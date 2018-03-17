@@ -25,10 +25,16 @@ Partial Class HonPrin
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.BSalir = New System.Windows.Forms.Button()
+        Me.TSSLTiempo = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AcercaDeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuStrip1.SuspendLayout()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AyudaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(800, 24)
@@ -37,6 +43,7 @@ Partial Class HonPrin
         '
         'StatusStrip1
         '
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TSSLTiempo})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 428)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(800, 22)
@@ -52,6 +59,26 @@ Partial Class HonPrin
         Me.BSalir.TabIndex = 3
         Me.BSalir.Text = "Salir"
         Me.BSalir.UseVisualStyleBackColor = True
+        '
+        'TSSLTiempo
+        '
+        Me.TSSLTiempo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.TSSLTiempo.Name = "TSSLTiempo"
+        Me.TSSLTiempo.Size = New System.Drawing.Size(120, 17)
+        Me.TSSLTiempo.Text = "ToolStripStatusLabel1"
+        '
+        'AyudaToolStripMenuItem
+        '
+        Me.AyudaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AcercaDeToolStripMenuItem})
+        Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
+        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
+        Me.AyudaToolStripMenuItem.Text = "Ayuda"
+        '
+        'AcercaDeToolStripMenuItem
+        '
+        Me.AcercaDeToolStripMenuItem.Name = "AcercaDeToolStripMenuItem"
+        Me.AcercaDeToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AcercaDeToolStripMenuItem.Text = "Acerca De..."
         '
         'HonPrin
         '
@@ -69,6 +96,10 @@ Partial Class HonPrin
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -77,4 +108,7 @@ Partial Class HonPrin
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents BSalir As Button
+    Friend WithEvents TSSLTiempo As ToolStripStatusLabel
+    Friend WithEvents AyudaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AcercaDeToolStripMenuItem As ToolStripMenuItem
 End Class
