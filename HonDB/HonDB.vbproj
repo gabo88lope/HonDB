@@ -115,12 +115,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="NuevoPrestamo.Designer.vb">
-      <DependentUpon>NuevoPrestamo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="NuevoPrestamo.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="HonDBPrin.resx">
@@ -134,9 +128,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NuevoPrestamo.resx">
-      <DependentUpon>NuevoPrestamo.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
