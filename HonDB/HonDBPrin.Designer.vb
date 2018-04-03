@@ -71,30 +71,35 @@ Partial Class HonDBPrin
         '
         'Button1
         '
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         resources.ApplyResources(Me.Button1, "Button1")
         Me.Button1.Name = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
         resources.ApplyResources(Me.Button2, "Button2")
         Me.Button2.Name = "Button2"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button3
         '
+        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
         resources.ApplyResources(Me.Button3, "Button3")
         Me.Button3.Name = "Button3"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button4
         '
+        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
         resources.ApplyResources(Me.Button4, "Button4")
         Me.Button4.Name = "Button4"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'Button5
         '
+        Me.Button5.Cursor = System.Windows.Forms.Cursors.Hand
         resources.ApplyResources(Me.Button5, "Button5")
         Me.Button5.Name = "Button5"
         Me.Button5.UseVisualStyleBackColor = True

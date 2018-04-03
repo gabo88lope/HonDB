@@ -90,12 +90,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HonDBLF.Designer.vb">
-      <DependentUpon>HonDBLF.vb</DependentUpon>
-    </Compile>
-    <Compile Include="HonDBLF.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="HonDBPrin.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +101,12 @@
       <DependentUpon>HonDBSS.vb</DependentUpon>
     </Compile>
     <Compile Include="HonDBSS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -126,9 +126,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="HonDBLF.resx">
-      <DependentUpon>HonDBLF.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HonDBPrin.lrc-IR.resx">
       <DependentUpon>HonDBPrin.vb</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HonDBSS.resx">
       <DependentUpon>HonDBSS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
