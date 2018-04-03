@@ -1,15 +1,15 @@
-﻿Public Class HonPrin
-    Private Sub BSalir_Click(sender As Object, e As EventArgs) Handles BSalir.Click
-        Me.Close()
-        Me.Dispose()
-    End Sub
+﻿Public Class HonDBPrin
 
     Private Sub HonPrin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         TSSLTiempo.Text = System.DateTime.Now.ToString
 
-        HonDBSec.Show()
-        HonDBSec.Focus()
 
     End Sub
+
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Application.Exit()
+    End Sub
+
 End Class
