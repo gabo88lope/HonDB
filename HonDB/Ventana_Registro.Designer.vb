@@ -22,12 +22,13 @@ Partial Class Ventana_Registro
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventana_Registro))
         Me.LabelLogo = New System.Windows.Forms.Label()
         Me.BookLogo = New System.Windows.Forms.PictureBox()
         Me.RetornoIcon = New System.Windows.Forms.PictureBox()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         CType(Me.BookLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RetornoIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -75,14 +76,6 @@ Partial Class Ventana_Registro
         Me.ShapeContainer1.TabIndex = 4
         Me.ShapeContainer1.TabStop = False
         '
-        'RectangleShape1
-        '
-        Me.RectangleShape1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(81, Byte), Integer))
-        Me.RectangleShape1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
-        Me.RectangleShape1.Location = New System.Drawing.Point(0, 0)
-        Me.RectangleShape1.Name = "RectangleShape1"
-        Me.RectangleShape1.Size = New System.Drawing.Size(1366, 70)
-        '
         'RectangleShape2
         '
         Me.RectangleShape2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(108, Byte), Integer))
@@ -90,7 +83,16 @@ Partial Class Ventana_Registro
         Me.RectangleShape2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(108, Byte), Integer))
         Me.RectangleShape2.Location = New System.Drawing.Point(0, 0)
         Me.RectangleShape2.Name = "RectangleShape2"
-        Me.RectangleShape2.Size = New System.Drawing.Size(70, 69)
+        Me.RectangleShape2.Size = New System.Drawing.Size(70, 70)
+        '
+        'RectangleShape1
+        '
+        Me.RectangleShape1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(81, Byte), Integer))
+        Me.RectangleShape1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
+        Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(81, Byte), Integer))
+        Me.RectangleShape1.Location = New System.Drawing.Point(0, 0)
+        Me.RectangleShape1.Name = "RectangleShape1"
+        Me.RectangleShape1.Size = New System.Drawing.Size(1366, 70)
         '
         'Ventana_Registro
         '
@@ -103,8 +105,11 @@ Partial Class Ventana_Registro
         Me.Controls.Add(Me.RetornoIcon)
         Me.Controls.Add(Me.ShapeContainer1)
         Me.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Ventana_Registro"
         Me.Text = "Ventana_Registro"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.BookLogo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RetornoIcon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
