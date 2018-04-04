@@ -161,13 +161,16 @@ Partial Class Login
         '
         'Label2
         '
+        Me.Label2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Lucida Calligraphy", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Caviar Dreams", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(113, 72)
+        Me.Label2.Location = New System.Drawing.Point(106, 120)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(141, 37)
+        Me.Label2.Size = New System.Drawing.Size(224, 81)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "HonDB"
         '
