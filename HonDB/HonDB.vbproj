@@ -215,5 +215,23 @@
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CreateBT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveBT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveBT2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UpdateBT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteBT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditBT.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
