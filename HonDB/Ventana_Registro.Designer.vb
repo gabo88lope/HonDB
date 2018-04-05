@@ -93,9 +93,9 @@ Partial Class Ventana_Registro
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(21, 128)
+        Me.DataGridView1.Location = New System.Drawing.Point(21, 161)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1324, 524)
+        Me.DataGridView1.Size = New System.Drawing.Size(1324, 491)
         Me.DataGridView1.TabIndex = 5
         '
         'LbCrear
