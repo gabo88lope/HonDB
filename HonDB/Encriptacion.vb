@@ -4,28 +4,27 @@ Imports System.Security.Cryptography
 
 Module Encriptacion
 
-    Public Sub Encriptacion(ByVal original As String, ByVal cifrado As String)
+    Public Sub Encriptacion(ByVal original As String, ByVal encriptado As Byte(), ByVal op As Boolean)
         Try
             ' Create a new instance of the AesManaged
             ' class.  This generates a new key and initialization 
             ' vector (IV).
             Using myAes As New AesManaged()
 
-                ' Encrypt the string to an array of bytes.
-                Dim encrypted As Byte() = EncryptStringToBytes_Aes(original, myAes.Key, myAes.IV)
+                If op Then
+                    'Encriptado
+                    encriptado = EncryptStringToBytes_Aes(original, myAes.Key, myAes.IV)
+                Else
+                    'Desencriptado
+                    original = DecryptStringFromBytes_Aes(encriptado, myAes.Key, myAes.IV)
+                End If
 
-                ' Decrypt the bytes to a string.
-                cifrado = DecryptStringFromBytes_Aes(encrypted, myAes.Key, myAes.IV)
-
-                'Display the original data and the decrypted data.
-                Console.WriteLine("Original:   {0}", original)
-                Console.WriteLine("Round Trip: {0}", cifrado)
             End Using
         Catch e As Exception
             MsgBox("Error: {0}", e.Message)
         End Try
 
-    End Sub 'Main
+    End Sub
 
     Function EncryptStringToBytes_Aes(ByVal plainText As String, ByVal Key() As Byte, ByVal IV() As Byte) As Byte()
         ' Check arguments.

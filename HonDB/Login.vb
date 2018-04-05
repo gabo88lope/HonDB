@@ -56,4 +56,8 @@ Public Class Login
         End If
     End Sub
 
+    Private Sub Validar_Contraseña()
+
+    End Sub
+
 End Class
