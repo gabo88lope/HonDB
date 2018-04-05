@@ -8,4 +8,7 @@
         Me.Close()
     End Sub
 
+    Private Sub BTCrear_Click(sender As Object, e As EventArgs) Handles BTCrear.Click
+        Ventana_Nuevo_Registro.Show()
+    End Sub
 End Class
