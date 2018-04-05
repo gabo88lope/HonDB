@@ -28,6 +28,11 @@ Partial Class Ventana_Registro
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.LbCrear = New System.Windows.Forms.Label()
+        Me.LbEditar = New System.Windows.Forms.Label()
+        Me.LbGuardar = New System.Windows.Forms.Label()
+        Me.LbActualizar = New System.Windows.Forms.Label()
+        Me.LbEliminar = New System.Windows.Forms.Label()
         Me.BTEliminar = New System.Windows.Forms.PictureBox()
         Me.BTActualizar = New System.Windows.Forms.PictureBox()
         Me.BTGuardar = New System.Windows.Forms.PictureBox()
@@ -35,11 +40,6 @@ Partial Class Ventana_Registro
         Me.BTCrear = New System.Windows.Forms.PictureBox()
         Me.BookLogo = New System.Windows.Forms.PictureBox()
         Me.RetornoIcon = New System.Windows.Forms.PictureBox()
-        Me.LbCrear = New System.Windows.Forms.Label()
-        Me.LbEditar = New System.Windows.Forms.Label()
-        Me.LbGuardar = New System.Windows.Forms.Label()
-        Me.LbActualizar = New System.Windows.Forms.Label()
-        Me.LbEliminar = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTActualizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -98,72 +98,6 @@ Partial Class Ventana_Registro
         Me.DataGridView1.Size = New System.Drawing.Size(1324, 524)
         Me.DataGridView1.TabIndex = 5
         '
-        'BTEliminar
-        '
-        Me.BTEliminar.Image = Global.HonDB.My.Resources.Resources.DeleteBT
-        Me.BTEliminar.Location = New System.Drawing.Point(670, 661)
-        Me.BTEliminar.Name = "BTEliminar"
-        Me.BTEliminar.Size = New System.Drawing.Size(40, 40)
-        Me.BTEliminar.TabIndex = 10
-        Me.BTEliminar.TabStop = False
-        '
-        'BTActualizar
-        '
-        Me.BTActualizar.Image = Global.HonDB.My.Resources.Resources.UpdateBT
-        Me.BTActualizar.Location = New System.Drawing.Point(526, 661)
-        Me.BTActualizar.Name = "BTActualizar"
-        Me.BTActualizar.Size = New System.Drawing.Size(40, 40)
-        Me.BTActualizar.TabIndex = 9
-        Me.BTActualizar.TabStop = False
-        '
-        'BTGuardar
-        '
-        Me.BTGuardar.Image = Global.HonDB.My.Resources.Resources.SaveBT2
-        Me.BTGuardar.Location = New System.Drawing.Point(372, 661)
-        Me.BTGuardar.Name = "BTGuardar"
-        Me.BTGuardar.Size = New System.Drawing.Size(40, 40)
-        Me.BTGuardar.TabIndex = 8
-        Me.BTGuardar.TabStop = False
-        '
-        'BTEditar
-        '
-        Me.BTEditar.Image = Global.HonDB.My.Resources.Resources.EditBT
-        Me.BTEditar.Location = New System.Drawing.Point(218, 663)
-        Me.BTEditar.Name = "BTEditar"
-        Me.BTEditar.Size = New System.Drawing.Size(35, 40)
-        Me.BTEditar.TabIndex = 7
-        Me.BTEditar.TabStop = False
-        '
-        'BTCrear
-        '
-        Me.BTCrear.Image = Global.HonDB.My.Resources.Resources.CreateBT
-        Me.BTCrear.Location = New System.Drawing.Point(74, 661)
-        Me.BTCrear.Name = "BTCrear"
-        Me.BTCrear.Size = New System.Drawing.Size(40, 40)
-        Me.BTCrear.TabIndex = 6
-        Me.BTCrear.TabStop = False
-        '
-        'BookLogo
-        '
-        Me.BookLogo.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(81, Byte), Integer))
-        Me.BookLogo.Image = Global.HonDB.My.Resources.Resources.BookLogo
-        Me.BookLogo.Location = New System.Drawing.Point(751, 8)
-        Me.BookLogo.Name = "BookLogo"
-        Me.BookLogo.Size = New System.Drawing.Size(65, 50)
-        Me.BookLogo.TabIndex = 3
-        Me.BookLogo.TabStop = False
-        '
-        'RetornoIcon
-        '
-        Me.RetornoIcon.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.RetornoIcon.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.RetornoIcon.Image = Global.HonDB.My.Resources.Resources.Arrow3
-        Me.RetornoIcon.Location = New System.Drawing.Point(7, 10)
-        Me.RetornoIcon.Name = "RetornoIcon"
-        Me.RetornoIcon.Size = New System.Drawing.Size(57, 50)
-        Me.RetornoIcon.TabIndex = 1
-        Me.RetornoIcon.TabStop = False
-        '
         'LbCrear
         '
         Me.LbCrear.AutoSize = True
@@ -213,6 +147,74 @@ Partial Class Ventana_Registro
         Me.LbEliminar.Size = New System.Drawing.Size(74, 21)
         Me.LbEliminar.TabIndex = 15
         Me.LbEliminar.Text = "Eliminar"
+        '
+        'BTEliminar
+        '
+        Me.BTEliminar.Image = Global.HonDB.My.Resources.Resources.DeleteBT
+        Me.BTEliminar.Location = New System.Drawing.Point(670, 661)
+        Me.BTEliminar.Name = "BTEliminar"
+        Me.BTEliminar.Size = New System.Drawing.Size(40, 40)
+        Me.BTEliminar.TabIndex = 10
+        Me.BTEliminar.TabStop = False
+        '
+        'BTActualizar
+        '
+        Me.BTActualizar.Image = Global.HonDB.My.Resources.Resources.UpdateBT
+        Me.BTActualizar.Location = New System.Drawing.Point(526, 661)
+        Me.BTActualizar.Name = "BTActualizar"
+        Me.BTActualizar.Size = New System.Drawing.Size(40, 40)
+        Me.BTActualizar.TabIndex = 9
+        Me.BTActualizar.TabStop = False
+        '
+        'BTGuardar
+        '
+        Me.BTGuardar.Image = Global.HonDB.My.Resources.Resources.SaveBT2
+        Me.BTGuardar.Location = New System.Drawing.Point(372, 661)
+        Me.BTGuardar.Name = "BTGuardar"
+        Me.BTGuardar.Size = New System.Drawing.Size(40, 40)
+        Me.BTGuardar.TabIndex = 8
+        Me.BTGuardar.TabStop = False
+        '
+        'BTEditar
+        '
+        Me.BTEditar.Image = Global.HonDB.My.Resources.Resources.EditBT
+        Me.BTEditar.Location = New System.Drawing.Point(218, 663)
+        Me.BTEditar.Name = "BTEditar"
+        Me.BTEditar.Size = New System.Drawing.Size(35, 40)
+        Me.BTEditar.TabIndex = 7
+        Me.BTEditar.TabStop = False
+        '
+        'BTCrear
+        '
+        Me.BTCrear.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BTCrear.Image = Global.HonDB.My.Resources.Resources.CreateBT
+        Me.BTCrear.Location = New System.Drawing.Point(74, 661)
+        Me.BTCrear.Name = "BTCrear"
+        Me.BTCrear.Size = New System.Drawing.Size(40, 40)
+        Me.BTCrear.TabIndex = 6
+        Me.BTCrear.TabStop = False
+        '
+        'BookLogo
+        '
+        Me.BookLogo.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(81, Byte), Integer))
+        Me.BookLogo.Image = Global.HonDB.My.Resources.Resources.BookLogo
+        Me.BookLogo.Location = New System.Drawing.Point(751, 8)
+        Me.BookLogo.Name = "BookLogo"
+        Me.BookLogo.Size = New System.Drawing.Size(65, 50)
+        Me.BookLogo.TabIndex = 3
+        Me.BookLogo.TabStop = False
+        '
+        'RetornoIcon
+        '
+        Me.RetornoIcon.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.RetornoIcon.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.RetornoIcon.Image = Global.HonDB.My.Resources.Resources.Arrow3
+        Me.RetornoIcon.Location = New System.Drawing.Point(0, 0)
+        Me.RetornoIcon.Name = "RetornoIcon"
+        Me.RetornoIcon.Size = New System.Drawing.Size(70, 70)
+        Me.RetornoIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.RetornoIcon.TabIndex = 1
+        Me.RetornoIcon.TabStop = False
         '
         'Ventana_Registro
         '
