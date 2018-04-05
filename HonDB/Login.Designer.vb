@@ -27,7 +27,7 @@ Partial Class Login
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.passText = New System.Windows.Forms.TextBox()
+        Me.PassText = New System.Windows.Forms.TextBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.UsernameText = New System.Windows.Forms.TextBox()
@@ -78,25 +78,25 @@ Partial Class Login
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.White
-        Me.Panel3.Controls.Add(Me.passText)
+        Me.Panel3.Controls.Add(Me.PassText)
         Me.Panel3.Controls.Add(Me.Panel5)
         Me.Panel3.Location = New System.Drawing.Point(26, 134)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(200, 42)
         Me.Panel3.TabIndex = 2
         '
-        'passText
+        'PassText
         '
-        Me.passText.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.passText.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.passText.ForeColor = System.Drawing.Color.FromArgb(CType(CType(84, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.passText.Location = New System.Drawing.Point(39, 12)
-        Me.passText.MaxLength = 30
-        Me.passText.Name = "passText"
-        Me.passText.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.passText.Size = New System.Drawing.Size(158, 20)
-        Me.passText.TabIndex = 3
-        Me.passText.Text = "Contraseña"
+        Me.PassText.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.PassText.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PassText.ForeColor = System.Drawing.Color.FromArgb(CType(CType(84, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.PassText.Location = New System.Drawing.Point(39, 12)
+        Me.PassText.MaxLength = 30
+        Me.PassText.Name = "PassText"
+        Me.PassText.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.PassText.Size = New System.Drawing.Size(158, 20)
+        Me.PassText.TabIndex = 3
+        Me.PassText.Text = "Contraseña"
         '
         'Panel5
         '
@@ -208,7 +208,7 @@ Partial Class Login
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel6 As Panel
-    Friend WithEvents passText As TextBox
+    Friend WithEvents PassText As TextBox
     Friend WithEvents Panel5 As Panel
     Friend WithEvents UsernameText As TextBox
     Friend WithEvents PictureBox1 As PictureBox
