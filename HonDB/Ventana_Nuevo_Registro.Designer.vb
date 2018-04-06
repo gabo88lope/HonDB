@@ -52,12 +52,12 @@ Partial Class Ventana_Nuevo_Registro
         Me.LbFP = New System.Windows.Forms.Label()
         Me.LbFD = New System.Windows.Forms.Label()
         Me.BTGuardar = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TBID = New System.Windows.Forms.TextBox()
+        Me.TBISBN = New System.Windows.Forms.TextBox()
+        Me.TBAU = New System.Windows.Forms.TextBox()
+        Me.TBNac = New System.Windows.Forms.TextBox()
+        Me.TBNB = New System.Windows.Forms.TextBox()
+        Me.TBLP = New System.Windows.Forms.TextBox()
         CType(Me.NumCant, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -387,71 +387,72 @@ Partial Class Ventana_Nuevo_Registro
         Me.BTGuardar.Text = "Guardar"
         Me.BTGuardar.UseVisualStyleBackColor = False
         '
-        'TextBox1
+        'TBID
         '
-        Me.TextBox1.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.TextBox1.Location = New System.Drawing.Point(57, 185)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(271, 26)
-        Me.TextBox1.TabIndex = 28
+        Me.TBID.BackColor = System.Drawing.SystemColors.Control
+        Me.TBID.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TBID.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.TBID.Location = New System.Drawing.Point(57, 185)
+        Me.TBID.Name = "TBID"
+        Me.TBID.Size = New System.Drawing.Size(271, 26)
+        Me.TBID.TabIndex = 28
         '
-        'TextBox2
+        'TBISBN
         '
-        Me.TextBox2.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.TextBox2.Location = New System.Drawing.Point(57, 370)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(271, 26)
-        Me.TextBox2.TabIndex = 29
+        Me.TBISBN.BackColor = System.Drawing.SystemColors.Control
+        Me.TBISBN.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TBISBN.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBISBN.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.TBISBN.Location = New System.Drawing.Point(57, 370)
+        Me.TBISBN.MaxLength = 13
+        Me.TBISBN.Name = "TBISBN"
+        Me.TBISBN.Size = New System.Drawing.Size(271, 26)
+        Me.TBISBN.TabIndex = 29
         '
-        'TextBox3
+        'TBAU
         '
-        Me.TextBox3.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox3.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.TextBox3.Location = New System.Drawing.Point(559, 98)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(271, 26)
-        Me.TextBox3.TabIndex = 30
+        Me.TBAU.BackColor = System.Drawing.SystemColors.Control
+        Me.TBAU.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TBAU.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBAU.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.TBAU.Location = New System.Drawing.Point(559, 98)
+        Me.TBAU.Name = "TBAU"
+        Me.TBAU.Size = New System.Drawing.Size(271, 26)
+        Me.TBAU.TabIndex = 30
         '
-        'TextBox4
+        'TBNac
         '
-        Me.TextBox4.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox4.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.TextBox4.Location = New System.Drawing.Point(559, 185)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(271, 26)
-        Me.TextBox4.TabIndex = 31
+        Me.TBNac.BackColor = System.Drawing.SystemColors.Control
+        Me.TBNac.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TBNac.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBNac.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.TBNac.Location = New System.Drawing.Point(559, 185)
+        Me.TBNac.Name = "TBNac"
+        Me.TBNac.Size = New System.Drawing.Size(271, 26)
+        Me.TBNac.TabIndex = 31
         '
-        'TextBox5
+        'TBNB
         '
-        Me.TextBox5.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox5.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.TextBox5.Location = New System.Drawing.Point(559, 457)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(271, 26)
-        Me.TextBox5.TabIndex = 32
+        Me.TBNB.BackColor = System.Drawing.SystemColors.Control
+        Me.TBNB.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TBNB.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBNB.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.TBNB.Location = New System.Drawing.Point(559, 457)
+        Me.TBNB.Name = "TBNB"
+        Me.TBNB.Size = New System.Drawing.Size(271, 26)
+        Me.TBNB.TabIndex = 32
         '
-        'TextBox6
+        'TBLP
         '
-        Me.TextBox6.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox6.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.TextBox6.Location = New System.Drawing.Point(57, 277)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(271, 26)
-        Me.TextBox6.TabIndex = 33
+        Me.TBLP.BackColor = System.Drawing.SystemColors.Control
+        Me.TBLP.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TBLP.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBLP.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.TBLP.Location = New System.Drawing.Point(57, 277)
+        Me.TBLP.Name = "TBLP"
+        Me.TBLP.Size = New System.Drawing.Size(271, 26)
+        Me.TBLP.TabIndex = 33
         '
         'Ventana_Nuevo_Registro
         '
@@ -460,12 +461,12 @@ Partial Class Ventana_Nuevo_Registro
         Me.BackgroundImage = Global.HonDB.My.Resources.Resources.Background
         Me.ClientSize = New System.Drawing.Size(889, 566)
         Me.ControlBox = False
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TBLP)
+        Me.Controls.Add(Me.TBNB)
+        Me.Controls.Add(Me.TBNac)
+        Me.Controls.Add(Me.TBAU)
+        Me.Controls.Add(Me.TBISBN)
+        Me.Controls.Add(Me.TBID)
         Me.Controls.Add(Me.BTGuardar)
         Me.Controls.Add(Me.LbFD)
         Me.Controls.Add(Me.LbFP)
@@ -531,10 +532,10 @@ Partial Class Ventana_Nuevo_Registro
     Friend WithEvents LbFP As Label
     Friend WithEvents LbFD As Label
     Friend WithEvents BTGuardar As Button
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TBID As TextBox
+    Friend WithEvents TBISBN As TextBox
+    Friend WithEvents TBAU As TextBox
+    Friend WithEvents TBNac As TextBox
+    Friend WithEvents TBNB As TextBox
+    Friend WithEvents TBLP As TextBox
 End Class
