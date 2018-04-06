@@ -11,7 +11,7 @@ Public Class Login
 
     Private Sub UsernameText_KeyPress(sender As Object, e As KeyPressEventArgs) Handles UsernameText.KeyPress
 
-        If e.KeyChar = ChrW(Keys.Enter) Then
+        If e.KeyChar = ChrW(Keys.Tab) Then
             PassText.Text = ""
             PassText.Select()
         End If
@@ -58,6 +58,22 @@ Public Class Login
 
     Private Sub Validar_Contraseña()
 
+        Dim encriptado As Byte() = Nothing
+        Encriptacion.Encriptacion(PassText.Text, encriptado, True)
+
+
+
     End Sub
 
+    Private Sub PassText_KeyPress(sender As Object, e As KeyPressEventArgs) Handles PassText.KeyPress
+        If e.KeyChar = ChrW(Keys.Tab) Then
+            BotonIngresar.Select()
+        End If
+    End Sub
+
+    Private Sub Login_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MyBase.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            BotonIngresar.PerformClick()
+        End If
+    End Sub
 End Class
