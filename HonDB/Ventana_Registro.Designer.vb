@@ -150,6 +150,7 @@ Partial Class Ventana_Registro
         '
         'BTEliminar
         '
+        Me.BTEliminar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BTEliminar.Image = Global.HonDB.My.Resources.Resources.DeleteBT
         Me.BTEliminar.Location = New System.Drawing.Point(670, 661)
         Me.BTEliminar.Name = "BTEliminar"
@@ -159,6 +160,7 @@ Partial Class Ventana_Registro
         '
         'BTActualizar
         '
+        Me.BTActualizar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BTActualizar.Image = Global.HonDB.My.Resources.Resources.UpdateBT
         Me.BTActualizar.Location = New System.Drawing.Point(526, 661)
         Me.BTActualizar.Name = "BTActualizar"
@@ -168,6 +170,7 @@ Partial Class Ventana_Registro
         '
         'BTGuardar
         '
+        Me.BTGuardar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BTGuardar.Image = Global.HonDB.My.Resources.Resources.SaveBT2
         Me.BTGuardar.Location = New System.Drawing.Point(372, 661)
         Me.BTGuardar.Name = "BTGuardar"
@@ -177,6 +180,7 @@ Partial Class Ventana_Registro
         '
         'BTEditar
         '
+        Me.BTEditar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BTEditar.Image = Global.HonDB.My.Resources.Resources.EditBT
         Me.BTEditar.Location = New System.Drawing.Point(218, 663)
         Me.BTEditar.Name = "BTEditar"
