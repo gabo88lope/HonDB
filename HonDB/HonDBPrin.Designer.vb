@@ -22,19 +22,20 @@ Partial Class HonDBPrin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(HonDBPrin))
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.TSSLTiempo = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.FLPButtons = New System.Windows.Forms.FlowLayoutPanel()
+        Me.BRegistro = New System.Windows.Forms.Button()
+        Me.BBusqueda = New System.Windows.Forms.Button()
+        Me.BReporte = New System.Windows.Forms.Button()
+        Me.BAdministrar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.StatusStrip1.SuspendLayout()
-        Me.FlowLayoutPanel1.SuspendLayout()
+        Me.FLPButtons.SuspendLayout()
         Me.SuspendLayout()
         '
         'StatusStrip1
@@ -49,6 +50,48 @@ Partial Class HonDBPrin
         Me.TSSLTiempo.Name = "TSSLTiempo"
         resources.ApplyResources(Me.TSSLTiempo, "TSSLTiempo")
         '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
+        '
+        'FLPButtons
+        '
+        Me.FLPButtons.Controls.Add(Me.BRegistro)
+        Me.FLPButtons.Controls.Add(Me.BBusqueda)
+        Me.FLPButtons.Controls.Add(Me.BReporte)
+        Me.FLPButtons.Controls.Add(Me.BAdministrar)
+        resources.ApplyResources(Me.FLPButtons, "FLPButtons")
+        Me.FLPButtons.Name = "FLPButtons"
+        '
+        'BRegistro
+        '
+        Me.BRegistro.BackColor = System.Drawing.SystemColors.ControlLight
+        resources.ApplyResources(Me.BRegistro, "BRegistro")
+        Me.BRegistro.Name = "BRegistro"
+        Me.BRegistro.UseVisualStyleBackColor = False
+        '
+        'BBusqueda
+        '
+        Me.BBusqueda.BackgroundImage = Global.HonDB.My.Resources.Resources.BotonBusqueda03
+        resources.ApplyResources(Me.BBusqueda, "BBusqueda")
+        Me.BBusqueda.Name = "BBusqueda"
+        Me.BBusqueda.UseVisualStyleBackColor = True
+        '
+        'BReporte
+        '
+        Me.BReporte.BackgroundImage = Global.HonDB.My.Resources.Resources.BotonReportes04
+        resources.ApplyResources(Me.BReporte, "BReporte")
+        Me.BReporte.Name = "BReporte"
+        Me.BReporte.UseVisualStyleBackColor = True
+        '
+        'BAdministrar
+        '
+        Me.BAdministrar.BackgroundImage = Global.HonDB.My.Resources.Resources.BotonAdministrar03
+        resources.ApplyResources(Me.BAdministrar, "BAdministrar")
+        Me.BAdministrar.Name = "BAdministrar"
+        Me.BAdministrar.UseVisualStyleBackColor = True
+        '
         'Panel1
         '
         resources.ApplyResources(Me.Panel1, "Panel1")
@@ -59,56 +102,11 @@ Partial Class HonDBPrin
         resources.ApplyResources(Me.Panel2, "Panel2")
         Me.Panel2.Name = "Panel2"
         '
-        'FlowLayoutPanel1
-        '
-        resources.ApplyResources(Me.FlowLayoutPanel1, "FlowLayoutPanel1")
-        Me.FlowLayoutPanel1.Controls.Add(Me.Button1)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Button2)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Button3)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Button4)
-        Me.FlowLayoutPanel1.Controls.Add(Me.Button5)
-        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        '
-        'Button1
-        '
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        resources.ApplyResources(Me.Button1, "Button1")
-        Me.Button1.Name = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        resources.ApplyResources(Me.Button2, "Button2")
-        Me.Button2.Name = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
-        resources.ApplyResources(Me.Button3, "Button3")
-        Me.Button3.Name = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
-        resources.ApplyResources(Me.Button4, "Button4")
-        Me.Button4.Name = "Button4"
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.Cursor = System.Windows.Forms.Cursors.Hand
-        resources.ApplyResources(Me.Button5, "Button5")
-        Me.Button5.Name = "Button5"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
         'HonDBPrin
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.FlowLayoutPanel1)
+        Me.Controls.Add(Me.FLPButtons)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
@@ -117,7 +115,7 @@ Partial Class HonDBPrin
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
-        Me.FlowLayoutPanel1.ResumeLayout(False)
+        Me.FLPButtons.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -126,10 +124,10 @@ Partial Class HonDBPrin
     Friend WithEvents TSSLTiempo As ToolStripStatusLabel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button5 As Button
+    Friend WithEvents BRegistro As Button
+    Friend WithEvents BBusqueda As Button
+    Friend WithEvents BAdministrar As Button
+    Friend WithEvents BReporte As Button
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents FLPButtons As FlowLayoutPanel
 End Class

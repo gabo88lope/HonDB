@@ -169,9 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana_Nuevo_Registro.resx">
       <DependentUpon>Ventana_Nuevo_Registro.vb</DependentUpon>
@@ -245,6 +245,10 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <None Include="Resources\BotonAdministrar-03.png" />
+    <None Include="Resources\BotonReportes-04.png" />
+    <None Include="Resources\BotonBusqueda-03.png" />
+    <None Include="Resources\BotonRegistros-03.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
