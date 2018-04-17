@@ -1,4 +1,7 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Data
+Imports System.Windows.Forms
+Imports HonDB
+Imports MySql.Data.MySqlClient
 
 Module Conexion
 
