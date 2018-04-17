@@ -21,12 +21,12 @@ Module Conexion
             conexion = New MySqlConnection
             conexion.ConnectionString = "server = localhost; user id = root; Password = leo12345; database = biblioteca"
             conexion.Open()
-            consulta = "SELECT * FROM AUTOR"
+            consulta = "SELECT * FROM " & table
             command = New MySqlCommand(consulta, conexion)
             READER = command.ExecuteReader
 
             While READER.Read
-                Dim aNombre = READER.GetString("nombre")
+                Dim aNombre = READER.GetString(column)
                 cb.Items.Add(aNombre)
             End While
 
@@ -44,7 +44,7 @@ Module Conexion
 
         Try
             conexion = New MySqlConnection
-            conexion.ConnectionString = "server = localhost; user id = root; Password = leo12345; database = biblioteca"
+            conexion.ConnectionString = "server = localhost; user id = root; Password = 12345678; database = hondb"
             conexion.Open()
             adaptador = New MySqlDataAdapter(query, conexion)
             datos = New DataSet
