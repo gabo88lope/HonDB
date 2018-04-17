@@ -105,7 +105,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conexion.vb" />
+    <Compile Include="OperacionesBD.vb" />
+    <Compile Include="ConexionBD.vb" />
     <Compile Include="Encriptacion.vb" />
     <Compile Include="HonDBPrin.vb">
       <SubType>Form</SubType>
