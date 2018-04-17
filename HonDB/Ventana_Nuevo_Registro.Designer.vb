@@ -233,7 +233,6 @@ Partial Class Ventana_Nuevo_Registro
         Me.ComboBoxEP.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
         Me.ComboBoxEP.FormattingEnabled = True
         Me.ComboBoxEP.IntegralHeight = False
-        Me.ComboBoxEP.Items.AddRange(New Object() {"Vigente", "Retrasado"})
         Me.ComboBoxEP.Location = New System.Drawing.Point(543, 360)
         Me.ComboBoxEP.Margin = New System.Windows.Forms.Padding(6)
         Me.ComboBoxEP.Name = "ComboBoxEP"

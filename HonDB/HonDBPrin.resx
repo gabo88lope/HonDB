@@ -121,6 +121,12 @@
     <value>132, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="TSSLTiempo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 17</value>
+  </data>
+  <data name="TSSLTiempo.Text" xml:space="preserve">
+    <value>ToolStripStatusLabel1</value>
+  </data>
   <data name="StatusStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 727</value>
   </data>
@@ -145,12 +151,6 @@
   </data>
   <data name="&gt;&gt;StatusStrip1.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="TSSLTiempo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 17</value>
-  </data>
-  <data name="TSSLTiempo.Text" xml:space="preserve">
-    <value>ToolStripStatusLabel1</value>
   </data>
   <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>249, 17</value>
@@ -14859,9 +14859,6 @@
         BgCtaX5a0KR1pLmpZQgAWtK81JEWTHAz6wCgPXVOsY5Os4YBoGpu6h5FFRqd41DXKK/ZPvjwD0KgrTyV
         u0fomNQ5TN11NHcAHjMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzm7r7N9nOritKdYsrAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

@@ -19,7 +19,7 @@ Module Conexion
 
         Try
             conexion = New MySqlConnection
-            conexion.ConnectionString = "server = localhost; user id = root; Password = leo12345; database = biblioteca"
+            conexion.ConnectionString = "server = localhost; user id = root; Password = Hydr0g3n2Oxyg3n1; database = hondb"
             conexion.Open()
             consulta = "SELECT * FROM " & table
             command = New MySqlCommand(consulta, conexion)
@@ -44,7 +44,7 @@ Module Conexion
 
         Try
             conexion = New MySqlConnection
-            conexion.ConnectionString = "server = localhost; user id = root; Password = 12345678; database = hondb"
+            conexion.ConnectionString = "server = localhost; user id = root; Password = Hydr0g3n2Oxyg3n1; database = hondb"
             conexion.Open()
             adaptador = New MySqlDataAdapter(query, conexion)
             datos = New DataSet

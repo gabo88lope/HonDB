@@ -68,6 +68,7 @@ Partial Class HonDBPrin
         '
         Me.BRegistro.BackColor = System.Drawing.SystemColors.ControlLight
         resources.ApplyResources(Me.BRegistro, "BRegistro")
+        Me.BRegistro.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BRegistro.Name = "BRegistro"
         Me.BRegistro.UseVisualStyleBackColor = False
         '

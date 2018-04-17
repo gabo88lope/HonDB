@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="hondbDataSet" targetNamespace="http://tempuri.org/hondbDataSet.xsd" xmlns:mstns="http://tempuri.org/hondbDataSet.xsd" xmlns="http://tempuri.org/hondbDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="hondbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="hondbConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.HonDB.My.MySettings.GlobalReference.Default.hondbConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="prestamoTableAdapter" GeneratorDataComponentClassName="prestamoTableAdapter" Name="prestamo" UserDataComponentName="prestamoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="hondbConnectionString (MySettings)" DbObjectName="hondb.prestamo" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT estado FROM prestamo</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="hondbDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="hondbDataSet" msprop:Generator_UserDSName="hondbDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="prestamo" msprop:Generator_TableClassName="prestamoDataTable" msprop:Generator_TableVarName="tableprestamo" msprop:Generator_TablePropName="prestamo" msprop:Generator_RowDeletingName="prestamoRowDeleting" msprop:Generator_RowChangingName="prestamoRowChanging" msprop:Generator_RowEvHandlerName="prestamoRowChangeEventHandler" msprop:Generator_RowDeletedName="prestamoRowDeleted" msprop:Generator_UserTableName="prestamo" msprop:Generator_RowChangedName="prestamoRowChanged" msprop:Generator_RowEvArgName="prestamoRowChangeEvent" msprop:Generator_RowClassName="prestamoRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

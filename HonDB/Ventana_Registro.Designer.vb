@@ -22,12 +22,16 @@ Partial Class Ventana_Registro
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventana_Registro))
         Me.LabelLogo = New System.Windows.Forms.Label()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleBusqueda = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Datos = New System.Windows.Forms.DataGridView()
         Me.LbCrear = New System.Windows.Forms.Label()
         Me.LbEditar = New System.Windows.Forms.Label()
         Me.LbGuardar = New System.Windows.Forms.Label()
@@ -40,7 +44,9 @@ Partial Class Ventana_Registro
         Me.BTCrear = New System.Windows.Forms.PictureBox()
         Me.BookLogo = New System.Windows.Forms.PictureBox()
         Me.RetornoIcon = New System.Windows.Forms.PictureBox()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TBBusqueda = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        CType(Me.Datos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTActualizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTGuardar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,10 +73,20 @@ Partial Class Ventana_Registro
         Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape2, Me.RectangleShape1})
+        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleBusqueda, Me.RectangleShape2, Me.RectangleShape1})
         Me.ShapeContainer1.Size = New System.Drawing.Size(1350, 729)
         Me.ShapeContainer1.TabIndex = 4
         Me.ShapeContainer1.TabStop = False
+        '
+        'RectangleBusqueda
+        '
+        Me.RectangleBusqueda.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.RectangleBusqueda.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
+        Me.RectangleBusqueda.BorderColor = System.Drawing.Color.Gray
+        Me.RectangleBusqueda.CornerRadius = 15
+        Me.RectangleBusqueda.Location = New System.Drawing.Point(52, 92)
+        Me.RectangleBusqueda.Name = "RectangleBusqueda"
+        Me.RectangleBusqueda.Size = New System.Drawing.Size(264, 50)
         '
         'RectangleShape2
         '
@@ -90,13 +106,34 @@ Partial Class Ventana_Registro
         Me.RectangleShape1.Name = "RectangleShape1"
         Me.RectangleShape1.Size = New System.Drawing.Size(1366, 70)
         '
-        'DataGridView1
+        'Datos
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(21, 161)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1324, 491)
-        Me.DataGridView1.TabIndex = 5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Datos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.Datos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Datos.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Datos.Location = New System.Drawing.Point(54, 164)
+        Me.Datos.Name = "Datos"
+        Me.Datos.ReadOnly = True
+        Me.Datos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Datos.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.Datos.Size = New System.Drawing.Size(1261, 491)
+        Me.Datos.TabIndex = 5
         '
         'LbCrear
         '
@@ -220,12 +257,38 @@ Partial Class Ventana_Registro
         Me.RetornoIcon.TabIndex = 1
         Me.RetornoIcon.TabStop = False
         '
+        'TBBusqueda
+        '
+        Me.TBBusqueda.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.TBBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TBBusqueda.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBBusqueda.ForeColor = System.Drawing.Color.Gray
+        Me.TBBusqueda.Location = New System.Drawing.Point(66, 105)
+        Me.TBBusqueda.Multiline = True
+        Me.TBBusqueda.Name = "TBBusqueda"
+        Me.TBBusqueda.Size = New System.Drawing.Size(239, 33)
+        Me.TBBusqueda.TabIndex = 16
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Gray
+        Me.Label1.Location = New System.Drawing.Point(319, 105)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(100, 25)
+        Me.Label1.TabIndex = 17
+        Me.Label1.Text = "Búsqueda"
+        '
         'Ventana_Registro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1350, 729)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.TBBusqueda)
         Me.Controls.Add(Me.LbEliminar)
         Me.Controls.Add(Me.LbActualizar)
         Me.Controls.Add(Me.LbGuardar)
@@ -236,7 +299,7 @@ Partial Class Ventana_Registro
         Me.Controls.Add(Me.BTGuardar)
         Me.Controls.Add(Me.BTEditar)
         Me.Controls.Add(Me.BTCrear)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.Datos)
         Me.Controls.Add(Me.BookLogo)
         Me.Controls.Add(Me.LabelLogo)
         Me.Controls.Add(Me.RetornoIcon)
@@ -247,7 +310,7 @@ Partial Class Ventana_Registro
         Me.Name = "Ventana_Registro"
         Me.Text = "Ventana_Registro"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Datos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BTEliminar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BTActualizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BTGuardar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -265,7 +328,7 @@ Partial Class Ventana_Registro
     Friend WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
     Friend WithEvents RectangleShape1 As PowerPacks.RectangleShape
     Friend WithEvents RectangleShape2 As PowerPacks.RectangleShape
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Datos As DataGridView
     Friend WithEvents BTCrear As PictureBox
     Friend WithEvents BTEditar As PictureBox
     Friend WithEvents BTGuardar As PictureBox
@@ -276,4 +339,7 @@ Partial Class Ventana_Registro
     Friend WithEvents LbGuardar As Label
     Friend WithEvents LbActualizar As Label
     Friend WithEvents LbEliminar As Label
+    Friend WithEvents RectangleBusqueda As PowerPacks.RectangleShape
+    Friend WithEvents TBBusqueda As TextBox
+    Friend WithEvents Label1 As Label
 End Class

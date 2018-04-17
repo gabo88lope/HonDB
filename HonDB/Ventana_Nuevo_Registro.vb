@@ -1,4 +1,5 @@
 ﻿Public Class Ventana_Nuevo_Registro
+
     Private Sub BTCancelar_Click(sender As Object, e As EventArgs) Handles BTCancelar.Click
         Me.Close()
 
@@ -66,5 +67,9 @@
         Else
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub ComboBoxEP_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxEP.SelectedIndexChanged
+        populateCombobox(ComboBoxEP, "prestamo", "estado")
     End Sub
 End Class
