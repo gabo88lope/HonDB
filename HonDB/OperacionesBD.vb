@@ -4,6 +4,7 @@ Imports HonDB.ConexionBD
 Module OperacionesBD
 
     Public Function ConexionInternet() As Boolean
+
         Try
             Return My.Computer.Network.Ping("www.google.com.ni")
         Catch ex As Exception
@@ -45,6 +46,7 @@ Module OperacionesBD
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+
     End Sub
 
 End Module
