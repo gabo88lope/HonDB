@@ -15,6 +15,7 @@
         Inner Join bibliotecario ON prestamo.idbibliotecario = bibliotecario.idbibliotecario
         Group by usuario.idusuario", "usuario")
 
+
     End Sub
 
     Private Sub RetornoIcon_Click(sender As Object, e As EventArgs) Handles RetornoIcon.Click
@@ -39,7 +40,7 @@
         Group by usuario.idusuario Having usuario.nombre like '" & TBBusqueda.Text & "%'", "usuario")
     End Sub
 
-    Private Sub Datos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Datos.CellContentClick
-
+    Private Sub Datos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Datos.CellClick
+        Datos.Rows(e.RowIndex).Selected = True
     End Sub
 End Class
