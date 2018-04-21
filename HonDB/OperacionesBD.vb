@@ -49,4 +49,17 @@ Module OperacionesBD
 
     End Sub
 
+    Public Sub SaveData(ByVal query As String)
+
+        Try
+            AbrirConexion()
+            command = New MySqlCommand(query, conexion)
+            reader = command.ExecuteReader
+            MsgBox("Datos guardados exitosamente!", MsgBoxStyle.OkOnly)
+            conexion.Close()
+        Catch ex As Exception
+            MsgBox("Ha ocurrido un error al guardar", MsgBoxStyle.Critical)
+        End Try
+    End Sub
+
 End Module
