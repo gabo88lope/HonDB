@@ -496,6 +496,7 @@ Partial Class Ventana_Nuevo_Registro
         Me.MinimizeBox = False
         Me.Name = "Ventana_Nuevo_Registro"
         Me.Text = "Nuevo Préstamo"
+        Me.TopMost = True
         CType(Me.NumCant, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -1,11 +1,8 @@
-﻿Public Class Ventana_Nuevo_Registro
+﻿Imports MySql.Data.MySqlClient
+Public Class Ventana_Nuevo_Registro
 
     Private Sub BTCancelar_Click(sender As Object, e As EventArgs) Handles BTCancelar.Click
         Me.Close()
-
-    End Sub
-
-    Private Sub BTGuardar_Click(sender As Object, e As EventArgs) Handles BTGuardar.Click
 
     End Sub
 
@@ -70,6 +67,17 @@
     End Sub
 
     Private Sub ComboBoxEP_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxEP.SelectedIndexChanged
-        populateCombobox(ComboBoxEP, "prestamo", "estado")
+        PopulateCombobox(ComboBoxEP, "prestamo", "estado")
+    End Sub
+
+    Private Sub BTGuardar_Click(sender As Object, e As EventArgs) Handles BTGuardar.Click
+        Dim Agregar As String
+        Agregar = "INSERT INTO usuario (nombre, apellido, identificacion, idubicacion)
+        VALUES ('" & TBNS.Text & "','" & TBAU.Text & "','" & TBID.Text & "')"
+        SaveData(Agregar)
+    End Sub
+
+    Private Sub Ventana_Nuevo_Registro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
