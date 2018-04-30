@@ -262,6 +262,12 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <None Include="Resources\BotonAcercade.png" />
+    <None Include="Resources\BotonSalir.png" />
+    <None Include="Resources\BotonAdministrar-031.png" />
+    <None Include="Resources\BotonReportes-041.png" />
+    <None Include="Resources\BotonBusqueda-031.png" />
+    <None Include="Resources\BotonRegistros-031.png" />
     <None Include="Resources\BotonAdministrar-03.png" />
     <None Include="Resources\BotonReportes-04.png" />
     <None Include="Resources\BotonBusqueda-03.png" />

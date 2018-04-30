@@ -2,7 +2,7 @@
 
     Private Sub HonPrin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        For Each b As Object In FLPButtons.Controls
+        For Each b As Object In Panel3.Controls
 
             b.FlatStyle = Windows.Forms.FlatStyle.Flat
             b.FlatAppearance.BorderSize = 0
@@ -38,4 +38,7 @@
 
     End Sub
 
+    Private Sub BSalir_Click(sender As Object, e As EventArgs) Handles BSalir.Click
+        Application.Exit()
+    End Sub
 End Class

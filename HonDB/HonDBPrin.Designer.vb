@@ -27,15 +27,17 @@ Partial Class HonDBPrin
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.TSSLTiempo = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.FLPButtons = New System.Windows.Forms.FlowLayoutPanel()
+        Me.BAcercaDe = New System.Windows.Forms.Button()
+        Me.BSalir = New System.Windows.Forms.Button()
         Me.BRegistro = New System.Windows.Forms.Button()
         Me.BBusqueda = New System.Windows.Forms.Button()
         Me.BReporte = New System.Windows.Forms.Button()
         Me.BAdministrar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.StatusStrip1.SuspendLayout()
-        Me.FLPButtons.SuspendLayout()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'StatusStrip1
@@ -55,18 +57,24 @@ Partial Class HonDBPrin
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
         '
-        'FLPButtons
+        'BAcercaDe
         '
-        Me.FLPButtons.Controls.Add(Me.BRegistro)
-        Me.FLPButtons.Controls.Add(Me.BBusqueda)
-        Me.FLPButtons.Controls.Add(Me.BReporte)
-        Me.FLPButtons.Controls.Add(Me.BAdministrar)
-        resources.ApplyResources(Me.FLPButtons, "FLPButtons")
-        Me.FLPButtons.Name = "FLPButtons"
+        Me.BAcercaDe.BackgroundImage = Global.HonDB.My.Resources.Resources.BotonAcercade
+        resources.ApplyResources(Me.BAcercaDe, "BAcercaDe")
+        Me.BAcercaDe.Name = "BAcercaDe"
+        Me.BAcercaDe.UseVisualStyleBackColor = True
+        '
+        'BSalir
+        '
+        Me.BSalir.BackgroundImage = Global.HonDB.My.Resources.Resources.BotonSalir
+        resources.ApplyResources(Me.BSalir, "BSalir")
+        Me.BSalir.Name = "BSalir"
+        Me.BSalir.UseVisualStyleBackColor = True
         '
         'BRegistro
         '
         Me.BRegistro.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.BRegistro.BackgroundImage = Global.HonDB.My.Resources.Resources.BotonRegistros03
         resources.ApplyResources(Me.BRegistro, "BRegistro")
         Me.BRegistro.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BRegistro.Name = "BRegistro"
@@ -103,20 +111,31 @@ Partial Class HonDBPrin
         resources.ApplyResources(Me.Panel2, "Panel2")
         Me.Panel2.Name = "Panel2"
         '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.BAcercaDe)
+        Me.Panel3.Controls.Add(Me.BSalir)
+        Me.Panel3.Controls.Add(Me.BAdministrar)
+        Me.Panel3.Controls.Add(Me.BReporte)
+        Me.Panel3.Controls.Add(Me.BBusqueda)
+        Me.Panel3.Controls.Add(Me.BRegistro)
+        resources.ApplyResources(Me.Panel3, "Panel3")
+        Me.Panel3.Name = "Panel3"
+        '
         'HonDBPrin
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.FLPButtons)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "HonDBPrin"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
-        Me.FLPButtons.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -130,5 +149,7 @@ Partial Class HonDBPrin
     Friend WithEvents BAdministrar As Button
     Friend WithEvents BReporte As Button
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents FLPButtons As FlowLayoutPanel
+    Friend WithEvents BAcercaDe As Button
+    Friend WithEvents BSalir As Button
+    Friend WithEvents Panel3 As Panel
 End Class
