@@ -1,0 +1,17 @@
+C:\Users\a\source\repos\Busqueda\Busqueda\bin\Debug\Busqueda.exe.config
+C:\Users\a\source\repos\Busqueda\Busqueda\bin\Debug\Busqueda.exe
+C:\Users\a\source\repos\Busqueda\Busqueda\bin\Debug\Busqueda.pdb
+C:\Users\a\source\repos\Busqueda\Busqueda\bin\Debug\Busqueda.xml
+C:\Users\a\source\repos\Busqueda\Busqueda\obj\Debug\Busqueda.vbprojResolveAssemblyReference.cache
+C:\Users\a\source\repos\Busqueda\Busqueda\obj\Debug\Busqueda.Resources.resources
+C:\Users\a\source\repos\Busqueda\Busqueda\obj\Debug\Busqueda.vbproj.GenerateResource.cache
+C:\Users\a\source\repos\Busqueda\Busqueda\obj\Debug\Busqueda.vbproj.CoreCompileInputs.cache
+C:\Users\a\source\repos\Busqueda\Busqueda\obj\Debug\Busqueda.exe
+C:\Users\a\source\repos\Busqueda\Busqueda\obj\Debug\Busqueda.xml
+C:\Users\a\source\repos\Busqueda\Busqueda\obj\Debug\Busqueda.pdb
+C:\Users\a\source\repos\Busqueda\Busqueda\bin\Debug\MySql.Data.dll
+C:\Users\a\source\repos\Busqueda\Busqueda\bin\Debug\MySql.Data.xml
+C:\Users\a\source\repos\Busqueda\Busqueda\obj\Debug\Busqueda.vbproj.CopyComplete
+C:\Users\a\source\repos\Busqueda\Busqueda\bin\Debug\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\a\source\repos\Busqueda\Busqueda\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\a\source\repos\Busqueda\Busqueda\obj\Debug\Busqueda.Ventana_Busqueda.resources
