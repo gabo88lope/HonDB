@@ -85,7 +85,7 @@ Public Class Busqueda
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PopulateCombobox(ComboBox1, "autor", "nombre")
-        PopulateCombobox(ComboBox2, "libro", "fechapublicaion")
+        PopulateCombobox(ComboBox2, "libro", "fechapublicacion")
         PopulateCombobox(ComboBox3, "libro", "titulo")
         PopulateCombobox(ComboBox4, "tipodocumento", "nombre")
 
