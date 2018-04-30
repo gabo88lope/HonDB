@@ -103,6 +103,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FReportes.Designer.vb">
+      <DependentUpon>FReportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FReportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="OperacionesBD.vb" />
     <Compile Include="ConexionBD.vb" />
     <Compile Include="Encriptacion.vb" />
@@ -154,6 +160,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FReportes.resx">
+      <DependentUpon>FReportes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HonDBPrin.lrc-IR.resx">
       <DependentUpon>HonDBPrin.vb</DependentUpon>
     </EmbeddedResource>
