@@ -37,10 +37,6 @@ Partial Class Ventana_Registro
         Me.LbGuardar = New System.Windows.Forms.Label()
         Me.LbActualizar = New System.Windows.Forms.Label()
         Me.LbEliminar = New System.Windows.Forms.Label()
-        Me.TBBusqueda = New System.Windows.Forms.TextBox()
-        Me.Filtrado = New System.Windows.Forms.ComboBox()
-        Me.LabelFiltrado = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BTEliminar = New System.Windows.Forms.PictureBox()
         Me.BTActualizar = New System.Windows.Forms.PictureBox()
         Me.BTGuardar = New System.Windows.Forms.PictureBox()
@@ -48,8 +44,9 @@ Partial Class Ventana_Registro
         Me.BTCrear = New System.Windows.Forms.PictureBox()
         Me.BookLogo = New System.Windows.Forms.PictureBox()
         Me.RetornoIcon = New System.Windows.Forms.PictureBox()
+        Me.TBBusqueda = New System.Windows.Forms.TextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.Datos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTActualizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTGuardar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,6 +54,7 @@ Partial Class Ventana_Registro
         CType(Me.BTCrear, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BookLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RetornoIcon, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelLogo
@@ -111,8 +109,8 @@ Partial Class Ventana_Registro
         '
         'Datos
         '
-        Me.Datos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.Datos.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Datos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(241, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.Datos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
@@ -190,51 +188,6 @@ Partial Class Ventana_Registro
         Me.LbEliminar.TabIndex = 15
         Me.LbEliminar.Text = "Eliminar"
         '
-        'TBBusqueda
-        '
-        Me.TBBusqueda.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.TBBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TBBusqueda.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TBBusqueda.ForeColor = System.Drawing.Color.Gray
-        Me.TBBusqueda.Location = New System.Drawing.Point(104, 105)
-        Me.TBBusqueda.Multiline = True
-        Me.TBBusqueda.Name = "TBBusqueda"
-        Me.TBBusqueda.Size = New System.Drawing.Size(262, 33)
-        Me.TBBusqueda.TabIndex = 16
-        '
-        'Filtrado
-        '
-        Me.Filtrado.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Filtrado.ForeColor = System.Drawing.Color.Gray
-        Me.Filtrado.FormattingEnabled = True
-        Me.Filtrado.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Filtrado.Items.AddRange(New Object() {"Nombre", "Identificación", "Fecha de Préstamo"})
-        Me.Filtrado.Location = New System.Drawing.Point(396, 113)
-        Me.Filtrado.Name = "Filtrado"
-        Me.Filtrado.Size = New System.Drawing.Size(121, 25)
-        Me.Filtrado.TabIndex = 19
-        '
-        'LabelFiltrado
-        '
-        Me.LabelFiltrado.AutoSize = True
-        Me.LabelFiltrado.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelFiltrado.ForeColor = System.Drawing.Color.Gray
-        Me.LabelFiltrado.Location = New System.Drawing.Point(392, 92)
-        Me.LabelFiltrado.Name = "LabelFiltrado"
-        Me.LabelFiltrado.Size = New System.Drawing.Size(69, 21)
-        Me.LabelFiltrado.TabIndex = 20
-        Me.LabelFiltrado.Text = "Filtrado"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(63, 105)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(28, 28)
-        Me.PictureBox1.TabIndex = 18
-        Me.PictureBox1.TabStop = False
-        '
         'BTEliminar
         '
         Me.BTEliminar.Cursor = System.Windows.Forms.Cursors.Hand
@@ -307,14 +260,34 @@ Partial Class Ventana_Registro
         Me.RetornoIcon.TabIndex = 1
         Me.RetornoIcon.TabStop = False
         '
+        'TBBusqueda
+        '
+        Me.TBBusqueda.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.TBBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TBBusqueda.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBBusqueda.ForeColor = System.Drawing.Color.Gray
+        Me.TBBusqueda.Location = New System.Drawing.Point(104, 105)
+        Me.TBBusqueda.Multiline = True
+        Me.TBBusqueda.Name = "TBBusqueda"
+        Me.TBBusqueda.Size = New System.Drawing.Size(262, 33)
+        Me.TBBusqueda.TabIndex = 16
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(63, 105)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(28, 28)
+        Me.PictureBox1.TabIndex = 18
+        Me.PictureBox1.TabStop = False
+        '
         'Ventana_Registro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1350, 729)
-        Me.Controls.Add(Me.LabelFiltrado)
-        Me.Controls.Add(Me.Filtrado)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.TBBusqueda)
         Me.Controls.Add(Me.LbEliminar)
@@ -339,7 +312,6 @@ Partial Class Ventana_Registro
         Me.Text = "Ventana_Registro"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.Datos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BTEliminar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BTActualizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BTGuardar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -347,6 +319,7 @@ Partial Class Ventana_Registro
         CType(Me.BTCrear, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BookLogo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RetornoIcon, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -371,6 +344,4 @@ Partial Class Ventana_Registro
     Friend WithEvents RectangleBusqueda As PowerPacks.RectangleShape
     Friend WithEvents TBBusqueda As TextBox
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Filtrado As ComboBox
-    Friend WithEvents LabelFiltrado As Label
 End Class

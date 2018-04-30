@@ -14,8 +14,6 @@
         Inner Join prestamo ON prestamo.idusuario=usuario.idusuario 
         Inner Join bibliotecario ON prestamo.idbibliotecario = bibliotecario.idbibliotecario
         Group by usuario.idusuario", "usuario")
-
-
     End Sub
 
     Private Sub RetornoIcon_Click(sender As Object, e As EventArgs) Handles RetornoIcon.Click
