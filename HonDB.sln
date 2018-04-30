@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27428.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HonDB", "HonDB\HonDB.vbproj", "{945BA0C3-1E0E-4F61-9F96-4C94442D10B3}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Busqueda", "..\Busqueda\Busqueda\Busqueda.vbproj", "{38AA5B41-EA03-40CD-B333-D15111E505BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{945BA0C3-1E0E-4F61-9F96-4C94442D10B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{945BA0C3-1E0E-4F61-9F96-4C94442D10B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{945BA0C3-1E0E-4F61-9F96-4C94442D10B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38AA5B41-EA03-40CD-B333-D15111E505BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38AA5B41-EA03-40CD-B333-D15111E505BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38AA5B41-EA03-40CD-B333-D15111E505BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38AA5B41-EA03-40CD-B333-D15111E505BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
