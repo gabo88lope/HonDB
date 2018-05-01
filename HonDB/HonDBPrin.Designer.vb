@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class HonDBPrin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class HonDBPrin
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(HonDBPrin))
@@ -76,6 +76,7 @@ Partial Class HonDBPrin
         '
         Me.BBusqueda.BackgroundImage = Global.HonDB.My.Resources.Resources.BotonBusqueda03
         resources.ApplyResources(Me.BBusqueda, "BBusqueda")
+        Me.BBusqueda.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BBusqueda.Name = "BBusqueda"
         Me.BBusqueda.UseVisualStyleBackColor = True
         '
@@ -83,6 +84,7 @@ Partial Class HonDBPrin
         '
         Me.BReporte.BackgroundImage = Global.HonDB.My.Resources.Resources.BotonReportes04
         resources.ApplyResources(Me.BReporte, "BReporte")
+        Me.BReporte.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BReporte.Name = "BReporte"
         Me.BReporte.UseVisualStyleBackColor = True
         '
@@ -90,6 +92,7 @@ Partial Class HonDBPrin
         '
         Me.BAdministrar.BackgroundImage = Global.HonDB.My.Resources.Resources.BotonAdministrar03
         resources.ApplyResources(Me.BAdministrar, "BAdministrar")
+        Me.BAdministrar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BAdministrar.Name = "BAdministrar"
         Me.BAdministrar.UseVisualStyleBackColor = True
         '

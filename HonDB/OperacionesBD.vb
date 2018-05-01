@@ -17,7 +17,7 @@ Module OperacionesBD
 
         Try
             AbrirConexion()
-            consulta = "SELECT * FROM " & table
+            consulta = "SELECT * FROM " & table & " Order by " & column & " asc"
             command = New MySqlCommand(consulta, conexion)
             reader = command.ExecuteReader
 
@@ -26,10 +26,14 @@ Module OperacionesBD
                 cb.Items.Add(aNombre)
             End While
 
-            conexion.Close()
+            'conexion.Close()
 
         Catch ex As Exception
             MsgBox(ex.Message)
+            'MsgBox("Ha ocurrido un problema")
+
+        Finally
+            conexion.Close()
         End Try
     End Sub
 
@@ -55,11 +59,30 @@ Module OperacionesBD
             AbrirConexion()
             command = New MySqlCommand(query, conexion)
             reader = command.ExecuteReader
-            MsgBox("Datos guardados exitosamente!", MsgBoxStyle.OkOnly)
+            MessageBox.Show("Datos guardados correctamente", "Proceso exitoso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             conexion.Close()
         Catch ex As Exception
-            MsgBox("Ha ocurrido un error al guardar", MsgBoxStyle.Critical)
+            MessageBox.Show("Ha ocurrido un error al guardar, verique el ingreso correcto de campos", "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
+    Public Function verificarRE(ByVal query As String, ByVal parametro As String) As Boolean
+        AbrirConexion()
+        comando = New MySqlCommand(query, conexion)
+        reader = comando.ExecuteReader
+        Dim cont As Integer
+
+        While reader.Read
+            cont = cont + 1
+        End While
+
+        If cont <> 0 Then
+            MsgBox("Ya existe un campo " & parametro & " con este valor")
+            Return True
+
+        Else
+            Return False
+        End If
+    End Function
 
 End Module

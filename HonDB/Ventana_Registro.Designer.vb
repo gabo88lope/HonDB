@@ -77,7 +77,7 @@ Partial Class Ventana_Registro
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleBusqueda, Me.RectangleShape2, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1350, 729)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1300, 729)
         Me.ShapeContainer1.TabIndex = 4
         Me.ShapeContainer1.TabStop = False
         '
@@ -312,7 +312,7 @@ Partial Class Ventana_Registro
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1350, 729)
+        Me.ClientSize = New System.Drawing.Size(1300, 729)
         Me.Controls.Add(Me.LabelFiltrado)
         Me.Controls.Add(Me.Filtrado)
         Me.Controls.Add(Me.PictureBox1)

@@ -103,6 +103,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsultaTablas.vb" />
     <Compile Include="OperacionesBD.vb" />
     <Compile Include="ConexionBD.vb" />
     <Compile Include="Encriptacion.vb" />
@@ -140,6 +141,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="VentanaAdministrar.Designer.vb">
+      <DependentUpon>VentanaAdministrar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaAdministrar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Ventana_Nuevo_Registro.Designer.vb">
       <DependentUpon>Ventana_Nuevo_Registro.vb</DependentUpon>
     </Compile>
@@ -171,6 +178,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaAdministrar.resx">
+      <DependentUpon>VentanaAdministrar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana_Nuevo_Registro.resx">
       <DependentUpon>Ventana_Nuevo_Registro.vb</DependentUpon>
@@ -244,6 +254,9 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <Content Include="Resources\icons8_Cancel_32px_1.png" />
+    <Content Include="Resources\icons8_Male_User_30px.png" />
+    <Content Include="Resources\icons8_Save_32px_16.png" />
     <None Include="Resources\BotonAdministrar-03.png" />
     <None Include="Resources\BotonReportes-04.png" />
     <None Include="Resources\BotonBusqueda-03.png" />
