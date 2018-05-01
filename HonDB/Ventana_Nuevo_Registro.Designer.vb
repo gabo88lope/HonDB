@@ -48,7 +48,6 @@ Partial Class Ventana_Nuevo_Registro
         Me.LBNac = New System.Windows.Forms.Label()
         Me.LbCant = New System.Windows.Forms.Label()
         Me.LbEP = New System.Windows.Forms.Label()
-        Me.LbNB = New System.Windows.Forms.Label()
         Me.LbFP = New System.Windows.Forms.Label()
         Me.LbFD = New System.Windows.Forms.Label()
         Me.BTGuardar = New System.Windows.Forms.Button()
@@ -58,6 +57,7 @@ Partial Class Ventana_Nuevo_Registro
         Me.TBNac = New System.Windows.Forms.TextBox()
         Me.TBNB = New System.Windows.Forms.TextBox()
         Me.TBLP = New System.Windows.Forms.TextBox()
+        Me.LbNB = New System.Windows.Forms.Label()
         CType(Me.NumCant, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -337,17 +337,6 @@ Partial Class Ventana_Nuevo_Registro
         Me.LbEP.TabIndex = 23
         Me.LbEP.Text = "Estado de Préstamo"
         '
-        'LbNB
-        '
-        Me.LbNB.AutoSize = True
-        Me.LbNB.BackColor = System.Drawing.Color.Transparent
-        Me.LbNB.ForeColor = System.Drawing.Color.White
-        Me.LbNB.Location = New System.Drawing.Point(550, 416)
-        Me.LbNB.Name = "LbNB"
-        Me.LbNB.Size = New System.Drawing.Size(254, 30)
-        Me.LbNB.TabIndex = 24
-        Me.LbNB.Text = "Nombre de Bibliotecario"
-        '
         'LbFP
         '
         Me.LbFP.AutoSize = True
@@ -453,6 +442,17 @@ Partial Class Ventana_Nuevo_Registro
         Me.TBLP.Size = New System.Drawing.Size(271, 26)
         Me.TBLP.TabIndex = 33
         '
+        'LbNB
+        '
+        Me.LbNB.AutoSize = True
+        Me.LbNB.BackColor = System.Drawing.Color.Transparent
+        Me.LbNB.ForeColor = System.Drawing.Color.White
+        Me.LbNB.Location = New System.Drawing.Point(550, 416)
+        Me.LbNB.Name = "LbNB"
+        Me.LbNB.Size = New System.Drawing.Size(254, 30)
+        Me.LbNB.TabIndex = 24
+        Me.LbNB.Text = "Nombre de Bibliotecario"
+        '
         'Ventana_Nuevo_Registro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(13.0!, 30.0!)
@@ -496,6 +496,7 @@ Partial Class Ventana_Nuevo_Registro
         Me.MinimizeBox = False
         Me.Name = "Ventana_Nuevo_Registro"
         Me.Text = "Nuevo Préstamo"
+        Me.TopMost = True
         CType(Me.NumCant, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -527,7 +528,6 @@ Partial Class Ventana_Nuevo_Registro
     Friend WithEvents LBNac As Label
     Friend WithEvents LbCant As Label
     Friend WithEvents LbEP As Label
-    Friend WithEvents LbNB As Label
     Friend WithEvents LbFP As Label
     Friend WithEvents LbFD As Label
     Friend WithEvents BTGuardar As Button
@@ -537,4 +537,5 @@ Partial Class Ventana_Nuevo_Registro
     Friend WithEvents TBNac As TextBox
     Friend WithEvents TBNB As TextBox
     Friend WithEvents TBLP As TextBox
+    Friend WithEvents LbNB As Label
 End Class

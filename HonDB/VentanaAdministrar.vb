@@ -193,6 +193,11 @@ Public Class VentanaAdministrar
     '-----------------------------------------------------------------------------------------------------
     '/////////////////////////// LIBROS //////////////////
 
+    Private Sub tablaLibros_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles tablaLibros.CellClick
+        Dim value As Object = tablaUsuarios.CurrentRow.Cells(0).Value
+
+        indexSelected = CType(value, Integer)
+    End Sub
 
 
 End Class

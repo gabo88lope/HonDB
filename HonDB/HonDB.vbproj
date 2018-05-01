@@ -103,7 +103,19 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Busqueda.Designer.vb">
+      <DependentUpon>Busqueda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Busqueda.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ConsultaTablas.vb" />
+    <Compile Include="FReportes.Designer.vb">
+      <DependentUpon>FReportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FReportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="OperacionesBD.vb" />
     <Compile Include="ConexionBD.vb" />
     <Compile Include="Encriptacion.vb" />
@@ -161,6 +173,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Busqueda.resx">
+      <DependentUpon>Busqueda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FReportes.resx">
+      <DependentUpon>FReportes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HonDBPrin.lrc-IR.resx">
       <DependentUpon>HonDBPrin.vb</DependentUpon>
     </EmbeddedResource>
@@ -254,9 +272,12 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
-    <Content Include="Resources\icons8_Cancel_32px_1.png" />
-    <Content Include="Resources\icons8_Male_User_30px.png" />
-    <Content Include="Resources\icons8_Save_32px_16.png" />
+    <None Include="Resources\BotonAcercade.png" />
+    <None Include="Resources\BotonSalir.png" />
+    <None Include="Resources\BotonAdministrar-031.png" />
+    <None Include="Resources\BotonReportes-041.png" />
+    <None Include="Resources\BotonBusqueda-031.png" />
+    <None Include="Resources\BotonRegistros-031.png" />
     <None Include="Resources\BotonAdministrar-03.png" />
     <None Include="Resources\BotonReportes-04.png" />
     <None Include="Resources\BotonBusqueda-03.png" />

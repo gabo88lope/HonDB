@@ -46,8 +46,6 @@ Partial Class Ventana_Registro
         Me.RetornoIcon = New System.Windows.Forms.PictureBox()
         Me.TBBusqueda = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Filtrado = New System.Windows.Forms.ComboBox()
-        Me.LabelFiltrado = New System.Windows.Forms.Label()
         CType(Me.Datos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTActualizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,7 +75,7 @@ Partial Class Ventana_Registro
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleBusqueda, Me.RectangleShape2, Me.RectangleShape1})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1300, 729)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1350, 729)
         Me.ShapeContainer1.TabIndex = 4
         Me.ShapeContainer1.TabStop = False
         '
@@ -111,8 +109,8 @@ Partial Class Ventana_Registro
         '
         'Datos
         '
-        Me.Datos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.Datos.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Datos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(241, Byte), Integer), CType(CType(241, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.Datos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
@@ -284,37 +282,12 @@ Partial Class Ventana_Registro
         Me.PictureBox1.TabIndex = 18
         Me.PictureBox1.TabStop = False
         '
-        'Filtrado
-        '
-        Me.Filtrado.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Filtrado.ForeColor = System.Drawing.Color.Gray
-        Me.Filtrado.FormattingEnabled = True
-        Me.Filtrado.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Filtrado.Items.AddRange(New Object() {"Nombre", "Identificación", "Fecha de Préstamo"})
-        Me.Filtrado.Location = New System.Drawing.Point(396, 113)
-        Me.Filtrado.Name = "Filtrado"
-        Me.Filtrado.Size = New System.Drawing.Size(121, 25)
-        Me.Filtrado.TabIndex = 19
-        '
-        'LabelFiltrado
-        '
-        Me.LabelFiltrado.AutoSize = True
-        Me.LabelFiltrado.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelFiltrado.ForeColor = System.Drawing.Color.Gray
-        Me.LabelFiltrado.Location = New System.Drawing.Point(392, 92)
-        Me.LabelFiltrado.Name = "LabelFiltrado"
-        Me.LabelFiltrado.Size = New System.Drawing.Size(69, 21)
-        Me.LabelFiltrado.TabIndex = 20
-        Me.LabelFiltrado.Text = "Filtrado"
-        '
         'Ventana_Registro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1300, 729)
-        Me.Controls.Add(Me.LabelFiltrado)
-        Me.Controls.Add(Me.Filtrado)
+        Me.ClientSize = New System.Drawing.Size(1350, 729)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.TBBusqueda)
         Me.Controls.Add(Me.LbEliminar)
@@ -371,6 +344,4 @@ Partial Class Ventana_Registro
     Friend WithEvents RectangleBusqueda As PowerPacks.RectangleShape
     Friend WithEvents TBBusqueda As TextBox
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Filtrado As ComboBox
-    Friend WithEvents LabelFiltrado As Label
 End Class
