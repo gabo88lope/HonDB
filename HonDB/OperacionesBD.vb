@@ -53,6 +53,7 @@ Module OperacionesBD
 
         Try
             AbrirConexion()
+            conexion.Open()
             command = New MySqlCommand(query, conexion)
             reader = command.ExecuteReader
             MsgBox("Datos guardados exitosamente!", MsgBoxStyle.OkOnly)
