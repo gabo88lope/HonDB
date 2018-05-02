@@ -61,6 +61,7 @@ Partial Class HonDBPrin
         '
         Me.BAcercaDe.BackgroundImage = Global.HonDB.My.Resources.Resources.BotonAcercade
         resources.ApplyResources(Me.BAcercaDe, "BAcercaDe")
+        Me.BAcercaDe.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BAcercaDe.Name = "BAcercaDe"
         Me.BAcercaDe.UseVisualStyleBackColor = True
         '
@@ -68,6 +69,7 @@ Partial Class HonDBPrin
         '
         Me.BSalir.BackgroundImage = Global.HonDB.My.Resources.Resources.BotonSalir
         resources.ApplyResources(Me.BSalir, "BSalir")
+        Me.BSalir.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BSalir.Name = "BSalir"
         Me.BSalir.UseVisualStyleBackColor = True
         '

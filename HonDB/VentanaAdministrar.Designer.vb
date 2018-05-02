@@ -111,7 +111,6 @@ Partial Class VentanaAdministrar
         Me.Label35 = New System.Windows.Forms.Label()
         Me.btNuevoAutor = New System.Windows.Forms.PictureBox()
         Me.PanelDatosAutor = New System.Windows.Forms.Panel()
-        Me.SelFechaAutor = New System.Windows.Forms.DateTimePicker()
         Me.rbFemAutor = New System.Windows.Forms.RadioButton()
         Me.rbMasAutor = New System.Windows.Forms.RadioButton()
         Me.btCancelarAutor = New System.Windows.Forms.Button()
@@ -119,7 +118,6 @@ Partial Class VentanaAdministrar
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.cbCiudadAutor = New System.Windows.Forms.ComboBox()
-        Me.Nacimiento = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
@@ -128,13 +126,61 @@ Partial Class VentanaAdministrar
         Me.txtNombreAutor = New System.Windows.Forms.TextBox()
         Me.tablaAutores = New System.Windows.Forms.DataGridView()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.TextBuscarBiblio = New System.Windows.Forms.TextBox()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.btActulBiblio = New System.Windows.Forms.PictureBox()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.btEliminarBiblio = New System.Windows.Forms.PictureBox()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.btEditarBiblio = New System.Windows.Forms.PictureBox()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.btCrearBiblio = New System.Windows.Forms.PictureBox()
+        Me.PanelDatosBiblio = New System.Windows.Forms.Panel()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.txtClave = New System.Windows.Forms.TextBox()
+        Me.txtUsuario = New System.Windows.Forms.TextBox()
+        Me.btCancelarBiblio = New System.Windows.Forms.Button()
+        Me.btGuardarBiblio = New System.Windows.Forms.Button()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.txtApellidoBiblio = New System.Windows.Forms.TextBox()
+        Me.txtNombreBiblio = New System.Windows.Forms.TextBox()
+        Me.tablaBibliotecario = New System.Windows.Forms.DataGridView()
+        Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
+        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.listaTipoDoc = New System.Windows.Forms.ListBox()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.btNuevoTD = New System.Windows.Forms.Button()
+        Me.btEditarTD = New System.Windows.Forms.Button()
+        Me.btEliminarTD = New System.Windows.Forms.Button()
+        Me.btActualizarTD = New System.Windows.Forms.Button()
+        Me.PanelTD = New System.Windows.Forms.Panel()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.txtTipoDoc = New System.Windows.Forms.TextBox()
+        Me.guardarTD = New System.Windows.Forms.Button()
+        Me.cancelarTD = New System.Windows.Forms.Button()
+        Me.listaEditoriales = New System.Windows.Forms.ListBox()
+        Me.Label47 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label48 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label49 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.RetornoIconA, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BookLogo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -166,9 +212,17 @@ Partial Class VentanaAdministrar
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tablaAutores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btActulBiblio, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btEliminarBiblio, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btEditarBiblio, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btCrearBiblio, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelDatosBiblio.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tablaBibliotecario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelTD.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -1126,7 +1180,6 @@ Partial Class VentanaAdministrar
         'PanelDatosAutor
         '
         Me.PanelDatosAutor.BackColor = System.Drawing.Color.Silver
-        Me.PanelDatosAutor.Controls.Add(Me.SelFechaAutor)
         Me.PanelDatosAutor.Controls.Add(Me.rbFemAutor)
         Me.PanelDatosAutor.Controls.Add(Me.rbMasAutor)
         Me.PanelDatosAutor.Controls.Add(Me.btCancelarAutor)
@@ -1134,7 +1187,6 @@ Partial Class VentanaAdministrar
         Me.PanelDatosAutor.Controls.Add(Me.Label27)
         Me.PanelDatosAutor.Controls.Add(Me.Label28)
         Me.PanelDatosAutor.Controls.Add(Me.cbCiudadAutor)
-        Me.PanelDatosAutor.Controls.Add(Me.Nacimiento)
         Me.PanelDatosAutor.Controls.Add(Me.Label30)
         Me.PanelDatosAutor.Controls.Add(Me.Label31)
         Me.PanelDatosAutor.Controls.Add(Me.PictureBox3)
@@ -1147,19 +1199,10 @@ Partial Class VentanaAdministrar
         Me.PanelDatosAutor.TabIndex = 22
         Me.PanelDatosAutor.Visible = False
         '
-        'SelFechaAutor
-        '
-        Me.SelFechaAutor.Location = New System.Drawing.Point(140, 173)
-        Me.SelFechaAutor.MaxDate = New Date(2040, 5, 1, 0, 0, 0, 0)
-        Me.SelFechaAutor.Name = "SelFechaAutor"
-        Me.SelFechaAutor.Size = New System.Drawing.Size(185, 23)
-        Me.SelFechaAutor.TabIndex = 16
-        Me.SelFechaAutor.Value = New Date(2018, 5, 1, 0, 0, 0, 0)
-        '
         'rbFemAutor
         '
         Me.rbFemAutor.AutoSize = True
-        Me.rbFemAutor.Location = New System.Drawing.Point(236, 253)
+        Me.rbFemAutor.Location = New System.Drawing.Point(226, 228)
         Me.rbFemAutor.Name = "rbFemAutor"
         Me.rbFemAutor.Size = New System.Drawing.Size(80, 19)
         Me.rbFemAutor.TabIndex = 15
@@ -1170,7 +1213,7 @@ Partial Class VentanaAdministrar
         '
         Me.rbMasAutor.AutoSize = True
         Me.rbMasAutor.Checked = True
-        Me.rbMasAutor.Location = New System.Drawing.Point(140, 253)
+        Me.rbMasAutor.Location = New System.Drawing.Point(140, 228)
         Me.rbMasAutor.Name = "rbMasAutor"
         Me.rbMasAutor.Size = New System.Drawing.Size(80, 19)
         Me.rbMasAutor.TabIndex = 14
@@ -1182,7 +1225,7 @@ Partial Class VentanaAdministrar
         '
         Me.btCancelarAutor.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btCancelarAutor.Image = CType(resources.GetObject("btCancelarAutor.Image"), System.Drawing.Image)
-        Me.btCancelarAutor.Location = New System.Drawing.Point(205, 337)
+        Me.btCancelarAutor.Location = New System.Drawing.Point(205, 306)
         Me.btCancelarAutor.Name = "btCancelarAutor"
         Me.btCancelarAutor.Size = New System.Drawing.Size(92, 63)
         Me.btCancelarAutor.TabIndex = 13
@@ -1194,7 +1237,7 @@ Partial Class VentanaAdministrar
         '
         Me.btGuardarAutor.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btGuardarAutor.Image = CType(resources.GetObject("btGuardarAutor.Image"), System.Drawing.Image)
-        Me.btGuardarAutor.Location = New System.Drawing.Point(48, 337)
+        Me.btGuardarAutor.Location = New System.Drawing.Point(72, 306)
         Me.btGuardarAutor.Name = "btGuardarAutor"
         Me.btGuardarAutor.Size = New System.Drawing.Size(86, 63)
         Me.btGuardarAutor.TabIndex = 12
@@ -1205,7 +1248,7 @@ Partial Class VentanaAdministrar
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(23, 253)
+        Me.Label27.Location = New System.Drawing.Point(24, 228)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(41, 15)
         Me.Label27.TabIndex = 10
@@ -1214,7 +1257,7 @@ Partial Class VentanaAdministrar
         'Label28
         '
         Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(20, 219)
+        Me.Label28.Location = New System.Drawing.Point(23, 182)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(67, 15)
         Me.Label28.TabIndex = 9
@@ -1225,19 +1268,10 @@ Partial Class VentanaAdministrar
         Me.cbCiudadAutor.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(234, Byte), Integer), CType(CType(234, Byte), Integer))
         Me.cbCiudadAutor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbCiudadAutor.FormattingEnabled = True
-        Me.cbCiudadAutor.Location = New System.Drawing.Point(140, 211)
+        Me.cbCiudadAutor.Location = New System.Drawing.Point(140, 182)
         Me.cbCiudadAutor.Name = "cbCiudadAutor"
         Me.cbCiudadAutor.Size = New System.Drawing.Size(121, 23)
         Me.cbCiudadAutor.TabIndex = 8
-        '
-        'Nacimiento
-        '
-        Me.Nacimiento.AutoSize = True
-        Me.Nacimiento.Location = New System.Drawing.Point(20, 179)
-        Me.Nacimiento.Name = "Nacimiento"
-        Me.Nacimiento.Size = New System.Drawing.Size(89, 15)
-        Me.Nacimiento.TabIndex = 7
-        Me.Nacimiento.Text = "Identificación: "
         '
         'Label30
         '
@@ -1309,7 +1343,19 @@ Partial Class VentanaAdministrar
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.DataGridView2)
+        Me.TabPage2.Controls.Add(Me.PictureBox5)
+        Me.TabPage2.Controls.Add(Me.TextBuscarBiblio)
+        Me.TabPage2.Controls.Add(Me.Label38)
+        Me.TabPage2.Controls.Add(Me.btActulBiblio)
+        Me.TabPage2.Controls.Add(Me.Label42)
+        Me.TabPage2.Controls.Add(Me.btEliminarBiblio)
+        Me.TabPage2.Controls.Add(Me.Label43)
+        Me.TabPage2.Controls.Add(Me.btEditarBiblio)
+        Me.TabPage2.Controls.Add(Me.Label44)
+        Me.TabPage2.Controls.Add(Me.btCrearBiblio)
+        Me.TabPage2.Controls.Add(Me.PanelDatosBiblio)
+        Me.TabPage2.Controls.Add(Me.tablaBibliotecario)
+        Me.TabPage2.Controls.Add(Me.ShapeContainer1)
         Me.TabPage2.Location = New System.Drawing.Point(4, 34)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -1318,17 +1364,291 @@ Partial Class VentanaAdministrar
         Me.TabPage2.Text = "Bibliotecarios"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'DataGridView2
+        'PictureBox5
         '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(24, 70)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(1305, 443)
-        Me.DataGridView2.TabIndex = 0
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
+        Me.PictureBox5.Location = New System.Drawing.Point(58, 27)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(38, 26)
+        Me.PictureBox5.TabIndex = 50
+        Me.PictureBox5.TabStop = False
+        '
+        'TextBuscarBiblio
+        '
+        Me.TextBuscarBiblio.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBuscarBiblio.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBuscarBiblio.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.TextBuscarBiblio.Location = New System.Drawing.Point(102, 30)
+        Me.TextBuscarBiblio.Name = "TextBuscarBiblio"
+        Me.TextBuscarBiblio.Size = New System.Drawing.Size(130, 18)
+        Me.TextBuscarBiblio.TabIndex = 49
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label38.Location = New System.Drawing.Point(423, 570)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(87, 21)
+        Me.Label38.TabIndex = 47
+        Me.Label38.Text = "Actualizar"
+        '
+        'btActulBiblio
+        '
+        Me.btActulBiblio.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btActulBiblio.Image = Global.HonDB.My.Resources.Resources.UpdateBT
+        Me.btActulBiblio.Location = New System.Drawing.Point(445, 527)
+        Me.btActulBiblio.Name = "btActulBiblio"
+        Me.btActulBiblio.Size = New System.Drawing.Size(40, 40)
+        Me.btActulBiblio.TabIndex = 46
+        Me.btActulBiblio.TabStop = False
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label42.Location = New System.Drawing.Point(318, 570)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(74, 21)
+        Me.Label42.TabIndex = 45
+        Me.Label42.Text = "Eliminar"
+        '
+        'btEliminarBiblio
+        '
+        Me.btEliminarBiblio.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btEliminarBiblio.Image = Global.HonDB.My.Resources.Resources.DeleteBT
+        Me.btEliminarBiblio.Location = New System.Drawing.Point(322, 529)
+        Me.btEliminarBiblio.Name = "btEliminarBiblio"
+        Me.btEliminarBiblio.Size = New System.Drawing.Size(40, 40)
+        Me.btEliminarBiblio.TabIndex = 44
+        Me.btEliminarBiblio.TabStop = False
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label43.Location = New System.Drawing.Point(193, 570)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(55, 21)
+        Me.Label43.TabIndex = 43
+        Me.Label43.Text = "Editar"
+        '
+        'btEditarBiblio
+        '
+        Me.btEditarBiblio.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btEditarBiblio.Image = Global.HonDB.My.Resources.Resources.EditBT
+        Me.btEditarBiblio.Location = New System.Drawing.Point(197, 527)
+        Me.btEditarBiblio.Name = "btEditarBiblio"
+        Me.btEditarBiblio.Size = New System.Drawing.Size(35, 40)
+        Me.btEditarBiblio.TabIndex = 42
+        Me.btEditarBiblio.TabStop = False
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.Location = New System.Drawing.Point(86, 570)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(50, 21)
+        Me.Label44.TabIndex = 41
+        Me.Label44.Text = "Crear"
+        '
+        'btCrearBiblio
+        '
+        Me.btCrearBiblio.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btCrearBiblio.Image = Global.HonDB.My.Resources.Resources.CreateBT
+        Me.btCrearBiblio.Location = New System.Drawing.Point(90, 529)
+        Me.btCrearBiblio.Name = "btCrearBiblio"
+        Me.btCrearBiblio.Size = New System.Drawing.Size(40, 40)
+        Me.btCrearBiblio.TabIndex = 40
+        Me.btCrearBiblio.TabStop = False
+        '
+        'PanelDatosBiblio
+        '
+        Me.PanelDatosBiblio.BackColor = System.Drawing.Color.Silver
+        Me.PanelDatosBiblio.Controls.Add(Me.Label36)
+        Me.PanelDatosBiblio.Controls.Add(Me.txtClave)
+        Me.PanelDatosBiblio.Controls.Add(Me.txtUsuario)
+        Me.PanelDatosBiblio.Controls.Add(Me.btCancelarBiblio)
+        Me.PanelDatosBiblio.Controls.Add(Me.btGuardarBiblio)
+        Me.PanelDatosBiblio.Controls.Add(Me.Label37)
+        Me.PanelDatosBiblio.Controls.Add(Me.Label39)
+        Me.PanelDatosBiblio.Controls.Add(Me.Label40)
+        Me.PanelDatosBiblio.Controls.Add(Me.PictureBox4)
+        Me.PanelDatosBiblio.Controls.Add(Me.Label41)
+        Me.PanelDatosBiblio.Controls.Add(Me.txtApellidoBiblio)
+        Me.PanelDatosBiblio.Controls.Add(Me.txtNombreBiblio)
+        Me.PanelDatosBiblio.Location = New System.Drawing.Point(712, 70)
+        Me.PanelDatosBiblio.Name = "PanelDatosBiblio"
+        Me.PanelDatosBiblio.Size = New System.Drawing.Size(512, 443)
+        Me.PanelDatosBiblio.TabIndex = 22
+        Me.PanelDatosBiblio.Visible = False
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(20, 227)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(72, 15)
+        Me.Label36.TabIndex = 16
+        Me.Label36.Text = "Contraseña:"
+        '
+        'txtClave
+        '
+        Me.txtClave.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(234, Byte), Integer), CType(CType(234, Byte), Integer))
+        Me.txtClave.Location = New System.Drawing.Point(140, 227)
+        Me.txtClave.MaxLength = 20
+        Me.txtClave.Name = "txtClave"
+        Me.txtClave.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtClave.Size = New System.Drawing.Size(183, 23)
+        Me.txtClave.TabIndex = 15
+        '
+        'txtUsuario
+        '
+        Me.txtUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(234, Byte), Integer), CType(CType(234, Byte), Integer))
+        Me.txtUsuario.Location = New System.Drawing.Point(140, 182)
+        Me.txtUsuario.MaxLength = 20
+        Me.txtUsuario.Name = "txtUsuario"
+        Me.txtUsuario.Size = New System.Drawing.Size(183, 23)
+        Me.txtUsuario.TabIndex = 14
+        '
+        'btCancelarBiblio
+        '
+        Me.btCancelarBiblio.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btCancelarBiblio.Image = CType(resources.GetObject("btCancelarBiblio.Image"), System.Drawing.Image)
+        Me.btCancelarBiblio.Location = New System.Drawing.Point(231, 306)
+        Me.btCancelarBiblio.Name = "btCancelarBiblio"
+        Me.btCancelarBiblio.Size = New System.Drawing.Size(92, 63)
+        Me.btCancelarBiblio.TabIndex = 13
+        Me.btCancelarBiblio.Text = "Cancelar"
+        Me.btCancelarBiblio.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btCancelarBiblio.UseVisualStyleBackColor = True
+        '
+        'btGuardarBiblio
+        '
+        Me.btGuardarBiblio.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btGuardarBiblio.Image = CType(resources.GetObject("btGuardarBiblio.Image"), System.Drawing.Image)
+        Me.btGuardarBiblio.Location = New System.Drawing.Point(72, 306)
+        Me.btGuardarBiblio.Name = "btGuardarBiblio"
+        Me.btGuardarBiblio.Size = New System.Drawing.Size(86, 63)
+        Me.btGuardarBiblio.TabIndex = 12
+        Me.btGuardarBiblio.Text = "Guardar"
+        Me.btGuardarBiblio.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.btGuardarBiblio.UseVisualStyleBackColor = True
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Location = New System.Drawing.Point(20, 182)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(55, 15)
+        Me.Label37.TabIndex = 9
+        Me.Label37.Text = "Usuario: "
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Location = New System.Drawing.Point(20, 140)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(63, 15)
+        Me.Label39.TabIndex = 6
+        Me.Label39.Text = "Apellidos: "
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Location = New System.Drawing.Point(19, 107)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(64, 15)
+        Me.Label40.TabIndex = 5
+        Me.Label40.Text = "Nombres: "
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
+        Me.PictureBox4.Location = New System.Drawing.Point(231, 22)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(30, 33)
+        Me.PictureBox4.TabIndex = 4
+        Me.PictureBox4.TabStop = False
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label41.Location = New System.Drawing.Point(68, 35)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(166, 20)
+        Me.Label41.TabIndex = 3
+        Me.Label41.Text = "Datos del bibliotecario"
+        '
+        'txtApellidoBiblio
+        '
+        Me.txtApellidoBiblio.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(234, Byte), Integer), CType(CType(234, Byte), Integer))
+        Me.txtApellidoBiblio.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.txtApellidoBiblio.Location = New System.Drawing.Point(140, 132)
+        Me.txtApellidoBiblio.MaxLength = 20
+        Me.txtApellidoBiblio.Name = "txtApellidoBiblio"
+        Me.txtApellidoBiblio.Size = New System.Drawing.Size(185, 23)
+        Me.txtApellidoBiblio.TabIndex = 1
+        '
+        'txtNombreBiblio
+        '
+        Me.txtNombreBiblio.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(234, Byte), Integer), CType(CType(234, Byte), Integer))
+        Me.txtNombreBiblio.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.txtNombreBiblio.Location = New System.Drawing.Point(140, 90)
+        Me.txtNombreBiblio.MaxLength = 20
+        Me.txtNombreBiblio.Name = "txtNombreBiblio"
+        Me.txtNombreBiblio.Size = New System.Drawing.Size(185, 23)
+        Me.txtNombreBiblio.TabIndex = 0
+        '
+        'tablaBibliotecario
+        '
+        Me.tablaBibliotecario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.tablaBibliotecario.Location = New System.Drawing.Point(24, 70)
+        Me.tablaBibliotecario.MultiSelect = False
+        Me.tablaBibliotecario.Name = "tablaBibliotecario"
+        Me.tablaBibliotecario.ReadOnly = True
+        Me.tablaBibliotecario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.tablaBibliotecario.Size = New System.Drawing.Size(585, 443)
+        Me.tablaBibliotecario.TabIndex = 0
+        '
+        'ShapeContainer1
+        '
+        Me.ShapeContainer1.Location = New System.Drawing.Point(3, 3)
+        Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
+        Me.ShapeContainer1.Name = "ShapeContainer1"
+        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape1})
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1357, 591)
+        Me.ShapeContainer1.TabIndex = 48
+        Me.ShapeContainer1.TabStop = False
+        '
+        'RectangleShape1
+        '
+        Me.RectangleShape1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
+        Me.RectangleShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.RectangleShape1.BorderWidth = 2
+        Me.RectangleShape1.CornerRadius = 10
+        Me.RectangleShape1.Location = New System.Drawing.Point(50, 18)
+        Me.RectangleShape1.Name = "RectangleShape1"
+        Me.RectangleShape1.Size = New System.Drawing.Size(203, 35)
         '
         'TabPage3
         '
-        Me.TabPage3.Controls.Add(Me.DataGridView3)
+        Me.TabPage3.Controls.Add(Me.Panel2)
+        Me.TabPage3.Controls.Add(Me.Button4)
+        Me.TabPage3.Controls.Add(Me.Button5)
+        Me.TabPage3.Controls.Add(Me.Button6)
+        Me.TabPage3.Controls.Add(Me.Button7)
+        Me.TabPage3.Controls.Add(Me.Label47)
+        Me.TabPage3.Controls.Add(Me.listaEditoriales)
+        Me.TabPage3.Controls.Add(Me.PanelTD)
+        Me.TabPage3.Controls.Add(Me.btActualizarTD)
+        Me.TabPage3.Controls.Add(Me.btEliminarTD)
+        Me.TabPage3.Controls.Add(Me.btEditarTD)
+        Me.TabPage3.Controls.Add(Me.btNuevoTD)
+        Me.TabPage3.Controls.Add(Me.Label45)
+        Me.TabPage3.Controls.Add(Me.listaTipoDoc)
         Me.TabPage3.Location = New System.Drawing.Point(4, 34)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
@@ -1336,14 +1656,6 @@ Partial Class VentanaAdministrar
         Me.TabPage3.TabIndex = 4
         Me.TabPage3.Text = "Tipo de documentos"
         Me.TabPage3.UseVisualStyleBackColor = True
-        '
-        'DataGridView3
-        '
-        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Location = New System.Drawing.Point(24, 70)
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.Size = New System.Drawing.Size(1305, 443)
-        Me.DataGridView3.TabIndex = 0
         '
         'TabPage4
         '
@@ -1384,6 +1696,244 @@ Partial Class VentanaAdministrar
         Me.TabPage7.TabIndex = 8
         Me.TabPage7.Text = "Cuentas de usuario"
         Me.TabPage7.UseVisualStyleBackColor = True
+        '
+        'listaTipoDoc
+        '
+        Me.listaTipoDoc.FormattingEnabled = True
+        Me.listaTipoDoc.ItemHeight = 15
+        Me.listaTipoDoc.Location = New System.Drawing.Point(30, 92)
+        Me.listaTipoDoc.Name = "listaTipoDoc"
+        Me.listaTipoDoc.ScrollAlwaysVisible = True
+        Me.listaTipoDoc.Size = New System.Drawing.Size(222, 289)
+        Me.listaTipoDoc.TabIndex = 0
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label45.Location = New System.Drawing.Point(36, 57)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(152, 20)
+        Me.Label45.TabIndex = 1
+        Me.Label45.Text = "Tipo de documentos"
+        '
+        'btNuevoTD
+        '
+        Me.btNuevoTD.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btNuevoTD.Location = New System.Drawing.Point(297, 119)
+        Me.btNuevoTD.Name = "btNuevoTD"
+        Me.btNuevoTD.Size = New System.Drawing.Size(75, 23)
+        Me.btNuevoTD.TabIndex = 2
+        Me.btNuevoTD.Text = "Nuevo"
+        Me.btNuevoTD.UseVisualStyleBackColor = True
+        '
+        'btEditarTD
+        '
+        Me.btEditarTD.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btEditarTD.Location = New System.Drawing.Point(297, 181)
+        Me.btEditarTD.Name = "btEditarTD"
+        Me.btEditarTD.Size = New System.Drawing.Size(75, 23)
+        Me.btEditarTD.TabIndex = 3
+        Me.btEditarTD.Text = "Editar"
+        Me.btEditarTD.UseVisualStyleBackColor = True
+        '
+        'btEliminarTD
+        '
+        Me.btEliminarTD.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btEliminarTD.Location = New System.Drawing.Point(297, 241)
+        Me.btEliminarTD.Name = "btEliminarTD"
+        Me.btEliminarTD.Size = New System.Drawing.Size(75, 23)
+        Me.btEliminarTD.TabIndex = 4
+        Me.btEliminarTD.Text = "Eliminar"
+        Me.btEliminarTD.UseVisualStyleBackColor = True
+        '
+        'btActualizarTD
+        '
+        Me.btActualizarTD.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btActualizarTD.Location = New System.Drawing.Point(297, 306)
+        Me.btActualizarTD.Name = "btActualizarTD"
+        Me.btActualizarTD.Size = New System.Drawing.Size(75, 23)
+        Me.btActualizarTD.TabIndex = 5
+        Me.btActualizarTD.Text = "Actualizar"
+        Me.btActualizarTD.UseVisualStyleBackColor = True
+        '
+        'PanelTD
+        '
+        Me.PanelTD.BackColor = System.Drawing.Color.Silver
+        Me.PanelTD.Controls.Add(Me.cancelarTD)
+        Me.PanelTD.Controls.Add(Me.guardarTD)
+        Me.PanelTD.Controls.Add(Me.txtTipoDoc)
+        Me.PanelTD.Controls.Add(Me.Label46)
+        Me.PanelTD.Location = New System.Drawing.Point(396, 145)
+        Me.PanelTD.Name = "PanelTD"
+        Me.PanelTD.Size = New System.Drawing.Size(200, 109)
+        Me.PanelTD.TabIndex = 6
+        Me.PanelTD.Visible = False
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Location = New System.Drawing.Point(12, 11)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(115, 15)
+        Me.Label46.TabIndex = 0
+        Me.Label46.Text = "Tipo de documento"
+        '
+        'txtTipoDoc
+        '
+        Me.txtTipoDoc.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(234, Byte), Integer), CType(CType(234, Byte), Integer))
+        Me.txtTipoDoc.Location = New System.Drawing.Point(15, 37)
+        Me.txtTipoDoc.MaxLength = 30
+        Me.txtTipoDoc.Name = "txtTipoDoc"
+        Me.txtTipoDoc.Size = New System.Drawing.Size(170, 23)
+        Me.txtTipoDoc.TabIndex = 1
+        '
+        'guardarTD
+        '
+        Me.guardarTD.Location = New System.Drawing.Point(15, 66)
+        Me.guardarTD.Name = "guardarTD"
+        Me.guardarTD.Size = New System.Drawing.Size(75, 23)
+        Me.guardarTD.TabIndex = 2
+        Me.guardarTD.Text = "Guardar"
+        Me.guardarTD.UseVisualStyleBackColor = True
+        '
+        'cancelarTD
+        '
+        Me.cancelarTD.Location = New System.Drawing.Point(96, 66)
+        Me.cancelarTD.Name = "cancelarTD"
+        Me.cancelarTD.Size = New System.Drawing.Size(75, 23)
+        Me.cancelarTD.TabIndex = 3
+        Me.cancelarTD.Text = "Cancelar"
+        Me.cancelarTD.UseVisualStyleBackColor = True
+        '
+        'listaEditoriales
+        '
+        Me.listaEditoriales.FormattingEnabled = True
+        Me.listaEditoriales.ItemHeight = 15
+        Me.listaEditoriales.Location = New System.Drawing.Point(667, 92)
+        Me.listaEditoriales.Name = "listaEditoriales"
+        Me.listaEditoriales.ScrollAlwaysVisible = True
+        Me.listaEditoriales.Size = New System.Drawing.Size(259, 289)
+        Me.listaEditoriales.TabIndex = 7
+        '
+        'Label47
+        '
+        Me.Label47.AutoSize = True
+        Me.Label47.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label47.Location = New System.Drawing.Point(663, 57)
+        Me.Label47.Name = "Label47"
+        Me.Label47.Size = New System.Drawing.Size(82, 20)
+        Me.Label47.TabIndex = 8
+        Me.Label47.Text = "Editoriales"
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.Silver
+        Me.Panel2.Controls.Add(Me.Label49)
+        Me.Panel2.Controls.Add(Me.ComboBox1)
+        Me.Panel2.Controls.Add(Me.Button2)
+        Me.Panel2.Controls.Add(Me.Button3)
+        Me.Panel2.Controls.Add(Me.TextBox1)
+        Me.Panel2.Controls.Add(Me.Label48)
+        Me.Panel2.Location = New System.Drawing.Point(1051, 145)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(200, 164)
+        Me.Panel2.TabIndex = 13
+        Me.Panel2.Visible = False
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(96, 129)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 3
+        Me.Button2.Text = "Cancelar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(15, 129)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 2
+        Me.Button3.Text = "Guardar"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(234, Byte), Integer), CType(CType(234, Byte), Integer))
+        Me.TextBox1.Location = New System.Drawing.Point(15, 37)
+        Me.TextBox1.MaxLength = 30
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(170, 23)
+        Me.TextBox1.TabIndex = 1
+        '
+        'Label48
+        '
+        Me.Label48.AutoSize = True
+        Me.Label48.Location = New System.Drawing.Point(21, 11)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(115, 15)
+        Me.Label48.TabIndex = 0
+        Me.Label48.Text = "Tipo de documento"
+        '
+        'Button4
+        '
+        Me.Button4.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button4.Location = New System.Drawing.Point(943, 306)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 23)
+        Me.Button4.TabIndex = 12
+        Me.Button4.Text = "Actualizar"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button5.Location = New System.Drawing.Point(943, 241)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(75, 23)
+        Me.Button5.TabIndex = 11
+        Me.Button5.Text = "Eliminar"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button6.Location = New System.Drawing.Point(943, 181)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(75, 23)
+        Me.Button6.TabIndex = 10
+        Me.Button6.Text = "Editar"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Button7
+        '
+        Me.Button7.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button7.Location = New System.Drawing.Point(943, 119)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(75, 23)
+        Me.Button7.TabIndex = 9
+        Me.Button7.Text = "Nuevo"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(15, 96)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 23)
+        Me.ComboBox1.TabIndex = 4
+        '
+        'Label49
+        '
+        Me.Label49.AutoSize = True
+        Me.Label49.Location = New System.Drawing.Point(21, 78)
+        Me.Label49.Name = "Label49"
+        Me.Label49.Size = New System.Drawing.Size(44, 15)
+        Me.Label49.TabIndex = 5
+        Me.Label49.Text = "Ciudad"
         '
         'VentanaAdministrar
         '
@@ -1435,9 +1985,22 @@ Partial Class VentanaAdministrar
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tablaAutores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.PerformLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btActulBiblio, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btEliminarBiblio, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btEditarBiblio, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btCrearBiblio, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelDatosBiblio.ResumeLayout(False)
+        Me.PanelDatosBiblio.PerformLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tablaBibliotecario, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage3.PerformLayout()
+        Me.PanelTD.ResumeLayout(False)
+        Me.PanelTD.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1458,8 +2021,7 @@ Partial Class VentanaAdministrar
     Friend WithEvents tablaUsuarios As DataGridView
     Friend WithEvents tablaLibros As DataGridView
     Friend WithEvents tablaAutores As DataGridView
-    Friend WithEvents DataGridView2 As DataGridView
-    Friend WithEvents DataGridView3 As DataGridView
+    Friend WithEvents tablaBibliotecario As DataGridView
     Friend WithEvents SearchWayCb As ComboBox
     Friend WithEvents campoBuscar As TextBox
     Friend WithEvents BTCrearVA As PictureBox
@@ -1531,7 +2093,6 @@ Partial Class VentanaAdministrar
     Friend WithEvents btCancelarL As Button
     Friend WithEvents btGuardarL As Button
     Friend WithEvents PanelDatosAutor As Panel
-    Friend WithEvents SelFechaAutor As DateTimePicker
     Friend WithEvents rbFemAutor As RadioButton
     Friend WithEvents rbMasAutor As RadioButton
     Friend WithEvents btCancelarAutor As Button
@@ -1539,7 +2100,6 @@ Partial Class VentanaAdministrar
     Friend WithEvents Label27 As Label
     Friend WithEvents Label28 As Label
     Friend WithEvents cbCiudadAutor As ComboBox
-    Friend WithEvents Nacimiento As Label
     Friend WithEvents Label30 As Label
     Friend WithEvents Label31 As Label
     Friend WithEvents PictureBox3 As PictureBox
@@ -1554,4 +2114,53 @@ Partial Class VentanaAdministrar
     Friend WithEvents btEditarAutor As PictureBox
     Friend WithEvents Label35 As Label
     Friend WithEvents btNuevoAutor As PictureBox
+    Friend WithEvents PanelDatosBiblio As Panel
+    Friend WithEvents Label36 As Label
+    Friend WithEvents txtClave As TextBox
+    Friend WithEvents txtUsuario As TextBox
+    Friend WithEvents btCancelarBiblio As Button
+    Friend WithEvents btGuardarBiblio As Button
+    Friend WithEvents Label37 As Label
+    Friend WithEvents Label39 As Label
+    Friend WithEvents Label40 As Label
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents Label41 As Label
+    Friend WithEvents txtApellidoBiblio As TextBox
+    Friend WithEvents txtNombreBiblio As TextBox
+    Friend WithEvents Label38 As Label
+    Friend WithEvents btActulBiblio As PictureBox
+    Friend WithEvents Label42 As Label
+    Friend WithEvents btEliminarBiblio As PictureBox
+    Friend WithEvents Label43 As Label
+    Friend WithEvents btEditarBiblio As PictureBox
+    Friend WithEvents Label44 As Label
+    Friend WithEvents btCrearBiblio As PictureBox
+    Friend WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
+    Friend WithEvents RectangleShape1 As PowerPacks.RectangleShape
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents TextBuscarBiblio As TextBox
+    Friend WithEvents listaTipoDoc As ListBox
+    Friend WithEvents btActualizarTD As Button
+    Friend WithEvents btEliminarTD As Button
+    Friend WithEvents btEditarTD As Button
+    Friend WithEvents btNuevoTD As Button
+    Friend WithEvents Label45 As Label
+    Friend WithEvents PanelTD As Panel
+    Friend WithEvents cancelarTD As Button
+    Friend WithEvents guardarTD As Button
+    Friend WithEvents txtTipoDoc As TextBox
+    Friend WithEvents Label46 As Label
+    Friend WithEvents Label47 As Label
+    Friend WithEvents listaEditoriales As ListBox
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label49 As Label
+    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Label48 As Label
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Button7 As Button
 End Class

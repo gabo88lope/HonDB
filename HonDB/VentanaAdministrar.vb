@@ -18,6 +18,9 @@ Public Class VentanaAdministrar
         LlenarTabla(tablaLibros, tablaLibroQuery, "libro")
         LlenarTabla(tablaUsuarios, tablaUsuarioCons, "usuario")
         LlenarTabla(tablaAutores, queryAutorTabla, "autor")
+        LlenarTabla(tablaBibliotecario, queryBiblioTabla, "bibliotecario")
+        llenarLista(listaTipoDoc, "tipodocumento", "nombre")
+        llenarLista(listaEditoriales, "editorial", "nombre")
         'PopulateCombobox(SearchWayCb, "usuario", "sexo")
         'SearchWayCb.Items.Add("Código")
         SearchWayCb.Items.Add("Cédula")
@@ -52,7 +55,6 @@ Public Class VentanaAdministrar
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
         Dim sex As String
-        Dim ubicacion As String
         Dim subQuery As String
         Dim query As String
         Dim opc = MessageBox.Show("¿Desea guardar los cambios?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -250,6 +252,7 @@ Public Class VentanaAdministrar
         PanelDatosAutor.Visible = True
         btEditarAutor.Enabled = False
         btEliminarAutor.Enabled = False
+        idActual = indexSelected
         edicion = True
         Try
             AbrirConexion()
@@ -262,22 +265,16 @@ Public Class VentanaAdministrar
 
             txtNombreAutor.Text = reader.GetString("nombre")
             txtApellidoAutor.Text = reader.GetString("apellido")
-            PopulateCombobox(cbCiudadAutor, "ubicacion", "Ciudad")
-            cbCiudadAutor.SelectedItem = reader.GetString("ciudad")
-
-
-            If reader.GetString("nacimiento") = Nothing Then
-                SelFechaAutor.Value = "00/00/00"
-
-            Else
-                SelFechaAutor.Value = reader.GetString("nacimiento")
-            End If
 
             If reader.GetString("Sexo") = "Femenino" Then
                 rbFemAutor.Select()
             Else
                 rbMasAutor.Select()
             End If
+
+            Dim var = reader.GetString("ciudad")
+            PopulateCombobox(cbCiudadAutor, "ubicacion", "Ciudad")
+            cbCiudadAutor.SelectedItem = var
 
             conexion.Close()
         Catch ex As Exception
@@ -287,7 +284,7 @@ Public Class VentanaAdministrar
     End Sub
 
     Private Sub tablaAutores_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles tablaAutores.CellClick
-        Dim value As Object = tablaUsuarios.CurrentRow.Cells(0).Value
+        Dim value As Object = tablaAutores.CurrentRow.Cells(0).Value
 
         indexSelected = CType(value, Integer)
     End Sub
@@ -302,4 +299,207 @@ Public Class VentanaAdministrar
     Private Sub btActualizarAutor_Click(sender As Object, e As EventArgs) Handles btActualizarAutor.Click
         LlenarTabla(tablaAutores, queryAutorTabla, "autor")
     End Sub
+
+    Private Sub btGuardarAutor_Click(sender As Object, e As EventArgs) Handles btGuardarAutor.Click
+        Dim sex As String
+        Dim ubicacion As String
+        Dim subQuery As String
+
+        Dim query As String
+
+        Dim opc = MessageBox.Show("¿Desea guardar los cambios?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If opc = DialogResult.Yes Then
+            If edicion = True Then
+                If rbFemAutor.Checked = True Then
+                    sex = "Femenino"
+
+                Else
+                    sex = "Masculino"
+                End If
+
+                subQuery = "(SELECT idubicacion FROM ubicacion WHERE ciudad = '" & cbCiudadAutor.SelectedItem & "')"
+                query = "Update usuario Set nombre = '" & txtNombreAutor.Text & "', apellido = '" & txtApellidoAutor.Text & "', 
+                sexo = '" & sex & "', idubicacion = " & subQuery & " Where idautor = " & idActual
+                SaveData(query)
+
+            Else
+                If rbFemAutor.Checked = True Then
+                    sex = "Femenino"
+
+                Else
+                    sex = "Masculino"
+                End If
+                subQuery = "(SELECT idubicacion FROM ubicacion WHERE ciudad = '" & cbCiudadAutor.SelectedItem & "')"
+                query = "INSERT INTO autor (nombre, apellido,sexo, idubicacion) values('" & txtNombreAutor.Text & "','" & txtApellidoAutor.Text & "','" & sex & "' ," & subQuery & ")"
+                SaveData(query)
+            End If
+
+        End If
+    End Sub
+
+    '----------------------------------------------------------------------------------------
+    '   Bibliotecarios
+
+    Private Sub btCrearBiblio_Click(sender As Object, e As EventArgs) Handles btCrearBiblio.Click
+        PanelDatosBiblio.Visible = True
+        btEditarBiblio.Enabled = False
+        btEliminarBiblio.Enabled = False
+    End Sub
+
+    Private Sub btCancelarBiblio_Click(sender As Object, e As EventArgs) Handles btCancelarBiblio.Click
+        PanelDatosBiblio.Visible = False
+        btEditarBiblio.Enabled = True
+        btEliminarBiblio.Enabled = True
+        edicion = False
+    End Sub
+
+
+    Private Sub btEliminarBiblio_Click(sender As Object, e As EventArgs) Handles btEliminarBiblio.Click
+        Dim opc = MessageBox.Show("¿Desea eliminar este registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If opc = DialogResult.Yes Then
+            SaveData("DELETE FROM bibliotecario WHERE idbibliotecario = " & indexSelected)
+        End If
+    End Sub
+
+    Private Sub btActulBiblio_Click(sender As Object, e As EventArgs) Handles btActulBiblio.Click
+        LlenarTabla(tablaBibliotecario, queryBiblioTabla, "bibliotecario")
+    End Sub
+
+
+    Private Sub btEditarBiblio_Click(sender As Object, e As EventArgs) Handles btEditarBiblio.Click
+        PanelDatosBiblio.Visible = True
+        btEditarBiblio.Enabled = False
+        btEliminarBiblio.Enabled = False
+        idActual = indexSelected
+        edicion = True
+
+        Try
+            AbrirConexion()
+            Dim query As String
+            idActual = indexSelected
+            query = queryBiblioTabla & " WHERE idbibliotecario = " & indexSelected
+            command = New MySqlCommand(query, conexion)
+            reader = command.ExecuteReader
+            reader.Read()
+
+            txtNombreBiblio.Text = reader.GetString("nombre")
+            txtApellidoBiblio.Text = reader.GetString("apellido")
+            txtUsuario.Text = reader.GetString("usuario")
+            txtClave.Text = reader.GetString("contraseña")
+
+            conexion.Close()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub tablaBibliotecario_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles tablaBibliotecario.CellClick
+        Dim value As Object = tablaBibliotecario.CurrentRow.Cells(0).Value
+
+        Try
+            indexSelected = CType(value, Integer)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub btGuardarBiblio_Click(sender As Object, e As EventArgs) Handles btGuardarBiblio.Click
+        Dim query As String
+        Dim opc = MessageBox.Show("¿Desea guardar los cambios?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If opc = DialogResult.Yes Then
+            If edicion = True Then
+                query = "UPDATE bibliotecario SET nombre = '" & txtNombreBiblio.Text & "', apellido = '" & txtApellidoBiblio.Text & "',
+                usuario = '" & txtUsuario.Text & "', contraseña = '" & txtClave.Text & "' WHERE idbibliotecario = " & idActual
+                SaveData(query)
+
+            Else
+                query = "INSERT INTO bibliotecario (nombre, apellido, usuario, contraseña) values ('" & txtNombreBiblio.Text & "',
+                '" & txtApellidoBiblio.Text & "','" & txtUsuario.Text & "','" & txtClave.Text & "')"
+                SaveData(query)
+            End If
+        End If
+    End Sub
+
+
+    Private Sub TextBuscarBiblio_TextChanged(sender As Object, e As EventArgs) Handles TextBuscarBiblio.TextChanged
+        Dim query As String
+        query = queryBiblioTabla & " Where nombre like '" & TextBuscarBiblio.Text & "%'"
+        LlenarTabla(tablaBibliotecario, query, "bibliotecario")
+    End Sub
+
+
+    '-------------------------------------------------------------------------------------
+    '  Tipo documentos
+
+    Private Sub btNuevoTD_Click(sender As Object, e As EventArgs) Handles btNuevoTD.Click
+        PanelTD.Visible = True
+        btEliminarTD.Enabled = False
+        btEditarTD.Enabled = False
+
+    End Sub
+
+
+    Private Sub btEditarTD_Click(sender As Object, e As EventArgs) Handles btEditarTD.Click
+        PanelTD.Visible = True
+        btEliminarTD.Enabled = False
+        btEditarTD.Enabled = False
+        edicion = True
+
+        If listaTipoDoc.SelectedItem <> Nothing Then
+            Try
+                AbrirConexion()
+                Dim query = "SELECT * FROM tipodocumento WHERE nombre = '" & listaTipoDoc.SelectedItem & "'"
+                command = New MySqlCommand(query, conexion)
+                reader = command.ExecuteReader
+                reader.Read()
+                idActual = reader.GetInt32("idtipodocumento")
+                txtTipoDoc.Text = listaTipoDoc.SelectedItem
+                conexion.Close()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
+    End Sub
+
+
+    Private Sub btActualizarTD_Click(sender As Object, e As EventArgs) Handles btActualizarTD.Click
+        listaTipoDoc.Items.Clear()
+        llenarLista(listaTipoDoc, "tipodocumento", "nombre")
+    End Sub
+
+
+    Private Sub btEliminarTD_Click(sender As Object, e As EventArgs) Handles btEliminarTD.Click
+        Dim opc = MessageBox.Show("¿Desea eliminar este registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If opc = DialogResult.Yes Then
+            SaveData("DELETE FROM tipodocumento WHERE nombre = '" & listaTipoDoc.SelectedItem & "'")
+        End If
+    End Sub
+
+    Private Sub guardarTD_Click(sender As Object, e As EventArgs) Handles guardarTD.Click
+        Dim opc = MessageBox.Show("¿Desea guardar los cambios?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If verificarRE("SELECT * FROM tipodocumento where nombre = '" & txtTipoDoc.Text & "'", "Tipo documento") <> True Then
+            If edicion <> True Then
+                Dim query = "INSERT INTO tipodocumento (nombre) values ('" & txtTipoDoc.Text & "')"
+                SaveData(query)
+            Else
+                Dim query = "Update tipodocumento SET nombre = '" & txtTipoDoc.Text & "'"
+                SaveData(query)
+            End If
+        End If
+    End Sub
+
+    Private Sub cancelarTD_Click(sender As Object, e As EventArgs) Handles cancelarTD.Click
+        PanelTD.Visible = False
+        btEliminarTD.Enabled = True
+        btEditarTD.Enabled = True
+        edicion = False
+        txtTipoDoc.Text = ""
+    End Sub
+
+    '----------------------------------------------------------------------
+
+
 End Class

@@ -28,7 +28,9 @@ Module ConsultaTablas
     g  ON l.codigogeneral = g.codigogeneral INNER JOIN categoriaespecial e ON l.codigoespecial = e.codigoespecial"
 
     Public queryAutorTabla = "SELECT a.idautor as Código, a.nombre as Nombre, a.apellido as Apellido, a.sexo as Sexo,
-    u.ciudad, u.pais, date_format(a.fechanacimiento,'%d/%m/%Y') as Nacimiento FROM autor a
-    INNER JOIN ubicacion u ON a.idubicacion = u.idubicacion"
+    u.ciudad, u.pais FROM autor a INNER JOIN ubicacion u ON a.idubicacion = u.idubicacion"
+
+    Public queryBiblioTabla = "SELECT idbibliotecario as Código, nombre as Nombre, apellido as Apellido, usuario as Usuario
+    FROM bibliotecario"
 
 End Module
