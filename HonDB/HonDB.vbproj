@@ -152,12 +152,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Ventana_Nuevo_Registro.Designer.vb">
-      <DependentUpon>Ventana_Nuevo_Registro.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Ventana_Nuevo_Registro.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Ventana_Registro.Designer.vb">
       <DependentUpon>Ventana_Registro.vb</DependentUpon>
     </Compile>
@@ -189,9 +183,6 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ventana_Nuevo_Registro.resx">
-      <DependentUpon>Ventana_Nuevo_Registro.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana_Registro.resx">
       <DependentUpon>Ventana_Registro.vb</DependentUpon>

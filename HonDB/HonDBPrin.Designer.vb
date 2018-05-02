@@ -68,6 +68,7 @@ Partial Class HonDBPrin
         '
         Me.BSalir.BackgroundImage = Global.HonDB.My.Resources.Resources.BotonSalir
         resources.ApplyResources(Me.BSalir, "BSalir")
+        Me.BSalir.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BSalir.Name = "BSalir"
         Me.BSalir.UseVisualStyleBackColor = True
         '

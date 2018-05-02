@@ -3,6 +3,7 @@
 Public Class ConexionBD
 
     Public Shared conexion As MySqlConnection
+    Public Shared cmd As MySqlCommandBuilder
     Public Shared comando As MySqlCommand
     Public Shared adaptador As MySqlDataAdapter
     Public Shared reader As MySqlDataReader
@@ -13,7 +14,7 @@ Public Class ConexionBD
     Public Shared Sub AbrirConexion()
 
         Try
-            conexion = New MySqlConnection("server = localhost; user id = root; Password = 12345678; database = hondb")
+            conexion = New MySqlConnection("server = localhost; user id = root; Password = Hydr0g3n2Oxyg3n1; database = hondb")
         Catch ex As Exception
             Err.Description.ToString()
         End Try
