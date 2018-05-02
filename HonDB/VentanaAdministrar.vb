@@ -17,6 +17,7 @@ Public Class VentanaAdministrar
 
         LlenarTabla(tablaLibros, tablaLibroQuery, "libro")
         LlenarTabla(tablaUsuarios, tablaUsuarioCons, "usuario")
+        LlenarTabla(tablaAutores, queryAutorTabla, "autor")
         'PopulateCombobox(SearchWayCb, "usuario", "sexo")
         'SearchWayCb.Items.Add("Código")
         SearchWayCb.Items.Add("Cédula")
@@ -190,6 +191,7 @@ Public Class VentanaAdministrar
         End If
     End Sub
 
+
     '-----------------------------------------------------------------------------------------------------
     '/////////////////////////// LIBROS //////////////////
 
@@ -199,5 +201,105 @@ Public Class VentanaAdministrar
         indexSelected = CType(value, Integer)
     End Sub
 
+    Private Sub btCrearLibro_Click(sender As Object, e As EventArgs) Handles btCrearLibro.Click
+        PanelDatosLibros.Visible = True
+        PopulateCombobox(cbCiudadL, "Ubicacion", "Ciudad")
+        PopulateCombobox(CBEstado, "Estado", "estado")
+        PopulateCombobox(CBCatG, "categoriageneral", "nombre")
+        PopulateCombobox(CBCatE, "categoriaespecial", "nombre")
+        PopulateCombobox(CBTipoDoc, "tipodocumento", "nombre")
+    End Sub
 
+
+    Private Sub btCancelarL_Click(sender As Object, e As EventArgs) Handles btCancelarL.Click
+        PanelDatosLibros.Visible = False
+
+    End Sub
+
+    Private Sub btEliminarLibro_Click(sender As Object, e As EventArgs) Handles btEliminarLibro.Click
+        Dim opc = MessageBox.Show("¿Desea eliminar este registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If opc = DialogResult.Yes Then
+            SaveData("DELETE FROM libro WHERE idlibro = " & indexSelected)
+        End If
+    End Sub
+
+    Private Sub btEditarLibro_Click(sender As Object, e As EventArgs) Handles btEditarLibro.Click
+
+    End Sub
+
+
+    '-------------------------------------------------------------------------------------
+    ' Autores
+
+    Private Sub btNuevoAutor_Click(sender As Object, e As EventArgs) Handles btNuevoAutor.Click
+
+        PanelDatosAutor.Visible = True
+        PopulateCombobox(cbCiudadAutor, "ubicacion", "Ciudad")
+    End Sub
+
+    Private Sub btEliminarAutor_Click(sender As Object, e As EventArgs) Handles btEliminarAutor.Click
+        Dim opc = MessageBox.Show("¿Desea eliminar este registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If opc = DialogResult.Yes Then
+            SaveData("DELETE FROM autor WHERE idautor = " & indexSelected)
+        End If
+    End Sub
+
+    Private Sub btEditarAutor_Click(sender As Object, e As EventArgs) Handles btEditarAutor.Click
+        PanelDatosAutor.Visible = True
+        btEditarAutor.Enabled = False
+        btEliminarAutor.Enabled = False
+        edicion = True
+        Try
+            AbrirConexion()
+            Dim query As String
+            idActual = indexSelected
+            query = queryAutorTabla & " WHERE a.idautor = " & indexSelected
+            command = New MySqlCommand(query, conexion)
+            reader = command.ExecuteReader
+            reader.Read()
+
+            txtNombreAutor.Text = reader.GetString("nombre")
+            txtApellidoAutor.Text = reader.GetString("apellido")
+            PopulateCombobox(cbCiudadAutor, "ubicacion", "Ciudad")
+            cbCiudadAutor.SelectedItem = reader.GetString("ciudad")
+
+
+            If reader.GetString("nacimiento") = Nothing Then
+                SelFechaAutor.Value = "00/00/00"
+
+            Else
+                SelFechaAutor.Value = reader.GetString("nacimiento")
+            End If
+
+            If reader.GetString("Sexo") = "Femenino" Then
+                rbFemAutor.Select()
+            Else
+                rbMasAutor.Select()
+            End If
+
+            conexion.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub tablaAutores_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles tablaAutores.CellClick
+        Dim value As Object = tablaUsuarios.CurrentRow.Cells(0).Value
+
+        indexSelected = CType(value, Integer)
+    End Sub
+
+    Private Sub btCancelarAutor_Click(sender As Object, e As EventArgs) Handles btCancelarAutor.Click
+        PanelDatosAutor.Visible = False
+        btEditarAutor.Enabled = True
+        btEliminarAutor.Enabled = True
+        edicion = False
+    End Sub
+
+    Private Sub btActualizarAutor_Click(sender As Object, e As EventArgs) Handles btActualizarAutor.Click
+        LlenarTabla(tablaAutores, queryAutorTabla, "autor")
+    End Sub
 End Class

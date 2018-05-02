@@ -20,10 +20,15 @@ Module ConsultaTablas
         u.idubicacion = p.idubicacion Where u.identificacion like '" & campoUsuario & "%' ORDER BY u.idusuario ASC"
 
     Public tablaLibroQuery = "SELECT l.idlibro as Código, l.isbn as ISBN, l.depositolegal as DepositoLegal, l.titulo as Titulo,
-    DATE_FORMAT(l.fechapublicacion, '%d-%m-%Y') as FechaPublicacion, l.edicion as Edicion, l.descripcion as Descripcion,
+    DATE_FORMAT(l.fechapublicacion, '%d/%m/%Y') as FechaPublicacion, l.edicion as Edicion, l.descripcion as Descripcion,
     l.paginas as Paginas, l.numejemplares as Ejemplares, u.ciudad as Ciudad, u.pais as Pais, s.estado
     as Estado, t.nombre as TipoDocumento, g.nombre as CategoriaGeneral, e.nombre as CategoriaEspecial
     FROM libro l INNER JOIN ubicacion u ON l.idubicacion = u.idubicacion INNER JOIN estado s ON l.idestado
      = s.idestado INNER JOIN tipodocumento t ON l.idtipodocumento = t.idtipodocumento INNER JOIN categoriageneral
     g  ON l.codigogeneral = g.codigogeneral INNER JOIN categoriaespecial e ON l.codigoespecial = e.codigoespecial"
+
+    Public queryAutorTabla = "SELECT a.idautor as Código, a.nombre as Nombre, a.apellido as Apellido, a.sexo as Sexo,
+    u.ciudad, u.pais, date_format(a.fechanacimiento,'%d/%m/%Y') as Nacimiento FROM autor a
+    INNER JOIN ubicacion u ON a.idubicacion = u.idubicacion"
+
 End Module
