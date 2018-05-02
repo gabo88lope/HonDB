@@ -20,16 +20,14 @@ Module OperacionesBD
             consulta = "SELECT * FROM " & table
             command = New MySqlCommand(consulta, conexion)
             reader = command.ExecuteReader
-
             While reader.Read
                 Dim aNombre = reader.GetString(column)
                 cb.Items.Add(aNombre)
             End While
-
-            conexion.Close()
-
         Catch ex As Exception
             MsgBox(ex.Message)
+        Finally
+            conexion.Close()
         End Try
     End Sub
 
@@ -42,9 +40,10 @@ Module OperacionesBD
             adaptador.Fill(datos, tableName)
             dgv.DataSource = datos
             dgv.DataMember = tableName
-            conexion.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
+        Finally
+            conexion.Close()
         End Try
 
     End Sub
@@ -56,9 +55,11 @@ Module OperacionesBD
             command = New MySqlCommand(query, conexion)
             reader = command.ExecuteReader
             MsgBox("Datos guardados exitosamente!", MsgBoxStyle.OkOnly)
-            conexion.Close()
         Catch ex As Exception
             MsgBox("Ha ocurrido un error al guardar", MsgBoxStyle.Critical)
+        Finally
+            command = Nothing
+            conexion.Close()
         End Try
     End Sub
 

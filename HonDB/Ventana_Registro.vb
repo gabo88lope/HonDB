@@ -27,10 +27,10 @@ Public Class Ventana_Registro
         Dim CrearUbicacion As String
         ConexionBD.AbrirConexion()
         CrearUbicacion = "INSERT INTO ubicacion(pais,ciudad,nacionalidad) 
-        VALUES (" & Pais.Text & ",'" & Ciudad.Text & ",'" & Nacionalidad.Text & "')"
+        VALUES ('" & Pais.Text & "','" & Ciudad.Text & "','" & Nacionalidad.Text & "')"
         SaveData(CrearUbicacion)
         CrearUsuario = "INSERT INTO usuario (nombre,apellido,identificacion,idubicacion) 
-        VALUES (" & NUsuario.Text & ",'" & AUsuario.Text & ",'" & IDUsuario.Text & ",'" & CrearUbicacion & "')"
+        VALUES ('" & NUsuario.Text & "','" & AUsuario.Text & "','" & IDUsuario.Text & "', (SELECT idubicacion FROM ubicacion WHERE ciudad = '" & Ciudad.Text & "'))"
         SaveData(CrearUsuario)
         MsgBox("Préstamo creado exitosamente")
         NUsuario.Clear()
