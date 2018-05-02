@@ -59,7 +59,7 @@ Public Class VentanaAdministrar
         If opc = DialogResult.Yes Then
             If edicion = False Then
 
-                If verificarRE("SELECT * FROM usuario where identificacion = '" & txtCedula.Text & "'", "cédula") <> True Then
+                If VerificarRE("SELECT * FROM usuario where identificacion = '" & txtCedula.Text & "'", "cédula") <> True Then
 
                     If rbFemenino.Checked = True Then
                         sex = "Femenino"

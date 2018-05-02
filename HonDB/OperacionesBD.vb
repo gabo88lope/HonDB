@@ -62,11 +62,12 @@ Module OperacionesBD
             MessageBox.Show("Datos guardados correctamente", "Proceso exitoso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             conexion.Close()
         Catch ex As Exception
-            MessageBox.Show("Ha ocurrido un error al guardar, verique el ingreso correcto de campos", "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'MessageBox.Show("Ha ocurrido un error al guardar, verique el ingreso correcto de campos", "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.Message)
         End Try
     End Sub
 
-    Public Function verificarRE(ByVal query As String, ByVal parametro As String) As Boolean
+    Public Function VerificarRE(ByVal query As String, ByVal parametro As String) As Boolean
         AbrirConexion()
         comando = New MySqlCommand(query, conexion)
         reader = comando.ExecuteReader
