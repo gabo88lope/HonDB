@@ -27,9 +27,9 @@ Partial Class FReportes
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleBusqueda = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape1 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RBusqueda = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.BookLogo = New System.Windows.Forms.PictureBox()
         Me.LabelLogo = New System.Windows.Forms.Label()
         Me.RetornoIcon = New System.Windows.Forms.PictureBox()
@@ -37,7 +37,7 @@ Partial Class FReportes
         Me.LabelFiltrado = New System.Windows.Forms.Label()
         Me.Filtrado = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.CBTipoReportes = New System.Windows.Forms.ComboBox()
         Me.LbEliminar = New System.Windows.Forms.Label()
         Me.LbActualizar = New System.Windows.Forms.Label()
         Me.LbGuardar = New System.Windows.Forms.Label()
@@ -72,20 +72,19 @@ Partial Class FReportes
         Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape1, Me.RectangleBusqueda, Me.RectangleShape2})
+        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape1, Me.RBusqueda, Me.RectangleShape2})
         Me.ShapeContainer1.Size = New System.Drawing.Size(1367, 776)
         Me.ShapeContainer1.TabIndex = 0
         Me.ShapeContainer1.TabStop = False
         '
-        'RectangleBusqueda
+        'RectangleShape3
         '
-        Me.RectangleBusqueda.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.RectangleBusqueda.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
-        Me.RectangleBusqueda.BorderColor = System.Drawing.Color.Gray
-        Me.RectangleBusqueda.CornerRadius = 15
-        Me.RectangleBusqueda.Location = New System.Drawing.Point(56, 94)
-        Me.RectangleBusqueda.Name = "RectangleBusqueda"
-        Me.RectangleBusqueda.Size = New System.Drawing.Size(331, 45)
+        Me.RectangleShape3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(81, Byte), Integer))
+        Me.RectangleShape3.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
+        Me.RectangleShape3.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(81, Byte), Integer))
+        Me.RectangleShape3.Location = New System.Drawing.Point(0, -1)
+        Me.RectangleShape3.Name = "RectangleShape3"
+        Me.RectangleShape3.Size = New System.Drawing.Size(1367, 70)
         '
         'RectangleShape1
         '
@@ -96,14 +95,15 @@ Partial Class FReportes
         Me.RectangleShape1.Name = "RectangleShape1"
         Me.RectangleShape1.Size = New System.Drawing.Size(70, 70)
         '
-        'RectangleShape3
+        'RBusqueda
         '
-        Me.RectangleShape3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(81, Byte), Integer))
-        Me.RectangleShape3.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
-        Me.RectangleShape3.BorderColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(81, Byte), Integer))
-        Me.RectangleShape3.Location = New System.Drawing.Point(0, -1)
-        Me.RectangleShape3.Name = "RectangleShape3"
-        Me.RectangleShape3.Size = New System.Drawing.Size(1367, 70)
+        Me.RBusqueda.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.RBusqueda.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
+        Me.RBusqueda.BorderColor = System.Drawing.Color.Gray
+        Me.RBusqueda.CornerRadius = 15
+        Me.RBusqueda.Location = New System.Drawing.Point(56, 94)
+        Me.RBusqueda.Name = "RBusqueda"
+        Me.RBusqueda.Size = New System.Drawing.Size(331, 45)
         '
         'BookLogo
         '
@@ -204,17 +204,17 @@ Partial Class FReportes
         Me.Label1.TabIndex = 24
         Me.Label1.Text = "Tipo de reportes"
         '
-        'ComboBox1
+        'CBTipoReportes
         '
-        Me.ComboBox1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ComboBox1.ForeColor = System.Drawing.Color.Gray
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.ComboBox1.Items.AddRange(New Object() {"Nombre", "Identificación", "Fecha de Préstamo"})
-        Me.ComboBox1.Location = New System.Drawing.Point(1042, 113)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(271, 25)
-        Me.ComboBox1.TabIndex = 23
+        Me.CBTipoReportes.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBTipoReportes.ForeColor = System.Drawing.Color.Gray
+        Me.CBTipoReportes.FormattingEnabled = True
+        Me.CBTipoReportes.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.CBTipoReportes.Items.AddRange(New Object() {"Nombre", "Identificación", "Fecha de Préstamo"})
+        Me.CBTipoReportes.Location = New System.Drawing.Point(1042, 113)
+        Me.CBTipoReportes.Name = "CBTipoReportes"
+        Me.CBTipoReportes.Size = New System.Drawing.Size(271, 25)
+        Me.CBTipoReportes.TabIndex = 23
         '
         'LbEliminar
         '
@@ -332,7 +332,7 @@ Partial Class FReportes
         Me.Controls.Add(Me.BTEditar)
         Me.Controls.Add(Me.BTCrear)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.CBTipoReportes)
         Me.Controls.Add(Me.LabelFiltrado)
         Me.Controls.Add(Me.Filtrado)
         Me.Controls.Add(Me.Datos)
@@ -359,7 +359,7 @@ Partial Class FReportes
     Friend WithEvents ShapeContainer1 As PowerPacks.ShapeContainer
     Friend WithEvents RectangleShape3 As PowerPacks.RectangleShape
     Friend WithEvents RectangleShape1 As PowerPacks.RectangleShape
-    Friend WithEvents RectangleBusqueda As PowerPacks.RectangleShape
+    Friend WithEvents RBusqueda As PowerPacks.RectangleShape
     Friend WithEvents BookLogo As PictureBox
     Friend WithEvents LabelLogo As Label
     Friend WithEvents RetornoIcon As PictureBox
@@ -367,7 +367,7 @@ Partial Class FReportes
     Friend WithEvents LabelFiltrado As Label
     Friend WithEvents Filtrado As ComboBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents CBTipoReportes As ComboBox
     Friend WithEvents LbEliminar As Label
     Friend WithEvents LbActualizar As Label
     Friend WithEvents LbGuardar As Label

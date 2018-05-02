@@ -20,10 +20,14 @@
     End Sub
 
     Private Sub BBusqueda_Click(sender As Object, e As EventArgs) Handles BBusqueda.Click
+        Busqueda.Show()
+        Busqueda.Focus()
 
     End Sub
 
     Private Sub BReporte_Click(sender As Object, e As EventArgs) Handles BReporte.Click
+        FReportes.Show()
+        FReportes.Focus()
 
     End Sub
 
