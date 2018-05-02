@@ -57,9 +57,9 @@ Public Class Ventana_Registro
         Group by usuario.idusuario Having usuario.nombre like '" & TBBusqueda.Text & "%'", "usuario")
     End Sub
 
-    Private Sub Datos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DatosGrid.CellContentClick
-        DatosGrid.Rows(e.RowIndex).Selected = True
-    End Sub
+    'Private Sub Datos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DatosGrid.CellContentClick
+    '    'DatosGrid.Rows(e.RowIndex).Selected = True
+    'End Sub
 
     Private Sub BTActualizar_Click(sender As Object, e As EventArgs) Handles BTActualizar.Click
         LlenarTabla(DatosGrid, "Select usuario.idusuario as Código, usuario.nombre as Nombre, usuario.apellido as Apellido,

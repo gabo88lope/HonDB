@@ -256,6 +256,7 @@ Partial Class Ventana_Registro
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DatosGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.DatosGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DatosGrid.Size = New System.Drawing.Size(676, 545)
         Me.DatosGrid.TabIndex = 5
         '
