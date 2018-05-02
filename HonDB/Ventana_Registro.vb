@@ -16,9 +16,6 @@ Public Class Ventana_Registro
         Inner Join prestamo ON prestamo.idusuario=usuario.idusuario 
         Inner Join bibliotecario ON prestamo.idbibliotecario = bibliotecario.idbibliotecario
         Group by usuario.idusuario", "usuario")
-
-        PopulateCombobox(CBB, "bibliotecario", "nombre")
-        PopulateCombobox(CBEstado, "prestamo", "estado")
     End Sub
 
     Private Sub RetornoIcon_Click(sender As Object, e As EventArgs) Handles RetornoIcon.Click
@@ -28,12 +25,12 @@ Public Class Ventana_Registro
     Private Sub BTCrear_Click(sender As Object, e As EventArgs) Handles BTCrear.Click
         Dim CrearUsuario As String
         Dim CrearUbicacion As String
-        ConexionBD.conexion.Open()
+        ConexionBD.AbrirConexion()
         CrearUbicacion = "INSERT INTO ubicacion(pais,ciudad,nacionalidad) 
         VALUES (" & Pais.Text & ",'" & Ciudad.Text & ",'" & Nacionalidad.Text & "')"
+        SaveData(CrearUbicacion)
         CrearUsuario = "INSERT INTO usuario (nombre,apellido,identificacion,idubicacion) 
         VALUES (" & NUsuario.Text & ",'" & AUsuario.Text & ",'" & IDUsuario.Text & ",'" & CrearUbicacion & "')"
-        SaveData(CrearUbicacion)
         SaveData(CrearUsuario)
         MsgBox("Préstamo creado exitosamente")
         NUsuario.Clear()
