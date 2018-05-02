@@ -5,7 +5,8 @@ Public Class Ventana_Registro
         Me.WindowState = FormWindowState.Maximized
 
         LlenarTabla(DatosGrid, "Select usuario.idusuario as Código, usuario.nombre as Nombre, usuario.apellido as Apellido,
-        usuario.identificacion as Identificación, libro.titulo as Libros, ubicacion.nacionalidad as Nacionalidad,
+        usuario.identificacion as Identificación, ubicacion.pais as País, ubicacion.ciudad as Ciudad, 
+        ubicacion.nacionalidad as Nacionalidad, libro.titulo as Libros,
         prestamo.estado as Estado, prestamo.fechaprestamo as Prestamo,
         prestamo.fechadevolucion as Devolución, prestamo.cantidad as Cantidad, bibliotecario.nombre as Nombre_B,
         bibliotecario.apellido as Apellido_B
@@ -15,6 +16,9 @@ Public Class Ventana_Registro
         Inner Join prestamo ON prestamo.idusuario=usuario.idusuario 
         Inner Join bibliotecario ON prestamo.idbibliotecario = bibliotecario.idbibliotecario
         Group by usuario.idusuario", "usuario")
+
+        PopulateCombobox(CBB, "bibliotecario", "nombre")
+        PopulateCombobox(CBEstado, "prestamo", "estado")
     End Sub
 
     Private Sub RetornoIcon_Click(sender As Object, e As EventArgs) Handles RetornoIcon.Click
@@ -22,12 +26,28 @@ Public Class Ventana_Registro
     End Sub
 
     Private Sub BTCrear_Click(sender As Object, e As EventArgs) Handles BTCrear.Click
-
+        Dim CrearUsuario As String
+        Dim CrearUbicacion As String
+        ConexionBD.conexion.Open()
+        CrearUbicacion = "INSERT INTO ubicacion(pais,ciudad,nacionalidad) 
+        VALUES (" & Pais.Text & ",'" & Ciudad.Text & ",'" & Nacionalidad.Text & "')"
+        CrearUsuario = "INSERT INTO usuario (nombre,apellido,identificacion,idubicacion) 
+        VALUES (" & NUsuario.Text & ",'" & AUsuario.Text & ",'" & IDUsuario.Text & ",'" & CrearUbicacion & "')"
+        SaveData(CrearUbicacion)
+        SaveData(CrearUsuario)
+        MsgBox("Préstamo creado exitosamente")
+        NUsuario.Clear()
+        AUsuario.Clear()
+        IDUsuario.Clear()
+        Pais.Clear()
+        Ciudad.Clear()
+        Nacionalidad.Clear()
     End Sub
 
     Private Sub TBBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TBBusqueda.TextChanged
         LlenarTabla(DatosGrid, "Select usuario.idusuario as Código, usuario.nombre as Nombre, usuario.apellido as Apellido,
-        usuario.identificacion as Identificación, libro.titulo as Libros, ubicacion.nacionalidad as Nacionalidad,
+        usuario.identificacion as Identificación, ubicacion.pais as País, ubicacion.ciudad as Ciudad, 
+        ubicacion.nacionalidad as Nacionalidad, libro.titulo as Libros,
         prestamo.estado as Estado, prestamo.fechaprestamo as Prestamo,
         prestamo.fechadevolucion as Devolución, prestamo.cantidad as Cantidad, bibliotecario.nombre as Nombre_B,
         bibliotecario.apellido as Apellido_B
@@ -45,7 +65,8 @@ Public Class Ventana_Registro
 
     Private Sub BTActualizar_Click(sender As Object, e As EventArgs) Handles BTActualizar.Click
         LlenarTabla(DatosGrid, "Select usuario.idusuario as Código, usuario.nombre as Nombre, usuario.apellido as Apellido,
-        usuario.identificacion as Identificación, libro.titulo as Libros, ubicacion.nacionalidad as Nacionalidad,
+        usuario.identificacion as Identificación, ubicacion.pais as País, ubicacion.ciudad as Ciudad, 
+        ubicacion.nacionalidad as Nacionalidad, libro.titulo as Libros,
         prestamo.estado as Estado, prestamo.fechaprestamo as Prestamo,
         prestamo.fechadevolucion as Devolución, prestamo.cantidad as Cantidad, bibliotecario.nombre as Nombre_B,
         bibliotecario.apellido as Apellido_B
@@ -56,4 +77,6 @@ Public Class Ventana_Registro
         Inner Join bibliotecario ON prestamo.idbibliotecario = bibliotecario.idbibliotecario
         Group by usuario.idusuario", "usuario")
     End Sub
+
+
 End Class

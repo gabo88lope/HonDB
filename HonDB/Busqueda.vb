@@ -96,7 +96,5 @@ Public Class Busqueda
         LlenarTabla(DataGridView1, "SELECT * FROM usuario where nombre like'" & TextBox1.Text & "%'", "usuario")
     End Sub
 
-    Private Sub Busqueda_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 End Class

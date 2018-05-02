@@ -22,15 +22,15 @@ Partial Class Ventana_Registro
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventana_Registro))
         Me.LabelLogo = New System.Windows.Forms.Label()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.RectangleShape9 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape11 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
+        Me.RectangleShape10 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape8 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
-        Me.RectangleShape7 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape6 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape5 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.RectangleShape4 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
@@ -61,7 +61,7 @@ Partial Class Ventana_Registro
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.IDUsuario = New System.Windows.Forms.TextBox()
-        Me.Nacionalidad = New System.Windows.Forms.TextBox()
+        Me.Pais = New System.Windows.Forms.TextBox()
         Me.LBPrestamos = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -74,9 +74,11 @@ Partial Class Ventana_Registro
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.CantP = New System.Windows.Forms.TextBox()
-        Me.NBibliotecario = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.ABibliotecario = New System.Windows.Forms.TextBox()
+        Me.Nacionalidad = New System.Windows.Forms.TextBox()
+        Me.Ciudad = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.LBNac = New System.Windows.Forms.Label()
+        Me.CBB = New System.Windows.Forms.ComboBox()
         CType(Me.DatosGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTActualizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -105,21 +107,32 @@ Partial Class Ventana_Registro
         Me.ShapeContainer1.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
-        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape9, Me.RectangleShape8, Me.RectangleShape7, Me.RectangleShape6, Me.RectangleShape5, Me.RectangleShape4, Me.RectangleShape3, Me.RectangleNS, Me.RectangleBusqueda, Me.RectangleShape2, Me.RectangleShape1})
+        Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape11, Me.RectangleShape10, Me.RectangleShape8, Me.RectangleShape6, Me.RectangleShape5, Me.RectangleShape4, Me.RectangleShape3, Me.RectangleNS, Me.RectangleBusqueda, Me.RectangleShape2, Me.RectangleShape1})
         Me.ShapeContainer1.Size = New System.Drawing.Size(1350, 729)
         Me.ShapeContainer1.TabIndex = 4
         Me.ShapeContainer1.TabStop = False
         '
-        'RectangleShape9
+        'RectangleShape11
         '
-        Me.RectangleShape9.BackColor = System.Drawing.SystemColors.Control
-        Me.RectangleShape9.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
-        Me.RectangleShape9.BorderColor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.RectangleShape9.BorderWidth = 2
-        Me.RectangleShape9.CornerRadius = 10
-        Me.RectangleShape9.Location = New System.Drawing.Point(1048, 576)
-        Me.RectangleShape9.Name = "RectangleShape9"
-        Me.RectangleShape9.Size = New System.Drawing.Size(278, 37)
+        Me.RectangleShape11.BackColor = System.Drawing.SystemColors.Control
+        Me.RectangleShape11.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
+        Me.RectangleShape11.BorderColor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.RectangleShape11.BorderWidth = 2
+        Me.RectangleShape11.CornerRadius = 10
+        Me.RectangleShape11.Location = New System.Drawing.Point(1049, 340)
+        Me.RectangleShape11.Name = "RectangleShape11"
+        Me.RectangleShape11.Size = New System.Drawing.Size(278, 37)
+        '
+        'RectangleShape10
+        '
+        Me.RectangleShape10.BackColor = System.Drawing.SystemColors.Control
+        Me.RectangleShape10.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
+        Me.RectangleShape10.BorderColor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.RectangleShape10.BorderWidth = 2
+        Me.RectangleShape10.CornerRadius = 10
+        Me.RectangleShape10.Location = New System.Drawing.Point(752, 340)
+        Me.RectangleShape10.Name = "RectangleShape10"
+        Me.RectangleShape10.Size = New System.Drawing.Size(278, 37)
         '
         'RectangleShape8
         '
@@ -130,18 +143,7 @@ Partial Class Ventana_Registro
         Me.RectangleShape8.CornerRadius = 10
         Me.RectangleShape8.Location = New System.Drawing.Point(1051, 413)
         Me.RectangleShape8.Name = "RectangleShape8"
-        Me.RectangleShape8.Size = New System.Drawing.Size(87, 37)
-        '
-        'RectangleShape7
-        '
-        Me.RectangleShape7.BackColor = System.Drawing.SystemColors.Control
-        Me.RectangleShape7.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
-        Me.RectangleShape7.BorderColor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.RectangleShape7.BorderWidth = 2
-        Me.RectangleShape7.CornerRadius = 10
-        Me.RectangleShape7.Location = New System.Drawing.Point(751, 577)
-        Me.RectangleShape7.Name = "RectangleShape7"
-        Me.RectangleShape7.Size = New System.Drawing.Size(278, 37)
+        Me.RectangleShape8.Size = New System.Drawing.Size(88, 37)
         '
         'RectangleShape6
         '
@@ -161,7 +163,7 @@ Partial Class Ventana_Registro
         Me.RectangleShape5.BorderColor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.RectangleShape5.BorderWidth = 2
         Me.RectangleShape5.CornerRadius = 10
-        Me.RectangleShape5.Location = New System.Drawing.Point(752, 326)
+        Me.RectangleShape5.Location = New System.Drawing.Point(751, 267)
         Me.RectangleShape5.Name = "RectangleShape5"
         Me.RectangleShape5.Size = New System.Drawing.Size(278, 37)
         '
@@ -172,7 +174,7 @@ Partial Class Ventana_Registro
         Me.RectangleShape4.BorderColor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.RectangleShape4.BorderWidth = 2
         Me.RectangleShape4.CornerRadius = 10
-        Me.RectangleShape4.Location = New System.Drawing.Point(1047, 327)
+        Me.RectangleShape4.Location = New System.Drawing.Point(1048, 267)
         Me.RectangleShape4.Name = "RectangleShape4"
         Me.RectangleShape4.Size = New System.Drawing.Size(278, 37)
         '
@@ -183,7 +185,7 @@ Partial Class Ventana_Registro
         Me.RectangleShape3.BorderColor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.RectangleShape3.BorderWidth = 2
         Me.RectangleShape3.CornerRadius = 10
-        Me.RectangleShape3.Location = New System.Drawing.Point(1046, 242)
+        Me.RectangleShape3.Location = New System.Drawing.Point(1046, 188)
         Me.RectangleShape3.Name = "RectangleShape3"
         Me.RectangleShape3.Size = New System.Drawing.Size(278, 37)
         '
@@ -194,7 +196,7 @@ Partial Class Ventana_Registro
         Me.RectangleNS.BorderColor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.RectangleNS.BorderWidth = 2
         Me.RectangleNS.CornerRadius = 10
-        Me.RectangleNS.Location = New System.Drawing.Point(751, 241)
+        Me.RectangleNS.Location = New System.Drawing.Point(751, 188)
         Me.RectangleNS.Name = "RectangleNS"
         Me.RectangleNS.Size = New System.Drawing.Size(278, 37)
         '
@@ -230,30 +232,30 @@ Partial Class Ventana_Registro
         '
         Me.DatosGrid.BackgroundColor = System.Drawing.Color.White
         Me.DatosGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DatosGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DatosGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DatosGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DatosGrid.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DatosGrid.DefaultCellStyle = DataGridViewCellStyle2
         Me.DatosGrid.Location = New System.Drawing.Point(54, 164)
         Me.DatosGrid.Name = "DatosGrid"
         Me.DatosGrid.ReadOnly = True
         Me.DatosGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DatosGrid.RowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DatosGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DatosGrid.Size = New System.Drawing.Size(676, 545)
         Me.DatosGrid.TabIndex = 5
         '
@@ -407,7 +409,7 @@ Partial Class Ventana_Registro
         Me.NUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.NUsuario.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.NUsuario.Location = New System.Drawing.Point(762, 249)
+        Me.NUsuario.Location = New System.Drawing.Point(762, 196)
         Me.NUsuario.Name = "NUsuario"
         Me.NUsuario.Size = New System.Drawing.Size(254, 22)
         Me.NUsuario.TabIndex = 19
@@ -418,7 +420,7 @@ Partial Class Ventana_Registro
         Me.LbNS.BackColor = System.Drawing.Color.Transparent
         Me.LbNS.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LbNS.ForeColor = System.Drawing.Color.DimGray
-        Me.LbNS.Location = New System.Drawing.Point(758, 215)
+        Me.LbNS.Location = New System.Drawing.Point(754, 164)
         Me.LbNS.Name = "LbNS"
         Me.LbNS.Size = New System.Drawing.Size(159, 21)
         Me.LbNS.TabIndex = 20
@@ -430,7 +432,7 @@ Partial Class Ventana_Registro
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.DimGray
-        Me.Label1.Location = New System.Drawing.Point(1053, 215)
+        Me.Label1.Location = New System.Drawing.Point(1056, 164)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(161, 21)
         Me.Label1.TabIndex = 22
@@ -442,7 +444,7 @@ Partial Class Ventana_Registro
         Me.AUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.AUsuario.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.AUsuario.Location = New System.Drawing.Point(1057, 250)
+        Me.AUsuario.Location = New System.Drawing.Point(1057, 196)
         Me.AUsuario.Name = "AUsuario"
         Me.AUsuario.Size = New System.Drawing.Size(254, 22)
         Me.AUsuario.TabIndex = 23
@@ -453,11 +455,11 @@ Partial Class Ventana_Registro
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.DimGray
-        Me.Label2.Location = New System.Drawing.Point(1053, 300)
+        Me.Label2.Location = New System.Drawing.Point(1056, 242)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(113, 21)
+        Me.Label2.Size = New System.Drawing.Size(41, 21)
         Me.Label2.TabIndex = 25
-        Me.Label2.Text = "Nacionalidad"
+        Me.Label2.Text = "País"
         '
         'Label3
         '
@@ -465,7 +467,7 @@ Partial Class Ventana_Registro
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.DimGray
-        Me.Label3.Location = New System.Drawing.Point(758, 300)
+        Me.Label3.Location = New System.Drawing.Point(759, 242)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(116, 21)
         Me.Label3.TabIndex = 24
@@ -477,21 +479,21 @@ Partial Class Ventana_Registro
         Me.IDUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.IDUsuario.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.IDUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.IDUsuario.Location = New System.Drawing.Point(762, 334)
+        Me.IDUsuario.Location = New System.Drawing.Point(762, 276)
         Me.IDUsuario.Name = "IDUsuario"
         Me.IDUsuario.Size = New System.Drawing.Size(254, 22)
         Me.IDUsuario.TabIndex = 26
         '
-        'Nacionalidad
+        'Pais
         '
-        Me.Nacionalidad.BackColor = System.Drawing.SystemColors.Control
-        Me.Nacionalidad.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Nacionalidad.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Nacionalidad.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.Nacionalidad.Location = New System.Drawing.Point(1057, 335)
-        Me.Nacionalidad.Name = "Nacionalidad"
-        Me.Nacionalidad.Size = New System.Drawing.Size(254, 22)
-        Me.Nacionalidad.TabIndex = 27
+        Me.Pais.BackColor = System.Drawing.SystemColors.Control
+        Me.Pais.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Pais.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Pais.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.Pais.Location = New System.Drawing.Point(1060, 275)
+        Me.Pais.Name = "Pais"
+        Me.Pais.Size = New System.Drawing.Size(254, 22)
+        Me.Pais.TabIndex = 27
         '
         'LBPrestamos
         '
@@ -499,7 +501,7 @@ Partial Class Ventana_Registro
         Me.LBPrestamos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.LBPrestamos.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBPrestamos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.LBPrestamos.Location = New System.Drawing.Point(762, 420)
+        Me.LBPrestamos.Location = New System.Drawing.Point(766, 420)
         Me.LBPrestamos.Name = "LBPrestamos"
         Me.LBPrestamos.Size = New System.Drawing.Size(254, 22)
         Me.LBPrestamos.TabIndex = 28
@@ -612,9 +614,9 @@ Partial Class Ventana_Registro
         Me.Label9.ForeColor = System.Drawing.Color.DimGray
         Me.Label9.Location = New System.Drawing.Point(758, 550)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(198, 21)
+        Me.Label9.Size = New System.Drawing.Size(108, 21)
         Me.Label9.TabIndex = 38
-        Me.Label9.Text = "Nombre de Bibliotecario"
+        Me.Label9.Text = "Bibliotecario"
         '
         'Label10
         '
@@ -622,7 +624,7 @@ Partial Class Ventana_Registro
         Me.Label10.BackColor = System.Drawing.Color.Transparent
         Me.Label10.Font = New System.Drawing.Font("Segoe UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.DimGray
-        Me.Label10.Location = New System.Drawing.Point(949, 164)
+        Me.Label10.Location = New System.Drawing.Point(942, 106)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(175, 37)
         Me.Label10.TabIndex = 39
@@ -639,39 +641,65 @@ Partial Class Ventana_Registro
         Me.CantP.Size = New System.Drawing.Size(68, 22)
         Me.CantP.TabIndex = 40
         '
-        'NBibliotecario
+        'Nacionalidad
         '
-        Me.NBibliotecario.BackColor = System.Drawing.SystemColors.Control
-        Me.NBibliotecario.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.NBibliotecario.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NBibliotecario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.NBibliotecario.Location = New System.Drawing.Point(762, 586)
-        Me.NBibliotecario.Name = "NBibliotecario"
-        Me.NBibliotecario.Size = New System.Drawing.Size(254, 22)
-        Me.NBibliotecario.TabIndex = 41
+        Me.Nacionalidad.BackColor = System.Drawing.SystemColors.Control
+        Me.Nacionalidad.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Nacionalidad.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Nacionalidad.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.Nacionalidad.Location = New System.Drawing.Point(1060, 348)
+        Me.Nacionalidad.Name = "Nacionalidad"
+        Me.Nacionalidad.Size = New System.Drawing.Size(254, 22)
+        Me.Nacionalidad.TabIndex = 45
         '
-        'Label11
+        'Ciudad
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.DimGray
-        Me.Label11.Location = New System.Drawing.Point(1053, 550)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(200, 21)
-        Me.Label11.TabIndex = 42
-        Me.Label11.Text = "Apellido de Bibliotecario"
+        Me.Ciudad.BackColor = System.Drawing.SystemColors.Control
+        Me.Ciudad.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Ciudad.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Ciudad.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.Ciudad.Location = New System.Drawing.Point(762, 348)
+        Me.Ciudad.Name = "Ciudad"
+        Me.Ciudad.Size = New System.Drawing.Size(254, 22)
+        Me.Ciudad.TabIndex = 44
         '
-        'ABibliotecario
+        'Label12
         '
-        Me.ABibliotecario.BackColor = System.Drawing.SystemColors.Control
-        Me.ABibliotecario.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ABibliotecario.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ABibliotecario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.ABibliotecario.Location = New System.Drawing.Point(1060, 584)
-        Me.ABibliotecario.Name = "ABibliotecario"
-        Me.ABibliotecario.Size = New System.Drawing.Size(254, 22)
-        Me.ABibliotecario.TabIndex = 43
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.DimGray
+        Me.Label12.Location = New System.Drawing.Point(759, 315)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(64, 21)
+        Me.Label12.TabIndex = 46
+        Me.Label12.Text = "Ciudad"
+        '
+        'LBNac
+        '
+        Me.LBNac.AutoSize = True
+        Me.LBNac.BackColor = System.Drawing.Color.Transparent
+        Me.LBNac.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBNac.ForeColor = System.Drawing.Color.DimGray
+        Me.LBNac.Location = New System.Drawing.Point(1056, 315)
+        Me.LBNac.Name = "LBNac"
+        Me.LBNac.Size = New System.Drawing.Size(113, 21)
+        Me.LBNac.TabIndex = 47
+        Me.LBNac.Text = "Nacionalidad"
+        '
+        'CBB
+        '
+        Me.CBB.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CBB.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CBB.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBB.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.CBB.FormattingEnabled = True
+        Me.CBB.IntegralHeight = False
+        Me.CBB.Location = New System.Drawing.Point(762, 577)
+        Me.CBB.Margin = New System.Windows.Forms.Padding(6)
+        Me.CBB.Name = "CBB"
+        Me.CBB.Size = New System.Drawing.Size(200, 29)
+        Me.CBB.TabIndex = 48
         '
         'Ventana_Registro
         '
@@ -679,9 +707,11 @@ Partial Class Ventana_Registro
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1350, 729)
-        Me.Controls.Add(Me.ABibliotecario)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.NBibliotecario)
+        Me.Controls.Add(Me.CBB)
+        Me.Controls.Add(Me.LBNac)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.Nacionalidad)
+        Me.Controls.Add(Me.Ciudad)
         Me.Controls.Add(Me.CantP)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label9)
@@ -694,7 +724,7 @@ Partial Class Ventana_Registro
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.LBPrestamos)
-        Me.Controls.Add(Me.Nacionalidad)
+        Me.Controls.Add(Me.Pais)
         Me.Controls.Add(Me.IDUsuario)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label3)
@@ -770,7 +800,7 @@ Partial Class Ventana_Registro
     Friend WithEvents Label3 As Label
     Friend WithEvents RectangleShape6 As PowerPacks.RectangleShape
     Friend WithEvents IDUsuario As TextBox
-    Friend WithEvents Nacionalidad As TextBox
+    Friend WithEvents Pais As TextBox
     Friend WithEvents LBPrestamos As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
@@ -780,13 +810,15 @@ Partial Class Ventana_Registro
     Friend WithEvents FP As DateTimePicker
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
-    Friend WithEvents RectangleShape7 As PowerPacks.RectangleShape
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents RectangleShape8 As PowerPacks.RectangleShape
     Friend WithEvents CantP As TextBox
-    Friend WithEvents NBibliotecario As TextBox
-    Friend WithEvents RectangleShape9 As PowerPacks.RectangleShape
-    Friend WithEvents Label11 As Label
-    Friend WithEvents ABibliotecario As TextBox
+    Friend WithEvents RectangleShape11 As PowerPacks.RectangleShape
+    Friend WithEvents RectangleShape10 As PowerPacks.RectangleShape
+    Friend WithEvents Nacionalidad As TextBox
+    Friend WithEvents Ciudad As TextBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents LBNac As Label
+    Friend WithEvents CBB As ComboBox
 End Class
