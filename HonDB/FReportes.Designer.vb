@@ -22,9 +22,9 @@ Partial Class FReportes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
         Me.RectangleShape3 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
@@ -73,7 +73,7 @@ Partial Class FReportes
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.RectangleShape3, Me.RectangleShape1, Me.RBusqueda, Me.RectangleShape2})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1367, 776)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1350, 729)
         Me.ShapeContainer1.TabIndex = 0
         Me.ShapeContainer1.TabStop = False
         '
@@ -143,31 +143,31 @@ Partial Class FReportes
         '
         Me.Datos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
         Me.Datos.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Datos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Datos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.Datos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Datos.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Datos.DefaultCellStyle = DataGridViewCellStyle5
         Me.Datos.Location = New System.Drawing.Point(52, 154)
         Me.Datos.Name = "Datos"
         Me.Datos.ReadOnly = True
         Me.Datos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Datos.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.Datos.Size = New System.Drawing.Size(1261, 517)
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Datos.RowsDefaultCellStyle = DataGridViewCellStyle6
+        Me.Datos.Size = New System.Drawing.Size(1261, 481)
         Me.Datos.TabIndex = 8
         '
         'LabelFiltrado
@@ -220,7 +220,7 @@ Partial Class FReportes
         '
         Me.LbEliminar.AutoSize = True
         Me.LbEliminar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbEliminar.Location = New System.Drawing.Point(643, 736)
+        Me.LbEliminar.Location = New System.Drawing.Point(644, 698)
         Me.LbEliminar.Name = "LbEliminar"
         Me.LbEliminar.Size = New System.Drawing.Size(74, 21)
         Me.LbEliminar.TabIndex = 34
@@ -230,7 +230,7 @@ Partial Class FReportes
         '
         Me.LbActualizar.AutoSize = True
         Me.LbActualizar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbActualizar.Location = New System.Drawing.Point(491, 736)
+        Me.LbActualizar.Location = New System.Drawing.Point(492, 698)
         Me.LbActualizar.Name = "LbActualizar"
         Me.LbActualizar.Size = New System.Drawing.Size(87, 21)
         Me.LbActualizar.TabIndex = 33
@@ -240,7 +240,7 @@ Partial Class FReportes
         '
         Me.LbGuardar.AutoSize = True
         Me.LbGuardar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbGuardar.Location = New System.Drawing.Point(344, 736)
+        Me.LbGuardar.Location = New System.Drawing.Point(345, 698)
         Me.LbGuardar.Name = "LbGuardar"
         Me.LbGuardar.Size = New System.Drawing.Size(71, 21)
         Me.LbGuardar.TabIndex = 32
@@ -250,7 +250,7 @@ Partial Class FReportes
         '
         Me.LbEditar.AutoSize = True
         Me.LbEditar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbEditar.Location = New System.Drawing.Point(195, 736)
+        Me.LbEditar.Location = New System.Drawing.Point(196, 698)
         Me.LbEditar.Name = "LbEditar"
         Me.LbEditar.Size = New System.Drawing.Size(55, 21)
         Me.LbEditar.TabIndex = 31
@@ -260,7 +260,7 @@ Partial Class FReportes
         '
         Me.LbCrear.AutoSize = True
         Me.LbCrear.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbCrear.Location = New System.Drawing.Point(55, 736)
+        Me.LbCrear.Location = New System.Drawing.Point(56, 698)
         Me.LbCrear.Name = "LbCrear"
         Me.LbCrear.Size = New System.Drawing.Size(50, 21)
         Me.LbCrear.TabIndex = 30
@@ -270,7 +270,7 @@ Partial Class FReportes
         '
         Me.BTEliminar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BTEliminar.Image = Global.HonDB.My.Resources.Resources.DeleteBT
-        Me.BTEliminar.Location = New System.Drawing.Point(657, 693)
+        Me.BTEliminar.Location = New System.Drawing.Point(658, 655)
         Me.BTEliminar.Name = "BTEliminar"
         Me.BTEliminar.Size = New System.Drawing.Size(40, 40)
         Me.BTEliminar.TabIndex = 29
@@ -280,7 +280,7 @@ Partial Class FReportes
         '
         Me.BTActualizar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BTActualizar.Image = Global.HonDB.My.Resources.Resources.UpdateBT
-        Me.BTActualizar.Location = New System.Drawing.Point(513, 693)
+        Me.BTActualizar.Location = New System.Drawing.Point(514, 655)
         Me.BTActualizar.Name = "BTActualizar"
         Me.BTActualizar.Size = New System.Drawing.Size(40, 40)
         Me.BTActualizar.TabIndex = 28
@@ -290,7 +290,7 @@ Partial Class FReportes
         '
         Me.BTGuardar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BTGuardar.Image = Global.HonDB.My.Resources.Resources.SaveBT2
-        Me.BTGuardar.Location = New System.Drawing.Point(359, 693)
+        Me.BTGuardar.Location = New System.Drawing.Point(360, 655)
         Me.BTGuardar.Name = "BTGuardar"
         Me.BTGuardar.Size = New System.Drawing.Size(40, 40)
         Me.BTGuardar.TabIndex = 27
@@ -300,7 +300,7 @@ Partial Class FReportes
         '
         Me.BTEditar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BTEditar.Image = Global.HonDB.My.Resources.Resources.EditBT
-        Me.BTEditar.Location = New System.Drawing.Point(205, 695)
+        Me.BTEditar.Location = New System.Drawing.Point(206, 657)
         Me.BTEditar.Name = "BTEditar"
         Me.BTEditar.Size = New System.Drawing.Size(35, 40)
         Me.BTEditar.TabIndex = 26
@@ -310,7 +310,7 @@ Partial Class FReportes
         '
         Me.BTCrear.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BTCrear.Image = Global.HonDB.My.Resources.Resources.CreateBT
-        Me.BTCrear.Location = New System.Drawing.Point(61, 693)
+        Me.BTCrear.Location = New System.Drawing.Point(62, 655)
         Me.BTCrear.Name = "BTCrear"
         Me.BTCrear.Size = New System.Drawing.Size(40, 40)
         Me.BTCrear.TabIndex = 25
@@ -320,7 +320,7 @@ Partial Class FReportes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1367, 776)
+        Me.ClientSize = New System.Drawing.Size(1350, 729)
         Me.Controls.Add(Me.LbEliminar)
         Me.Controls.Add(Me.LbActualizar)
         Me.Controls.Add(Me.LbGuardar)
