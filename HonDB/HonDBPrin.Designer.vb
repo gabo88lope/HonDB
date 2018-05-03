@@ -28,14 +28,14 @@ Partial Class HonDBPrin
         Me.TSSLTiempo = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BAcercaDe = New System.Windows.Forms.Button()
         Me.BSalir = New System.Windows.Forms.Button()
         Me.BAdministrar = New System.Windows.Forms.Button()
         Me.BReporte = New System.Windows.Forms.Button()
         Me.BBusqueda = New System.Windows.Forms.Button()
         Me.BRegistro = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
@@ -68,20 +68,11 @@ Partial Class HonDBPrin
         resources.ApplyResources(Me.Panel3, "Panel3")
         Me.Panel3.Name = "Panel3"
         '
-        'Panel1
-        '
-        resources.ApplyResources(Me.Panel1, "Panel1")
-        Me.Panel1.Name = "Panel1"
-        '
-        'Panel2
-        '
-        resources.ApplyResources(Me.Panel2, "Panel2")
-        Me.Panel2.Name = "Panel2"
-        '
         'BAcercaDe
         '
         Me.BAcercaDe.BackgroundImage = Global.HonDB.My.Resources.Resources.BotonAcercade
         resources.ApplyResources(Me.BAcercaDe, "BAcercaDe")
+        Me.BAcercaDe.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BAcercaDe.Name = "BAcercaDe"
         Me.BAcercaDe.UseVisualStyleBackColor = True
         '
@@ -97,6 +88,7 @@ Partial Class HonDBPrin
         '
         Me.BAdministrar.BackgroundImage = Global.HonDB.My.Resources.Resources.BotonAdministrar03
         resources.ApplyResources(Me.BAdministrar, "BAdministrar")
+        Me.BAdministrar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BAdministrar.Name = "BAdministrar"
         Me.BAdministrar.UseVisualStyleBackColor = True
         '
@@ -104,6 +96,7 @@ Partial Class HonDBPrin
         '
         Me.BReporte.BackgroundImage = Global.HonDB.My.Resources.Resources.BotonReportes04
         resources.ApplyResources(Me.BReporte, "BReporte")
+        Me.BReporte.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BReporte.Name = "BReporte"
         Me.BReporte.UseVisualStyleBackColor = True
         '
@@ -111,6 +104,7 @@ Partial Class HonDBPrin
         '
         Me.BBusqueda.BackgroundImage = Global.HonDB.My.Resources.Resources.BotonBusqueda03
         resources.ApplyResources(Me.BBusqueda, "BBusqueda")
+        Me.BBusqueda.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BBusqueda.Name = "BBusqueda"
         Me.BBusqueda.UseVisualStyleBackColor = True
         '
@@ -122,6 +116,16 @@ Partial Class HonDBPrin
         Me.BRegistro.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BRegistro.Name = "BRegistro"
         Me.BRegistro.UseVisualStyleBackColor = False
+        '
+        'Panel1
+        '
+        resources.ApplyResources(Me.Panel1, "Panel1")
+        Me.Panel1.Name = "Panel1"
+        '
+        'Panel2
+        '
+        resources.ApplyResources(Me.Panel2, "Panel2")
+        Me.Panel2.Name = "Panel2"
         '
         'HonDBPrin
         '

@@ -4,18 +4,19 @@ Public Class Ventana_Registro
         Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
         Me.WindowState = FormWindowState.Maximized
 
-        LlenarTabla(DatosGrid, "Select usuario.idusuario as Código, usuario.nombre as Nombre, usuario.apellido as Apellido,
-        usuario.identificacion as Identificación, ubicacion.pais as País, ubicacion.ciudad as Ciudad, 
-        ubicacion.nacionalidad as Nacionalidad, libro.titulo as Libros,
-        prestamo.estado as Estado, prestamo.fechaprestamo as Prestamo,
-        prestamo.fechadevolucion as Devolución, prestamo.cantidad as Cantidad, bibliotecario.nombre as Nombre_B,
-        bibliotecario.apellido as Apellido_B
-        From Usuario
-        Inner Join ubicacion ON usuario.idubicacion=ubicacion.idubicacion
-        Inner Join libro ON libro.idubicacion=ubicacion.idubicacion
-        Inner Join prestamo ON prestamo.idusuario=usuario.idusuario 
-        Inner Join bibliotecario ON prestamo.idbibliotecario = bibliotecario.idbibliotecario
-        Group by usuario.idusuario", "usuario")
+        LlenarTabla(DatosGrid, "SELECT p.idprestamo AS '#', u.idusuario AS 'Codigo de usuario', u.nombre AS Nombre,
+        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS País,
+        ubicacion.ciudad AS Ciudad, ubicacion.nacionalidad AS Nacionalidad,
+        GROUP_CONCAT(DISTINCT l.titulo SEPARATOR ', ') AS 'Libros prestados', 
+        p.fechaprestamo AS 'Fecha de prestamo', p.fechadevolucion AS 'Fecha de devolucion',
+        p.cantidad AS Cantidad, p.estado AS Estado, b.nombre AS 'Nombre bibliotecario', b.apellido AS 'Apellido bibliotecario'
+        FROM Prestamo p
+        INNER JOIN detalleprestamo dp ON (p.idprestamo = dp.idprestamo)
+        INNER JOIN libro l ON (dp.idlibro = l.idlibro)
+        INNER JOIN usuario u ON (p.idusuario = u.idusuario)
+        INNER JOIN ubicacion ON u.idubicacion = ubicacion.idubicacion
+        INNER JOIN bibliotecario b ON p.idbibliotecario = b.idbibliotecario
+        GROUP BY p.idprestamo;", "prestamo")
         PopulateCombobox(CBBN, "bibliotecario", "nombre")
         PopulateCombobox(CBBA, "bibliotecario", "apellido")
     End Sub
@@ -30,7 +31,7 @@ Public Class Ventana_Registro
         Dim CrearPrestamo As String
         Dim CrearDetallePrestamo As String
         ConexionBD.AbrirConexion()
-        CrearUbicacion = "INSERT INTO ubicacion(pais,ciudad,nacionalidad) 
+        CrearUbicacion = "INSERT INTO ubicacion(pais,ciudad,nacionalidad)
         VALUES ('" & Pais.Text & "','" & Ciudad.Text & "','" & Nacionalidad.Text & "')"
         SaveData(CrearUbicacion)
         CrearUsuario = "INSERT INTO usuario (nombre,apellido,identificacion,idubicacion) 
@@ -38,7 +39,7 @@ Public Class Ventana_Registro
         SaveData(CrearUsuario)
         CrearPrestamo = "INSERT INTO prestamo (idusuario, idbibliotecario, fechaprestamo, fechadevolucion, cantidad, estado)
         VALUES ((SELECT idusuario FROM usuario WHERE identificacion = '" & IDUsuario.Text & "'), (SELECT idbibliotecario FROM bibliotecario WHERE nombre = '" & CBBN.SelectedItem & "')
-        ,'" & "STR_TO_DATE(FP.Value,'%d/%m/%Y')" & "','" & "STR_TO_DATE(FD.Value,'%d/%m/%Y')" & "','" & CantP.Text & "','" & CBEstado.SelectedItem & "')"
+        ,'" & FP.Value.Date & "','" & FD.Value.Date & "','" & CantP.Text & "','" & CBEstado.SelectedItem & "')"
         MsgBox(CrearPrestamo)
         SaveData(CrearPrestamo)
         CrearDetallePrestamo = "INSERT INTO detalleprestamo(idlibro,idprestamo)
@@ -82,33 +83,35 @@ Public Class Ventana_Registro
     End Sub
 
     Private Sub BTActualizar_Click(sender As Object, e As EventArgs) Handles BTActualizar.Click
-        LlenarTabla(DatosGrid, "Select usuario.idusuario as Código, usuario.nombre as Nombre, usuario.apellido as Apellido,
-        usuario.identificacion as Identificación, ubicacion.pais as País, ubicacion.ciudad as Ciudad, 
-        ubicacion.nacionalidad as Nacionalidad, libro.titulo as Libros,
-        prestamo.estado as Estado, prestamo.fechaprestamo as Prestamo,
-        prestamo.fechadevolucion as Devolución, prestamo.cantidad as Cantidad, bibliotecario.nombre as Nombre_B,
-        bibliotecario.apellido as Apellido_B
-        From Usuario
-        Inner Join ubicacion ON usuario.idubicacion=ubicacion.idubicacion
-        Inner Join libro ON libro.idubicacion=ubicacion.idubicacion
-        Inner Join prestamo ON prestamo.idusuario=usuario.idusuario 
-        Inner Join bibliotecario ON prestamo.idbibliotecario = bibliotecario.idbibliotecario
-        Group by usuario.idusuario", "usuario")
+        LlenarTabla(DatosGrid, "SELECT p.idprestamo AS '#', u.idusuario AS 'Codigo de usuario', u.nombre AS Nombre,
+        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS País,
+        ubicacion.ciudad AS Ciudad, ubicacion.nacionalidad AS Nacionalidad,
+        GROUP_CONCAT(DISTINCT l.titulo SEPARATOR ', ') AS 'Libros prestados', 
+        p.fechaprestamo AS 'Fecha de prestamo', p.fechadevolucion AS 'Fecha de devolucion',
+        p.cantidad AS Cantidad, p.estado AS Estado, b.nombre AS 'Nombre bibliotecario', b.apellido AS 'Apellido bibliotecario'
+        FROM Prestamo p
+        INNER JOIN detalleprestamo dp ON (p.idprestamo = dp.idprestamo)
+        INNER JOIN libro l ON (dp.idlibro = l.idlibro)
+        INNER JOIN usuario u ON (p.idusuario = u.idusuario)
+        INNER JOIN ubicacion ON u.idubicacion = ubicacion.idubicacion
+        INNER JOIN bibliotecario b ON p.idbibliotecario = b.idbibliotecario
+        GROUP BY p.idprestamo;", "prestamo")
     End Sub
 
     Private Sub TBBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TBBusqueda.TextChanged
-        LlenarTabla(DatosGrid, "Select usuario.idusuario As Código, usuario.nombre As Nombre, usuario.apellido As Apellido,
-        usuario.identificacion as Identificación, ubicacion.pais as País, ubicacion.ciudad as Ciudad, 
-        ubicacion.nacionalidad as Nacionalidad, libro.titulo as Libros,
-        prestamo.estado as Estado, prestamo.fechaprestamo as Prestamo,
-        prestamo.fechadevolucion as Devolución, prestamo.cantidad as Cantidad, bibliotecario.nombre as Nombre_B,
-        bibliotecario.apellido as Apellido_B
-        From Usuario
-        Inner Join ubicacion ON usuario.idubicacion=ubicacion.idubicacion
-        Inner Join libro ON libro.idubicacion=ubicacion.idubicacion
-        Inner Join prestamo ON prestamo.idusuario=usuario.idusuario 
-        Inner Join bibliotecario ON prestamo.idbibliotecario = bibliotecario.idbibliotecario
-        Group by usuario.idusuario Having usuario.nombre like '" & TBBusqueda.Text & "%'", "usuario")
+        LlenarTabla(DatosGrid, "SELECT p.idprestamo AS '#', u.idusuario AS 'Codigo de usuario', u.nombre AS Nombre,
+        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS País,
+        ubicacion.ciudad AS Ciudad, ubicacion.nacionalidad AS Nacionalidad,
+        GROUP_CONCAT(DISTINCT l.titulo SEPARATOR ', ') AS 'Libros prestados', 
+        p.fechaprestamo AS 'Fecha de prestamo', p.fechadevolucion AS 'Fecha de devolucion',
+        p.cantidad AS Cantidad, p.estado AS Estado, b.nombre AS 'Nombre bibliotecario', b.apellido AS 'Apellido bibliotecario'
+        FROM Prestamo p
+        INNER JOIN detalleprestamo dp ON (p.idprestamo = dp.idprestamo)
+        INNER JOIN libro l ON (dp.idlibro = l.idlibro)
+        INNER JOIN usuario u ON (p.idusuario = u.idusuario)
+        INNER JOIN ubicacion ON u.idubicacion = ubicacion.idubicacion
+        INNER JOIN bibliotecario b ON p.idbibliotecario = b.idbibliotecario
+        Group by u.idusuario Having u.nombre like '" & TBBusqueda.Text & "%'", "usuario")
     End Sub
 
     Private Sub Datos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DatosGrid.CellContentClick
@@ -156,6 +159,7 @@ Public Class Ventana_Registro
             IDUsuario.Clear()
             Pais.Clear()
             Ciudad.Clear()
+            CantP.Clear()
             Nacionalidad.Clear()
             ID.Clear()
             LBPrestamos.Clear()
@@ -165,5 +169,9 @@ Public Class Ventana_Registro
             FP.ResetText()
             FD.ResetText()
         End If
+    End Sub
+
+    Private Sub ID_TextChanged(sender As Object, e As EventArgs) Handles ID.TextChanged
+
     End Sub
 End Class
