@@ -46,6 +46,7 @@ Partial Class FReportes
         Me.BTCrear = New System.Windows.Forms.PictureBox()
         Me.RetornoIcon = New System.Windows.Forms.PictureBox()
         Me.BookLogo = New System.Windows.Forms.PictureBox()
+        Me.TBBusqueda = New System.Windows.Forms.TextBox()
         CType(Me.DGVReporte, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -288,11 +289,24 @@ Partial Class FReportes
         Me.BookLogo.TabIndex = 5
         Me.BookLogo.TabStop = False
         '
+        'TBBusqueda
+        '
+        Me.TBBusqueda.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.TBBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TBBusqueda.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBBusqueda.ForeColor = System.Drawing.Color.Gray
+        Me.TBBusqueda.Location = New System.Drawing.Point(112, 104)
+        Me.TBBusqueda.Multiline = True
+        Me.TBBusqueda.Name = "TBBusqueda"
+        Me.TBBusqueda.Size = New System.Drawing.Size(262, 33)
+        Me.TBBusqueda.TabIndex = 36
+        '
         'FReportes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1350, 729)
+        Me.Controls.Add(Me.TBBusqueda)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.LbEliminar)
         Me.Controls.Add(Me.LbActualizar)
@@ -345,4 +359,5 @@ Partial Class FReportes
     Friend WithEvents BTActualizar As PictureBox
     Friend WithEvents BTCrear As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents TBBusqueda As TextBox
 End Class
