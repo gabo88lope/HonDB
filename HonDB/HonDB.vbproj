@@ -116,6 +116,12 @@
     <Compile Include="FReportes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="HondDBA.Designer.vb">
+      <DependentUpon>HondDBA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HondDBA.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="OperacionesBD.vb" />
     <Compile Include="ConexionBD.vb" />
     <Compile Include="Encriptacion.vb" />
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HonDBSS.resx">
       <DependentUpon>HonDBSS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HondDBA.resx">
+      <DependentUpon>HondDBA.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
