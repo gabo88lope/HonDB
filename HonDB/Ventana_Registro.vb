@@ -54,8 +54,8 @@ Public Class Ventana_Registro
 
     Private Sub BTEditar_Click(sender As Object, e As EventArgs) Handles BTEditar.Click
         Dim EditarUsuario As String
-        EditarUsuario = "UPDATE usuario SET nombre = '" & NUsuario.Text & "', apellido = '" & AUsuario.Text & "' , identificacion = '" & AUsuario.Text & "' 
-        WHERE identificacion = '" & IDUsuario.Text & ""
+        EditarUsuario = "Update usuario Set nombre = '" & NUsuario.Text & "', apellido = '" & AUsuario.Text & "', 
+        identificacion = '" & IDUsuario.Text & " Where identificacion = " & IDUsuario.Text
         SaveData(EditarUsuario)
     End Sub
 
