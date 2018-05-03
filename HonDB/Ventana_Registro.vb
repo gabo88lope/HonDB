@@ -16,7 +16,8 @@ Public Class Ventana_Registro
         Inner Join prestamo ON prestamo.idusuario=usuario.idusuario 
         Inner Join bibliotecario ON prestamo.idbibliotecario = bibliotecario.idbibliotecario
         Group by usuario.idusuario", "usuario")
-        PopulateCombobox(CBEstado, "prestamo", "estado")
+        PopulateCombobox(CBBN, "bibliotecario", "nombre")
+        PopulateCombobox(CBBA, "bibliotecario", "apellido")
     End Sub
 
     Private Sub RetornoIcon_Click(sender As Object, e As EventArgs) Handles RetornoIcon.Click
@@ -26,6 +27,8 @@ Public Class Ventana_Registro
     Private Sub BTCrear_Click(sender As Object, e As EventArgs) Handles BTCrear.Click
         Dim CrearUsuario As String
         Dim CrearUbicacion As String
+        Dim CrearPrestamo As String
+        Dim CrearDetallePrestamo As String
         ConexionBD.AbrirConexion()
         CrearUbicacion = "INSERT INTO ubicacion(pais,ciudad,nacionalidad) 
         VALUES ('" & Pais.Text & "','" & Ciudad.Text & "','" & Nacionalidad.Text & "')"
@@ -33,6 +36,13 @@ Public Class Ventana_Registro
         CrearUsuario = "INSERT INTO usuario (nombre,apellido,identificacion,idubicacion) 
         VALUES ('" & NUsuario.Text & "','" & AUsuario.Text & "','" & IDUsuario.Text & "', (SELECT idubicacion FROM ubicacion WHERE ciudad = '" & Ciudad.Text & "'))"
         SaveData(CrearUsuario)
+        CrearPrestamo = "INSERT INTO prestamo (idusuario, idbibliotecario, fechaprestamo, fechadevolucion, cantidad, estado)
+        VALUES ((SELECT idusuario FROM usuario WHERE identificacion = '" & IDUsuario.Text & "'), (SELECT idbibliotecario FROM bibliotecario WHERE identificacion = '" & CBBN.SelectedItem & "')
+        ,'" & FP.Value & "','" & FD.Value & "','" & CantP.Text & "','" & CBEstado.SelectedItem & "')"
+        SaveData(CrearPrestamo)
+        CrearDetallePrestamo = "INSERT INTO detalleprestamo(idlibro,idprestamo)
+        VALUES ((SELECT idlibro FROM libro WHERE titulo = '" & LBPrestamos.Text & "') , (SELECT idusuario FROM prestamo WHERE identificacion = '" & IDUsuario.Text & "'))"
+        SaveData(CrearDetallePrestamo)
         MsgBox("Préstamo creado exitosamente")
         NUsuario.Clear()
         AUsuario.Clear()
@@ -42,8 +52,15 @@ Public Class Ventana_Registro
         Nacionalidad.Clear()
     End Sub
 
+    Private Sub BTEditar_Click(sender As Object, e As EventArgs) Handles BTEditar.Click
+        Dim EditarUsuario As String
+        EditarUsuario = "UPDATE usuario SET nombre = '" & NUsuario.Text & "', apellido = '" & AUsuario.Text & "' , identificacion = '" & AUsuario.Text & "' 
+        WHERE identificacion = '" & IDUsuario.Text & ""
+        SaveData(EditarUsuario)
+    End Sub
+
     Private Sub TBBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TBBusqueda.TextChanged
-        LlenarTabla(DatosGrid, "Select usuario.idusuario as Código, usuario.nombre as Nombre, usuario.apellido as Apellido,
+        LlenarTabla(DatosGrid, "Select usuario.idusuario As Código, usuario.nombre As Nombre, usuario.apellido As Apellido,
         usuario.identificacion as Identificación, ubicacion.pais as País, ubicacion.ciudad as Ciudad, 
         ubicacion.nacionalidad as Nacionalidad, libro.titulo as Libros,
         prestamo.estado as Estado, prestamo.fechaprestamo as Prestamo,
@@ -59,6 +76,21 @@ Public Class Ventana_Registro
 
     Private Sub Datos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DatosGrid.CellContentClick
         DatosGrid.Rows(e.RowIndex).Selected = True
+        Dim S As Integer
+        S = DatosGrid.CurrentRow.Index
+        NUsuario.Text = DatosGrid.Item(1, S).Value()
+        AUsuario.Text = DatosGrid.Item(2, S).Value()
+        IDUsuario.Text = DatosGrid.Item(3, S).Value()
+        Pais.Text = DatosGrid.Item(4, S).Value()
+        Ciudad.Text = DatosGrid.Item(5, S).Value()
+        Nacionalidad.Text = DatosGrid.Item(6, S).Value()
+        LBPrestamos.Text = DatosGrid.Item(7, S).Value()
+        CBEstado.Text = DatosGrid.Item(8, S).Value()
+        FP.Text = DatosGrid.Item(9, S).Value()
+        FD.Text = DatosGrid.Item(10, S).Value()
+        CantP.Text = DatosGrid.Item(11, S).Value()
+        CBBN.SelectedItem = DatosGrid.Item(12, S).Value()
+        CBBA.SelectedItem = DatosGrid.Item(13, S).Value()
     End Sub
 
     Private Sub BTActualizar_Click(sender As Object, e As EventArgs) Handles BTActualizar.Click
@@ -75,6 +107,5 @@ Public Class Ventana_Registro
         Inner Join bibliotecario ON prestamo.idbibliotecario = bibliotecario.idbibliotecario
         Group by usuario.idusuario", "usuario")
     End Sub
-
 
 End Class

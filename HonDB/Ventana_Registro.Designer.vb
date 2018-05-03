@@ -78,7 +78,9 @@ Partial Class Ventana_Registro
         Me.Ciudad = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.LBNac = New System.Windows.Forms.Label()
-        Me.CBB = New System.Windows.Forms.ComboBox()
+        Me.CBBN = New System.Windows.Forms.ComboBox()
+        Me.CBBA = New System.Windows.Forms.ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         CType(Me.DatosGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTActualizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -538,6 +540,7 @@ Partial Class Ventana_Registro
         Me.CBEstado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
         Me.CBEstado.FormattingEnabled = True
         Me.CBEstado.IntegralHeight = False
+        Me.CBEstado.Items.AddRange(New Object() {"Préstamo Vigente", "Préstamo Vencido", "Préstamo Finalizado"})
         Me.CBEstado.Location = New System.Drawing.Point(1057, 500)
         Me.CBEstado.Margin = New System.Windows.Forms.Padding(6)
         Me.CBEstado.Name = "CBEstado"
@@ -612,11 +615,11 @@ Partial Class Ventana_Registro
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.DimGray
-        Me.Label9.Location = New System.Drawing.Point(758, 550)
+        Me.Label9.Location = New System.Drawing.Point(762, 550)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(108, 21)
+        Me.Label9.Size = New System.Drawing.Size(175, 21)
         Me.Label9.TabIndex = 38
-        Me.Label9.Text = "Bibliotecario"
+        Me.Label9.Text = "Nombre Bibliotecario"
         '
         'Label10
         '
@@ -687,19 +690,45 @@ Partial Class Ventana_Registro
         Me.LBNac.TabIndex = 47
         Me.LBNac.Text = "Nacionalidad"
         '
-        'CBB
+        'CBBN
         '
-        Me.CBB.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.CBB.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CBB.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBB.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.CBB.FormattingEnabled = True
-        Me.CBB.IntegralHeight = False
-        Me.CBB.Location = New System.Drawing.Point(762, 577)
-        Me.CBB.Margin = New System.Windows.Forms.Padding(6)
-        Me.CBB.Name = "CBB"
-        Me.CBB.Size = New System.Drawing.Size(200, 29)
-        Me.CBB.TabIndex = 48
+        Me.CBBN.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CBBN.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CBBN.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBBN.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.CBBN.FormattingEnabled = True
+        Me.CBBN.IntegralHeight = False
+        Me.CBBN.Location = New System.Drawing.Point(762, 577)
+        Me.CBBN.Margin = New System.Windows.Forms.Padding(6)
+        Me.CBBN.Name = "CBBN"
+        Me.CBBN.Size = New System.Drawing.Size(200, 29)
+        Me.CBBN.TabIndex = 48
+        '
+        'CBBA
+        '
+        Me.CBBA.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CBBA.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CBBA.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBBA.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.CBBA.FormattingEnabled = True
+        Me.CBBA.IntegralHeight = False
+        Me.CBBA.Location = New System.Drawing.Point(1057, 577)
+        Me.CBBA.Margin = New System.Windows.Forms.Padding(6)
+        Me.CBBA.Name = "CBBA"
+        Me.CBBA.Size = New System.Drawing.Size(200, 29)
+        Me.CBBA.TabIndex = 49
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.DimGray
+        Me.Label11.Location = New System.Drawing.Point(1056, 550)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(177, 21)
+        Me.Label11.TabIndex = 50
+        Me.Label11.Text = "Apellido Bibliotecario"
         '
         'Ventana_Registro
         '
@@ -707,7 +736,9 @@ Partial Class Ventana_Registro
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1350, 729)
-        Me.Controls.Add(Me.CBB)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.CBBA)
+        Me.Controls.Add(Me.CBBN)
         Me.Controls.Add(Me.LBNac)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Nacionalidad)
@@ -820,5 +851,7 @@ Partial Class Ventana_Registro
     Friend WithEvents Ciudad As TextBox
     Friend WithEvents Label12 As Label
     Friend WithEvents LBNac As Label
-    Friend WithEvents CBB As ComboBox
+    Friend WithEvents CBBN As ComboBox
+    Friend WithEvents CBBA As ComboBox
+    Friend WithEvents Label11 As Label
 End Class
