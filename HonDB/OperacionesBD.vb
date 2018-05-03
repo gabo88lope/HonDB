@@ -63,11 +63,11 @@ Module OperacionesBD
             conexion.Close()
         Catch ex As Exception
             'MessageBox.Show("Ha ocurrido un error al guardar, verique el ingreso correcto de campos", "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            MsgBox(ex.Message)
+            MessageBox.Show(ex.Message)
         End Try
     End Sub
 
-    Public Function verificarRE(ByVal query As String, ByVal parametro As String) As Boolean
+    Public Function VerificarRE(ByVal query As String, ByVal parametro As String) As Boolean
         AbrirConexion()
         comando = New MySqlCommand(query, conexion)
         reader = comando.ExecuteReader
@@ -86,21 +86,4 @@ Module OperacionesBD
         End If
     End Function
 
-    Public Sub llenarLista(ByRef lista As ListBox, ByVal tabla As String, ByVal columna As String)
-        Try
-            AbrirConexion()
-            consulta = "SELECT * FROM " & tabla & " Order by " & columna & " asc"
-            command = New MySqlCommand(consulta, conexion)
-            reader = command.ExecuteReader
-
-            While reader.Read
-                Dim aNombre = reader.GetString(columna)
-                lista.Items.Add(aNombre)
-            End While
-
-            conexion.Close()
-        Catch ex As Exception
-
-        End Try
-    End Sub
 End Module
