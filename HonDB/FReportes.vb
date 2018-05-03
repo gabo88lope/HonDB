@@ -102,6 +102,8 @@ Public Class FReportes
                                         GROUP BY fechaprestamo
                                         ORDER BY fechaprestamo DESC;", "prestamo")
             Case 5
+
+            Case 6
                 LlenarTabla(DGVReporte, "SELECT 
                                             p.idprestamo AS 'Codigo de prestamo',
                                             u.idusuario AS 'Codigo de usuario',
@@ -125,8 +127,6 @@ Public Class FReportes
                                         WHERE
                                             p.fechaprestamo = curdate()
                                         GROUP BY p.idprestamo", "prestamo")
-            Case 6
-
             Case 7
 
             Case Else
