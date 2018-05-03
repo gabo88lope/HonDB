@@ -12,7 +12,7 @@ Public Class FReportes
                 DGVReporte.Rows.Clear()
             Case 1
                 LlenarTabla(DGVReporte, "SELECT 
-                                            p.idprestamo AS '#',
+                                            p.idprestamo AS 'Codigo de prestamo',
                                             u.idusuario AS 'Codigo de usuario',
                                             u.nombre AS Nombre,
                                             u.apellido AS Apellido,
@@ -102,7 +102,29 @@ Public Class FReportes
                                         GROUP BY fechaprestamo
                                         ORDER BY fechaprestamo DESC;", "prestamo")
             Case 5
-
+                LlenarTabla(DGVReporte, "SELECT 
+                                            p.idprestamo AS 'Codigo de prestamo',
+                                            u.idusuario AS 'Codigo de usuario',
+                                            u.nombre AS Nombre,
+                                            u.apellido AS Apellido,
+                                            p.fechaprestamo AS 'Fecha de prestamo',
+                                            p.fechadevolucion AS 'Fecha de devolucion',
+                                            p.cantidad AS Cantidad,
+                                            GROUP_CONCAT(DISTINCT l.titulo
+                                                SEPARATOR ', ') AS 'Libros prestados'
+                                        FROM
+                                            Prestamo p
+                                                INNER JOIN
+                                            detalleprestamo dp ON (p.idprestamo = dp.idprestamo)
+                                                INNER JOIN
+                                            libro l ON (dp.idlibro = l.idlibro)
+                                                INNER JOIN
+                                            usuario u ON (p.idusuario = u.idusuario)
+                                                INNER JOIN
+                                            bibliotecario b ON p.idbibliotecario = b.idbibliotecario
+                                        WHERE
+                                            p.fechaprestamo = curdate()
+                                        GROUP BY p.idprestamo", "prestamo")
             Case 6
 
             Case 7
