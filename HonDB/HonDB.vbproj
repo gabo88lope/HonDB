@@ -109,10 +109,17 @@
     <Compile Include="Busqueda.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ExportarExcel.vb" />
     <Compile Include="FReportes.Designer.vb">
       <DependentUpon>FReportes.vb</DependentUpon>
     </Compile>
     <Compile Include="FReportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HondDBA.Designer.vb">
+      <DependentUpon>HondDBA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HondDBA.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OperacionesBD.vb" />
@@ -174,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HonDBSS.resx">
       <DependentUpon>HonDBSS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HondDBA.resx">
+      <DependentUpon>HondDBA.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
@@ -253,6 +263,7 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <None Include="Resources\icons8-csv-64.png" />
     <None Include="Resources\BotonAcercade.png" />
     <None Include="Resources\BotonSalir.png" />
     <None Include="Resources\BotonAdministrar-031.png" />
