@@ -81,6 +81,9 @@ Partial Class Ventana_Registro
         Me.CBBN = New System.Windows.Forms.ComboBox()
         Me.CBBA = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.ID = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.CBEdit = New System.Windows.Forms.CheckBox()
         CType(Me.DatosGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTActualizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -564,9 +567,10 @@ Partial Class Ventana_Registro
         Me.FD.CalendarForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
         Me.FD.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText
         Me.FD.CalendarTitleForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.FD.CustomFormat = "d/m/yyyy"
         Me.FD.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
         Me.FD.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FD.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.FD.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.FD.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.FD.Location = New System.Drawing.Point(902, 500)
         Me.FD.Name = "FD"
@@ -576,9 +580,10 @@ Partial Class Ventana_Registro
         'FP
         '
         Me.FP.CalendarForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.FP.CustomFormat = "d/m/yyyy"
         Me.FP.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
         Me.FP.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FP.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.FP.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.FP.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.FP.Location = New System.Drawing.Point(762, 500)
         Me.FP.Name = "FP"
@@ -730,12 +735,51 @@ Partial Class Ventana_Registro
         Me.Label11.TabIndex = 50
         Me.Label11.Text = "Apellido Bibliotecario"
         '
+        'ID
+        '
+        Me.ID.BackColor = System.Drawing.SystemColors.Control
+        Me.ID.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.ID.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.ID.Location = New System.Drawing.Point(762, 615)
+        Me.ID.Name = "ID"
+        Me.ID.Size = New System.Drawing.Size(68, 22)
+        Me.ID.TabIndex = 51
+        Me.ID.Visible = False
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.Color.Transparent
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.DimGray
+        Me.Label13.Location = New System.Drawing.Point(392, 108)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(182, 21)
+        Me.Label13.TabIndex = 52
+        Me.Label13.Text = "Búsqueda por Nombre"
+        '
+        'CBEdit
+        '
+        Me.CBEdit.AutoSize = True
+        Me.CBEdit.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBEdit.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CBEdit.Location = New System.Drawing.Point(580, 133)
+        Me.CBEdit.Name = "CBEdit"
+        Me.CBEdit.Size = New System.Drawing.Size(150, 25)
+        Me.CBEdit.TabIndex = 53
+        Me.CBEdit.Text = "Editar Préstamo"
+        Me.CBEdit.UseVisualStyleBackColor = True
+        '
         'Ventana_Registro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1350, 729)
+        Me.Controls.Add(Me.CBEdit)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.ID)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.CBBA)
         Me.Controls.Add(Me.CBBN)
@@ -854,4 +898,7 @@ Partial Class Ventana_Registro
     Friend WithEvents CBBN As ComboBox
     Friend WithEvents CBBA As ComboBox
     Friend WithEvents Label11 As Label
+    Friend WithEvents ID As TextBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents CBEdit As CheckBox
 End Class
