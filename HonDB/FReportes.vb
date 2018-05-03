@@ -1,4 +1,6 @@
-﻿Public Class FReportes
+﻿Imports HonDB.ExportarExcel
+
+Public Class FReportes
     Private Sub RetornoIcon_Click(sender As Object, e As EventArgs) Handles RetornoIcon.Click
         Me.Close()
     End Sub
@@ -51,4 +53,8 @@
         Return cbitems
 
     End Function
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        EExcel(DGVReporte)
+    End Sub
 End Class
