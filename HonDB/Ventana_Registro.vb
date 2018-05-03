@@ -99,7 +99,8 @@ Public Class Ventana_Registro
     End Sub
 
     Private Sub TBBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TBBusqueda.TextChanged
-        LlenarTabla(DatosGrid, "SELECT p.idprestamo AS '#', u.idusuario AS 'Codigo de usuario', u.nombre AS Nombre,
+        If CBFiltro.Text = "Nombre" Then
+            LlenarTabla(DatosGrid, "SELECT p.idprestamo AS '#', u.idusuario AS 'Codigo de usuario', u.nombre AS Nombre,
         u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS País,
         ubicacion.ciudad AS Ciudad, ubicacion.nacionalidad AS Nacionalidad,
         GROUP_CONCAT(DISTINCT l.titulo SEPARATOR ', ') AS 'Libros prestados', 
@@ -112,6 +113,22 @@ Public Class Ventana_Registro
         INNER JOIN ubicacion ON u.idubicacion = ubicacion.idubicacion
         INNER JOIN bibliotecario b ON p.idbibliotecario = b.idbibliotecario
         Group by u.idusuario Having u.nombre like '" & TBBusqueda.Text & "%'", "usuario")
+
+        ElseIf CBFiltro.Text = "Identificación" Then
+            LlenarTabla(DatosGrid, "SELECT p.idprestamo AS '#', u.idusuario AS 'Codigo de usuario', u.nombre AS Nombre,
+        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS País,
+        ubicacion.ciudad AS Ciudad, ubicacion.nacionalidad AS Nacionalidad,
+        GROUP_CONCAT(DISTINCT l.titulo SEPARATOR ', ') AS 'Libros prestados', 
+        p.fechaprestamo AS 'Fecha de prestamo', p.fechadevolucion AS 'Fecha de devolucion',
+        p.cantidad AS Cantidad, p.estado AS Estado, b.nombre AS 'Nombre bibliotecario', b.apellido AS 'Apellido bibliotecario'
+        FROM Prestamo p
+        INNER JOIN detalleprestamo dp ON (p.idprestamo = dp.idprestamo)
+        INNER JOIN libro l ON (dp.idlibro = l.idlibro)
+        INNER JOIN usuario u ON (p.idusuario = u.idusuario)
+        INNER JOIN ubicacion ON u.idubicacion = ubicacion.idubicacion
+        INNER JOIN bibliotecario b ON p.idbibliotecario = b.idbibliotecario
+        Group by u.idusuario Having u.identificacion like '" & TBBusqueda.Text & "%'", "usuario")
+        End If
     End Sub
 
     Private Sub Datos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DatosGrid.CellContentClick
