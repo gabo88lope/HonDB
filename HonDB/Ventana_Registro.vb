@@ -112,7 +112,6 @@ Public Class Ventana_Registro
     End Sub
 
     Private Sub Datos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DatosGrid.CellContentClick
-        'DatosGrid.Rows(e.RowIndex).Selected = True
         If CBEdit.Checked = True Then
             Dim S As Integer
             S = DatosGrid.CurrentRow.Index
