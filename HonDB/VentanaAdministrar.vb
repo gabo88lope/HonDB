@@ -21,6 +21,8 @@ Public Class VentanaAdministrar
         LlenarTabla(tablaBibliotecario, queryBiblioTabla, "bibliotecario")
         llenarLista(listaTipoDoc, "tipodocumento", "nombre")
         llenarLista(listaEditoriales, "editorial", "nombre")
+        LlenarTabla(tablaUbicaciones, queryUbicacionesTabla, "ubicacion")
+        LlenarTabla(tablaCG, queryTablaCG, "categoriageneral")
         'PopulateCombobox(SearchWayCb, "usuario", "sexo")
         'SearchWayCb.Items.Add("Código")
         SearchWayCb.Items.Add("Cédula")
@@ -478,6 +480,7 @@ Public Class VentanaAdministrar
         End If
     End Sub
 
+
     Private Sub guardarTD_Click(sender As Object, e As EventArgs) Handles guardarTD.Click
         Dim opc = MessageBox.Show("¿Desea guardar los cambios?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If verificarRE("SELECT * FROM tipodocumento where nombre = '" & txtTipoDoc.Text & "'", "Tipo documento") <> True Then
@@ -491,6 +494,7 @@ Public Class VentanaAdministrar
         End If
     End Sub
 
+
     Private Sub cancelarTD_Click(sender As Object, e As EventArgs) Handles cancelarTD.Click
         PanelTD.Visible = False
         btEliminarTD.Enabled = True
@@ -500,6 +504,183 @@ Public Class VentanaAdministrar
     End Sub
 
     '----------------------------------------------------------------------
+    ' Editoriales
+    Private Sub nuevoEditorial_Click(sender As Object, e As EventArgs) Handles nuevoEditorial.Click
+        PanelDatosEdit.Visible = True
+        editarEditorial.Enabled = False
+        eliminarEditorial.Enabled = False
+        PopulateCombobox(CBCiudadEd, "ubicacion", "ciudad")
+    End Sub
 
+
+    Private Sub cancelarEditorial_Click(sender As Object, e As EventArgs) Handles cancelarEditorial.Click
+        PanelDatosEdit.Visible = False
+        editarEditorial.Enabled = True
+        eliminarEditorial.Enabled = True
+        edicion = False
+    End Sub
+
+
+    Private Sub eliminarEditorial_Click(sender As Object, e As EventArgs) Handles eliminarEditorial.Click
+        Dim opc = MessageBox.Show("¿Desea eliminar este registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If opc = DialogResult.Yes Then
+            SaveData("DELETE FROM editorial WHERE nombre = '" & listaEditoriales.SelectedItem & "'")
+        End If
+    End Sub
+
+    Private Sub actualizarEditorial_Click(sender As Object, e As EventArgs) Handles actualizarEditorial.Click
+        listaEditoriales.Items.Clear()
+        llenarLista(listaEditoriales, "editorial", "nombre")
+    End Sub
+
+
+
+    Private Sub editarEditorial_Click(sender As Object, e As EventArgs) Handles editarEditorial.Click
+        edicion = True
+        PanelDatosEdit.Visible = True
+        editarEditorial.Enabled = False
+        eliminarEditorial.Enabled = False
+        Dim var As String
+
+        Try
+            AbrirConexion()
+            Dim query = "SELECT * FROM editorial WHERE nombre = '" & listaEditoriales.SelectedItem & "'"
+            command = New MySqlCommand(query, conexion)
+            reader = command.ExecuteReader
+            reader.Read()
+            idActual = reader.GetInt32("ideditorial")
+
+            txtEditorial.Text = listaEditoriales.SelectedItem
+            Dim idUb = reader.GetInt32("idubicacion")
+            conexion.Close()
+            query = "SELECT * From ubicacion WHERE idubicacion = " & idUb & ""
+            AbrirConexion()
+            command = New MySqlCommand(query, conexion)
+            reader = command.ExecuteReader
+            reader.Read()
+            var = reader.GetString("Ciudad")
+            PopulateCombobox(CBCiudadEd, "ubicacion", "ciudad")
+            CBCiudadEd.SelectedItem = var
+            conexion.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+
+    Private Sub guardarEditorial_Click(sender As Object, e As EventArgs) Handles guardarEditorial.Click
+        Dim opc = MessageBox.Show("¿Desea guardar los cambios?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If verificarRE("SELECT * FROM editorial where nombre = '" & txtEditorial.Text & "'", "editorial") <> True Then
+            If edicion <> True Then
+
+                Dim subQ = "(SELECT idubicacion from ubicacion Where ciudad = '" & CBCiudadEd.SelectedItem & "')"
+                Dim query = "INSERT INTO editorial (nombre, idubicacion) values ('" & txtEditorial.Text & "'," & subQ & ")"
+                SaveData(query)
+            Else
+                Dim subQ = "(SELECT idubicacion from ubicacion Where ciudad = '" & CBCiudadEd.SelectedItem & "')"
+                Dim query = "Update editorial SET nombre = '" & txtEditorial.Text & "', idubicacion = " & subQ & "
+                WHERE ideditorial = " & idActual
+                SaveData(query)
+            End If
+
+        End If
+    End Sub
+
+    '----------------------------------------------------------------------------
+    ' Ubicaciones
+
+    Private Sub btCrearUbi_Click(sender As Object, e As EventArgs) Handles btCrearUbi.Click
+        PanelDatosUbi.Visible = True
+        btEditarUbi.Enabled = False
+        btEliminarUbi.Enabled = False
+    End Sub
+
+    Private Sub btCancelarUbi_Click(sender As Object, e As EventArgs) Handles btCancelarUbi.Click
+        PanelDatosUbi.Visible = False
+        btEditarUbi.Enabled = True
+        btEliminarUbi.Enabled = True
+        edicion = False
+        txtNacionalidad.Text = ""
+        txtPais.Text = ""
+        txtCiudad.Text = ""
+    End Sub
+
+
+    Private Sub btEditarUbi_Click(sender As Object, e As EventArgs) Handles btEditarUbi.Click
+        PanelDatosUbi.Visible = True
+        btEditarUbi.Enabled = False
+        btEliminarUbi.Enabled = False
+        edicion = True
+        idActual = indexSelected
+
+        Try
+            AbrirConexion()
+            Dim query = "SELECT * FROM ubicacion WHERE idubicacion = " & idActual
+            command = New MySqlCommand(query, conexion)
+            reader = command.ExecuteReader
+            reader.Read()
+
+            txtCiudad.Text = reader.GetString("Ciudad")
+            txtPais.Text = reader.GetString("pais")
+            txtNacionalidad.Text = reader.GetString("nacionalidad")
+            conexion.Close()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+
+    Private Sub tablaUbicaciones_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles tablaUbicaciones.CellClick
+        Dim value As Object = tablaUbicaciones.CurrentRow.Cells(0).Value
+
+        Try
+            indexSelected = CType(value, Integer)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+
+
+    Private Sub btEliminarUbi_Click(sender As Object, e As EventArgs) Handles btEliminarUbi.Click
+        Dim opc = MessageBox.Show("¿Desea eliminar este registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If opc = DialogResult.Yes Then
+            SaveData("DELETE FROM ubicacion WHERE idubicacion = " & indexSelected)
+        End If
+    End Sub
+
+    Private Sub btGuardarUbi_Click(sender As Object, e As EventArgs) Handles btGuardarUbi.Click
+        Dim opc = MessageBox.Show("¿Desea guardar los cambios?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If opc = DialogResult.Yes Then
+            If edicion = True Then
+                Dim query = "UPDATE ubicacion SET ciudad = '" & txtCiudad.Text & "', pais = '" & txtPais.Text & "', nacionalidad = 
+                '" & txtNacionalidad.Text & "' WHERE idubicacion = " & idActual
+                SaveData(query)
+
+            Else
+                Dim query = "INSERT INTO ubicacion (ciudad, pais , nacionalidad) values ('" & txtCiudad.Text & "','" & txtPais.Text & "',
+                '" & txtNacionalidad.Text & "')"
+                SaveData(query)
+            End If
+        End If
+    End Sub
+
+
+    '----------------------------------------------------------------------------
+    ' Categoría General
+    Private Sub txtCodigoG_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCodigoG.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+
+        Else
+            e.Handled = True
+        End If
+    End Sub
 
 End Class

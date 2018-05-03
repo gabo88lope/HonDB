@@ -33,4 +33,8 @@ Module ConsultaTablas
     Public queryBiblioTabla = "SELECT idbibliotecario as Código, nombre as Nombre, apellido as Apellido, usuario as Usuario
     FROM bibliotecario"
 
+    Public queryUbicacionesTabla = "SELECT idubicacion as Código, ciudad as Ciudad, pais as País, nacionalidad as Nacionalidad
+    FROM ubicacion"
+
+    Public queryTablaCG = "SELECT codigogeneral as CódigoGeneral, nombre as Nombre FROM categoriageneral"
 End Module

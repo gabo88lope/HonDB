@@ -62,7 +62,8 @@ Module OperacionesBD
             MessageBox.Show("Datos guardados correctamente", "Proceso exitoso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             conexion.Close()
         Catch ex As Exception
-            MessageBox.Show("Ha ocurrido un error al guardar, verique el ingreso correcto de campos", "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            'MessageBox.Show("Ha ocurrido un error al guardar, verique el ingreso correcto de campos", "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MsgBox(ex.Message)
         End Try
     End Sub
 
