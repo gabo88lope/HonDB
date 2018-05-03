@@ -54,7 +54,7 @@ Public Class FReportes
 
     End Function
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
+    Private Sub BTCrear_Click(sender As Object, e As EventArgs) Handles BTCrear.Click
         EExcel(DGVReporte)
     End Sub
 End Class
