@@ -38,7 +38,7 @@ Public Class Ventana_Registro
         SaveData(CrearUsuario)
         CrearPrestamo = "INSERT INTO prestamo (idusuario, idbibliotecario, fechaprestamo, fechadevolucion, cantidad, estado)
         VALUES ((SELECT idusuario FROM usuario WHERE identificacion = '" & IDUsuario.Text & "'), (SELECT idbibliotecario FROM bibliotecario WHERE nombre = '" & CBBN.SelectedItem & "')
-        ,'" & FP.Value & "','" & FD.Value & "','" & CantP.Text & "','" & CBEstado.SelectedItem & "')"
+        ,'" & "STR_TO_DATE(FP.Value,'%d/%m/%Y')" & "','" & "STR_TO_DATE(FD.Value,'%d/%m/%Y')" & "','" & CantP.Text & "','" & CBEstado.SelectedItem & "')"
         MsgBox(CrearPrestamo)
         SaveData(CrearPrestamo)
         CrearDetallePrestamo = "INSERT INTO detalleprestamo(idlibro,idprestamo)
@@ -130,8 +130,7 @@ Public Class Ventana_Registro
             CantP.Text = DatosGrid.Item(11, S).Value()
             CBBN.SelectedItem = DatosGrid.Item(12, S).Value()
             CBBA.SelectedItem = DatosGrid.Item(13, S).Value()
-        End If
-        If CBEdit.Checked = False Then
+        ElseIf CBEdit.Checked = False Then
             NUsuario.Clear()
             AUsuario.Clear()
             IDUsuario.Clear()
@@ -147,5 +146,6 @@ Public Class Ventana_Registro
             FD.ResetText()
         End If
     End Sub
+
 
 End Class
