@@ -38,7 +38,7 @@ Public Class Ventana_Registro
         SaveData(CrearUsuario)
         CrearPrestamo = "INSERT INTO prestamo (idusuario, idbibliotecario, fechaprestamo, fechadevolucion, cantidad, estado)
         VALUES ((SELECT idusuario FROM usuario WHERE identificacion = '" & IDUsuario.Text & "'), (SELECT idbibliotecario FROM bibliotecario WHERE nombre = '" & CBBN.SelectedItem & "')
-        ,'" & "STR_TO_DATE(FP.Value,'%d/%m/%Y')" & "','" & "STR_TO_DATE(FD.Value,'%d/%m/%Y')" & "','" & CantP.Text & "','" & CBEstado.SelectedItem & "')"
+        ,'" & FP.Value.Date & "','" & FD.Value.Date & "','" & CantP.Text & "','" & CBEstado.SelectedItem & "')"
         MsgBox(CrearPrestamo)
         SaveData(CrearPrestamo)
         CrearDetallePrestamo = "INSERT INTO detalleprestamo(idlibro,idprestamo)
@@ -156,6 +156,7 @@ Public Class Ventana_Registro
             IDUsuario.Clear()
             Pais.Clear()
             Ciudad.Clear()
+            CantP.Clear()
             Nacionalidad.Clear()
             ID.Clear()
             LBPrestamos.Clear()
@@ -165,5 +166,9 @@ Public Class Ventana_Registro
             FP.ResetText()
             FD.ResetText()
         End If
+    End Sub
+
+    Private Sub ID_TextChanged(sender As Object, e As EventArgs) Handles ID.TextChanged
+
     End Sub
 End Class
