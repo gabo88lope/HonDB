@@ -69,7 +69,7 @@ Public Class Ventana_Registro
         EditarPrestamo = "Update prestamo Set fechaprestamo = '" & FP.Value.Date & "', fechadevolucion = '" & FD.Value.Date & "', 
         cantidad = '" & CantP.Text & "' Where idprestamo = " & idPrestamo.Text
         MsgBox(EditarPrestamo)
-        SaveData(EditarPrestamo)
+        'SaveData(EditarPrestamo)
     End Sub
 
     Private Sub BTEliminar_Click(sender As Object, e As EventArgs) Handles BTEliminar.Click
