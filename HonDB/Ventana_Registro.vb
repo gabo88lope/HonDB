@@ -77,7 +77,6 @@ Public Class Ventana_Registro
         Dim Decision = MessageBox.Show("¿Desea eliminar este préstamo?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If Decision = DialogResult.Yes Then
             EliminarDetalleP = "DELETE FROM detalleprestamo WHERE idprestamo = " & idPrestamo.Text
-            TextBox1.Text = EliminarDetalleP
             SaveData(EliminarDetalleP)
             EliminarPrestamo = "DELETE FROM prestamo WHERE idprestamo = " & idPrestamo.Text
             SaveData(EliminarPrestamo)
