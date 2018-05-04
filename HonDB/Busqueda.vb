@@ -2,8 +2,6 @@
 Imports MySql.Data.MySqlClient
 
 Public Class Busqueda
-    Dim constr As String = "Server=localhost;user id=root;Password=12345678;database = hondb"
-    Dim con As New MySqlConnection(constr)
     Dim codigo As Integer
 
     Private Sub BTCancelar_Click(sender As Object, e As EventArgs) Handles BotonCancelarBusqueda.Click
