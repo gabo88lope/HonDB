@@ -128,7 +128,26 @@ Public Class FReportes
                                             p.fechaprestamo = curdate()
                                         GROUP BY p.idprestamo", "prestamo")
             Case 7
-
+                LlenarTabla(DGVReporte, "SELECT 
+                                            l.idlibro AS 'Codigo de libro',
+                                            l.isbn AS ISBN,
+                                            l.depositolegal AS 'Deposito legal',
+                                            l.titulo AS 'Titulo del Libro',
+                                            l.edicion AS Edicion,
+                                            YEAR(l.fechapublicacion) AS 'Fecha de publicacion',
+                                            l.paginas AS Paginas,
+                                            l.numejemplares AS 'Numero de ejemplares',
+                                            CONCAT_WS(', ', u.ciudad, u.pais) AS 'Lugar de publicacion',
+                                            td.nombre AS 'Tipo de material',
+                                            CONCAT(LPAD(codigogeneral, 3, '0'),
+                                                    ' - ',
+                                                    LPAD(codigoespecial, 3, '0')) AS 'Clasificacion de libro'
+                                        FROM
+                                            libro l
+                                                INNER JOIN
+                                            ubicacion u ON (l.idubicacion = u.idubicacion)
+                                                INNER JOIN
+                                            tipodocumento td ON (l.idtipodocumento = td.idtipodocumento)", "libro")
             Case Else
 
         End Select
