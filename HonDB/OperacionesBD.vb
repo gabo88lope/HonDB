@@ -8,7 +8,8 @@ Module OperacionesBD
         Try
             Return My.Computer.Network.Ping("www.google.com.ni")
         Catch ex As Exception
-            Return False
+            Return Nothing
+            EMsg.Show("No hay conexión a internet", ex)
         End Try
 
     End Function
@@ -25,7 +26,7 @@ Module OperacionesBD
                 cb.Items.Add(aNombre)
             End While
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EMsg.Show("No se ha podido llenar el control. Contacte a su administrador", ex)
         Finally
             conexion.Close()
         End Try
@@ -41,7 +42,7 @@ Module OperacionesBD
             dgv.DataSource = datos
             dgv.DataMember = tableName
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EMsg.Show("No se ha podido llenar la tabla. Contacte a su administrador", ex)
         Finally
             conexion.Close()
         End Try
@@ -56,7 +57,7 @@ Module OperacionesBD
             reader = command.ExecuteReader
             MsgBox("Datos guardados exitosamente!", MsgBoxStyle.OkOnly)
         Catch ex As Exception
-            MsgBox("Ha ocurrido un error al guardar", MsgBoxStyle.Critical)
+            EMsg.Show("Ha ocurrido un error al guardar", ex)
         Finally
             command = Nothing
             conexion.Close()
