@@ -40,7 +40,7 @@ Public Class Ventana_Registro
         CrearPrestamo = "INSERT INTO prestamo (idusuario, idbibliotecario, fechaprestamo, fechadevolucion, cantidad, estado)
         VALUES ((SELECT idusuario FROM usuario WHERE identificacion = '" & IDUsuario.Text & "'), (SELECT idbibliotecario FROM bibliotecario WHERE nombre = '" & CBBN.SelectedItem & "')
         ,'" & FP.Value & "','" & FD.Value & "','" & CantP.Text & "','" & CBEstado.SelectedItem & "')"
-        SaveData(CrearPrestamo)
+        'SaveData(CrearPrestamo)
         CrearDetallePrestamo = "INSERT INTO detalleprestamo(idlibro,idprestamo)
         VALUES ((SELECT idlibro FROM libro WHERE titulo = '" & LBPrestamos.Text & "') , (SELECT idusuario FROM prestamo WHERE identificacion = '" & IDUsuario.Text & "'))"
         'SaveData(CrearDetallePrestamo)
@@ -64,11 +64,10 @@ Public Class Ventana_Registro
         Dim EditarUsuario As String
         EditarUsuario = "Update usuario Set nombre = '" & NUsuario.Text & "', apellido = '" & AUsuario.Text & "', 
         identificacion = '" & IDUsuario.Text & "' Where idusuario = " & ID.Text
-        'SaveData(EditarUsuario)
+        SaveData(EditarUsuario)
         Dim EditarPrestamo As String
         EditarPrestamo = "Update prestamo Set fechaprestamo = '" & FP.Value.Date & "', fechadevolucion = '" & FD.Value.Date & "', 
         cantidad = '" & CantP.Text & "' Where idprestamo = " & idPrestamo.Text
-        MsgBox(EditarPrestamo)
         'SaveData(EditarPrestamo)
     End Sub
 
@@ -271,5 +270,9 @@ Public Class Ventana_Registro
         Else
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub Lupa_Click(sender As Object, e As EventArgs) Handles Lupa.Click
+        Busqueda.Show()
     End Sub
 End Class

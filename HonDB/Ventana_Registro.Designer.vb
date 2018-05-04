@@ -45,15 +45,7 @@ Partial Class Ventana_Registro
         Me.LbGuardar = New System.Windows.Forms.Label()
         Me.LbActualizar = New System.Windows.Forms.Label()
         Me.LbEliminar = New System.Windows.Forms.Label()
-        Me.BTEliminar = New System.Windows.Forms.PictureBox()
-        Me.BTActualizar = New System.Windows.Forms.PictureBox()
-        Me.BTGuardar = New System.Windows.Forms.PictureBox()
-        Me.BTEditar = New System.Windows.Forms.PictureBox()
-        Me.BTCrear = New System.Windows.Forms.PictureBox()
-        Me.BookLogo = New System.Windows.Forms.PictureBox()
-        Me.RetornoIcon = New System.Windows.Forms.PictureBox()
         Me.TBBusqueda = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.NUsuario = New System.Windows.Forms.TextBox()
         Me.LbNS = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -86,7 +78,18 @@ Partial Class Ventana_Registro
         Me.CBFiltro = New System.Windows.Forms.ComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.idPrestamo = New System.Windows.Forms.TextBox()
+        Me.Lupa = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.BTEliminar = New System.Windows.Forms.PictureBox()
+        Me.BTActualizar = New System.Windows.Forms.PictureBox()
+        Me.BTGuardar = New System.Windows.Forms.PictureBox()
+        Me.BTEditar = New System.Windows.Forms.PictureBox()
+        Me.BTCrear = New System.Windows.Forms.PictureBox()
+        Me.BookLogo = New System.Windows.Forms.PictureBox()
+        Me.RetornoIcon = New System.Windows.Forms.PictureBox()
         CType(Me.DatosGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Lupa, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTActualizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTGuardar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -94,7 +97,6 @@ Partial Class Ventana_Registro
         CType(Me.BTCrear, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BookLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RetornoIcon, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelLogo
@@ -148,7 +150,7 @@ Partial Class Ventana_Registro
         Me.RectangleShape8.BorderColor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.RectangleShape8.BorderWidth = 2
         Me.RectangleShape8.CornerRadius = 10
-        Me.RectangleShape8.Location = New System.Drawing.Point(1051, 413)
+        Me.RectangleShape8.Location = New System.Drawing.Point(1093, 413)
         Me.RectangleShape8.Name = "RectangleShape8"
         Me.RectangleShape8.Size = New System.Drawing.Size(88, 37)
         '
@@ -161,7 +163,7 @@ Partial Class Ventana_Registro
         Me.RectangleShape6.CornerRadius = 10
         Me.RectangleShape6.Location = New System.Drawing.Point(753, 412)
         Me.RectangleShape6.Name = "RectangleShape6"
-        Me.RectangleShape6.Size = New System.Drawing.Size(278, 37)
+        Me.RectangleShape6.Size = New System.Drawing.Size(320, 37)
         '
         'RectangleShape5
         '
@@ -317,78 +319,6 @@ Partial Class Ventana_Registro
         Me.LbEliminar.TabIndex = 15
         Me.LbEliminar.Text = "Eliminar"
         '
-        'BTEliminar
-        '
-        Me.BTEliminar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BTEliminar.Image = Global.HonDB.My.Resources.Resources.DeleteBT
-        Me.BTEliminar.Location = New System.Drawing.Point(1225, 647)
-        Me.BTEliminar.Name = "BTEliminar"
-        Me.BTEliminar.Size = New System.Drawing.Size(40, 40)
-        Me.BTEliminar.TabIndex = 10
-        Me.BTEliminar.TabStop = False
-        '
-        'BTActualizar
-        '
-        Me.BTActualizar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BTActualizar.Image = Global.HonDB.My.Resources.Resources.UpdateBT
-        Me.BTActualizar.Location = New System.Drawing.Point(1128, 647)
-        Me.BTActualizar.Name = "BTActualizar"
-        Me.BTActualizar.Size = New System.Drawing.Size(40, 40)
-        Me.BTActualizar.TabIndex = 9
-        Me.BTActualizar.TabStop = False
-        '
-        'BTGuardar
-        '
-        Me.BTGuardar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BTGuardar.Image = Global.HonDB.My.Resources.Resources.SaveBT2
-        Me.BTGuardar.Location = New System.Drawing.Point(1030, 647)
-        Me.BTGuardar.Name = "BTGuardar"
-        Me.BTGuardar.Size = New System.Drawing.Size(40, 40)
-        Me.BTGuardar.TabIndex = 8
-        Me.BTGuardar.TabStop = False
-        '
-        'BTEditar
-        '
-        Me.BTEditar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BTEditar.Image = Global.HonDB.My.Resources.Resources.EditBT
-        Me.BTEditar.Location = New System.Drawing.Point(935, 647)
-        Me.BTEditar.Name = "BTEditar"
-        Me.BTEditar.Size = New System.Drawing.Size(35, 40)
-        Me.BTEditar.TabIndex = 7
-        Me.BTEditar.TabStop = False
-        '
-        'BTCrear
-        '
-        Me.BTCrear.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BTCrear.Image = Global.HonDB.My.Resources.Resources.CreateBT
-        Me.BTCrear.Location = New System.Drawing.Point(831, 647)
-        Me.BTCrear.Name = "BTCrear"
-        Me.BTCrear.Size = New System.Drawing.Size(40, 40)
-        Me.BTCrear.TabIndex = 6
-        Me.BTCrear.TabStop = False
-        '
-        'BookLogo
-        '
-        Me.BookLogo.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(81, Byte), Integer))
-        Me.BookLogo.Image = Global.HonDB.My.Resources.Resources.BookLogo
-        Me.BookLogo.Location = New System.Drawing.Point(751, 8)
-        Me.BookLogo.Name = "BookLogo"
-        Me.BookLogo.Size = New System.Drawing.Size(65, 50)
-        Me.BookLogo.TabIndex = 3
-        Me.BookLogo.TabStop = False
-        '
-        'RetornoIcon
-        '
-        Me.RetornoIcon.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(108, Byte), Integer))
-        Me.RetornoIcon.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.RetornoIcon.Image = Global.HonDB.My.Resources.Resources.Arrow3
-        Me.RetornoIcon.Location = New System.Drawing.Point(0, 0)
-        Me.RetornoIcon.Name = "RetornoIcon"
-        Me.RetornoIcon.Size = New System.Drawing.Size(70, 70)
-        Me.RetornoIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.RetornoIcon.TabIndex = 1
-        Me.RetornoIcon.TabStop = False
-        '
         'TBBusqueda
         '
         Me.TBBusqueda.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
@@ -400,16 +330,6 @@ Partial Class Ventana_Registro
         Me.TBBusqueda.Name = "TBBusqueda"
         Me.TBBusqueda.Size = New System.Drawing.Size(243, 33)
         Me.TBBusqueda.TabIndex = 16
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(63, 105)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(28, 28)
-        Me.PictureBox1.TabIndex = 18
-        Me.PictureBox1.TabStop = False
         '
         'NUsuario
         '
@@ -511,7 +431,7 @@ Partial Class Ventana_Registro
         Me.LBPrestamos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
         Me.LBPrestamos.Location = New System.Drawing.Point(766, 420)
         Me.LBPrestamos.Name = "LBPrestamos"
-        Me.LBPrestamos.Size = New System.Drawing.Size(254, 22)
+        Me.LBPrestamos.Size = New System.Drawing.Size(262, 22)
         Me.LBPrestamos.TabIndex = 28
         '
         'Label4
@@ -532,7 +452,7 @@ Partial Class Ventana_Registro
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.DimGray
-        Me.Label5.Location = New System.Drawing.Point(1053, 386)
+        Me.Label5.Location = New System.Drawing.Point(1096, 386)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(79, 21)
         Me.Label5.TabIndex = 31
@@ -647,7 +567,7 @@ Partial Class Ventana_Registro
         Me.CantP.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.CantP.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CantP.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.CantP.Location = New System.Drawing.Point(1060, 421)
+        Me.CantP.Location = New System.Drawing.Point(1104, 420)
         Me.CantP.Name = "CantP"
         Me.CantP.Size = New System.Drawing.Size(68, 22)
         Me.CantP.TabIndex = 40
@@ -801,12 +721,105 @@ Partial Class Ventana_Registro
         Me.idPrestamo.TabIndex = 56
         Me.idPrestamo.Visible = False
         '
+        'Lupa
+        '
+        Me.Lupa.BackColor = System.Drawing.SystemColors.Control
+        Me.Lupa.Image = Global.HonDB.My.Resources.Resources.Loupe
+        Me.Lupa.Location = New System.Drawing.Point(1035, 418)
+        Me.Lupa.Name = "Lupa"
+        Me.Lupa.Size = New System.Drawing.Size(27, 26)
+        Me.Lupa.TabIndex = 57
+        Me.Lupa.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(63, 105)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(28, 28)
+        Me.PictureBox1.TabIndex = 18
+        Me.PictureBox1.TabStop = False
+        '
+        'BTEliminar
+        '
+        Me.BTEliminar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BTEliminar.Image = Global.HonDB.My.Resources.Resources.DeleteBT
+        Me.BTEliminar.Location = New System.Drawing.Point(1225, 647)
+        Me.BTEliminar.Name = "BTEliminar"
+        Me.BTEliminar.Size = New System.Drawing.Size(40, 40)
+        Me.BTEliminar.TabIndex = 10
+        Me.BTEliminar.TabStop = False
+        '
+        'BTActualizar
+        '
+        Me.BTActualizar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BTActualizar.Image = Global.HonDB.My.Resources.Resources.UpdateBT
+        Me.BTActualizar.Location = New System.Drawing.Point(1128, 647)
+        Me.BTActualizar.Name = "BTActualizar"
+        Me.BTActualizar.Size = New System.Drawing.Size(40, 40)
+        Me.BTActualizar.TabIndex = 9
+        Me.BTActualizar.TabStop = False
+        '
+        'BTGuardar
+        '
+        Me.BTGuardar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BTGuardar.Image = Global.HonDB.My.Resources.Resources.SaveBT2
+        Me.BTGuardar.Location = New System.Drawing.Point(1030, 647)
+        Me.BTGuardar.Name = "BTGuardar"
+        Me.BTGuardar.Size = New System.Drawing.Size(40, 40)
+        Me.BTGuardar.TabIndex = 8
+        Me.BTGuardar.TabStop = False
+        '
+        'BTEditar
+        '
+        Me.BTEditar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BTEditar.Image = Global.HonDB.My.Resources.Resources.EditBT
+        Me.BTEditar.Location = New System.Drawing.Point(935, 647)
+        Me.BTEditar.Name = "BTEditar"
+        Me.BTEditar.Size = New System.Drawing.Size(35, 40)
+        Me.BTEditar.TabIndex = 7
+        Me.BTEditar.TabStop = False
+        '
+        'BTCrear
+        '
+        Me.BTCrear.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BTCrear.Image = Global.HonDB.My.Resources.Resources.CreateBT
+        Me.BTCrear.Location = New System.Drawing.Point(831, 647)
+        Me.BTCrear.Name = "BTCrear"
+        Me.BTCrear.Size = New System.Drawing.Size(40, 40)
+        Me.BTCrear.TabIndex = 6
+        Me.BTCrear.TabStop = False
+        '
+        'BookLogo
+        '
+        Me.BookLogo.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(46, Byte), Integer), CType(CType(81, Byte), Integer))
+        Me.BookLogo.Image = Global.HonDB.My.Resources.Resources.BookLogo
+        Me.BookLogo.Location = New System.Drawing.Point(751, 8)
+        Me.BookLogo.Name = "BookLogo"
+        Me.BookLogo.Size = New System.Drawing.Size(65, 50)
+        Me.BookLogo.TabIndex = 3
+        Me.BookLogo.TabStop = False
+        '
+        'RetornoIcon
+        '
+        Me.RetornoIcon.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(61, Byte), Integer), CType(CType(108, Byte), Integer))
+        Me.RetornoIcon.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.RetornoIcon.Image = Global.HonDB.My.Resources.Resources.Arrow3
+        Me.RetornoIcon.Location = New System.Drawing.Point(0, 0)
+        Me.RetornoIcon.Name = "RetornoIcon"
+        Me.RetornoIcon.Size = New System.Drawing.Size(70, 70)
+        Me.RetornoIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.RetornoIcon.TabIndex = 1
+        Me.RetornoIcon.TabStop = False
+        '
         'Ventana_Registro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1350, 729)
+        Me.Controls.Add(Me.Lupa)
         Me.Controls.Add(Me.idPrestamo)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.CBFiltro)
@@ -856,6 +869,7 @@ Partial Class Ventana_Registro
         Me.Controls.Add(Me.LabelLogo)
         Me.Controls.Add(Me.RetornoIcon)
         Me.Controls.Add(Me.ShapeContainer1)
+        Me.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -863,6 +877,8 @@ Partial Class Ventana_Registro
         Me.Text = "Ventana_Registro"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.DatosGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Lupa, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BTEliminar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BTActualizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BTGuardar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -870,7 +886,6 @@ Partial Class Ventana_Registro
         CType(Me.BTCrear, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BookLogo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RetornoIcon, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -935,4 +950,5 @@ Partial Class Ventana_Registro
     Friend WithEvents CBFiltro As ComboBox
     Friend WithEvents Label13 As Label
     Friend WithEvents idPrestamo As TextBox
+    Friend WithEvents Lupa As PictureBox
 End Class
