@@ -135,6 +135,7 @@ Public Class Ventana_Registro
         If CBEdit.Checked = True Then
             Dim S As Integer
             S = DatosGrid.CurrentRow.Index
+            idPrestamo.Text = DatosGrid.Item(0, S).Value()
             ID.Text = DatosGrid.Item(1, S).Value()
             NUsuario.Text = DatosGrid.Item(2, S).Value()
             AUsuario.Text = DatosGrid.Item(3, S).Value()
@@ -193,9 +194,5 @@ Public Class Ventana_Registro
             FP.ResetText()
             FD.ResetText()
         End If
-    End Sub
-
-    Private Sub ID_TextChanged(sender As Object, e As EventArgs) Handles ID.TextChanged
-
     End Sub
 End Class
