@@ -109,6 +109,12 @@
     <Compile Include="Busqueda.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EMsg.Designer.vb">
+      <DependentUpon>EMsg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EMsg.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ExportarExcel.vb" />
     <Compile Include="FReportes.Designer.vb">
       <DependentUpon>FReportes.vb</DependentUpon>
@@ -169,6 +175,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Busqueda.resx">
       <DependentUpon>Busqueda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMsg.resx">
+      <DependentUpon>EMsg.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FReportes.resx">
       <DependentUpon>FReportes.vb</DependentUpon>

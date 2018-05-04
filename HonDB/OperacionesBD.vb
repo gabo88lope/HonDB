@@ -16,6 +16,7 @@ Module OperacionesBD
 
     Public Sub PopulateCombobox(ByRef cb As ComboBox, ByVal table As String, ByVal column As String)
 
+        'prueba para cambiar de rama
         Try
             AbrirConexion()
             consulta = "SELECT * FROM " & table
