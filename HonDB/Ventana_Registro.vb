@@ -78,6 +78,7 @@ Public Class Ventana_Registro
         Dim Decision = MessageBox.Show("¿Desea eliminar este préstamo?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If Decision = DialogResult.Yes Then
             EliminarDetalleP = "DELETE FROM detalleprestamo WHERE idprestamo = " & idPrestamo.Text
+            TextBox1.Text = EliminarDetalleP
             SaveData(EliminarDetalleP)
             EliminarPrestamo = "DELETE FROM prestamo WHERE idprestamo = " & idPrestamo.Text
             SaveData(EliminarPrestamo)
@@ -170,6 +171,7 @@ Public Class Ventana_Registro
         If CBEdit.Checked = True Then
             Dim S As Integer
             S = DatosGrid.CurrentRow.Index
+            idPrestamo.Text = DatosGrid.Item(0, S).Value()
             ID.Text = DatosGrid.Item(1, S).Value()
             NUsuario.Text = DatosGrid.Item(2, S).Value()
             AUsuario.Text = DatosGrid.Item(3, S).Value()

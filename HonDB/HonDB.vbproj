@@ -64,6 +64,9 @@
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>HonDBico-01.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -107,6 +110,12 @@
       <DependentUpon>Busqueda.vb</DependentUpon>
     </Compile>
     <Compile Include="Busqueda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMsg.Designer.vb">
+      <DependentUpon>EMsg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EMsg.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ExportarExcel.vb" />
@@ -169,6 +178,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Busqueda.resx">
       <DependentUpon>Busqueda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMsg.resx">
+      <DependentUpon>EMsg.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FReportes.resx">
       <DependentUpon>FReportes.vb</DependentUpon>
@@ -263,6 +275,7 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <Content Include="HonDBico-01.ico" />
     <None Include="Resources\icons8-csv-64.png" />
     <None Include="Resources\BotonAcercade.png" />
     <None Include="Resources\BotonSalir.png" />

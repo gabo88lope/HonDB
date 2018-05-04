@@ -34,7 +34,7 @@ Public Class ExportarExcel
                 .Cells.EntireColumn.AutoFit()
             End With
         Catch ex As Exception
-            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            EMsg.Show("Error al exportar a Microsoft Excel", ex)
         Finally
             System.Windows.Forms.Cursor.Current = System.Windows.Forms.Cursors.Default
             xlApp = Nothing
