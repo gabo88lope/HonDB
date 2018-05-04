@@ -102,7 +102,20 @@ Public Class FReportes
                                         GROUP BY fechaprestamo
                                         ORDER BY fechaprestamo DESC;", "prestamo")
             Case 5
-
+                LlenarTabla(DGVReporte, "SELECT 
+                                            l.titulo
+                                        FROM
+                                            libro l
+                                                INNER JOIN
+                                            detalleprestamo dp ON (l.idlibro = dp.idlibro)
+                                        GROUP BY dp.idlibro
+                                        HAVING COUNT(dp.idlibro) = (SELECT 
+                                                COUNT(dp.idlibro) AS great
+                                            FROM
+                                                detalleprestamo dp
+                                            GROUP BY dp.idlibro
+                                            ORDER BY great DESC
+                                            LIMIT 1)", "libro")
             Case 6
                 LlenarTabla(DGVReporte, "SELECT 
                                             p.idprestamo AS 'Codigo de prestamo',
