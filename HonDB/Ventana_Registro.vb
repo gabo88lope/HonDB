@@ -26,6 +26,9 @@ Public Class Ventana_Registro
     End Sub
 
     Private Sub BTCrear_Click(sender As Object, e As EventArgs) Handles BTCrear.Click
+        If CBEdit.Checked = True Then
+            BTCrear.Enabled = False
+        End If
         Dim CrearUsuario As String
         Dim CrearUbicacion As String
         Dim CrearPrestamo As String
@@ -44,7 +47,7 @@ Public Class Ventana_Registro
         SaveData(CrearPrestamo)
         CrearDetallePrestamo = "INSERT INTO detalleprestamo(idlibro,idprestamo)
         VALUES ((SELECT idlibro FROM libro WHERE titulo = '" & LBPrestamos.Text & "') , (SELECT idusuario FROM prestamo WHERE identificacion = '" & IDUsuario.Text & "'))"
-        'SaveData(CrearDetallePrestamo)
+        SaveData(CrearDetallePrestamo)
         MsgBox("Préstamo creado exitosamente")
         NUsuario.Clear()
         AUsuario.Clear()
@@ -135,20 +138,20 @@ Public Class Ventana_Registro
         If CBEdit.Checked = True Then
             Dim S As Integer
             S = DatosGrid.CurrentRow.Index
-            ID.Text = DatosGrid.Item(0, S).Value()
-            NUsuario.Text = DatosGrid.Item(1, S).Value()
-            AUsuario.Text = DatosGrid.Item(2, S).Value()
-            IDUsuario.Text = DatosGrid.Item(3, S).Value()
-            Pais.Text = DatosGrid.Item(4, S).Value()
-            Ciudad.Text = DatosGrid.Item(5, S).Value()
-            Nacionalidad.Text = DatosGrid.Item(6, S).Value()
-            LBPrestamos.Text = DatosGrid.Item(7, S).Value()
-            CBEstado.Text = DatosGrid.Item(8, S).Value()
+            ID.Text = DatosGrid.Item(1, S).Value()
+            NUsuario.Text = DatosGrid.Item(2, S).Value()
+            AUsuario.Text = DatosGrid.Item(3, S).Value()
+            IDUsuario.Text = DatosGrid.Item(4, S).Value()
+            Pais.Text = DatosGrid.Item(5, S).Value()
+            Ciudad.Text = DatosGrid.Item(6, S).Value()
+            Nacionalidad.Text = DatosGrid.Item(7, S).Value()
+            LBPrestamos.Text = DatosGrid.Item(8, S).Value()
             FP.Text = DatosGrid.Item(9, S).Value()
             FD.Text = DatosGrid.Item(10, S).Value()
             CantP.Text = DatosGrid.Item(11, S).Value()
-            CBBN.SelectedItem = DatosGrid.Item(12, S).Value()
-            CBBA.SelectedItem = DatosGrid.Item(13, S).Value()
+            CBEstado.Text = DatosGrid.Item(12, S).Value()
+            CBBN.SelectedItem = DatosGrid.Item(13, S).Value()
+            CBBA.SelectedItem = DatosGrid.Item(14, S).Value()
         End If
     End Sub
 
