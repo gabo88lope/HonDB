@@ -76,9 +76,9 @@ Public Class Ventana_Registro
     Private Sub BTEliminar_Click(sender As Object, e As EventArgs) Handles BTEliminar.Click
         Dim EliminarPrestamo As String
         Dim EliminarDetalleP As String
-        EliminarDetalleP = "DELETE FROM detalleprestamo WHERE idprestamo = '"
+        EliminarDetalleP = "DELETE FROM detalleprestamo WHERE idprestamo = " & idPrestamo.Text
         SaveData(EliminarDetalleP)
-        EliminarPrestamo = "DELETE FROM prestamo WHERE idprestamo = '"
+        EliminarPrestamo = "DELETE FROM prestamo WHERE idprestamo = " & idPrestamo.Text
         SaveData(EliminarPrestamo)
     End Sub
 
@@ -155,11 +155,9 @@ Public Class Ventana_Registro
 
     Private Sub CBEdit_CheckedChanged(sender As Object, e As EventArgs) Handles CBEdit.CheckedChanged
         If CBEdit.Checked = True Then
-            BTCrear.Visible = False
-            LbCrear.Visible = False
+            BTCrear.Enabled = False
         Else
-            BTCrear.Visible = True
-            LbCrear.Visible = True
+            BTCrear.Enabled = True
         End If
         If CBEdit.Checked = True Then
             Dim S As Integer

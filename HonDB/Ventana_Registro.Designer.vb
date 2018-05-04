@@ -215,7 +215,7 @@ Partial Class Ventana_Registro
         Me.RectangleBusqueda.CornerRadius = 15
         Me.RectangleBusqueda.Location = New System.Drawing.Point(52, 92)
         Me.RectangleBusqueda.Name = "RectangleBusqueda"
-        Me.RectangleBusqueda.Size = New System.Drawing.Size(331, 50)
+        Me.RectangleBusqueda.Size = New System.Drawing.Size(307, 50)
         '
         'RectangleShape2
         '
@@ -395,10 +395,10 @@ Partial Class Ventana_Registro
         Me.TBBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TBBusqueda.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TBBusqueda.ForeColor = System.Drawing.Color.Gray
-        Me.TBBusqueda.Location = New System.Drawing.Point(104, 105)
+        Me.TBBusqueda.Location = New System.Drawing.Point(102, 105)
         Me.TBBusqueda.Multiline = True
         Me.TBBusqueda.Name = "TBBusqueda"
-        Me.TBBusqueda.Size = New System.Drawing.Size(262, 33)
+        Me.TBBusqueda.Size = New System.Drawing.Size(243, 33)
         Me.TBBusqueda.TabIndex = 16
         '
         'PictureBox1
@@ -753,13 +753,13 @@ Partial Class Ventana_Registro
         'CBEdit
         '
         Me.CBEdit.AutoSize = True
-        Me.CBEdit.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBEdit.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CBEdit.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CBEdit.Location = New System.Drawing.Point(580, 133)
+        Me.CBEdit.Location = New System.Drawing.Point(532, 137)
         Me.CBEdit.Name = "CBEdit"
-        Me.CBEdit.Size = New System.Drawing.Size(150, 25)
+        Me.CBEdit.Size = New System.Drawing.Size(204, 24)
         Me.CBEdit.TabIndex = 53
-        Me.CBEdit.Text = "Editar Préstamo"
+        Me.CBEdit.Text = "Editar/Eliminar Préstamo"
         Me.CBEdit.UseVisualStyleBackColor = True
         '
         'CBFiltro
@@ -771,7 +771,7 @@ Partial Class Ventana_Registro
         Me.CBFiltro.FormattingEnabled = True
         Me.CBFiltro.IntegralHeight = False
         Me.CBFiltro.Items.AddRange(New Object() {"Nombre", "Identificación"})
-        Me.CBFiltro.Location = New System.Drawing.Point(391, 114)
+        Me.CBFiltro.Location = New System.Drawing.Point(366, 114)
         Me.CBFiltro.Margin = New System.Windows.Forms.Padding(6)
         Me.CBFiltro.Name = "CBFiltro"
         Me.CBFiltro.Size = New System.Drawing.Size(156, 29)
@@ -783,7 +783,7 @@ Partial Class Ventana_Registro
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.DimGray
-        Me.Label13.Location = New System.Drawing.Point(387, 92)
+        Me.Label13.Location = New System.Drawing.Point(362, 92)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(115, 21)
         Me.Label13.TabIndex = 55
