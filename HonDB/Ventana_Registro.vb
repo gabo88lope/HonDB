@@ -65,15 +65,15 @@ Public Class Ventana_Registro
         Dim EditarUsuario As String
         EditarUsuario = "Update usuario Set nombre = '" & NUsuario.Text & "', apellido = '" & AUsuario.Text & "', 
         identificacion = '" & IDUsuario.Text & "' Where idusuario = " & ID.Text
-        MsgBox(EditarUsuario)
         SaveData(EditarUsuario)
         Dim EditarPrestamo As String
         EditarPrestamo = "Update prestamo Set fechaprestamo = '" & FP.Value & "', fechadevolucion = '" & FD.Value & "', 
-        cantidad = '" & CantP.Text & "' Where idusuario = " & ID.Text
+        cantidad = '" & CantP.Text & "' Where idprestamo = " & idPrestamo.Text
         SaveData(EditarPrestamo)
     End Sub
 
     Private Sub BTEliminar_Click(sender As Object, e As EventArgs) Handles BTEliminar.Click
+
         Dim EliminarPrestamo As String
         Dim EliminarDetalleP As String
         EliminarDetalleP = "DELETE FROM detalleprestamo WHERE idprestamo = " & idPrestamo.Text
