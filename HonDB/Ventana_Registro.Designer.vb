@@ -570,10 +570,10 @@ Partial Class Ventana_Registro
         Me.FD.CalendarForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
         Me.FD.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText
         Me.FD.CalendarTitleForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.FD.CustomFormat = ""
+        Me.FD.CustomFormat = "dd/mm/yyyy"
         Me.FD.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
         Me.FD.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FD.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.FD.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.FD.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.FD.Location = New System.Drawing.Point(902, 500)
         Me.FD.Name = "FD"
@@ -583,10 +583,10 @@ Partial Class Ventana_Registro
         'FP
         '
         Me.FP.CalendarForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.FP.CustomFormat = ""
+        Me.FP.CustomFormat = "dd/mm/yyyy"
         Me.FP.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
         Me.FP.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FP.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.FP.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.FP.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.FP.Location = New System.Drawing.Point(762, 500)
         Me.FP.Name = "FP"

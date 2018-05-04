@@ -194,4 +194,75 @@ Public Class Ventana_Registro
             FD.ResetText()
         End If
     End Sub
+
+    Private Sub NUsuario_KeyPress(sender As Object, e As KeyPressEventArgs) Handles NUsuario.KeyPress
+        If e.KeyChar.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub AUsuario_KeyPress(sender As Object, e As KeyPressEventArgs) Handles AUsuario.KeyPress
+        If e.KeyChar.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub Pais_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Pais.KeyPress
+        If e.KeyChar.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub Ciudad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Ciudad.KeyPress
+        If e.KeyChar.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub Nacionalidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Nacionalidad.KeyPress
+        If e.KeyChar.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub CantP_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CantP.KeyPress
+        If e.KeyChar.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
 End Class
