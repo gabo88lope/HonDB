@@ -8,7 +8,7 @@ Module OperacionesBD
         Try
             Return My.Computer.Network.Ping("www.google.com.ni")
         Catch ex As Exception
-            Return False
+            Return Nothing
             EMsg.Show("No hay conexión a internet", ex)
         End Try
 
