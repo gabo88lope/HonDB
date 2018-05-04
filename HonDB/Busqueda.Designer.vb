@@ -22,6 +22,7 @@ Partial Class Busqueda
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Busqueda))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -219,6 +220,8 @@ Partial Class Busqueda
         Me.Controls.Add(Me.BotonAgregarBusqueda)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Panel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Busqueda"
         Me.Text = "Búsqueda de Libros"
         Me.Panel1.ResumeLayout(False)

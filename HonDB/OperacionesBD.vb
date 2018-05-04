@@ -8,7 +8,8 @@ Module OperacionesBD
         Try
             Return My.Computer.Network.Ping("www.google.com.ni")
         Catch ex As Exception
-            Return False
+            Return Nothing
+            EMsg.Show("No hay conexión a internet", ex)
         End Try
 
     End Function
@@ -20,16 +21,14 @@ Module OperacionesBD
             consulta = "SELECT * FROM " & table
             command = New MySqlCommand(consulta, conexion)
             reader = command.ExecuteReader
-
             While reader.Read
                 Dim aNombre = reader.GetString(column)
                 cb.Items.Add(aNombre)
             End While
-
-            conexion.Close()
-
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EMsg.Show("No se ha podido llenar el control. Contacte a su administrador", ex)
+        Finally
+            conexion.Close()
         End Try
     End Sub
 
@@ -42,9 +41,10 @@ Module OperacionesBD
             adaptador.Fill(datos, tableName)
             dgv.DataSource = datos
             dgv.DataMember = tableName
-            conexion.Close()
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EMsg.Show("No se ha podido llenar la tabla. Contacte a su administrador", ex)
+        Finally
+            conexion.Close()
         End Try
 
     End Sub
@@ -56,9 +56,11 @@ Module OperacionesBD
             command = New MySqlCommand(query, conexion)
             reader = command.ExecuteReader
             MsgBox("Datos guardados exitosamente!", MsgBoxStyle.OkOnly)
-            conexion.Close()
         Catch ex As Exception
-            MsgBox("Ha ocurrido un error al guardar", MsgBoxStyle.Critical)
+            EMsg.Show("Ha ocurrido un error al guardar", ex)
+        Finally
+            command = Nothing
+            conexion.Close()
         End Try
     End Sub
 
