@@ -73,13 +73,15 @@ Public Class Ventana_Registro
     End Sub
 
     Private Sub BTEliminar_Click(sender As Object, e As EventArgs) Handles BTEliminar.Click
-
         Dim EliminarPrestamo As String
         Dim EliminarDetalleP As String
-        EliminarDetalleP = "DELETE FROM detalleprestamo WHERE idprestamo = " & idPrestamo.Text
-        SaveData(EliminarDetalleP)
-        EliminarPrestamo = "DELETE FROM prestamo WHERE idprestamo = " & idPrestamo.Text
-        SaveData(EliminarPrestamo)
+        Dim Decision = MessageBox.Show("¿Desea eliminar este préstamo?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If Decision = DialogResult.Yes Then
+            EliminarDetalleP = "DELETE FROM detalleprestamo WHERE idprestamo = " & idPrestamo.Text
+            SaveData(EliminarDetalleP)
+            EliminarPrestamo = "DELETE FROM prestamo WHERE idprestamo = " & idPrestamo.Text
+            SaveData(EliminarPrestamo)
+        End If
     End Sub
 
     Private Sub BTActualizar_Click(sender As Object, e As EventArgs) Handles BTActualizar.Click
