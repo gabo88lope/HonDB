@@ -1,5 +1,4 @@
 ﻿Imports MySql.Data.MySqlClient
-
 Public Class ConexionBD
 
     Public Shared conexion As MySqlConnection
