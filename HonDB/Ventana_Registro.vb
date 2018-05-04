@@ -5,7 +5,7 @@ Public Class Ventana_Registro
         Me.WindowState = FormWindowState.Maximized
 
         LlenarTabla(DatosGrid, "SELECT p.idprestamo AS '#', u.idusuario AS 'Codigo de usuario', u.nombre AS Nombre,
-        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS Pais,
+        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS País,
         ubicacion.ciudad AS Ciudad, ubicacion.nacionalidad AS Nacionalidad,
         GROUP_CONCAT(DISTINCT l.titulo SEPARATOR ', ') AS 'Libros prestados', 
         p.fechaprestamo AS 'Fecha de prestamo', p.fechadevolucion AS 'Fecha de devolucion',
@@ -39,8 +39,7 @@ Public Class Ventana_Registro
         SaveData(CrearUsuario)
         CrearPrestamo = "INSERT INTO prestamo (idusuario, idbibliotecario, fechaprestamo, fechadevolucion, cantidad, estado)
         VALUES ((SELECT idusuario FROM usuario WHERE identificacion = '" & IDUsuario.Text & "'), (SELECT idbibliotecario FROM bibliotecario WHERE nombre = '" & CBBN.SelectedItem & "')
-        ,'" & FP.Value.Date & "','" & FD.Value.Date & "','" & CantP.Text & "','" & CBEstado.SelectedItem & "')"
-        MsgBox(CrearPrestamo)
+        ,'" & FP.Value & "','" & FD.Value & "','" & CantP.Text & "','" & CBEstado.SelectedItem & "')"
         SaveData(CrearPrestamo)
         CrearDetallePrestamo = "INSERT INTO detalleprestamo(idlibro,idprestamo)
         VALUES ((SELECT idlibro FROM libro WHERE titulo = '" & LBPrestamos.Text & "') , (SELECT idusuario FROM prestamo WHERE identificacion = '" & IDUsuario.Text & "'))"
@@ -65,26 +64,28 @@ Public Class Ventana_Registro
         Dim EditarUsuario As String
         EditarUsuario = "Update usuario Set nombre = '" & NUsuario.Text & "', apellido = '" & AUsuario.Text & "', 
         identificacion = '" & IDUsuario.Text & "' Where idusuario = " & ID.Text
-        MsgBox(EditarUsuario)
         SaveData(EditarUsuario)
         Dim EditarPrestamo As String
         EditarPrestamo = "Update prestamo Set fechaprestamo = '" & FP.Value & "', fechadevolucion = '" & FD.Value & "', 
-        cantidad = '" & CantP.Text & "' Where idusuario = " & ID.Text
+        cantidad = '" & CantP.Text & "' Where idprestamo = " & idPrestamo.Text
         SaveData(EditarPrestamo)
     End Sub
 
     Private Sub BTEliminar_Click(sender As Object, e As EventArgs) Handles BTEliminar.Click
         Dim EliminarPrestamo As String
         Dim EliminarDetalleP As String
-        EliminarDetalleP = "DELETE FROM detalleprestamo WHERE idprestamo = '"
-        SaveData(EliminarDetalleP)
-        EliminarPrestamo = "DELETE FROM prestamo WHERE idprestamo = '"
-        SaveData(EliminarPrestamo)
+        Dim Decision = MessageBox.Show("¿Desea eliminar este préstamo?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If Decision = DialogResult.Yes Then
+            EliminarDetalleP = "DELETE FROM detalleprestamo WHERE idprestamo = " & idPrestamo.Text
+            SaveData(EliminarDetalleP)
+            EliminarPrestamo = "DELETE FROM prestamo WHERE idprestamo = " & idPrestamo.Text
+            SaveData(EliminarPrestamo)
+        End If
     End Sub
 
     Private Sub BTActualizar_Click(sender As Object, e As EventArgs) Handles BTActualizar.Click
         LlenarTabla(DatosGrid, "SELECT p.idprestamo AS '#', u.idusuario AS 'Codigo de usuario', u.nombre AS Nombre,
-        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS Pais,
+        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS País,
         ubicacion.ciudad AS Ciudad, ubicacion.nacionalidad AS Nacionalidad,
         GROUP_CONCAT(DISTINCT l.titulo SEPARATOR ', ') AS 'Libros prestados', 
         p.fechaprestamo AS 'Fecha de prestamo', p.fechadevolucion AS 'Fecha de devolucion',
@@ -99,8 +100,9 @@ Public Class Ventana_Registro
     End Sub
 
     Private Sub TBBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TBBusqueda.TextChanged
-        LlenarTabla(DatosGrid, "SELECT p.idprestamo AS '#', u.idusuario AS 'Codigo de usuario', u.nombre AS Nombre,
-        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS Pais,
+        If CBFiltro.Text = "Nombre" Then
+            LlenarTabla(DatosGrid, "SELECT p.idprestamo AS '#', u.idusuario AS 'Codigo de usuario', u.nombre AS Nombre,
+        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS País,
         ubicacion.ciudad AS Ciudad, ubicacion.nacionalidad AS Nacionalidad,
         GROUP_CONCAT(DISTINCT l.titulo SEPARATOR ', ') AS 'Libros prestados', 
         p.fechaprestamo AS 'Fecha de prestamo', p.fechadevolucion AS 'Fecha de devolucion',
@@ -112,47 +114,69 @@ Public Class Ventana_Registro
         INNER JOIN ubicacion ON u.idubicacion = ubicacion.idubicacion
         INNER JOIN bibliotecario b ON p.idbibliotecario = b.idbibliotecario
         Group by u.idusuario Having u.nombre like '" & TBBusqueda.Text & "%'", "usuario")
+
+        ElseIf CBFiltro.Text = "Identificación" Then
+            LlenarTabla(DatosGrid, "SELECT p.idprestamo AS '#', u.idusuario AS 'Codigo de usuario', u.nombre AS Nombre,
+        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS País,
+        ubicacion.ciudad AS Ciudad, ubicacion.nacionalidad AS Nacionalidad,
+        GROUP_CONCAT(DISTINCT l.titulo SEPARATOR ', ') AS 'Libros prestados', 
+        p.fechaprestamo AS 'Fecha de prestamo', p.fechadevolucion AS 'Fecha de devolucion',
+        p.cantidad AS Cantidad, p.estado AS Estado, b.nombre AS 'Nombre bibliotecario', b.apellido AS 'Apellido bibliotecario'
+        FROM Prestamo p
+        INNER JOIN detalleprestamo dp ON (p.idprestamo = dp.idprestamo)
+        INNER JOIN libro l ON (dp.idlibro = l.idlibro)
+        INNER JOIN usuario u ON (p.idusuario = u.idusuario)
+        INNER JOIN ubicacion ON u.idubicacion = ubicacion.idubicacion
+        INNER JOIN bibliotecario b ON p.idbibliotecario = b.idbibliotecario
+        Group by u.idusuario Having u.identificacion like '" & TBBusqueda.Text & "%'", "usuario")
+        End If
     End Sub
 
     Private Sub Datos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DatosGrid.CellContentClick
         If CBEdit.Checked = True Then
             Dim S As Integer
             S = DatosGrid.CurrentRow.Index
-            ID.Text = DatosGrid.Item(0, S).Value()
-            NUsuario.Text = DatosGrid.Item(1, S).Value()
-            AUsuario.Text = DatosGrid.Item(2, S).Value()
-            IDUsuario.Text = DatosGrid.Item(3, S).Value()
-            Pais.Text = DatosGrid.Item(4, S).Value()
-            Ciudad.Text = DatosGrid.Item(5, S).Value()
-            Nacionalidad.Text = DatosGrid.Item(6, S).Value()
-            LBPrestamos.Text = DatosGrid.Item(7, S).Value()
-            CBEstado.Text = DatosGrid.Item(8, S).Value()
+            idPrestamo.Text = DatosGrid.Item(0, S).Value()
+            ID.Text = DatosGrid.Item(1, S).Value()
+            NUsuario.Text = DatosGrid.Item(2, S).Value()
+            AUsuario.Text = DatosGrid.Item(3, S).Value()
+            IDUsuario.Text = DatosGrid.Item(4, S).Value()
+            Pais.Text = DatosGrid.Item(5, S).Value()
+            Ciudad.Text = DatosGrid.Item(6, S).Value()
+            Nacionalidad.Text = DatosGrid.Item(7, S).Value()
+            LBPrestamos.Text = DatosGrid.Item(8, S).Value()
             FP.Text = DatosGrid.Item(9, S).Value()
             FD.Text = DatosGrid.Item(10, S).Value()
             CantP.Text = DatosGrid.Item(11, S).Value()
-            CBBN.SelectedItem = DatosGrid.Item(12, S).Value()
-            CBBA.SelectedItem = DatosGrid.Item(13, S).Value()
+            CBEstado.Text = DatosGrid.Item(12, S).Value()
+            CBBN.SelectedItem = DatosGrid.Item(13, S).Value()
+            CBBA.SelectedItem = DatosGrid.Item(14, S).Value()
         End If
     End Sub
 
     Private Sub CBEdit_CheckedChanged(sender As Object, e As EventArgs) Handles CBEdit.CheckedChanged
         If CBEdit.Checked = True Then
+            BTCrear.Enabled = False
+        Else
+            BTCrear.Enabled = True
+        End If
+        If CBEdit.Checked = True Then
             Dim S As Integer
             S = DatosGrid.CurrentRow.Index
-            ID.Text = DatosGrid.Item(0, S).Value()
-            NUsuario.Text = DatosGrid.Item(1, S).Value()
-            AUsuario.Text = DatosGrid.Item(2, S).Value()
-            IDUsuario.Text = DatosGrid.Item(3, S).Value()
-            Pais.Text = DatosGrid.Item(4, S).Value()
-            Ciudad.Text = DatosGrid.Item(5, S).Value()
-            Nacionalidad.Text = DatosGrid.Item(6, S).Value()
-            LBPrestamos.Text = DatosGrid.Item(7, S).Value()
-            CBEstado.Text = DatosGrid.Item(8, S).Value()
+            ID.Text = DatosGrid.Item(1, S).Value()
+            NUsuario.Text = DatosGrid.Item(2, S).Value()
+            AUsuario.Text = DatosGrid.Item(3, S).Value()
+            IDUsuario.Text = DatosGrid.Item(4, S).Value()
+            Pais.Text = DatosGrid.Item(5, S).Value()
+            Ciudad.Text = DatosGrid.Item(6, S).Value()
+            Nacionalidad.Text = DatosGrid.Item(7, S).Value()
+            LBPrestamos.Text = DatosGrid.Item(8, S).Value()
             FP.Text = DatosGrid.Item(9, S).Value()
             FD.Text = DatosGrid.Item(10, S).Value()
             CantP.Text = DatosGrid.Item(11, S).Value()
-            CBBN.SelectedItem = DatosGrid.Item(12, S).Value()
-            CBBA.SelectedItem = DatosGrid.Item(13, S).Value()
+            CBEstado.Text = DatosGrid.Item(12, S).Value()
+            CBBN.SelectedItem = DatosGrid.Item(13, S).Value()
+            CBBA.SelectedItem = DatosGrid.Item(14, S).Value()
         ElseIf CBEdit.Checked = False Then
             NUsuario.Clear()
             AUsuario.Clear()
@@ -171,7 +195,74 @@ Public Class Ventana_Registro
         End If
     End Sub
 
-    Private Sub ID_TextChanged(sender As Object, e As EventArgs) Handles ID.TextChanged
-
+    Private Sub NUsuario_KeyPress(sender As Object, e As KeyPressEventArgs) Handles NUsuario.KeyPress
+        If e.KeyChar.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
     End Sub
+
+    Private Sub AUsuario_KeyPress(sender As Object, e As KeyPressEventArgs) Handles AUsuario.KeyPress
+        If e.KeyChar.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub Pais_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Pais.KeyPress
+        If e.KeyChar.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub Ciudad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Ciudad.KeyPress
+        If e.KeyChar.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub Nacionalidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Nacionalidad.KeyPress
+        If e.KeyChar.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub CantP_KeyPress(sender As Object, e As KeyPressEventArgs) Handles CantP.KeyPress
+        If e.KeyChar.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf e.KeyChar.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
 End Class

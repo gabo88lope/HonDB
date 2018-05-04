@@ -22,9 +22,9 @@ Partial Class Ventana_Registro
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventana_Registro))
         Me.LabelLogo = New System.Windows.Forms.Label()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
@@ -82,8 +82,10 @@ Partial Class Ventana_Registro
         Me.CBBA = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.ID = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.CBEdit = New System.Windows.Forms.CheckBox()
+        Me.CBFiltro = New System.Windows.Forms.ComboBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.idPrestamo = New System.Windows.Forms.TextBox()
         CType(Me.DatosGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTActualizar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -213,7 +215,7 @@ Partial Class Ventana_Registro
         Me.RectangleBusqueda.CornerRadius = 15
         Me.RectangleBusqueda.Location = New System.Drawing.Point(52, 92)
         Me.RectangleBusqueda.Name = "RectangleBusqueda"
-        Me.RectangleBusqueda.Size = New System.Drawing.Size(331, 50)
+        Me.RectangleBusqueda.Size = New System.Drawing.Size(307, 50)
         '
         'RectangleShape2
         '
@@ -237,30 +239,30 @@ Partial Class Ventana_Registro
         '
         Me.DatosGrid.BackgroundColor = System.Drawing.Color.White
         Me.DatosGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DatosGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DatosGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DatosGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DatosGrid.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DatosGrid.DefaultCellStyle = DataGridViewCellStyle2
         Me.DatosGrid.Location = New System.Drawing.Point(54, 164)
         Me.DatosGrid.Name = "DatosGrid"
         Me.DatosGrid.ReadOnly = True
         Me.DatosGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DatosGrid.RowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DatosGrid.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DatosGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DatosGrid.Size = New System.Drawing.Size(676, 545)
         Me.DatosGrid.TabIndex = 5
@@ -393,10 +395,10 @@ Partial Class Ventana_Registro
         Me.TBBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TBBusqueda.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TBBusqueda.ForeColor = System.Drawing.Color.Gray
-        Me.TBBusqueda.Location = New System.Drawing.Point(104, 105)
+        Me.TBBusqueda.Location = New System.Drawing.Point(102, 105)
         Me.TBBusqueda.Multiline = True
         Me.TBBusqueda.Name = "TBBusqueda"
-        Me.TBBusqueda.Size = New System.Drawing.Size(262, 33)
+        Me.TBBusqueda.Size = New System.Drawing.Size(243, 33)
         Me.TBBusqueda.TabIndex = 16
         '
         'PictureBox1
@@ -568,10 +570,10 @@ Partial Class Ventana_Registro
         Me.FD.CalendarForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
         Me.FD.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText
         Me.FD.CalendarTitleForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.FD.CustomFormat = ""
+        Me.FD.CustomFormat = "dd/mm/yyyy"
         Me.FD.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
         Me.FD.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FD.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.FD.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.FD.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.FD.Location = New System.Drawing.Point(902, 500)
         Me.FD.Name = "FD"
@@ -581,10 +583,10 @@ Partial Class Ventana_Registro
         'FP
         '
         Me.FP.CalendarForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.FP.CustomFormat = ""
+        Me.FP.CustomFormat = "dd/mm/yyyy"
         Me.FP.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
         Me.FP.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FP.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.FP.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.FP.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.FP.Location = New System.Drawing.Point(762, 500)
         Me.FP.Name = "FP"
@@ -748,29 +750,56 @@ Partial Class Ventana_Registro
         Me.ID.TabIndex = 51
         Me.ID.Visible = False
         '
+        'CBEdit
+        '
+        Me.CBEdit.AutoSize = True
+        Me.CBEdit.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBEdit.ForeColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.CBEdit.Location = New System.Drawing.Point(532, 137)
+        Me.CBEdit.Name = "CBEdit"
+        Me.CBEdit.Size = New System.Drawing.Size(204, 24)
+        Me.CBEdit.TabIndex = 53
+        Me.CBEdit.Text = "Editar/Eliminar Préstamo"
+        Me.CBEdit.UseVisualStyleBackColor = True
+        '
+        'CBFiltro
+        '
+        Me.CBFiltro.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CBFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CBFiltro.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBFiltro.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.CBFiltro.FormattingEnabled = True
+        Me.CBFiltro.IntegralHeight = False
+        Me.CBFiltro.Items.AddRange(New Object() {"Nombre", "Identificación"})
+        Me.CBFiltro.Location = New System.Drawing.Point(366, 114)
+        Me.CBFiltro.Margin = New System.Windows.Forms.Padding(6)
+        Me.CBFiltro.Name = "CBFiltro"
+        Me.CBFiltro.Size = New System.Drawing.Size(156, 29)
+        Me.CBFiltro.TabIndex = 54
+        '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.DimGray
-        Me.Label13.Location = New System.Drawing.Point(392, 108)
+        Me.Label13.Location = New System.Drawing.Point(362, 92)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(182, 21)
-        Me.Label13.TabIndex = 52
-        Me.Label13.Text = "Búsqueda por Nombre"
+        Me.Label13.Size = New System.Drawing.Size(115, 21)
+        Me.Label13.TabIndex = 55
+        Me.Label13.Text = "Búsqueda por"
         '
-        'CBEdit
+        'idPrestamo
         '
-        Me.CBEdit.AutoSize = True
-        Me.CBEdit.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBEdit.ForeColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.CBEdit.Location = New System.Drawing.Point(580, 133)
-        Me.CBEdit.Name = "CBEdit"
-        Me.CBEdit.Size = New System.Drawing.Size(150, 25)
-        Me.CBEdit.TabIndex = 53
-        Me.CBEdit.Text = "Editar Préstamo"
-        Me.CBEdit.UseVisualStyleBackColor = True
+        Me.idPrestamo.BackColor = System.Drawing.SystemColors.Control
+        Me.idPrestamo.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.idPrestamo.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.idPrestamo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.idPrestamo.Location = New System.Drawing.Point(836, 615)
+        Me.idPrestamo.Name = "idPrestamo"
+        Me.idPrestamo.Size = New System.Drawing.Size(68, 22)
+        Me.idPrestamo.TabIndex = 56
+        Me.idPrestamo.Visible = False
         '
         'Ventana_Registro
         '
@@ -778,8 +807,10 @@ Partial Class Ventana_Registro
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1350, 729)
-        Me.Controls.Add(Me.CBEdit)
+        Me.Controls.Add(Me.idPrestamo)
         Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.CBFiltro)
+        Me.Controls.Add(Me.CBEdit)
         Me.Controls.Add(Me.ID)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.CBBA)
@@ -900,6 +931,8 @@ Partial Class Ventana_Registro
     Friend WithEvents CBBA As ComboBox
     Friend WithEvents Label11 As Label
     Friend WithEvents ID As TextBox
-    Friend WithEvents Label13 As Label
     Friend WithEvents CBEdit As CheckBox
+    Friend WithEvents CBFiltro As ComboBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents idPrestamo As TextBox
 End Class
