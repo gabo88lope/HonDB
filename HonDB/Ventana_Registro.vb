@@ -69,7 +69,7 @@ Public Class Ventana_Registro
         EditarPrestamo = "Update prestamo Set fechaprestamo = '" & FP.Value.Date & "', fechadevolucion = '" & FD.Value.Date & "', 
         cantidad = '" & CantP.Text & "' Where idprestamo = " & idPrestamo.Text
         MsgBox(EditarPrestamo)
-        SaveData(EditarPrestamo)
+        'SaveData(EditarPrestamo)
     End Sub
 
     Private Sub BTEliminar_Click(sender As Object, e As EventArgs) Handles BTEliminar.Click
@@ -170,6 +170,7 @@ Public Class Ventana_Registro
         If CBEdit.Checked = True Then
             Dim S As Integer
             S = DatosGrid.CurrentRow.Index
+            idPrestamo.Text = DatosGrid.Item(0, S).Value()
             ID.Text = DatosGrid.Item(1, S).Value()
             NUsuario.Text = DatosGrid.Item(2, S).Value()
             AUsuario.Text = DatosGrid.Item(3, S).Value()
