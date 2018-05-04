@@ -8,10 +8,10 @@ Public Class Login
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Me.Label2.Parent = PictureBox1
-        If Not ConexionInternet() Then
-            MsgBox("No se ha establecido la conexión a internet", MsgBoxStyle.Critical)
-            Me.Close()
-        End If
+        'If Not ConexionInternet() Then
+        '    MsgBox("No se ha establecido la conexión a internet", MsgBoxStyle.Critical)
+        '    Me.Close()
+        'End If
 
     End Sub
 
