@@ -5,7 +5,7 @@ Public Class Ventana_Registro
         Me.WindowState = FormWindowState.Maximized
 
         LlenarTabla(DatosGrid, "SELECT p.idprestamo AS '#', u.idusuario AS 'Codigo de usuario', u.nombre AS Nombre,
-        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS País,
+        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS Pais,
         ubicacion.ciudad AS Ciudad, ubicacion.nacionalidad AS Nacionalidad,
         GROUP_CONCAT(DISTINCT l.titulo SEPARATOR ', ') AS 'Libros prestados', 
         p.fechaprestamo AS 'Fecha de prestamo', p.fechadevolucion AS 'Fecha de devolucion',
@@ -84,7 +84,7 @@ Public Class Ventana_Registro
 
     Private Sub BTActualizar_Click(sender As Object, e As EventArgs) Handles BTActualizar.Click
         LlenarTabla(DatosGrid, "SELECT p.idprestamo AS '#', u.idusuario AS 'Codigo de usuario', u.nombre AS Nombre,
-        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS País,
+        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS Pais,
         ubicacion.ciudad AS Ciudad, ubicacion.nacionalidad AS Nacionalidad,
         GROUP_CONCAT(DISTINCT l.titulo SEPARATOR ', ') AS 'Libros prestados', 
         p.fechaprestamo AS 'Fecha de prestamo', p.fechadevolucion AS 'Fecha de devolucion',
@@ -100,7 +100,7 @@ Public Class Ventana_Registro
 
     Private Sub TBBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TBBusqueda.TextChanged
         LlenarTabla(DatosGrid, "SELECT p.idprestamo AS '#', u.idusuario AS 'Codigo de usuario', u.nombre AS Nombre,
-        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS País,
+        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS Pais,
         ubicacion.ciudad AS Ciudad, ubicacion.nacionalidad AS Nacionalidad,
         GROUP_CONCAT(DISTINCT l.titulo SEPARATOR ', ') AS 'Libros prestados', 
         p.fechaprestamo AS 'Fecha de prestamo', p.fechadevolucion AS 'Fecha de devolucion',
