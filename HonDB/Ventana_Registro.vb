@@ -26,9 +26,6 @@ Public Class Ventana_Registro
     End Sub
 
     Private Sub BTCrear_Click(sender As Object, e As EventArgs) Handles BTCrear.Click
-        If CBEdit.Checked = True Then
-            BTCrear.Enabled = False
-        End If
         Dim CrearUsuario As String
         Dim CrearUbicacion As String
         Dim CrearPrestamo As String
@@ -156,6 +153,13 @@ Public Class Ventana_Registro
     End Sub
 
     Private Sub CBEdit_CheckedChanged(sender As Object, e As EventArgs) Handles CBEdit.CheckedChanged
+        If CBEdit.Checked = True Then
+            BTCrear.Visible = False
+            LbCrear.Visible = False
+        Else
+            BTCrear.Visible = True
+            LbCrear.Visible = True
+        End If
         If CBEdit.Checked = True Then
             Dim S As Integer
             S = DatosGrid.CurrentRow.Index
