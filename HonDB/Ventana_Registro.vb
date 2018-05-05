@@ -56,20 +56,6 @@ Public Class Ventana_Registro
         MsgBox(CrearPrestamo)
         SaveData(CrearPrestamo)
         MsgBox("Préstamo creado exitosamente")
-        NUsuario.Clear()
-        AUsuario.Clear()
-        IDUsuario.Clear()
-        Pais.Clear()
-        Ciudad.Clear()
-        Nacionalidad.Clear()
-        ID.Clear()
-        LBPrestamos.Clear()
-        CBEstado.ResetText()
-        CBBN.ResetText()
-        CBBA.ResetText()
-        FP.ResetText()
-        FD.ResetText()
-
         GetData("SELECT p.idprestamo FROM prestamo p ORDER BY p.idprestamo DESC LIMIT 1;", idp)
         idPrestamo.Text = idp.ToString
 
@@ -80,9 +66,8 @@ Public Class Ventana_Registro
         Consulta1 = "SELECT idusuario FROM usuario WHERE identificacion = '" & IDUsuario.Text
         Dim CrearDetallePrestamo As String
         CrearDetallePrestamo = "INSERT INTO detalleprestamo(idlibro,idprestamo)
-        VALUES ((SELECT idlibro FROM libro WHERE titulo = '" & LBPrestamos.Text & "') , (SELECT idprestamo FROM prestamo WHERE usuario = '" & Consulta1 & "'))"
+        VALUES ((SELECT idlibro FROM libro WHERE titulo = '" & LBPrestamos.Text & "') , '" & idPrestamo.Text & "')"
         SaveData(CrearDetallePrestamo)
-        MsgBox(CrearDetallePrestamo)
     End Sub
 
     Private Sub BTEditar_Click(sender As Object, e As EventArgs) Handles BTEditar.Click
@@ -93,7 +78,6 @@ Public Class Ventana_Registro
         Dim EditarPrestamo As String
         EditarPrestamo = "Update prestamo Set fechaprestamo =  STR_TO_DATE('" & FP.Value.Date.ToString("dd/MM/yyyy") & "', '%d/%m/%Y') , fechadevolucion = STR_TO_DATE('" & FD.Value.Date & "', '%d/%m/%Y'), cantidad = '" & CantP.Text & "' Where idprestamo = '" & idPrestamo.Text & "';"
         SaveData(EditarPrestamo)
-
     End Sub
 
     Private Sub BTEliminar_Click(sender As Object, e As EventArgs) Handles BTEliminar.Click
@@ -180,6 +164,12 @@ Public Class Ventana_Registro
     End Sub
 
     Private Sub CBEdit_CheckedChanged(sender As Object, e As EventArgs) Handles CBEdit.CheckedChanged
+        If CBEdit.Checked = True Then
+            BTAgregarLibro.Visible = False
+        Else
+            BTAgregarLibro.Visible = True
+        End If
+
         If CBEdit.Checked = True Then
             BTEliminar.Enabled = True
         Else
