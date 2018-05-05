@@ -23,6 +23,9 @@ Public Class VentanaAdministrar
         llenarLista(listaEditoriales, "editorial", "nombre")
         LlenarTabla(tablaUbicaciones, queryUbicacionesTabla, "ubicacion")
         LlenarTabla(tablaCG, queryTablaCG, "categoriageneral")
+        AjustarAnchoColumna(tablaCG, 180, 2)
+        LlenarTabla(tablaCE, queryTablaCE, "categoriaespecial")
+        AjustarAnchoColumna(tablaCE, 150, 3)
         'PopulateCombobox(SearchWayCb, "usuario", "sexo")
         'SearchWayCb.Items.Add("Código")
         SearchWayCb.Items.Add("Cédula")
@@ -118,8 +121,11 @@ Public Class VentanaAdministrar
         Dim value As Object = tablaUsuarios.CurrentRow.Cells(0).Value
 
         'MsgBox(CType(value, Integer))
-        indexSelected = CType(value, Integer)
-        'campoBuscar.Text = indexSelected
+        Try
+            indexSelected = CType(value, Integer)
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub botonEditar_Click(sender As Object, e As EventArgs) Handles botonEditar.Click
@@ -200,24 +206,54 @@ Public Class VentanaAdministrar
     '/////////////////////////// LIBROS //////////////////
 
     Private Sub tablaLibros_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles tablaLibros.CellClick
-        Dim value As Object = tablaUsuarios.CurrentRow.Cells(0).Value
+        Try
+            Dim value As Object = tablaLibros.CurrentRow.Cells(0).Value
 
-        indexSelected = CType(value, Integer)
+            indexSelected = CType(value, Integer)
+        Catch ex As Exception
+            indexSelected = -1
+        End Try
     End Sub
 
     Private Sub btCrearLibro_Click(sender As Object, e As EventArgs) Handles btCrearLibro.Click
         PanelDatosLibros.Visible = True
+        btEditarLibro.Enabled = False
+        btEliminarLibro.Enabled = False
         PopulateCombobox(cbCiudadL, "Ubicacion", "Ciudad")
-        PopulateCombobox(CBEstado, "Estado", "estado")
         PopulateCombobox(CBCatG, "categoriageneral", "nombre")
         PopulateCombobox(CBCatE, "categoriaespecial", "nombre")
         PopulateCombobox(CBTipoDoc, "tipodocumento", "nombre")
+        PopulateCombobox(cbEditarialLibro, "editorial", "nombre")
+        PopulateCombobox(cbAutorLibro, "autor", "nombre")
     End Sub
 
+    Private Sub btActualizarTL_Click(sender As Object, e As EventArgs) Handles btActualizarTL.Click
+        LlenarTabla(tablaLibros, tablaLibroQuery, "libro")
+    End Sub
+
+    Private Sub txtBuscarLibro_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarLibro.TextChanged
+        Dim query = tablaLibroQuery & " Where l.titulo like '" & txtBuscarLibro.Text & "%'"
+        LlenarTabla(tablaLibros, query, "libro")
+    End Sub
 
     Private Sub btCancelarL_Click(sender As Object, e As EventArgs) Handles btCancelarL.Click
         PanelDatosLibros.Visible = False
-
+        btEditarLibro.Enabled = True
+        btEliminarLibro.Enabled = True
+        txtTituloL.Text = ""
+        txtEdicion.Text = ""
+        txtISBN.Text = ""
+        txtDescrip.Text = ""
+        txtDL.Text = ""
+        paginasCant.Value = 1
+        ejemplaresCont.Value = 1
+        cbAutorLibro.Items.Clear()
+        cbEditarialLibro.Items.Clear()
+        cbCiudadL.Items.Clear()
+        CBCatG.Items.Clear()
+        CBCatE.Items.Clear()
+        CBTipoDoc.Items.Clear()
+        edicion = False
     End Sub
 
     Private Sub btEliminarLibro_Click(sender As Object, e As EventArgs) Handles btEliminarLibro.Click
@@ -229,8 +265,53 @@ Public Class VentanaAdministrar
     End Sub
 
     Private Sub btEditarLibro_Click(sender As Object, e As EventArgs) Handles btEditarLibro.Click
+        PanelDatosLibros.Visible = True
+        btEditarLibro.Enabled = False
+        btEliminarLibro.Enabled = False
+        PopulateCombobox(cbCiudadL, "Ubicacion", "Ciudad")
+        PopulateCombobox(CBCatG, "categoriageneral", "nombre")
+        PopulateCombobox(CBCatE, "categoriaespecial", "nombre")
+        PopulateCombobox(CBTipoDoc, "tipodocumento", "nombre")
+        PopulateCombobox(cbEditarialLibro, "editorial", "nombre")
+        PopulateCombobox(cbAutorLibro, "autor", "nombre")
 
+        Try
+            AbrirConexion()
+            Dim query As String
+            idActual = indexSelected
+            query = tablaLibroQuery & " WHERE l.idlibro = " & idActual
+            command = New MySqlCommand(query, conexion)
+            reader = command.ExecuteReader
+            reader.Read()
+
+            txtTituloL.Text = reader.GetString("Titulo")
+            txtEdicion.Text = reader.GetString("Edicion")
+            txtISBN.Text = reader.GetString("ISBN")
+            txtDescrip.Text = reader.GetString("Descripcion")
+            txtDL.Text = reader.GetString("DepositoLegal")
+            Dim varUbi = reader.GetString("Ciudad")
+            Dim varCE = reader.GetString("CategoriaEspecial")
+            Dim varCG = reader.GetString("CategoriaGeneral")
+            Dim varTD = reader.GetString("TipoDocumento")
+            Dim varAu = reader.GetString("Autor")
+            Dim varEd = reader.GetString("Editorial")
+            'Dim eje = reader.GetInt32("Ejemplares")
+
+
+            cbCiudadL.SelectedItem = varUbi
+            CBCatG.SelectedItem = varCG
+            CBCatE.SelectedItem = varCE
+            CBTipoDoc.SelectedItem = varTD
+            cbAutorLibro.SelectedItem = varAu
+            cbEditarialLibro.SelectedItem = varEd
+            'ejemplaresCont.Value = eje
+
+            conexion.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
+
 
 
     '-------------------------------------------------------------------------------------
@@ -239,62 +320,81 @@ Public Class VentanaAdministrar
     Private Sub btNuevoAutor_Click(sender As Object, e As EventArgs) Handles btNuevoAutor.Click
 
         PanelDatosAutor.Visible = True
+        btEditarAutor.Enabled = False
+        btEliminarAutor.Enabled = False
         PopulateCombobox(cbCiudadAutor, "ubicacion", "Ciudad")
     End Sub
 
     Private Sub btEliminarAutor_Click(sender As Object, e As EventArgs) Handles btEliminarAutor.Click
-        Dim opc = MessageBox.Show("¿Desea eliminar este registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If indexSelected > -1 Then
+            Dim opc = MessageBox.Show("¿Desea eliminar este registro? - Se eliminarán los registros con este autor", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
-        If opc = DialogResult.Yes Then
-            SaveData("DELETE FROM autor WHERE idautor = " & indexSelected)
+            If opc = DialogResult.Yes Then
+                SaveData("DELETE FROM autor WHERE idautor = " & indexSelected)
+            End If
         End If
     End Sub
 
+    Private Sub txtBuscarAutor_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarAutor.TextChanged
+        Dim query = queryAutorTabla & " Where a.nombre like '" & txtBuscarAutor.Text & "%'"
+        LlenarTabla(tablaAutores, query, "autor")
+    End Sub
+
     Private Sub btEditarAutor_Click(sender As Object, e As EventArgs) Handles btEditarAutor.Click
-        PanelDatosAutor.Visible = True
-        btEditarAutor.Enabled = False
-        btEliminarAutor.Enabled = False
-        idActual = indexSelected
-        edicion = True
-        Try
-            AbrirConexion()
-            Dim query As String
+
+        If indexSelected > -1 Then
+            PanelDatosAutor.Visible = True
+            btEditarAutor.Enabled = False
+            btEliminarAutor.Enabled = False
             idActual = indexSelected
-            query = queryAutorTabla & " WHERE a.idautor = " & indexSelected
-            command = New MySqlCommand(query, conexion)
-            reader = command.ExecuteReader
-            reader.Read()
+            edicion = True
+            Try
+                AbrirConexion()
+                Dim query As String
+                idActual = indexSelected
+                query = queryAutorTabla & " WHERE a.idautor = " & indexSelected
+                command = New MySqlCommand(query, conexion)
+                reader = command.ExecuteReader
+                reader.Read()
 
-            txtNombreAutor.Text = reader.GetString("nombre")
-            txtApellidoAutor.Text = reader.GetString("apellido")
+                txtNombreAutor.Text = reader.GetString("nombre")
+                txtApellidoAutor.Text = reader.GetString("apellido")
 
-            If reader.GetString("Sexo") = "Femenino" Then
-                rbFemAutor.Select()
-            Else
-                rbMasAutor.Select()
-            End If
+                If reader.GetString("Sexo") = "Femenino" Then
+                    rbFemAutor.Select()
+                Else
+                    rbMasAutor.Select()
+                End If
 
-            Dim var = reader.GetString("ciudad")
-            PopulateCombobox(cbCiudadAutor, "ubicacion", "Ciudad")
-            cbCiudadAutor.SelectedItem = var
+                Dim var = reader.GetString("ciudad")
+                PopulateCombobox(cbCiudadAutor, "ubicacion", "Ciudad")
+                cbCiudadAutor.SelectedItem = var
 
-            conexion.Close()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+                conexion.Close()
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
 
     End Sub
 
     Private Sub tablaAutores_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles tablaAutores.CellClick
-        Dim value As Object = tablaAutores.CurrentRow.Cells(0).Value
+        Try
+            Dim value As Object = tablaAutores.CurrentRow.Cells(0).Value
 
-        indexSelected = CType(value, Integer)
+            indexSelected = CType(value, Integer)
+        Catch ex As Exception
+            indexSelected = -1
+        End Try
     End Sub
 
     Private Sub btCancelarAutor_Click(sender As Object, e As EventArgs) Handles btCancelarAutor.Click
         PanelDatosAutor.Visible = False
         btEditarAutor.Enabled = True
         btEliminarAutor.Enabled = True
+        txtNombreAutor.Text = False
+        txtApellidoAutor.Text = False
+        cbCiudadAutor.Items.Clear()
         edicion = False
     End Sub
 
@@ -321,7 +421,7 @@ Public Class VentanaAdministrar
                 End If
 
                 subQuery = "(SELECT idubicacion FROM ubicacion WHERE ciudad = '" & cbCiudadAutor.SelectedItem & "')"
-                query = "Update usuario Set nombre = '" & txtNombreAutor.Text & "', apellido = '" & txtApellidoAutor.Text & "', 
+                query = "Update autor Set nombre = '" & txtNombreAutor.Text & "', apellido = '" & txtApellidoAutor.Text & "', 
                 sexo = '" & sex & "', idubicacion = " & subQuery & " Where idautor = " & idActual
                 SaveData(query)
 
@@ -517,6 +617,7 @@ Public Class VentanaAdministrar
         PanelDatosEdit.Visible = False
         editarEditorial.Enabled = True
         eliminarEditorial.Enabled = True
+        CBCiudadEd.Items.Clear()
         edicion = False
     End Sub
 
@@ -632,16 +733,19 @@ Public Class VentanaAdministrar
 
 
     Private Sub tablaUbicaciones_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles tablaUbicaciones.CellClick
-        Dim value As Object = tablaUbicaciones.CurrentRow.Cells(0).Value
+
 
         Try
+            Dim value As Object = tablaUbicaciones.CurrentRow.Cells(0).Value
             indexSelected = CType(value, Integer)
         Catch ex As Exception
-
+            indexSelected = -1
         End Try
     End Sub
 
-
+    Private Sub btActualizarUbi_Click(sender As Object, e As EventArgs) Handles btActualizarUbi.Click
+        LlenarTabla(tablaUbicaciones, queryUbicacionesTabla, "ubicacion")
+    End Sub
 
     Private Sub btEliminarUbi_Click(sender As Object, e As EventArgs) Handles btEliminarUbi.Click
         Dim opc = MessageBox.Show("¿Desea eliminar este registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -650,6 +754,7 @@ Public Class VentanaAdministrar
             SaveData("DELETE FROM ubicacion WHERE idubicacion = " & indexSelected)
         End If
     End Sub
+
 
     Private Sub btGuardarUbi_Click(sender As Object, e As EventArgs) Handles btGuardarUbi.Click
         Dim opc = MessageBox.Show("¿Desea guardar los cambios?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -682,5 +787,184 @@ Public Class VentanaAdministrar
             e.Handled = True
         End If
     End Sub
+
+    Private Sub btCrearCG_Click(sender As Object, e As EventArgs) Handles btCrearCG.Click
+        PanelDatosCG.Visible = True
+        btEditarCG.Enabled = False
+        btEliminarCG.Enabled = False
+    End Sub
+
+
+    Private Sub btCancelarCG_Click(sender As Object, e As EventArgs) Handles btCancelarCG.Click
+        PanelDatosCG.Visible = False
+        btEditarCG.Enabled = True
+        btEliminarCG.Enabled = True
+        edicion = False
+        txtCodigoG.Text = ""
+        txtNombreCG.Text = ""
+    End Sub
+
+
+    Private Sub btEliminarCG_Click(sender As Object, e As EventArgs) Handles btEliminarCG.Click
+        Dim opc = MessageBox.Show("¿Desea eliminar este registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If opc = DialogResult.Yes Then
+            SaveData("DELETE FROM categoria WHERE codigogeneral = " & idActual)
+        End If
+    End Sub
+
+    Private Sub btActualizarCG_Click(sender As Object, e As EventArgs) Handles btActualizarCG.Click
+        LlenarTabla(tablaCG, queryTablaCG, "categoriageneral")
+    End Sub
+
+
+    Private Sub btEditarCG_Click(sender As Object, e As EventArgs) Handles btEditarCG.Click
+        PanelDatosCG.Visible = True
+        btEditarCG.Enabled = False
+        btEliminarCG.Enabled = False
+        edicion = True
+        idActual = indexSelected
+        Try
+            AbrirConexion()
+            Dim query = "SELECT * FROM categoriageneral WHERE codigogeneral = " & idActual
+            command = New MySqlCommand(query, conexion)
+            reader = command.ExecuteReader
+            reader.Read()
+
+            txtNombreCG.Text = reader.GetString("nombre")
+            txtCodigoG.Text = reader.GetInt32("codigogeneral")
+
+            conexion.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+
+    Private Sub tablaCG_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles tablaCG.CellClick
+
+
+        Try
+            Dim value As Object = tablaCG.CurrentRow.Cells(0).Value
+            indexSelected = CType(value, Integer)
+
+        Catch ex As Exception
+            indexSelected = -1
+        End Try
+    End Sub
+
+    Private Sub btGuardarCG_Click(sender As Object, e As EventArgs) Handles btGuardarCG.Click
+        Dim opc = MessageBox.Show("¿Desea guardar los cambios?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Dim query As String
+        If opc = DialogResult.Yes Then
+            If edicion = True Then
+                query = "UPDATE categoriageneral SET codigogeneral = " & txtCodigoG.Text & ", nombre = '" & txtNombreCG.Text & "' WHERE
+                codigogeneral = " & idActual
+                SaveData(query)
+
+            Else
+                query = "INSERT INTO categoriageneral (codigogeneral, nombre) VALUES (" & txtCodigoG.Text & ", '" & txtNombreCG.Text & "')"
+                SaveData(query)
+            End If
+        End If
+    End Sub
+
+
+    '-------------------------------------------------------------------------------------------
+    ' Categoria Especial
+
+    Private Sub btCrearCE_Click(sender As Object, e As EventArgs) Handles btCrearCE.Click
+        PanelDatosCE.Visible = True
+        btEditarCE.Enabled = False
+        btEliminarCE.Enabled = False
+        btCrearCE.Enabled = False
+        PopulateCombobox(cbCatEs, "categoriageneral", "nombre")
+    End Sub
+
+
+    Private Sub tablaCE_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles tablaCE.CellClick
+
+
+        Try
+            Dim value As Object = tablaCE.CurrentRow.Cells(0).Value
+            indexSelected = CType(value, Integer)
+        Catch ex As Exception
+            indexSelected = -1
+        End Try
+    End Sub
+
+
+    Private Sub btActualizarCE_Click(sender As Object, e As EventArgs) Handles btActualizarCE.Click
+        LlenarTabla(tablaCE, queryTablaCE, "categoriaespecial")
+    End Sub
+
+    Private Sub btCancelarCE_Click(sender As Object, e As EventArgs) Handles btCancelarCE.Click
+        PanelDatosCE.Visible = False
+        btEditarCE.Enabled = True
+        btEliminarCE.Enabled = True
+        btCrearCE.Enabled = True
+        edicion = False
+        txtNombreCE.Text = ""
+        txtCodigoCE.Text = ""
+        cbCatEs.Items.Clear()
+    End Sub
+
+
+    Private Sub btEliminarCE_Click(sender As Object, e As EventArgs) Handles btEliminarCE.Click
+        Dim opc = MessageBox.Show("¿Desea eliminar este registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If opc = DialogResult.Yes Then
+            SaveData("DELETE FROM categoriaespecial WHERE codigoespecial = " & idActual)
+        End If
+    End Sub
+
+
+
+    Private Sub btEditarCE_Click(sender As Object, e As EventArgs) Handles btEditarCE.Click
+        PanelDatosCE.Visible = True
+        btEditarCE.Enabled = False
+        btEliminarCE.Enabled = False
+        edicion = True
+        idActual = indexSelected
+        Try
+            AbrirConexion()
+            Dim query = queryTablaCE & " Where codigoespecial = " & idActual
+            command = New MySqlCommand(query, conexion)
+            reader = command.ExecuteReader
+            reader.Read()
+
+            txtNombreCE.Text = reader.GetString("Nombre")
+            txtCodigoCE.Text = reader.GetInt32("CodigoEspecial")
+            Dim var = reader.GetString("CategoriaGeneral")
+
+            PopulateCombobox(cbCatEs, "categoriageneral", "nombre")
+            cbCatEs.SelectedItem = var
+            conexion.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btGuardarCE_Click(sender As Object, e As EventArgs) Handles btGuardarCE.Click
+        Dim opc = MessageBox.Show("¿Desea guardar los cambios?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Dim query As String
+        Dim SubQuery As String
+        If opc = DialogResult.Yes Then
+            If edicion = True Then
+                SubQuery = "(SELECT codigogeneral FROM categoriageneral WHERE nombre  = '" & cbCatEs.SelectedItem & "')"
+                query = "UPDATE categoriaespecial SET codigoespecial = " & txtCodigoCE.Text & ", nombre = '" & txtNombreCE.Text & "', codigogeneral =
+                " & SubQuery & " WHERE codigoespecial = " & idActual
+                SaveData(query)
+
+            Else
+                SubQuery = "(SELECT codigogeneral FROM categoriageneral WHERE nombre  = '" & cbCatEs.SelectedItem & "')"
+                query = "INSERT INTO categoriaespecial (codigoespecial, nombre, codigogeneral) VALUES (" & txtCodigoCE.Text & ", '" & txtNombreCE.Text & "', " & SubQuery & ")"
+                SaveData(query)
+            End If
+        End If
+    End Sub
+
 
 End Class

@@ -272,6 +272,10 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <Content Include="Resources\icons8_Book_Stack_40px_2.png" />
+    <Content Include="Resources\icons8_Give_40px_10.png" />
+    <Content Include="Resources\icons8_Location_40px.png" />
+    <Content Include="Resources\icons8_Oscar_Wilde_40px.png" />
     <None Include="Resources\BotonAcercade.png" />
     <None Include="Resources\BotonSalir.png" />
     <None Include="Resources\BotonAdministrar-031.png" />

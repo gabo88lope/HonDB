@@ -14,7 +14,7 @@ Public Class ConexionBD
 
         Try
             conexion = New MySqlConnection
-            conexion.ConnectionString = "server = localhost; user id = root; Password = 12345678; database = biblioteca"
+            conexion.ConnectionString = "server = localhost; user id = root; Password = leo12345; database = biblioteca"
             conexion.Open()
         Catch ex As Exception
             Err.Description.ToString()
