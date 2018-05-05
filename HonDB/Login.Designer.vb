@@ -214,9 +214,9 @@ Partial Class Login
         Me.ClientSize = New System.Drawing.Size(690, 331)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.LBPass)
         Me.Controls.Add(Me.LBUser)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
