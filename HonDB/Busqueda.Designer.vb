@@ -153,7 +153,7 @@ Partial Class Busqueda
         Me.BotonCancelarBusqueda.Name = "BotonCancelarBusqueda"
         Me.BotonCancelarBusqueda.Size = New System.Drawing.Size(99, 35)
         Me.BotonCancelarBusqueda.TabIndex = 3
-        Me.BotonCancelarBusqueda.Text = "Cancelar"
+        Me.BotonCancelarBusqueda.Text = "Cerrar"
         Me.BotonCancelarBusqueda.UseVisualStyleBackColor = True
         '
         'Busqueda
