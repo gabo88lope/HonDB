@@ -9,30 +9,7 @@ Public Class Busqueda
 
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-
-        If CheckBox1.Checked = True Then
-            ComboBox1.Visible = True
-        Else
-            ComboBox1.Visible = False
-        End If
-
-        If CheckBox1.Checked = True Then
-            Label1.Visible = True
-        Else
-            Label1.Visible = False
-        End If
-
-        If CheckBox1.Checked = True Then
-            ComboBox1.Enabled = True
-
-        Else
-            ComboBox1.Enabled = False
-        End If
-    End Sub
-
-
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs)
         LlenarTabla(DataGridView1, "SELECT l.idlibro as Código, l.isbn as ISBN,(SELECT concat_ws(' ',a.nombre,concat(' ', a.apellido)) FROM 
         autor a INNER JOIN detallelibro d ON a.idautor = d.idautor
         WHERE d.idlibro = l.idlibro) as Autor, l.depositolegal as DepositoLegal, l.titulo as Titulo,

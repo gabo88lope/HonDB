@@ -26,9 +26,6 @@ Partial Class Busqueda
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TBI = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.BotonLimpiarBusquedaLibro = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -43,14 +40,11 @@ Partial Class Busqueda
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.Panel1.Controls.Add(Me.TBI)
         Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.ComboBox1)
-        Me.Panel1.Controls.Add(Me.CheckBox1)
         Me.Panel1.Controls.Add(Me.BotonLimpiarBusquedaLibro)
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Location = New System.Drawing.Point(-8, -3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(816, 153)
+        Me.Panel1.Size = New System.Drawing.Size(816, 86)
         Me.Panel1.TabIndex = 0
         '
         'TBI
@@ -64,62 +58,30 @@ Partial Class Busqueda
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold)
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI Black", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(303, 0)
+        Me.Label5.Location = New System.Drawing.Point(13, 12)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(205, 30)
+        Me.Label5.Size = New System.Drawing.Size(277, 37)
         Me.Label5.TabIndex = 12
         Me.Label5.Text = "Búsqueda de Libros"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(619, 47)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(53, 13)
-        Me.Label1.TabIndex = 7
-        Me.Label1.Text = "Filtrar por:"
-        Me.Label1.Visible = False
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Nombre del autor", "Nombre del documento", "Tematica del docuemento", "Categoría"})
-        Me.ComboBox1.Location = New System.Drawing.Point(622, 63)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(174, 21)
-        Me.ComboBox1.TabIndex = 3
-        Me.ComboBox1.Visible = False
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.CheckBox1.Location = New System.Drawing.Point(20, 88)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(125, 17)
-        Me.CheckBox1.TabIndex = 2
-        Me.CheckBox1.Text = "Búsqueda Avanzada"
-        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'BotonLimpiarBusquedaLibro
         '
         Me.BotonLimpiarBusquedaLibro.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BotonLimpiarBusquedaLibro.Location = New System.Drawing.Point(481, 63)
+        Me.BotonLimpiarBusquedaLibro.Location = New System.Drawing.Point(368, 52)
         Me.BotonLimpiarBusquedaLibro.Name = "BotonLimpiarBusquedaLibro"
-        Me.BotonLimpiarBusquedaLibro.Size = New System.Drawing.Size(75, 21)
+        Me.BotonLimpiarBusquedaLibro.Size = New System.Drawing.Size(75, 24)
         Me.BotonLimpiarBusquedaLibro.TabIndex = 1
         Me.BotonLimpiarBusquedaLibro.Text = "Limpiar"
         Me.BotonLimpiarBusquedaLibro.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(20, 64)
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(20, 52)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(455, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(342, 24)
         Me.TextBox1.TabIndex = 0
         '
         'DataGridView1
@@ -128,12 +90,12 @@ Partial Class Busqueda
         Me.DataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DataGridView1.Location = New System.Drawing.Point(-5, 148)
+        Me.DataGridView1.Location = New System.Drawing.Point(-5, 79)
         Me.DataGridView1.MultiSelect = False
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(807, 259)
+        Me.DataGridView1.Size = New System.Drawing.Size(807, 328)
         Me.DataGridView1.TabIndex = 1
         '
         'BotonAgregarBusqueda
@@ -178,14 +140,11 @@ Partial Class Busqueda
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents BotonLimpiarBusquedaLibro As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents BotonAgregarBusqueda As Button
     Friend WithEvents BotonCancelarBusqueda As Button
-    Friend WithEvents Label1 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents TBI As TextBox
 End Class
