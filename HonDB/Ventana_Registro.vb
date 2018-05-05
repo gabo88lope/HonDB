@@ -65,7 +65,7 @@ Public Class Ventana_Registro
         SaveData(CrearUsuario)
         CrearPrestamo = "INSERT INTO prestamo (idusuario, idbibliotecario, fechaprestamo, fechadevolucion, cantidad, estado)
         VALUES ((SELECT idusuario FROM usuario WHERE identificacion = '" & IDUsuario.Text & "'), (SELECT idbibliotecario FROM bibliotecario WHERE nombre = '" & CBBN.SelectedItem & "')
-        , STR_TO_DATE('" & FP.Value.Date.ToString("dd/MM/yyyy") & "', '%d/%m/%Y') , STR_TO_DATE('" & FD.Value.Date & "', '%d/%m/%Y') ,'" & CantP.Text & "','" & CBEstado.SelectedItem & "')"
+        , STR_TO_DATE('" & FP.Value.Date.ToString("dd/MM/yyyy") & "', '%d/%m/%Y') , STR_TO_DATE('" & FD.Value.Date & "', '%d/%m/%Y') ,'" & CantP.Text & "','" & CBEstado.Items.Item(0) & "')"
         MsgBox(CrearPrestamo)
         SaveData(CrearPrestamo)
         MsgBox("Préstamo creado exitosamente")
@@ -343,5 +343,6 @@ Public Class Ventana_Registro
         CBBA.ResetText()
         FP.ResetText()
         FD.ResetText()
+        ids.Clear()
     End Sub
 End Class
