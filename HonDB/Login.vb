@@ -1,9 +1,13 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports HonDB.ConexionBD
+Imports System.Security.Cryptography
+Imports System.IO
 
 Public Class Login
 
-    Dim conexion As MySqlConnection
+    Private enc As System.Text.UTF8Encoding
+    Private encryptor As ICryptoTransform
+    Private decryptor As ICryptoTransform
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -12,6 +16,9 @@ Public Class Login
         '    MsgBox("No se ha establecido la conexión a internet", MsgBoxStyle.Critical)
         '    Me.Close()
         'End If
+
+        llenarListaL(LBUser, "bibliotecario", "usuario")
+        llenarListaL(LBPass, "bibliotecario", "password")
 
     End Sub
 
@@ -27,9 +34,30 @@ Public Class Login
     Private Sub BotonIngresar_Click(sender As Object, e As EventArgs) Handles BotonIngresar.Click
 
         Try
-            HonDBPrin.Show()
-            HonDBPrin.Focus()
-            Me.Close()
+
+            Dim b1 As Boolean
+            Dim b2 As Boolean
+
+            For Each s As String In LBUser.Items
+                If s = UsernameText.Text Then
+                    b1 = True
+                End If
+            Next
+
+            For Each s As String In LBPass.Items
+                If Desencriptar(s) = PassText.Text Then
+                    b2 = True
+                End If
+            Next
+
+            If b1 And b2 Then
+                HonDBPrin.Show()
+                HonDBPrin.Focus()
+                Me.Close()
+            Else
+                MsgBox("Contraseña o usuario incorrecto", MsgBoxStyle.Critical)
+            End If
+
         Catch ex As Exception
             EMsg.Show("Conexión fallida con la Base de Datos", ex)
         End Try
@@ -57,13 +85,6 @@ Public Class Login
         If PassText.Text Is Nothing Or PassText.Text.Equals("") Then
             PassText.Text = "Contraseña"
         End If
-
-    End Sub
-
-    Private Sub Validar_Contraseña()
-
-        Dim encriptado As Byte() = Nothing
-        Encriptacion.Encriptacion(PassText.Text, encriptado, True)
 
     End Sub
 

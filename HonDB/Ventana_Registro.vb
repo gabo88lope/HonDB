@@ -1,8 +1,22 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Ventana_Registro
+
+    Dim idp As Int32
+    Shared ids As New List(Of Int32)
+
+
+    Public Shared Sub AddId(ByVal idl As Int32)
+
+        ids.Add(idl)
+        Ventana_Registro.CantP.Text = ids.Count.ToString
+
+    End Sub
+
     Private Sub Ventana_Registro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
         Me.WindowState = FormWindowState.Maximized
+
+        CBEstado.DisplayMember = "Préstamo Vigente"
 
         LlenarTabla(DatosGrid, "SELECT p.idprestamo AS '#', u.idusuario AS 'Codigo de usuario', u.nombre AS Nombre,
         u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS País,
@@ -30,6 +44,7 @@ Public Class Ventana_Registro
         RectangleShape3.Enabled = False
         RectangleShape4.Enabled = False
         RectangleShape6.Enabled = False
+
     End Sub
 
     Private Sub RetornoIcon_Click(sender As Object, e As EventArgs) Handles RetornoIcon.Click
@@ -37,44 +52,34 @@ Public Class Ventana_Registro
     End Sub
 
     Private Sub BTCrear_Click(sender As Object, e As EventArgs) Handles BTCrear.Click
+
         Dim CrearUsuario As String
         Dim CrearUbicacion As String
         Dim CrearPrestamo As String
         ConexionBD.AbrirConexion()
         CrearUbicacion = "INSERT INTO ubicacion(pais,ciudad,nacionalidad)
         VALUES ('" & Pais.Text & "','" & Ciudad.Text & "','" & Nacionalidad.Text & "')"
-        'SaveData(CrearUbicacion)
+        SaveData(CrearUbicacion)
         CrearUsuario = "INSERT INTO usuario (nombre,apellido,identificacion,idubicacion) 
         VALUES ('" & NUsuario.Text & "','" & AUsuario.Text & "','" & IDUsuario.Text & "', (SELECT idubicacion FROM ubicacion WHERE ciudad = '" & Ciudad.Text & "'))"
-        'SaveData(CrearUsuario)
+        SaveData(CrearUsuario)
         CrearPrestamo = "INSERT INTO prestamo (idusuario, idbibliotecario, fechaprestamo, fechadevolucion, cantidad, estado)
         VALUES ((SELECT idusuario FROM usuario WHERE identificacion = '" & IDUsuario.Text & "'), (SELECT idbibliotecario FROM bibliotecario WHERE nombre = '" & CBBN.SelectedItem & "')
-        ,'" & FP.Value.Date & "','" & FD.Value.Date & "','" & CantP.Text & "','" & CBEstado.SelectedItem & "')"
+        , STR_TO_DATE('" & FP.Value.Date.ToString("dd/MM/yyyy") & "', '%d/%m/%Y') , STR_TO_DATE('" & FD.Value.Date & "', '%d/%m/%Y') ,'" & CantP.Text & "','" & CBEstado.Items.Item(0) & "')"
         MsgBox(CrearPrestamo)
-        'SaveData(CrearPrestamo)
+        SaveData(CrearPrestamo)
         MsgBox("Préstamo creado exitosamente")
-        NUsuario.Clear()
-        AUsuario.Clear()
-        IDUsuario.Clear()
-        Pais.Clear()
-        Ciudad.Clear()
-        Nacionalidad.Clear()
-        ID.Clear()
-        LBPrestamos.Clear()
-        CBEstado.ResetText()
-        CBBN.ResetText()
-        CBBA.ResetText()
-        FP.ResetText()
-        FD.ResetText()
+        GetData("SELECT p.idprestamo FROM prestamo p ORDER BY p.idprestamo DESC LIMIT 1;", idp)
+        idPrestamo.Text = idp.ToString
+
+        Dim CrearDetallePrestamo As String
+        For Each i As Int32 In ids
+            CrearDetallePrestamo = "INSERT INTO detalleprestamo(idlibro,idprestamo) VALUES ('" & i & "','" & idPrestamo.Text & "')"
+            SaveData(CrearDetallePrestamo)
+        Next
+
     End Sub
 
-    Private Sub BTAgregarLibro_Click(sender As Object, e As EventArgs) Handles BTAgregarLibro.Click
-        Dim CrearDetallePrestamo As String
-        CrearDetallePrestamo = "INSERT INTO detalleprestamo(idlibro,idprestamo)
-        VALUES ((SELECT idlibro FROM libro WHERE titulo = '" & LBPrestamos.Text & "') , (SELECT idusuario FROM prestamo WHERE identificacion = '" & idPrestamo.Text & "'))"
-        'SaveData(CrearDetallePrestamo)
-        MsgBox(CrearDetallePrestamo)
-    End Sub
 
     Private Sub BTEditar_Click(sender As Object, e As EventArgs) Handles BTEditar.Click
         Dim EditarUsuario As String
@@ -84,7 +89,6 @@ Public Class Ventana_Registro
         Dim EditarPrestamo As String
         EditarPrestamo = "Update prestamo Set fechaprestamo =  STR_TO_DATE('" & FP.Value.Date.ToString("dd/MM/yyyy") & "', '%d/%m/%Y') , fechadevolucion = STR_TO_DATE('" & FD.Value.Date & "', '%d/%m/%Y'), cantidad = '" & CantP.Text & "' Where idprestamo = '" & idPrestamo.Text & "';"
         SaveData(EditarPrestamo)
-
     End Sub
 
     Private Sub BTEliminar_Click(sender As Object, e As EventArgs) Handles BTEliminar.Click
@@ -171,6 +175,7 @@ Public Class Ventana_Registro
     End Sub
 
     Private Sub CBEdit_CheckedChanged(sender As Object, e As EventArgs) Handles CBEdit.CheckedChanged
+
         If CBEdit.Checked = True Then
             BTEliminar.Enabled = True
         Else
@@ -182,6 +187,19 @@ Public Class Ventana_Registro
         Else
             BTCrear.Enabled = True
         End If
+
+        If CBEdit.Checked = True Then
+            CBEstado.Enabled = True
+        Else
+            CBEstado.Enabled = False
+        End If
+
+        If CBEdit.Checked = True Then
+            CantP.Enabled = True
+        Else
+            CantP.Enabled = False
+        End If
+
         If CBEdit.Checked = True Then
             Dim S As Integer
             S = DatosGrid.CurrentRow.Index
@@ -293,6 +311,38 @@ Public Class Ventana_Registro
     End Sub
 
     Private Sub BTGuardar_Click(sender As Object, e As EventArgs) Handles BTGuardar.Click
+        NUsuario.Clear()
+        AUsuario.Clear()
+        IDUsuario.Clear()
+        Pais.Clear()
+        Ciudad.Clear()
+        CantP.Clear()
+        Nacionalidad.Clear()
+        ID.Clear()
+        LBPrestamos.Clear()
+        CBEstado.ResetText()
+        CBBN.ResetText()
+        CBBA.ResetText()
+        FP.ResetText()
+        FD.ResetText()
         Me.Close()
+    End Sub
+
+    Private Sub Limpiar_Click(sender As Object, e As EventArgs) Handles Limpiar.Click
+        NUsuario.Clear()
+        AUsuario.Clear()
+        IDUsuario.Clear()
+        Pais.Clear()
+        Ciudad.Clear()
+        CantP.Clear()
+        Nacionalidad.Clear()
+        ID.Clear()
+        LBPrestamos.Clear()
+        CBEstado.ResetText()
+        CBBN.ResetText()
+        CBBA.ResetText()
+        FP.ResetText()
+        FD.ResetText()
+        ids.Clear()
     End Sub
 End Class

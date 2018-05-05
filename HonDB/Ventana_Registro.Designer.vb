@@ -78,7 +78,6 @@ Partial Class Ventana_Registro
         Me.CBFiltro = New System.Windows.Forms.ComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.idPrestamo = New System.Windows.Forms.TextBox()
-        Me.BTAgregarLibro = New System.Windows.Forms.PictureBox()
         Me.Lupa = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BTEliminar = New System.Windows.Forms.PictureBox()
@@ -88,8 +87,8 @@ Partial Class Ventana_Registro
         Me.BTCrear = New System.Windows.Forms.PictureBox()
         Me.BookLogo = New System.Windows.Forms.PictureBox()
         Me.RetornoIcon = New System.Windows.Forms.PictureBox()
+        Me.Limpiar = New System.Windows.Forms.Button()
         CType(Me.DatosGrid, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BTAgregarLibro, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Lupa, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -152,9 +151,10 @@ Partial Class Ventana_Registro
         Me.RectangleShape8.BorderColor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.RectangleShape8.BorderWidth = 2
         Me.RectangleShape8.CornerRadius = 10
-        Me.RectangleShape8.Location = New System.Drawing.Point(1154, 413)
+        Me.RectangleShape8.Enabled = False
+        Me.RectangleShape8.Location = New System.Drawing.Point(1105, 411)
         Me.RectangleShape8.Name = "RectangleShape8"
-        Me.RectangleShape8.Size = New System.Drawing.Size(88, 37)
+        Me.RectangleShape8.Size = New System.Drawing.Size(139, 37)
         '
         'RectangleShape6
         '
@@ -373,7 +373,7 @@ Partial Class Ventana_Registro
         '
         Me.AUsuario.BackColor = System.Drawing.SystemColors.Control
         Me.AUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.AUsuario.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.AUsuario.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.AUsuario.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
         Me.AUsuario.Location = New System.Drawing.Point(1057, 196)
@@ -456,7 +456,7 @@ Partial Class Ventana_Registro
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.DimGray
-        Me.Label5.Location = New System.Drawing.Point(1157, 386)
+        Me.Label5.Location = New System.Drawing.Point(1113, 386)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(79, 21)
         Me.Label5.TabIndex = 31
@@ -465,6 +465,7 @@ Partial Class Ventana_Registro
         'CBEstado
         '
         Me.CBEstado.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CBEstado.Enabled = False
         Me.CBEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CBEstado.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CBEstado.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
@@ -569,11 +570,12 @@ Partial Class Ventana_Registro
         '
         Me.CantP.BackColor = System.Drawing.SystemColors.Control
         Me.CantP.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.CantP.Enabled = False
         Me.CantP.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CantP.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.CantP.Location = New System.Drawing.Point(1164, 420)
+        Me.CantP.Location = New System.Drawing.Point(1117, 420)
         Me.CantP.Name = "CantP"
-        Me.CantP.Size = New System.Drawing.Size(68, 22)
+        Me.CantP.Size = New System.Drawing.Size(116, 22)
         Me.CantP.TabIndex = 40
         '
         'Nacionalidad
@@ -725,16 +727,6 @@ Partial Class Ventana_Registro
         Me.idPrestamo.TabIndex = 56
         Me.idPrestamo.Visible = False
         '
-        'BTAgregarLibro
-        '
-        Me.BTAgregarLibro.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BTAgregarLibro.Image = Global.HonDB.My.Resources.Resources.BTA
-        Me.BTAgregarLibro.Location = New System.Drawing.Point(1081, 409)
-        Me.BTAgregarLibro.Name = "BTAgregarLibro"
-        Me.BTAgregarLibro.Size = New System.Drawing.Size(40, 40)
-        Me.BTAgregarLibro.TabIndex = 58
-        Me.BTAgregarLibro.TabStop = False
-        '
         'Lupa
         '
         Me.Lupa.BackColor = System.Drawing.SystemColors.Control
@@ -828,13 +820,24 @@ Partial Class Ventana_Registro
         Me.RetornoIcon.TabIndex = 1
         Me.RetornoIcon.TabStop = False
         '
+        'Limpiar
+        '
+        Me.Limpiar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Limpiar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Limpiar.Location = New System.Drawing.Point(532, 105)
+        Me.Limpiar.Name = "Limpiar"
+        Me.Limpiar.Size = New System.Drawing.Size(198, 23)
+        Me.Limpiar.TabIndex = 59
+        Me.Limpiar.Text = "Limpiar Campos"
+        Me.Limpiar.UseVisualStyleBackColor = True
+        '
         'Ventana_Registro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1350, 729)
-        Me.Controls.Add(Me.BTAgregarLibro)
+        Me.Controls.Add(Me.Limpiar)
         Me.Controls.Add(Me.Lupa)
         Me.Controls.Add(Me.idPrestamo)
         Me.Controls.Add(Me.Label13)
@@ -893,7 +896,6 @@ Partial Class Ventana_Registro
         Me.Text = "Ventana_Registro"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.DatosGrid, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BTAgregarLibro, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Lupa, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BTEliminar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -968,5 +970,5 @@ Partial Class Ventana_Registro
     Friend WithEvents Label13 As Label
     Friend WithEvents idPrestamo As TextBox
     Friend WithEvents Lupa As PictureBox
-    Friend WithEvents BTAgregarLibro As PictureBox
+    Friend WithEvents Limpiar As Button
 End Class

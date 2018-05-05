@@ -109,6 +109,7 @@
     <Compile Include="Busqueda.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ConsultaTablas.vb" />
     <Compile Include="EMsg.Designer.vb">
       <DependentUpon>EMsg.vb</DependentUpon>
     </Compile>
@@ -165,6 +166,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="VentanaAdministrar.Designer.vb">
+      <DependentUpon>VentanaAdministrar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaAdministrar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Ventana_Registro.Designer.vb">
       <DependentUpon>Ventana_Registro.vb</DependentUpon>
     </Compile>
@@ -202,6 +209,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaAdministrar.resx">
+      <DependentUpon>VentanaAdministrar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana_Registro.resx">
       <DependentUpon>Ventana_Registro.vb</DependentUpon>
@@ -272,6 +282,10 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <Content Include="Resources\icons8_Book_Stack_40px_2.png" />
+    <Content Include="Resources\icons8_Give_40px_10.png" />
+    <Content Include="Resources\icons8_Location_40px.png" />
+    <Content Include="Resources\icons8_Oscar_Wilde_40px.png" />
     <None Include="Resources\BTA.png" />
     <None Include="Resources\Loupe.png" />
     <None Include="Resources\icons8-csv-64.png" />
