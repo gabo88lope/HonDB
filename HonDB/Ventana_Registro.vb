@@ -43,15 +43,15 @@ Public Class Ventana_Registro
         ConexionBD.AbrirConexion()
         CrearUbicacion = "INSERT INTO ubicacion(pais,ciudad,nacionalidad)
         VALUES ('" & Pais.Text & "','" & Ciudad.Text & "','" & Nacionalidad.Text & "')"
-        'SaveData(CrearUbicacion)
+        SaveData(CrearUbicacion)
         CrearUsuario = "INSERT INTO usuario (nombre,apellido,identificacion,idubicacion) 
         VALUES ('" & NUsuario.Text & "','" & AUsuario.Text & "','" & IDUsuario.Text & "', (SELECT idubicacion FROM ubicacion WHERE ciudad = '" & Ciudad.Text & "'))"
-        'SaveData(CrearUsuario)
+        SaveData(CrearUsuario)
         CrearPrestamo = "INSERT INTO prestamo (idusuario, idbibliotecario, fechaprestamo, fechadevolucion, cantidad, estado)
         VALUES ((SELECT idusuario FROM usuario WHERE identificacion = '" & IDUsuario.Text & "'), (SELECT idbibliotecario FROM bibliotecario WHERE nombre = '" & CBBN.SelectedItem & "')
-        ,'" & FP.Value.Date & "','" & FD.Value.Date & "','" & CantP.Text & "','" & CBEstado.SelectedItem & "')"
+        , STR_TO_DATE('" & FP.Value.Date.ToString("dd/MM/yyyy") & "', '%d/%m/%Y') , STR_TO_DATE('" & FD.Value.Date & "', '%d/%m/%Y') ,'" & CantP.Text & "','" & CBEstado.SelectedItem & "')"
         MsgBox(CrearPrestamo)
-        'SaveData(CrearPrestamo)
+        SaveData(CrearPrestamo)
         MsgBox("Préstamo creado exitosamente")
         NUsuario.Clear()
         AUsuario.Clear()
@@ -69,10 +69,12 @@ Public Class Ventana_Registro
     End Sub
 
     Private Sub BTAgregarLibro_Click(sender As Object, e As EventArgs) Handles BTAgregarLibro.Click
+        Dim Consulta1 As String
+        Consulta1 = "SELECT idusuario FROM usuario WHERE identificacion = '" & IDUsuario.Text
         Dim CrearDetallePrestamo As String
         CrearDetallePrestamo = "INSERT INTO detalleprestamo(idlibro,idprestamo)
-        VALUES ((SELECT idlibro FROM libro WHERE titulo = '" & LBPrestamos.Text & "') , (SELECT idusuario FROM prestamo WHERE identificacion = '" & idPrestamo.Text & "'))"
-        'SaveData(CrearDetallePrestamo)
+        VALUES ((SELECT idlibro FROM libro WHERE titulo = '" & LBPrestamos.Text & "') , (SELECT idprestamo FROM prestamo WHERE usuario = '" & Consulta1 & "'))"
+        SaveData(CrearDetallePrestamo)
         MsgBox(CrearDetallePrestamo)
     End Sub
 
