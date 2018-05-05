@@ -838,6 +838,7 @@ Partial Class Ventana_Registro
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1350, 729)
         Me.Controls.Add(Me.Limpiar)
+        Me.Controls.Add(Me.BTAgregarLibro)
         Me.Controls.Add(Me.Lupa)
         Me.Controls.Add(Me.idPrestamo)
         Me.Controls.Add(Me.Label13)
