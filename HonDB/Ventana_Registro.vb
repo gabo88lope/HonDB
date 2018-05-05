@@ -58,7 +58,6 @@ Public Class Ventana_Registro
         MsgBox("Préstamo creado exitosamente")
         GetData("SELECT p.idprestamo FROM prestamo p ORDER BY p.idprestamo DESC LIMIT 1;", idp)
         idPrestamo.Text = idp.ToString
-
     End Sub
 
     Private Sub BTAgregarLibro_Click(sender As Object, e As EventArgs) Handles BTAgregarLibro.Click
@@ -68,6 +67,7 @@ Public Class Ventana_Registro
         CrearDetallePrestamo = "INSERT INTO detalleprestamo(idlibro,idprestamo)
         VALUES ((SELECT idlibro FROM libro WHERE titulo = '" & LBPrestamos.Text & "') , '" & idPrestamo.Text & "')"
         SaveData(CrearDetallePrestamo)
+        LBPrestamos.Clear()
     End Sub
 
     Private Sub BTEditar_Click(sender As Object, e As EventArgs) Handles BTEditar.Click
@@ -164,6 +164,7 @@ Public Class Ventana_Registro
     End Sub
 
     Private Sub CBEdit_CheckedChanged(sender As Object, e As EventArgs) Handles CBEdit.CheckedChanged
+
         If CBEdit.Checked = True Then
             BTAgregarLibro.Visible = False
         Else
@@ -292,6 +293,37 @@ Public Class Ventana_Registro
     End Sub
 
     Private Sub BTGuardar_Click(sender As Object, e As EventArgs) Handles BTGuardar.Click
+        NUsuario.Clear()
+        AUsuario.Clear()
+        IDUsuario.Clear()
+        Pais.Clear()
+        Ciudad.Clear()
+        CantP.Clear()
+        Nacionalidad.Clear()
+        ID.Clear()
+        LBPrestamos.Clear()
+        CBEstado.ResetText()
+        CBBN.ResetText()
+        CBBA.ResetText()
+        FP.ResetText()
+        FD.ResetText()
         Me.Close()
+    End Sub
+
+    Private Sub Limpiar_Click(sender As Object, e As EventArgs) Handles Limpiar.Click
+        NUsuario.Clear()
+        AUsuario.Clear()
+        IDUsuario.Clear()
+        Pais.Clear()
+        Ciudad.Clear()
+        CantP.Clear()
+        Nacionalidad.Clear()
+        ID.Clear()
+        LBPrestamos.Clear()
+        CBEstado.ResetText()
+        CBBN.ResetText()
+        CBBA.ResetText()
+        FP.ResetText()
+        FD.ResetText()
     End Sub
 End Class
