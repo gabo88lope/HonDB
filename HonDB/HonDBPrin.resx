@@ -216,65 +216,35 @@
   <data name="&gt;&gt;BSalir.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="BRegistro.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+  <data name="BAdministrar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="BRegistro.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="BAdministrar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="BRegistro.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="BAdministrar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="BRegistro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-7, 0</value>
+  <data name="BAdministrar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>572, 0</value>
   </data>
-  <data name="BRegistro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 89</value>
+  <data name="BAdministrar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>192, 89</value>
   </data>
-  <data name="BRegistro.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="BAdministrar.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
-  <data name="&gt;&gt;BRegistro.Name" xml:space="preserve">
-    <value>BRegistro</value>
+  <data name="&gt;&gt;BAdministrar.Name" xml:space="preserve">
+    <value>BAdministrar</value>
   </data>
-  <data name="&gt;&gt;BRegistro.Type" xml:space="preserve">
+  <data name="&gt;&gt;BAdministrar.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;BRegistro.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BAdministrar.Parent" xml:space="preserve">
     <value>Panel3</value>
   </data>
-  <data name="&gt;&gt;BRegistro.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="BBusqueda.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="BBusqueda.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="BBusqueda.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="BBusqueda.Location" type="System.Drawing.Point, System.Drawing">
-    <value>185, 0</value>
-  </data>
-  <data name="BBusqueda.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 89</value>
-  </data>
-  <data name="BBusqueda.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;BBusqueda.Name" xml:space="preserve">
-    <value>BBusqueda</value>
-  </data>
-  <data name="&gt;&gt;BBusqueda.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BBusqueda.Parent" xml:space="preserve">
-    <value>Panel3</value>
-  </data>
-  <data name="&gt;&gt;BBusqueda.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;BAdministrar.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="BReporte.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
@@ -306,35 +276,86 @@
   <data name="&gt;&gt;BReporte.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="BAdministrar.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+  <data name="BBusqueda.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>
   </data>
-  <data name="BAdministrar.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="BBusqueda.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="BAdministrar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="BBusqueda.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="BAdministrar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>572, 0</value>
+  <data name="BBusqueda.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 0</value>
   </data>
-  <data name="BAdministrar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 89</value>
+  <data name="BBusqueda.Size" type="System.Drawing.Size, System.Drawing">
+    <value>198, 89</value>
   </data>
-  <data name="BAdministrar.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="BBusqueda.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
-  <data name="&gt;&gt;BAdministrar.Name" xml:space="preserve">
-    <value>BAdministrar</value>
+  <data name="&gt;&gt;BBusqueda.Name" xml:space="preserve">
+    <value>BBusqueda</value>
   </data>
-  <data name="&gt;&gt;BAdministrar.Type" xml:space="preserve">
+  <data name="&gt;&gt;BBusqueda.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;BAdministrar.Parent" xml:space="preserve">
+  <data name="&gt;&gt;BBusqueda.Parent" xml:space="preserve">
     <value>Panel3</value>
   </data>
-  <data name="&gt;&gt;BAdministrar.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;BBusqueda.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="BRegistro.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="BRegistro.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="BRegistro.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="BRegistro.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-7, 0</value>
+  </data>
+  <data name="BRegistro.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 89</value>
+  </data>
+  <data name="BRegistro.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;BRegistro.Name" xml:space="preserve">
+    <value>BRegistro</value>
+  </data>
+  <data name="&gt;&gt;BRegistro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BRegistro.Parent" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;BRegistro.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="Panel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>480, 0</value>
+  </data>
+  <data name="Panel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>886, 197</value>
+  </data>
+  <data name="Panel3.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Name" xml:space="preserve">
+    <value>Panel3</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Panel3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="Panel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -14573,27 +14594,6 @@
   </data>
   <data name="&gt;&gt;Panel2.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="Panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>480, 0</value>
-  </data>
-  <data name="Panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>886, 197</value>
-  </data>
-  <data name="Panel3.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;Panel3.Name" xml:space="preserve">
-    <value>Panel3</value>
-  </data>
-  <data name="&gt;&gt;Panel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;Panel3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Panel3.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports HonDB.ConexionBD
 
 Public Class Login
 
@@ -7,10 +8,10 @@ Public Class Login
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Me.Label2.Parent = PictureBox1
-        'if not conexioninternet() then
-        '    msgbox("no se ha establecido la conexión a internet", msgboxstyle.critical)
-        '    me.close()
-        'end if
+        'If Not ConexionInternet() Then
+        '    MsgBox("No se ha establecido la conexión a internet", MsgBoxStyle.Critical)
+        '    Me.Close()
+        'End If
 
     End Sub
 
@@ -25,21 +26,13 @@ Public Class Login
 
     Private Sub BotonIngresar_Click(sender As Object, e As EventArgs) Handles BotonIngresar.Click
 
-        Dim query As String
-        query = "SELECT * From Bibliotecario where usuario = '" & UsernameText.Text & "' and contraseña = '" & PassText.Text & "'"
-        If VerificarLogin(query) Then
-
-            Try
-                HonDBPrin.Show()
-                HonDBPrin.Focus()
-                Me.Close()
-            Catch ex As Exception
-                MsgBox("Conexíon fallida")
-            End Try
-
-        Else
-            MessageBox.Show("Verifique el usuario o clave", "Datos incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End If
+        Try
+            HonDBPrin.Show()
+            HonDBPrin.Focus()
+            Me.Close()
+        Catch ex As Exception
+            EMsg.Show("Conexión fallida con la Base de Datos", ex)
+        End Try
 
     End Sub
 
