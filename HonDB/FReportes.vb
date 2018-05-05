@@ -11,6 +11,7 @@ Public Class FReportes
                 DGVReporte.DataSource = Nothing
                 DGVReporte.Rows.Clear()
             Case 1
+                DGVReporte.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
                 LlenarTabla(DGVReporte, "SELECT 
                                             p.idprestamo AS 'Codigo de prestamo',
                                             u.idusuario AS 'Codigo de usuario',
@@ -42,6 +43,7 @@ Public Class FReportes
                                             bibliotecario b ON p.idbibliotecario = b.idbibliotecario
                                         GROUP BY p.idprestamo;", "prestamo")
             Case 2
+                DGVReporte.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
                 LlenarTabla(DGVReporte, "SELECT 
                                             idprestamo AS 'Numero de Prestamo',
                                             usuario.nombre AS Nombre,
@@ -62,6 +64,7 @@ Public Class FReportes
                                         GROUP BY fechaprestamo
                                         ORDER BY fechaprestamo DESC;", "prestamo")
             Case 3
+                DGVReporte.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
                 LlenarTabla(DGVReporte, "SELECT 
                                             idprestamo AS 'Numero de Prestamo',
                                             usuario.nombre AS Nombre,
@@ -82,6 +85,7 @@ Public Class FReportes
                                         GROUP BY fechaprestamo
                                         ORDER BY fechaprestamo ASC;", "prestamo")
             Case 4
+                DGVReporte.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
                 LlenarTabla(DGVReporte, "SELECT 
                                             idprestamo AS 'Numero de Prestamo',
                                             usuario.nombre AS Nombre,
@@ -102,21 +106,29 @@ Public Class FReportes
                                         GROUP BY fechaprestamo
                                         ORDER BY fechaprestamo DESC;", "prestamo")
             Case 5
+                DGVReporte.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
                 LlenarTabla(DGVReporte, "SELECT 
-                                            l.titulo
+                                            l.idlibro AS 'Codigo de libro',
+                                            l.titulo As 'Titulo del libro',
+	                                        l.isbn AS ISBN,
+                                            l.edicion AS Edicion,
+                                            YEAR(l.fechapublicacion) AS 'Fecha de publicacion',
+	                                        l.paginas AS Paginas,
+                                            GROUP_CONCAT(DISTINCT e.nombre SEPARATOR ', ') AS Editorial,
+                                            COUNT(*) As 'Numero de veces prestado'
                                         FROM
                                             libro l
                                                 INNER JOIN
                                             detalleprestamo dp ON (l.idlibro = dp.idlibro)
+		                                        INNER JOIN
+	                                        detallelibro dl ON (l.idlibro = dl.idlibro)
+		                                        INNER JOIN
+	                                        editorial e ON (dl.ideditorial = e.ideditorial)
                                         GROUP BY dp.idlibro
-                                        HAVING COUNT(dp.idlibro) = (SELECT 
-                                                COUNT(dp.idlibro) AS great
-                                            FROM
-                                                detalleprestamo dp
-                                            GROUP BY dp.idlibro
-                                            ORDER BY great DESC
-                                            LIMIT 1)", "libro")
+                                        ORDER BY COUNT(*) DESC
+                                            LIMIT    10;", "libro")
             Case 6
+                DGVReporte.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
                 LlenarTabla(DGVReporte, "SELECT 
                                             p.idprestamo AS 'Codigo de prestamo',
                                             u.idusuario AS 'Codigo de usuario',
@@ -141,6 +153,7 @@ Public Class FReportes
                                             p.fechaprestamo = curdate()
                                         GROUP BY p.idprestamo", "prestamo")
             Case 7
+                DGVReporte.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells
                 LlenarTabla(DGVReporte, "SELECT 
                                             l.idlibro AS 'Codigo de libro',
                                             l.isbn AS ISBN,
@@ -151,6 +164,7 @@ Public Class FReportes
                                             l.paginas AS Paginas,
                                             l.numejemplares AS 'Numero de ejemplares',
                                             CONCAT_WS(', ', u.ciudad, u.pais) AS 'Lugar de publicacion',
+                                            GROUP_CONCAT(DISTINCT e.nombre SEPARATOR ', ') AS Editorial,
                                             td.nombre AS 'Tipo de material',
                                             CONCAT(LPAD(codigogeneral, 3, '0'),
                                                     ' - ',
@@ -160,7 +174,12 @@ Public Class FReportes
                                                 INNER JOIN
                                             ubicacion u ON (l.idubicacion = u.idubicacion)
                                                 INNER JOIN
-                                            tipodocumento td ON (l.idtipodocumento = td.idtipodocumento)", "libro")
+                                            tipodocumento td ON (l.idtipodocumento = td.idtipodocumento)
+		                                        INNER JOIN
+	                                        detallelibro dl ON (l.idlibro = dl.idlibro)
+		                                        INNER JOIN
+	                                        editorial e ON (dl.ideditorial = e.ideditorial)
+                                        GROUP BY l.idlibro", "libro")
             Case Else
 
         End Select

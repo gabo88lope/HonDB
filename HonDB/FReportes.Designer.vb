@@ -22,9 +22,9 @@ Partial Class FReportes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FReportes))
         Me.RectangleShape2 = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
@@ -33,20 +33,18 @@ Partial Class FReportes
         Me.RBusqueda = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.LabelLogo = New System.Windows.Forms.Label()
         Me.DGVReporte = New System.Windows.Forms.DataGridView()
-        Me.LabelFiltrado = New System.Windows.Forms.Label()
-        Me.Filtrado = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CBTipoReportes = New System.Windows.Forms.ComboBox()
         Me.LbEliminar = New System.Windows.Forms.Label()
         Me.LbActualizar = New System.Windows.Forms.Label()
         Me.LbCrear = New System.Windows.Forms.Label()
+        Me.TBBusqueda = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BTEliminar = New System.Windows.Forms.PictureBox()
         Me.BTActualizar = New System.Windows.Forms.PictureBox()
         Me.BTCrear = New System.Windows.Forms.PictureBox()
         Me.RetornoIcon = New System.Windows.Forms.PictureBox()
         Me.BookLogo = New System.Windows.Forms.PictureBox()
-        Me.TBBusqueda = New System.Windows.Forms.TextBox()
         CType(Me.DGVReporte, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -119,59 +117,36 @@ Partial Class FReportes
         '
         Me.DGVReporte.AllowUserToAddRows = False
         Me.DGVReporte.AllowUserToDeleteRows = False
-        Me.DGVReporte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
+        Me.DGVReporte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGVReporte.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
         Me.DGVReporte.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGVReporte.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVReporte.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DGVReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVReporte.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVReporte.DefaultCellStyle = DataGridViewCellStyle5
         Me.DGVReporte.Location = New System.Drawing.Point(52, 154)
         Me.DGVReporte.Name = "DGVReporte"
         Me.DGVReporte.ReadOnly = True
         Me.DGVReporte.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGVReporte.RowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVReporte.RowsDefaultCellStyle = DataGridViewCellStyle6
         Me.DGVReporte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGVReporte.Size = New System.Drawing.Size(1261, 481)
         Me.DGVReporte.TabIndex = 8
-        '
-        'LabelFiltrado
-        '
-        Me.LabelFiltrado.AutoSize = True
-        Me.LabelFiltrado.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelFiltrado.ForeColor = System.Drawing.Color.Gray
-        Me.LabelFiltrado.Location = New System.Drawing.Point(400, 89)
-        Me.LabelFiltrado.Name = "LabelFiltrado"
-        Me.LabelFiltrado.Size = New System.Drawing.Size(69, 21)
-        Me.LabelFiltrado.TabIndex = 22
-        Me.LabelFiltrado.Text = "Filtrado"
-        '
-        'Filtrado
-        '
-        Me.Filtrado.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Filtrado.ForeColor = System.Drawing.Color.Gray
-        Me.Filtrado.FormattingEnabled = True
-        Me.Filtrado.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Filtrado.Items.AddRange(New Object() {"Nombre", "Identificación", "Fecha de Préstamo"})
-        Me.Filtrado.Location = New System.Drawing.Point(404, 113)
-        Me.Filtrado.Name = "Filtrado"
-        Me.Filtrado.Size = New System.Drawing.Size(121, 25)
-        Me.Filtrado.TabIndex = 21
         '
         'Label1
         '
@@ -227,6 +202,18 @@ Partial Class FReportes
         Me.LbCrear.Size = New System.Drawing.Size(160, 21)
         Me.LbCrear.TabIndex = 30
         Me.LbCrear.Text = "Exportar a MS Excel"
+        '
+        'TBBusqueda
+        '
+        Me.TBBusqueda.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.TBBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TBBusqueda.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBBusqueda.ForeColor = System.Drawing.Color.Gray
+        Me.TBBusqueda.Location = New System.Drawing.Point(112, 104)
+        Me.TBBusqueda.Multiline = True
+        Me.TBBusqueda.Name = "TBBusqueda"
+        Me.TBBusqueda.Size = New System.Drawing.Size(262, 33)
+        Me.TBBusqueda.TabIndex = 36
         '
         'PictureBox1
         '
@@ -291,18 +278,6 @@ Partial Class FReportes
         Me.BookLogo.TabIndex = 5
         Me.BookLogo.TabStop = False
         '
-        'TBBusqueda
-        '
-        Me.TBBusqueda.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.TBBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TBBusqueda.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TBBusqueda.ForeColor = System.Drawing.Color.Gray
-        Me.TBBusqueda.Location = New System.Drawing.Point(112, 104)
-        Me.TBBusqueda.Multiline = True
-        Me.TBBusqueda.Name = "TBBusqueda"
-        Me.TBBusqueda.Size = New System.Drawing.Size(262, 33)
-        Me.TBBusqueda.TabIndex = 36
-        '
         'FReportes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -318,8 +293,6 @@ Partial Class FReportes
         Me.Controls.Add(Me.BTCrear)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.CBTipoReportes)
-        Me.Controls.Add(Me.LabelFiltrado)
-        Me.Controls.Add(Me.Filtrado)
         Me.Controls.Add(Me.DGVReporte)
         Me.Controls.Add(Me.RetornoIcon)
         Me.Controls.Add(Me.BookLogo)
@@ -350,8 +323,6 @@ Partial Class FReportes
     Friend WithEvents LabelLogo As Label
     Friend WithEvents RetornoIcon As PictureBox
     Friend WithEvents DGVReporte As DataGridView
-    Friend WithEvents LabelFiltrado As Label
-    Friend WithEvents Filtrado As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents CBTipoReportes As ComboBox
     Friend WithEvents LbEliminar As Label
