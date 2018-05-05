@@ -19,7 +19,7 @@ Public Class Ventana_Registro
         CBEstado.DisplayMember = "Préstamo Vigente"
 
         LlenarTabla(DatosGrid, "SELECT p.idprestamo AS '#', u.idusuario AS 'Codigo de usuario', u.nombre AS Nombre,
-        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS País,
+        u.apellido AS Apellido, u.identificacion AS Identificacion, u.sexo AS Sexo, ubicacion.pais AS País,
         ubicacion.ciudad AS Ciudad, ubicacion.nacionalidad AS Nacionalidad,
         GROUP_CONCAT(DISTINCT l.titulo SEPARATOR ', ') AS 'Libros prestados', 
         p.fechaprestamo AS 'Fecha de prestamo', p.fechadevolucion AS 'Fecha de devolucion',
@@ -52,13 +52,12 @@ Public Class Ventana_Registro
         Dim CrearUsuario As String
         Dim CrearPrestamo As String
         ConexionBD.AbrirConexion()
-        CrearUsuario = "INSERT INTO usuario (nombre,apellido,identificacion,idubicacion) 
-        VALUES ('" & NUsuario.Text & "','" & AUsuario.Text & "','" & IDUsuario.Text & "', (SELECT idubicacion FROM ubicacion WHERE ciudad = '" & Ciudad.SelectedItem & "'))"
+        CrearUsuario = "INSERT INTO usuario (nombre,apellido,identificacion,sexo,idubicacion) 
+        VALUES ('" & NUsuario.Text & "','" & AUsuario.Text & "','" & IDUsuario.Text & "','" & Sexo.SelectedItem & "', (SELECT idubicacion FROM ubicacion WHERE ciudad = '" & Ciudad.SelectedItem & "'))"
         SaveData(CrearUsuario)
         CrearPrestamo = "INSERT INTO prestamo (idusuario, idbibliotecario, fechaprestamo, fechadevolucion, cantidad, estado)
         VALUES ((SELECT idusuario FROM usuario WHERE identificacion = '" & IDUsuario.Text & "'), (SELECT idbibliotecario FROM bibliotecario WHERE nombre = '" & CBBN.SelectedItem & "')
         , STR_TO_DATE('" & FP.Value.Date.ToString("dd/MM/yyyy") & "', '%d/%m/%Y') , STR_TO_DATE('" & FD.Value.Date & "', '%d/%m/%Y') ,'" & CantP.Text & "','" & CBEstado.Items.Item(0) & "')"
-        MsgBox(CrearPrestamo)
         SaveData(CrearPrestamo)
         MsgBox("Préstamo creado exitosamente")
         GetData("SELECT p.idprestamo FROM prestamo p ORDER BY p.idprestamo DESC LIMIT 1;", idp)
@@ -75,7 +74,7 @@ Public Class Ventana_Registro
     Private Sub BTEditar_Click(sender As Object, e As EventArgs) Handles BTEditar.Click
         Dim EditarUsuario As String
         EditarUsuario = "Update usuario Set nombre = '" & NUsuario.Text & "', apellido = '" & AUsuario.Text & "', 
-        identificacion = '" & IDUsuario.Text & "' Where idusuario = " & ID.Text
+        identificacion = '" & IDUsuario.Text & "', sexo = '" & Sexo.SelectedItem & "' Where idusuario = " & ID.Text
         SaveData(EditarUsuario)
         Dim EditarPrestamo As String
         EditarPrestamo = "Update prestamo Set fechaprestamo =  STR_TO_DATE('" & FP.Value.Date.ToString("dd/MM/yyyy") & "', '%d/%m/%Y') , fechadevolucion = STR_TO_DATE('" & FD.Value.Date & "', '%d/%m/%Y'), cantidad = '" & CantP.Text & "' Where idprestamo = '" & idPrestamo.Text & "';"
@@ -96,7 +95,7 @@ Public Class Ventana_Registro
 
     Private Sub BTActualizar_Click(sender As Object, e As EventArgs) Handles BTActualizar.Click
         LlenarTabla(DatosGrid, "SELECT p.idprestamo AS '#', u.idusuario AS 'Codigo de usuario', u.nombre AS Nombre,
-        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS País,
+        u.apellido AS Apellido, u.identificacion AS Identificacion, u.sexo AS Sexo, ubicacion.pais AS País,
         ubicacion.ciudad AS Ciudad, ubicacion.nacionalidad AS Nacionalidad,
         GROUP_CONCAT(DISTINCT l.titulo SEPARATOR ', ') AS 'Libros prestados', 
         p.fechaprestamo AS 'Fecha de prestamo', p.fechadevolucion AS 'Fecha de devolucion',
@@ -113,7 +112,7 @@ Public Class Ventana_Registro
     Private Sub TBBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TBBusqueda.TextChanged
         If CBFiltro.Text = "Nombre" Then
             LlenarTabla(DatosGrid, "SELECT p.idprestamo AS '#', u.idusuario AS 'Codigo de usuario', u.nombre AS Nombre,
-        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS País,
+        u.apellido AS Apellido, u.identificacion AS Identificacion, u.sexo AS Sexo, ubicacion.pais AS País,
         ubicacion.ciudad AS Ciudad, ubicacion.nacionalidad AS Nacionalidad,
         GROUP_CONCAT(DISTINCT l.titulo SEPARATOR ', ') AS 'Libros prestados', 
         p.fechaprestamo AS 'Fecha de prestamo', p.fechadevolucion AS 'Fecha de devolucion',
@@ -128,7 +127,7 @@ Public Class Ventana_Registro
 
         ElseIf CBFiltro.Text = "Identificación" Then
             LlenarTabla(DatosGrid, "SELECT p.idprestamo AS '#', u.idusuario AS 'Codigo de usuario', u.nombre AS Nombre,
-        u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS País,
+        u.apellido AS Apellido, u.identificacion AS Identificacion, u.sexo AS Sexo, ubicacion.pais AS País,
         ubicacion.ciudad AS Ciudad, ubicacion.nacionalidad AS Nacionalidad,
         GROUP_CONCAT(DISTINCT l.titulo SEPARATOR ', ') AS 'Libros prestados', 
         p.fechaprestamo AS 'Fecha de prestamo', p.fechadevolucion AS 'Fecha de devolucion',
@@ -152,15 +151,16 @@ Public Class Ventana_Registro
             NUsuario.Text = DatosGrid.Item(2, S).Value()
             AUsuario.Text = DatosGrid.Item(3, S).Value()
             IDUsuario.Text = DatosGrid.Item(4, S).Value()
-            Pais.Text = DatosGrid.Item(5, S).Value()
-            Ciudad.Text = DatosGrid.Item(6, S).Value()
-            Nacionalidad.Text = DatosGrid.Item(7, S).Value()
-            LBPrestamos.Text = DatosGrid.Item(8, S).Value()
-            FP.Text = DatosGrid.Item(9, S).Value()
-            FD.Text = DatosGrid.Item(10, S).Value()
-            CantP.Text = DatosGrid.Item(11, S).Value()
-            CBEstado.Text = DatosGrid.Item(12, S).Value()
-            CBBN.SelectedItem = DatosGrid.Item(13, S).Value()
+            Sexo.Text = DatosGrid.Item(5, S).Value()
+            Pais.Text = DatosGrid.Item(6, S).Value()
+            Ciudad.Text = DatosGrid.Item(7, S).Value()
+            Nacionalidad.Text = DatosGrid.Item(8, S).Value()
+            LBPrestamos.Text = DatosGrid.Item(9, S).Value()
+            FP.Text = DatosGrid.Item(10, S).Value()
+            FD.Text = DatosGrid.Item(11, S).Value()
+            CantP.Text = DatosGrid.Item(12, S).Value()
+            CBEstado.Text = DatosGrid.Item(13, S).Value()
+            CBBN.SelectedItem = DatosGrid.Item(14, S).Value()
         End If
     End Sub
 
@@ -204,19 +204,21 @@ Public Class Ventana_Registro
             NUsuario.Text = DatosGrid.Item(2, S).Value()
             AUsuario.Text = DatosGrid.Item(3, S).Value()
             IDUsuario.Text = DatosGrid.Item(4, S).Value()
-            Pais.Text = DatosGrid.Item(5, S).Value()
-            Ciudad.Text = DatosGrid.Item(6, S).Value()
-            Nacionalidad.Text = DatosGrid.Item(7, S).Value()
-            LBPrestamos.Text = DatosGrid.Item(8, S).Value()
-            FP.Text = DatosGrid.Item(9, S).Value()
-            FD.Text = DatosGrid.Item(10, S).Value()
-            CantP.Text = DatosGrid.Item(11, S).Value()
-            CBEstado.Text = DatosGrid.Item(12, S).Value()
-            CBBN.SelectedItem = DatosGrid.Item(13, S).Value()
+            Sexo.Text = DatosGrid.Item(5, S).Value()
+            Pais.Text = DatosGrid.Item(6, S).Value()
+            Ciudad.Text = DatosGrid.Item(7, S).Value()
+            Nacionalidad.Text = DatosGrid.Item(8, S).Value()
+            LBPrestamos.Text = DatosGrid.Item(9, S).Value()
+            FP.Text = DatosGrid.Item(10, S).Value()
+            FD.Text = DatosGrid.Item(11, S).Value()
+            CantP.Text = DatosGrid.Item(12, S).Value()
+            CBEstado.Text = DatosGrid.Item(13, S).Value()
+            CBBN.SelectedItem = DatosGrid.Item(14, S).Value()
         ElseIf CBEdit.Checked = False Then
             NUsuario.Clear()
             AUsuario.Clear()
             IDUsuario.Clear()
+            Sexo.ResetText()
             Pais.ResetText()
             Ciudad.ResetText()
             CantP.Clear()

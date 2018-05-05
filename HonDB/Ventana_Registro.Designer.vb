@@ -22,9 +22,9 @@ Partial Class Ventana_Registro
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventana_Registro))
         Me.LabelLogo = New System.Windows.Forms.Label()
         Me.ShapeContainer1 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
@@ -83,6 +83,8 @@ Partial Class Ventana_Registro
         Me.Ciudad = New System.Windows.Forms.ComboBox()
         Me.Pais = New System.Windows.Forms.ComboBox()
         Me.Nacionalidad = New System.Windows.Forms.ComboBox()
+        Me.Sexo = New System.Windows.Forms.ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         CType(Me.DatosGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Lupa, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,9 +127,9 @@ Partial Class Ventana_Registro
         Me.RectangleShape8.BorderWidth = 2
         Me.RectangleShape8.CornerRadius = 10
         Me.RectangleShape8.Enabled = False
-        Me.RectangleShape8.Location = New System.Drawing.Point(1105, 411)
+        Me.RectangleShape8.Location = New System.Drawing.Point(758, 493)
         Me.RectangleShape8.Name = "RectangleShape8"
-        Me.RectangleShape8.Size = New System.Drawing.Size(139, 37)
+        Me.RectangleShape8.Size = New System.Drawing.Size(226, 37)
         '
         'RectangleShape6
         '
@@ -136,7 +138,7 @@ Partial Class Ventana_Registro
         Me.RectangleShape6.BorderColor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.RectangleShape6.BorderWidth = 2
         Me.RectangleShape6.CornerRadius = 10
-        Me.RectangleShape6.Location = New System.Drawing.Point(753, 412)
+        Me.RectangleShape6.Location = New System.Drawing.Point(1005, 428)
         Me.RectangleShape6.Name = "RectangleShape6"
         Me.RectangleShape6.Size = New System.Drawing.Size(320, 37)
         '
@@ -206,30 +208,30 @@ Partial Class Ventana_Registro
         Me.DatosGrid.AllowUserToAddRows = False
         Me.DatosGrid.BackgroundColor = System.Drawing.Color.White
         Me.DatosGrid.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle19.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        DataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DatosGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DatosGrid.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DatosGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle20.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        DataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DatosGrid.DefaultCellStyle = DataGridViewCellStyle20
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DatosGrid.DefaultCellStyle = DataGridViewCellStyle8
         Me.DatosGrid.Location = New System.Drawing.Point(54, 164)
         Me.DatosGrid.Name = "DatosGrid"
         Me.DatosGrid.ReadOnly = True
         Me.DatosGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DatosGrid.RowsDefaultCellStyle = DataGridViewCellStyle21
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DatosGrid.RowsDefaultCellStyle = DataGridViewCellStyle9
         Me.DatosGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DatosGrid.Size = New System.Drawing.Size(676, 545)
         Me.DatosGrid.TabIndex = 5
@@ -313,7 +315,7 @@ Partial Class Ventana_Registro
         Me.LbNS.BackColor = System.Drawing.Color.Transparent
         Me.LbNS.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LbNS.ForeColor = System.Drawing.Color.DimGray
-        Me.LbNS.Location = New System.Drawing.Point(754, 164)
+        Me.LbNS.Location = New System.Drawing.Point(766, 164)
         Me.LbNS.Name = "LbNS"
         Me.LbNS.Size = New System.Drawing.Size(159, 21)
         Me.LbNS.TabIndex = 20
@@ -349,7 +351,7 @@ Partial Class Ventana_Registro
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.DimGray
-        Me.Label2.Location = New System.Drawing.Point(1056, 240)
+        Me.Label2.Location = New System.Drawing.Point(766, 326)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(41, 21)
         Me.Label2.TabIndex = 25
@@ -361,7 +363,7 @@ Partial Class Ventana_Registro
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.DimGray
-        Me.Label3.Location = New System.Drawing.Point(759, 242)
+        Me.Label3.Location = New System.Drawing.Point(766, 242)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(116, 21)
         Me.Label3.TabIndex = 24
@@ -384,7 +386,7 @@ Partial Class Ventana_Registro
         Me.LBPrestamos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.LBPrestamos.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBPrestamos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.LBPrestamos.Location = New System.Drawing.Point(766, 420)
+        Me.LBPrestamos.Location = New System.Drawing.Point(1017, 436)
         Me.LBPrestamos.Name = "LBPrestamos"
         Me.LBPrestamos.Size = New System.Drawing.Size(262, 22)
         Me.LBPrestamos.TabIndex = 28
@@ -395,7 +397,7 @@ Partial Class Ventana_Registro
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.DimGray
-        Me.Label4.Location = New System.Drawing.Point(758, 386)
+        Me.Label4.Location = New System.Drawing.Point(1013, 398)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(155, 21)
         Me.Label4.TabIndex = 29
@@ -407,7 +409,7 @@ Partial Class Ventana_Registro
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.DimGray
-        Me.Label5.Location = New System.Drawing.Point(1113, 386)
+        Me.Label5.Location = New System.Drawing.Point(766, 464)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(79, 21)
         Me.Label5.TabIndex = 31
@@ -423,10 +425,10 @@ Partial Class Ventana_Registro
         Me.CBEstado.FormattingEnabled = True
         Me.CBEstado.IntegralHeight = False
         Me.CBEstado.Items.AddRange(New Object() {"Préstamo Vigente", "Préstamo Vencido", "Préstamo Finalizado"})
-        Me.CBEstado.Location = New System.Drawing.Point(1057, 500)
+        Me.CBEstado.Location = New System.Drawing.Point(762, 574)
         Me.CBEstado.Margin = New System.Windows.Forms.Padding(6)
         Me.CBEstado.Name = "CBEstado"
-        Me.CBEstado.Size = New System.Drawing.Size(200, 29)
+        Me.CBEstado.Size = New System.Drawing.Size(223, 29)
         Me.CBEstado.TabIndex = 32
         '
         'Label6
@@ -435,7 +437,7 @@ Partial Class Ventana_Registro
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.DimGray
-        Me.Label6.Location = New System.Drawing.Point(1053, 473)
+        Me.Label6.Location = New System.Drawing.Point(758, 547)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(160, 21)
         Me.Label6.TabIndex = 33
@@ -451,7 +453,7 @@ Partial Class Ventana_Registro
         Me.FD.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FD.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.FD.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.FD.Location = New System.Drawing.Point(902, 500)
+        Me.FD.Location = New System.Drawing.Point(1196, 502)
         Me.FD.Name = "FD"
         Me.FD.Size = New System.Drawing.Size(130, 29)
         Me.FD.TabIndex = 35
@@ -464,7 +466,7 @@ Partial Class Ventana_Registro
         Me.FP.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FP.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.FP.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.FP.Location = New System.Drawing.Point(762, 500)
+        Me.FP.Location = New System.Drawing.Point(1046, 502)
         Me.FP.Name = "FP"
         Me.FP.Size = New System.Drawing.Size(130, 29)
         Me.FP.TabIndex = 34
@@ -475,7 +477,7 @@ Partial Class Ventana_Registro
         Me.Label7.BackColor = System.Drawing.Color.Transparent
         Me.Label7.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.DimGray
-        Me.Label7.Location = New System.Drawing.Point(758, 473)
+        Me.Label7.Location = New System.Drawing.Point(1042, 475)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(97, 21)
         Me.Label7.TabIndex = 36
@@ -487,7 +489,7 @@ Partial Class Ventana_Registro
         Me.Label8.BackColor = System.Drawing.Color.Transparent
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.DimGray
-        Me.Label8.Location = New System.Drawing.Point(898, 473)
+        Me.Label8.Location = New System.Drawing.Point(1192, 475)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(113, 21)
         Me.Label8.TabIndex = 37
@@ -499,7 +501,7 @@ Partial Class Ventana_Registro
         Me.Label9.BackColor = System.Drawing.Color.Transparent
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.DimGray
-        Me.Label9.Location = New System.Drawing.Point(762, 550)
+        Me.Label9.Location = New System.Drawing.Point(1056, 547)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(175, 21)
         Me.Label9.TabIndex = 38
@@ -524,9 +526,9 @@ Partial Class Ventana_Registro
         Me.CantP.Enabled = False
         Me.CantP.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CantP.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
-        Me.CantP.Location = New System.Drawing.Point(1117, 420)
+        Me.CantP.Location = New System.Drawing.Point(771, 501)
         Me.CantP.Name = "CantP"
-        Me.CantP.Size = New System.Drawing.Size(116, 22)
+        Me.CantP.Size = New System.Drawing.Size(199, 22)
         Me.CantP.TabIndex = 40
         '
         'Label12
@@ -535,7 +537,7 @@ Partial Class Ventana_Registro
         Me.Label12.BackColor = System.Drawing.Color.Transparent
         Me.Label12.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.DimGray
-        Me.Label12.Location = New System.Drawing.Point(759, 315)
+        Me.Label12.Location = New System.Drawing.Point(1056, 326)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(64, 21)
         Me.Label12.TabIndex = 46
@@ -547,7 +549,7 @@ Partial Class Ventana_Registro
         Me.LBNac.BackColor = System.Drawing.Color.Transparent
         Me.LBNac.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBNac.ForeColor = System.Drawing.Color.DimGray
-        Me.LBNac.Location = New System.Drawing.Point(1056, 315)
+        Me.LBNac.Location = New System.Drawing.Point(766, 398)
         Me.LBNac.Name = "LBNac"
         Me.LBNac.Size = New System.Drawing.Size(113, 21)
         Me.LBNac.TabIndex = 47
@@ -561,7 +563,7 @@ Partial Class Ventana_Registro
         Me.CBBN.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
         Me.CBBN.FormattingEnabled = True
         Me.CBBN.IntegralHeight = False
-        Me.CBBN.Location = New System.Drawing.Point(762, 577)
+        Me.CBBN.Location = New System.Drawing.Point(1057, 574)
         Me.CBBN.Margin = New System.Windows.Forms.Padding(6)
         Me.CBBN.Name = "CBBN"
         Me.CBBN.Size = New System.Drawing.Size(268, 29)
@@ -635,7 +637,7 @@ Partial Class Ventana_Registro
         Me.Lupa.BackColor = System.Drawing.SystemColors.Control
         Me.Lupa.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Lupa.Image = Global.HonDB.My.Resources.Resources.Loupe
-        Me.Lupa.Location = New System.Drawing.Point(1035, 418)
+        Me.Lupa.Location = New System.Drawing.Point(1286, 433)
         Me.Lupa.Name = "Lupa"
         Me.Lupa.Size = New System.Drawing.Size(27, 26)
         Me.Lupa.TabIndex = 57
@@ -743,7 +745,7 @@ Partial Class Ventana_Registro
         Me.Ciudad.FormattingEnabled = True
         Me.Ciudad.IntegralHeight = False
         Me.Ciudad.Items.AddRange(New Object() {"Managua", "Masaya", "Leon", "Granada", "Carazo", "Esteli", "Rivas", "Chinandenga", "Chontales", "Madriz", "Matagalpa", "Nueva Segovia", "Boaco", "Rio San Juan", "Caribe Sur", "Jinotega", "Caribe Norte"})
-        Me.Ciudad.Location = New System.Drawing.Point(751, 340)
+        Me.Ciudad.Location = New System.Drawing.Point(1046, 351)
         Me.Ciudad.Margin = New System.Windows.Forms.Padding(6)
         Me.Ciudad.Name = "Ciudad"
         Me.Ciudad.Size = New System.Drawing.Size(279, 29)
@@ -758,7 +760,7 @@ Partial Class Ventana_Registro
         Me.Pais.FormattingEnabled = True
         Me.Pais.IntegralHeight = False
         Me.Pais.Items.AddRange(New Object() {"Nicaragua"})
-        Me.Pais.Location = New System.Drawing.Point(1046, 267)
+        Me.Pais.Location = New System.Drawing.Point(752, 353)
         Me.Pais.Margin = New System.Windows.Forms.Padding(6)
         Me.Pais.Name = "Pais"
         Me.Pais.Size = New System.Drawing.Size(279, 29)
@@ -773,11 +775,38 @@ Partial Class Ventana_Registro
         Me.Nacionalidad.FormattingEnabled = True
         Me.Nacionalidad.IntegralHeight = False
         Me.Nacionalidad.Items.AddRange(New Object() {"Nicaraguense"})
-        Me.Nacionalidad.Location = New System.Drawing.Point(1046, 342)
+        Me.Nacionalidad.Location = New System.Drawing.Point(752, 425)
         Me.Nacionalidad.Margin = New System.Windows.Forms.Padding(6)
         Me.Nacionalidad.Name = "Nacionalidad"
-        Me.Nacionalidad.Size = New System.Drawing.Size(279, 29)
+        Me.Nacionalidad.Size = New System.Drawing.Size(231, 29)
         Me.Nacionalidad.TabIndex = 63
+        '
+        'Sexo
+        '
+        Me.Sexo.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Sexo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Sexo.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Sexo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.Sexo.FormattingEnabled = True
+        Me.Sexo.IntegralHeight = False
+        Me.Sexo.Items.AddRange(New Object() {"Masculino", "Femenino"})
+        Me.Sexo.Location = New System.Drawing.Point(1046, 267)
+        Me.Sexo.Margin = New System.Windows.Forms.Padding(6)
+        Me.Sexo.Name = "Sexo"
+        Me.Sexo.Size = New System.Drawing.Size(279, 29)
+        Me.Sexo.TabIndex = 64
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.DimGray
+        Me.Label11.Location = New System.Drawing.Point(1056, 240)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(47, 21)
+        Me.Label11.TabIndex = 65
+        Me.Label11.Text = "Sexo"
         '
         'Ventana_Registro
         '
@@ -785,6 +814,8 @@ Partial Class Ventana_Registro
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1350, 729)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.Sexo)
         Me.Controls.Add(Me.Nacionalidad)
         Me.Controls.Add(Me.Pais)
         Me.Controls.Add(Me.Ciudad)
@@ -912,4 +943,6 @@ Partial Class Ventana_Registro
     Friend WithEvents Ciudad As ComboBox
     Friend WithEvents Pais As ComboBox
     Friend WithEvents Nacionalidad As ComboBox
+    Friend WithEvents Sexo As ComboBox
+    Friend WithEvents Label11 As Label
 End Class
