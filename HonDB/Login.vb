@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports HonDB.ConexionBD
 
 Public Class Login
 
@@ -7,10 +8,10 @@ Public Class Login
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Me.Label2.Parent = PictureBox1
-        'if not conexioninternet() then
-        '    msgbox("no se ha establecido la conexión a internet", msgboxstyle.critical)
-        '    me.close()
-        'end if
+        'If Not ConexionInternet() Then
+        '    MsgBox("No se ha establecido la conexión a internet", MsgBoxStyle.Critical)
+        '    Me.Close()
+        'End If
 
     End Sub
 
@@ -30,7 +31,7 @@ Public Class Login
             HonDBPrin.Focus()
             Me.Close()
         Catch ex As Exception
-            MsgBox("Conexíon fallida")
+            EMsg.Show("Conexión fallida con la Base de Datos", ex)
         End Try
 
     End Sub

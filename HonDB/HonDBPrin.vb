@@ -7,6 +7,7 @@
             b.FlatStyle = Windows.Forms.FlatStyle.Flat
             b.FlatAppearance.BorderSize = 0
             b.FlatAppearance.MouseDownBackColor = Color.Transparent
+            b.FlatAppearance.CheckedBackColor = Color.Transparent
             b.BackColor = Color.Transparent
 
         Next
@@ -21,9 +22,15 @@
 
     Private Sub BBusqueda_Click(sender As Object, e As EventArgs) Handles BBusqueda.Click
 
+        Busqueda.Show()
+        Busqueda.Focus()
+
     End Sub
 
     Private Sub BReporte_Click(sender As Object, e As EventArgs) Handles BReporte.Click
+
+        FReportes.Show()
+        FReportes.Focus()
 
     End Sub
 
@@ -40,6 +47,16 @@
     End Sub
 
     Private Sub BSalir_Click(sender As Object, e As EventArgs) Handles BSalir.Click
+
         Application.Exit()
+
     End Sub
+
+    Private Sub BAcercaDe_Click(sender As Object, e As EventArgs) Handles BAcercaDe.Click
+
+        HondDBA.ShowDialog()
+        HondDBA.Focus()
+
+    End Sub
+
 End Class

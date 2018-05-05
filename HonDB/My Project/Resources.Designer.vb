@@ -153,6 +153,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property BTA() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("BTA", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property CreateBT() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("CreateBT", resourceCulture)
@@ -189,6 +199,13 @@ Namespace My.Resources
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
+
+        Friend ReadOnly Property icons8_csv_64() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("icons8-csv-64", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
         
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
@@ -216,6 +233,13 @@ Namespace My.Resources
         Friend ReadOnly Property icons8_Oscar_Wilde_40px() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("icons8_Oscar_Wilde_40px", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+
+        Friend ReadOnly Property Loupe() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Loupe", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

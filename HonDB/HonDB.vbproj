@@ -110,10 +110,23 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConsultaTablas.vb" />
+    <Compile Include="EMsg.Designer.vb">
+      <DependentUpon>EMsg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EMsg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportarExcel.vb" />
     <Compile Include="FReportes.Designer.vb">
       <DependentUpon>FReportes.vb</DependentUpon>
     </Compile>
     <Compile Include="FReportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HondDBA.Designer.vb">
+      <DependentUpon>HondDBA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HondDBA.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OperacionesBD.vb" />
@@ -176,6 +189,9 @@
     <EmbeddedResource Include="Busqueda.resx">
       <DependentUpon>Busqueda.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EMsg.resx">
+      <DependentUpon>EMsg.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FReportes.resx">
       <DependentUpon>FReportes.vb</DependentUpon>
     </EmbeddedResource>
@@ -187,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HonDBSS.resx">
       <DependentUpon>HonDBSS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HondDBA.resx">
+      <DependentUpon>HondDBA.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
@@ -276,6 +295,9 @@
     <Content Include="Resources\icons8_Give_40px_10.png" />
     <Content Include="Resources\icons8_Location_40px.png" />
     <Content Include="Resources\icons8_Oscar_Wilde_40px.png" />
+    <None Include="Resources\BTA.png" />
+    <None Include="Resources\Loupe.png" />
+    <None Include="Resources\icons8-csv-64.png" />
     <None Include="Resources\BotonAcercade.png" />
     <None Include="Resources\BotonSalir.png" />
     <None Include="Resources\BotonAdministrar-031.png" />
@@ -286,6 +308,35 @@
     <None Include="Resources\BotonReportes-04.png" />
     <None Include="Resources\BotonBusqueda-03.png" />
     <None Include="Resources\BotonRegistros-03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

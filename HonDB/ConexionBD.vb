@@ -1,9 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
-
 Public Class ConexionBD
 
     Public Shared conexion As MySqlConnection
-    Public Shared comando As MySqlCommand
+    Public Shared cmd As MySqlCommandBuilder
     Public Shared adaptador As MySqlDataAdapter
     Public Shared reader As MySqlDataReader
     Public Shared command As MySqlCommand
@@ -13,11 +12,13 @@ Public Class ConexionBD
     Public Shared Sub AbrirConexion()
 
         Try
+
             conexion = New MySqlConnection
             conexion.ConnectionString = "server = localhost; user id = root; Password = leo12345; database = biblioteca"
             conexion.Open()
+      
         Catch ex As Exception
-            Err.Description.ToString()
+            EMsg.Show("Se ha encontrado un error al establecer la conexión con la Base de Datos. Por favor contacte al administrador para resolver este error", ex)
         End Try
 
     End Sub

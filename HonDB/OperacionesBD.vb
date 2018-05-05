@@ -8,30 +8,26 @@ Module OperacionesBD
         Try
             Return My.Computer.Network.Ping("www.google.com.ni")
         Catch ex As Exception
-            Return False
+            Return Nothing
+            EMsg.Show("No hay conexión a internet", ex)
         End Try
 
     End Function
 
     Public Sub PopulateCombobox(ByRef cb As ComboBox, ByVal table As String, ByVal column As String)
 
+        'prueba para cambiar de rama
         Try
             AbrirConexion()
             consulta = "SELECT * FROM " & table & " Order by " & column & " asc"
             command = New MySqlCommand(consulta, conexion)
             reader = command.ExecuteReader
-
             While reader.Read
                 Dim aNombre = reader.GetString(column)
                 cb.Items.Add(aNombre)
             End While
-
-            'conexion.Close()
-
         Catch ex As Exception
-            MsgBox(ex.Message)
-            'MsgBox("Ha ocurrido un problema")
-
+            EMsg.Show("No se ha podido llenar el control. Contacte a su administrador", ex)
         Finally
             conexion.Close()
         End Try
@@ -46,9 +42,10 @@ Module OperacionesBD
             adaptador.Fill(datos, tableName)
             dgv.DataSource = datos
             dgv.DataMember = tableName
-            conexion.Close()
         Catch ex As Exception
-            MsgBox(ex.Message)
+            EMsg.Show("No se ha podido llenar la tabla. Contacte a su administrador", ex)
+        Finally
+            conexion.Close()
         End Try
 
     End Sub
@@ -60,10 +57,11 @@ Module OperacionesBD
             command = New MySqlCommand(query, conexion)
             reader = command.ExecuteReader
             MessageBox.Show("Datos guardados correctamente", "Proceso exitoso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
-            conexion.Close()
         Catch ex As Exception
-            'MessageBox.Show("Ha ocurrido un error al guardar, verique el ingreso correcto de campos", "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            MessageBox.Show(ex.Message)
+            EMsg.Show("Ha ocurrido un error al guardar", ex)
+        Finally
+            command = Nothing
+            conexion.Close()
         End Try
     End Sub
 
@@ -103,4 +101,13 @@ Module OperacionesBD
 
         End Try
     End Sub
+
+    Public Sub GetData(ByVal query As String, ByRef result As Object)
+
+        AbrirConexion()
+        command = New MySqlCommand(query, conexion)
+        result = command.ExecuteScalar()
+
+    End Sub
+
 End Module
