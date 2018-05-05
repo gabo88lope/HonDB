@@ -31,7 +31,7 @@ Module ConsultaTablas
     Public queryAutorTabla = "SELECT a.idautor as Código, a.nombre as Nombre, a.apellido as Apellido, a.sexo as Sexo,
     u.ciudad, u.pais FROM autor a INNER JOIN ubicacion u ON a.idubicacion = u.idubicacion"
 
-    Public queryBiblioTabla = "SELECT idbibliotecario as Código, nombre as Nombre, apellido as Apellido, usuario as Usuario
+    Public queryBiblioTabla = "SELECT idbibliotecario as Código, nombre as Nombre, apellido as Apellido, usuario as Usuario, password as Password
     FROM bibliotecario"
 
     Public queryUbicacionesTabla = "SELECT idubicacion as Código, ciudad as Ciudad, pais as País, nacionalidad as Nacionalidad

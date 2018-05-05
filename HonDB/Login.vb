@@ -17,18 +17,8 @@ Public Class Login
         '    Me.Close()
         'End If
 
-        llenarLista(LBUser, "bibliotecario", "usuario")
-        'llenarLista(LBPass, "bibliotecario", "password")
-
-        LBPass.Items.Add(Encriptar(LBUser.Items.Item(0)))
-        LBPass.Items.Add(Encriptar(LBUser.Items.Item(1)))
-        LBPass.Items.Add(Encriptar(LBUser.Items.Item(2)))
-        LBPass.Items.Add(Encriptar(LBUser.Items.Item(3)))
-        LBPass.Items.Add(Encriptar(LBUser.Items.Item(4)))
-
-        For Each s As String In LBPass.Items
-            SaveData("Insert into bibliotecario ")
-        Next
+        llenarListaL(LBUser, "bibliotecario", "usuario")
+        llenarListaL(LBPass, "bibliotecario", "password")
 
     End Sub
 
@@ -45,12 +35,28 @@ Public Class Login
 
         Try
 
-            HonDBPrin.Show()
-            HonDBPrin.Focus()
+            Dim b1 As Boolean
+            Dim b2 As Boolean
 
+            For Each s As String In LBUser.Items
+                If s = UsernameText.Text Then
+                    b1 = True
+                End If
+            Next
 
+            For Each s As String In LBPass.Items
+                If Desencriptar(s) = PassText.Text Then
+                    b2 = True
+                End If
+            Next
 
-            ' Me.Close()
+            If b1 And b2 Then
+                HonDBPrin.Show()
+                HonDBPrin.Focus()
+                Me.Close()
+            Else
+                MsgBox("Contraseña o usuario incorrecto", MsgBoxStyle.Critical)
+            End If
 
         Catch ex As Exception
             EMsg.Show("Conexión fallida con la Base de Datos", ex)

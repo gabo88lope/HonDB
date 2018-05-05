@@ -112,6 +112,24 @@ Module OperacionesBD
         End Try
     End Sub
 
+    Public Sub llenarListaL(ByRef lista As ListBox, ByVal tabla As String, ByVal columna As String)
+        Try
+            AbrirConexion()
+            consulta = "SELECT * FROM " & tabla & " Order by idbibliotecario asc"
+            command = New MySqlCommand(consulta, conexion)
+            reader = command.ExecuteReader
+
+            While reader.Read
+                Dim aNombre = reader.GetString(columna)
+                lista.Items.Add(aNombre)
+            End While
+
+            conexion.Close()
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
     Public Sub GetData(ByVal query As String, ByRef result As Object)
 
         AbrirConexion()
