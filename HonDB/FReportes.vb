@@ -228,10 +228,6 @@ Public Class FReportes
         EExcel(DGVReporte)
     End Sub
 
-    Private Sub CBFiltro_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBFiltro.SelectedIndexChanged
-
-    End Sub
-
     Private Sub TBBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TBBusqueda.TextChanged
 
         Select Case CBFiltro.SelectedIndex
@@ -621,7 +617,4 @@ Public Class FReportes
 
     End Sub
 
-    Private Sub BTActualizar_Click(sender As Object, e As EventArgs) Handles BTActualizar.Click
-
-    End Sub
 End Class
