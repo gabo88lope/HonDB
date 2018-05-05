@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿
+Imports MySql.Data.MySqlClient
 Imports HonDB.ConexionBD
 
 Module OperacionesBD
@@ -59,7 +60,7 @@ Module OperacionesBD
             AbrirConexion()
             command = New MySqlCommand(query, conexion)
             reader = command.ExecuteReader
-            MessageBox.Show("Datos guardados correctamente", "Proceso exitoso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+            MessageBox.Show("Cambios realizados correctamente", "Proceso exitoso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             conexion.Close()
         Catch ex As Exception
             'MessageBox.Show("Ha ocurrido un error al guardar, verique el ingreso correcto de campos", "Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -103,4 +104,24 @@ Module OperacionesBD
 
         End Try
     End Sub
+
+    Public Function VerificarLogin(ByVal query As String) As Boolean
+        AbrirConexion()
+        comando = New MySqlCommand(query, conexion)
+        reader = comando.ExecuteReader
+        Dim cont As Integer
+
+        While reader.Read
+            cont = cont + 1
+        End While
+
+        If cont <> 0 Then
+
+            Return True
+
+        Else
+
+            Return False
+        End If
+    End Function
 End Module

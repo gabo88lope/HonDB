@@ -22,7 +22,9 @@ Module ConsultaTablas
     Public tablaLibroQuery = "SELECT l.idlibro as Código, l.isbn as ISBN,(SELECT a.nombre FROM 
         autor a INNER JOIN detallelibro d ON a.idautor = d.idautor
         WHERE d.idlibro = l.idlibro) as Autor, l.depositolegal as DepositoLegal, l.titulo as Titulo,
-        DATE_FORMAT(l.fechapublicacion, '%d/%m/%Y') as FechaPublicacion, l.edicion as Edicion, l.descripcion as Descripcion,
+        DATE_FORMAT(l.fechapublicacion, '%d/%m/%Y') as FechaPublicacion, l.edicion as Edicion,(SELECT k.nombre FROM 
+        editorial k INNER JOIN detallelibro d ON k.ideditorial = d.ideditorial
+        WHERE d.idlibro = l.idlibro) as Editorial, l.descripcion as Descripcion,
         l.paginas as Paginas, l.numejemplares as Ejemplares, u.ciudad as Ciudad, u.pais as Pais, t.nombre as TipoDocumento, g.nombre as CategoriaGeneral, e.nombre as CategoriaEspecial
         FROM libro l INNER JOIN ubicacion u ON l.idubicacion = u.idubicacion INNER JOIN tipodocumento t ON l.idtipodocumento = t.idtipodocumento INNER JOIN categoriageneral
         g  ON l.codigogeneral = g.codigogeneral INNER JOIN categoriaespecial e ON l.codigoespecial = e.codigoespecial INNER

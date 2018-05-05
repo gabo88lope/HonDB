@@ -1,4 +1,8 @@
-﻿Imports HonDB.ConexionBD
+﻿' Ventana para administrar registros
+' Leonardo José Cardoza Orozco
+' UNIVERIDAD CENTROAMERICANA
+
+Imports HonDB.ConexionBD
 Imports MySql.Data.MySqlClient
 
 Public Class VentanaAdministrar
@@ -19,6 +23,7 @@ Public Class VentanaAdministrar
         LlenarTabla(tablaUsuarios, tablaUsuarioCons, "usuario")
         LlenarTabla(tablaAutores, queryAutorTabla, "autor")
         LlenarTabla(tablaBibliotecario, queryBiblioTabla, "bibliotecario")
+        AjustarAnchoColumna(tablaBibliotecario, 180, 2)
         llenarLista(listaTipoDoc, "tipodocumento", "nombre")
         llenarLista(listaEditoriales, "editorial", "nombre")
         LlenarTabla(tablaUbicaciones, queryUbicacionesTabla, "ubicacion")
@@ -231,6 +236,38 @@ Public Class VentanaAdministrar
         LlenarTabla(tablaLibros, tablaLibroQuery, "libro")
     End Sub
 
+    Private Sub btGuardarL_Click(sender As Object, e As EventArgs) Handles btGuardarL.Click
+        Dim opc = MessageBox.Show("¿Desea guardar los cambios?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+        If opc = DialogResult.Yes Then
+            If edicion = True Then
+                Dim query = "UPDATE libro set titulo = '" & txtTituloL.Text & "', isbn = '" & txtISBN.Text & "', depositolegal = '" & txtDL.Text & "
+                ',fechapublicacion = STR_TO_DATE('" & selectorPublicacion.Value.Date.ToString("dd/MM/yyyy") & "', '%d/%m/%Y'), edicion = '" & txtEdicion.Text & "', descripcion = 
+                '" & txtDescrip.Text & "', paginas = " & paginasCant.Value & ", numejemplares = " & ejemplaresCont.Value & ", idtipodocumento = (
+                SELECT idtipodocumento FROM tipodocumento WHERE nombre = '" & CBTipoDoc.SelectedItem & "'), codigogeneral = (SELECT codigogeneral FROM
+                categoriageneral Where nombre = '" & CBCatG.SelectedItem & "'), codigoespecial = (SELECT codigoespecial FROM categoriaespecial where nombre = '" &
+                CBCatE.SelectedItem & "'), idubicacion = (SELECT idubicacion from ubicacion where ciudad = '" & cbCiudadL.SelectedItem & "') where idlibro = " & idActual
+
+                Dim otherquery = "Update detallelibro Set idautor = (SELECT idautor FROM autor Where nombre = '" & cbAutorLibro.SelectedItem & "'), ideditorial = (SELECT ideditorial FROM editorial where
+                nombre = '" & cbEditarialLibro.SelectedItem & "') Where idlibro = " & idActual
+                SaveData(query)
+                SaveData(otherquery)
+            Else
+                Dim query = "INSERT INTO libro (titulo, isbn, depositolegal, fechapublicacion, edicion, descripcion, paginas, numejemplares, idubicacion, idtipodocumento, codigogeneral,
+                codigoespecial) VALUES('" & txtTituloL.Text & "', '" & txtISBN.Text & "','" & txtDL.Text & "',STR_TO_DATE('" & selectorPublicacion.Value.Date.ToString("dd/MM/yyyy") & "', '%d/%m/%Y'), '" & txtEdicion.Text & "'
+                ,'" & txtDescrip.Text & "', " & paginasCant.Value & ", " & ejemplaresCont.Value & ", (SELECT idubicacion from ubicacion where ciudad = '" & cbCiudadL.SelectedItem & "'), (SELECT idtipodocumento FROM 
+                tipodocumento where nombre = '" & CBTipoDoc.SelectedItem & "'), (SELECT codigogeneral From categoriageneral where nombre = '" & CBCatG.SelectedItem & "'), (SELECT codigoespecial from categoriaespecial
+                where nombre = '" & CBCatE.SelectedItem & "'))"
+
+                Dim otherquery = "INSERT INTO detallelibro (idautor, ideditorial, idlibro) VALUES ((SELECT idautor FROM autor where nombre = '" & cbAutorLibro.SelectedItem & "'), (SELECT ideditorial FROM editorial where
+                nombre = '" & cbEditarialLibro.SelectedItem & "'), " & idActual & ")"
+
+                SaveData(query)
+                SaveData(otherquery)
+            End If
+        End If
+    End Sub
+
     Private Sub txtBuscarLibro_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarLibro.TextChanged
         Dim query = tablaLibroQuery & " Where l.titulo like '" & txtBuscarLibro.Text & "%'"
         LlenarTabla(tablaLibros, query, "libro")
@@ -260,6 +297,7 @@ Public Class VentanaAdministrar
         Dim opc = MessageBox.Show("¿Desea eliminar este registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If opc = DialogResult.Yes Then
+            SaveData("DELETE FROM detallelibro WHERE idlibro = " & indexSelected)
             SaveData("DELETE FROM libro WHERE idlibro = " & indexSelected)
         End If
     End Sub
@@ -268,6 +306,7 @@ Public Class VentanaAdministrar
         PanelDatosLibros.Visible = True
         btEditarLibro.Enabled = False
         btEliminarLibro.Enabled = False
+        edicion = True
         PopulateCombobox(cbCiudadL, "Ubicacion", "Ciudad")
         PopulateCombobox(CBCatG, "categoriageneral", "nombre")
         PopulateCombobox(CBCatE, "categoriaespecial", "nombre")
@@ -289,14 +328,16 @@ Public Class VentanaAdministrar
             txtISBN.Text = reader.GetString("ISBN")
             txtDescrip.Text = reader.GetString("Descripcion")
             txtDL.Text = reader.GetString("DepositoLegal")
+            'conexion.Close()
+            'AbrirConexion()
             Dim varUbi = reader.GetString("Ciudad")
             Dim varCE = reader.GetString("CategoriaEspecial")
             Dim varCG = reader.GetString("CategoriaGeneral")
             Dim varTD = reader.GetString("TipoDocumento")
             Dim varAu = reader.GetString("Autor")
             Dim varEd = reader.GetString("Editorial")
-            'Dim eje = reader.GetInt32("Ejemplares")
-
+            Dim eje = reader.GetInt32("Ejemplares")
+            Dim pag = reader.GetInt32("Paginas")
 
             cbCiudadL.SelectedItem = varUbi
             CBCatG.SelectedItem = varCG
@@ -304,7 +345,8 @@ Public Class VentanaAdministrar
             CBTipoDoc.SelectedItem = varTD
             cbAutorLibro.SelectedItem = varAu
             cbEditarialLibro.SelectedItem = varEd
-            'ejemplaresCont.Value = eje
+            ejemplaresCont.Value = eje
+            paginasCant.Value = pag
 
             conexion.Close()
         Catch ex As Exception
@@ -507,6 +549,7 @@ Public Class VentanaAdministrar
         End Try
     End Sub
 
+
     Private Sub btGuardarBiblio_Click(sender As Object, e As EventArgs) Handles btGuardarBiblio.Click
         Dim query As String
         Dim opc = MessageBox.Show("¿Desea guardar los cambios?", "Guardar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -695,6 +738,11 @@ Public Class VentanaAdministrar
         PanelDatosUbi.Visible = True
         btEditarUbi.Enabled = False
         btEliminarUbi.Enabled = False
+    End Sub
+
+    Private Sub txtBuscarCiudad_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarCiudad.TextChanged
+        Dim query = queryUbicacionesTabla & " WHERE ciudad like '" & txtBuscarCiudad.Text & "%'"
+        LlenarTabla(tablaUbicaciones, query, "ubicacion")
     End Sub
 
     Private Sub btCancelarUbi_Click(sender As Object, e As EventArgs) Handles btCancelarUbi.Click
@@ -917,6 +965,10 @@ Public Class VentanaAdministrar
         If opc = DialogResult.Yes Then
             SaveData("DELETE FROM categoriaespecial WHERE codigoespecial = " & idActual)
         End If
+    End Sub
+
+    Private Sub TabPage2_Click(sender As Object, e As EventArgs) Handles TabPage2.Click
+
     End Sub
 
 

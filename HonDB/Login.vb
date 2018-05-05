@@ -25,13 +25,21 @@ Public Class Login
 
     Private Sub BotonIngresar_Click(sender As Object, e As EventArgs) Handles BotonIngresar.Click
 
-        Try
-            HonDBPrin.Show()
-            HonDBPrin.Focus()
-            Me.Close()
-        Catch ex As Exception
-            MsgBox("Conexíon fallida")
-        End Try
+        Dim query As String
+        query = "SELECT * From Bibliotecario where usuario = '" & UsernameText.Text & "' and contraseña = '" & PassText.Text & "'"
+        If VerificarLogin(query) Then
+
+            Try
+                HonDBPrin.Show()
+                HonDBPrin.Focus()
+                Me.Close()
+            Catch ex As Exception
+                MsgBox("Conexíon fallida")
+            End Try
+
+        Else
+            MessageBox.Show("Verifique el usuario o clave", "Datos incorrectos", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
 
     End Sub
 
