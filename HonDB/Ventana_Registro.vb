@@ -32,17 +32,13 @@ Public Class Ventana_Registro
         INNER JOIN bibliotecario b ON p.idbibliotecario = b.idbibliotecario
         GROUP BY p.idprestamo;", "prestamo")
         PopulateCombobox(CBBN, "bibliotecario", "nombre")
-        PopulateCombobox(CBBA, "bibliotecario", "apellido")
         RectangleBusqueda.Enabled = False
         RectangleNS.Enabled = False
         RectangleShape1.Enabled = False
-        RectangleShape10.Enabled = False
         RectangleShape8.Enabled = False
-        RectangleShape11.Enabled = False
         RectangleShape2.Enabled = False
         RectangleShape5.Enabled = False
         RectangleShape3.Enabled = False
-        RectangleShape4.Enabled = False
         RectangleShape6.Enabled = False
 
     End Sub
@@ -54,14 +50,10 @@ Public Class Ventana_Registro
     Private Sub BTCrear_Click(sender As Object, e As EventArgs) Handles BTCrear.Click
 
         Dim CrearUsuario As String
-        Dim CrearUbicacion As String
         Dim CrearPrestamo As String
         ConexionBD.AbrirConexion()
-        CrearUbicacion = "INSERT INTO ubicacion(pais,ciudad,nacionalidad)
-        VALUES ('" & Pais.Text & "','" & Ciudad.Text & "','" & Nacionalidad.Text & "')"
-        SaveData(CrearUbicacion)
         CrearUsuario = "INSERT INTO usuario (nombre,apellido,identificacion,idubicacion) 
-        VALUES ('" & NUsuario.Text & "','" & AUsuario.Text & "','" & IDUsuario.Text & "', (SELECT idubicacion FROM ubicacion WHERE ciudad = '" & Ciudad.Text & "'))"
+        VALUES ('" & NUsuario.Text & "','" & AUsuario.Text & "','" & IDUsuario.Text & "', (SELECT idubicacion FROM ubicacion WHERE ciudad = '" & Ciudad.SelectedItem & "'))"
         SaveData(CrearUsuario)
         CrearPrestamo = "INSERT INTO prestamo (idusuario, idbibliotecario, fechaprestamo, fechadevolucion, cantidad, estado)
         VALUES ((SELECT idusuario FROM usuario WHERE identificacion = '" & IDUsuario.Text & "'), (SELECT idbibliotecario FROM bibliotecario WHERE nombre = '" & CBBN.SelectedItem & "')
@@ -71,7 +63,6 @@ Public Class Ventana_Registro
         MsgBox("Préstamo creado exitosamente")
         GetData("SELECT p.idprestamo FROM prestamo p ORDER BY p.idprestamo DESC LIMIT 1;", idp)
         idPrestamo.Text = idp.ToString
-
         Dim CrearDetallePrestamo As String
         For Each i As Int32 In ids
             CrearDetallePrestamo = "INSERT INTO detalleprestamo(idlibro,idprestamo) VALUES ('" & i & "','" & idPrestamo.Text & "')"
@@ -170,11 +161,16 @@ Public Class Ventana_Registro
             CantP.Text = DatosGrid.Item(11, S).Value()
             CBEstado.Text = DatosGrid.Item(12, S).Value()
             CBBN.SelectedItem = DatosGrid.Item(13, S).Value()
-            CBBA.SelectedItem = DatosGrid.Item(14, S).Value()
         End If
     End Sub
 
     Private Sub CBEdit_CheckedChanged(sender As Object, e As EventArgs) Handles CBEdit.CheckedChanged
+
+        If CBEdit.Checked = True Then
+            Lupa.Visible = False
+        Else
+            Lupa.Visible = True
+        End If
 
         If CBEdit.Checked = True Then
             BTEliminar.Enabled = True
@@ -217,20 +213,18 @@ Public Class Ventana_Registro
             CantP.Text = DatosGrid.Item(11, S).Value()
             CBEstado.Text = DatosGrid.Item(12, S).Value()
             CBBN.SelectedItem = DatosGrid.Item(13, S).Value()
-            CBBA.SelectedItem = DatosGrid.Item(14, S).Value()
         ElseIf CBEdit.Checked = False Then
             NUsuario.Clear()
             AUsuario.Clear()
             IDUsuario.Clear()
-            Pais.Clear()
-            Ciudad.Clear()
+            Pais.ResetText()
+            Ciudad.ResetText()
             CantP.Clear()
-            Nacionalidad.Clear()
+            Nacionalidad.ResetText()
             ID.Clear()
             LBPrestamos.Clear()
             CBEstado.ResetText()
             CBBN.ResetText()
-            CBBA.ResetText()
             FP.ResetText()
             FD.ResetText()
         End If
@@ -260,7 +254,7 @@ Public Class Ventana_Registro
         End If
     End Sub
 
-    Private Sub Pais_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Pais.KeyPress
+    Private Sub Pais_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Char.IsLetter(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -272,7 +266,7 @@ Public Class Ventana_Registro
         End If
     End Sub
 
-    Private Sub Ciudad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Ciudad.KeyPress
+    Private Sub Ciudad_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Char.IsLetter(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -284,7 +278,7 @@ Public Class Ventana_Registro
         End If
     End Sub
 
-    Private Sub Nacionalidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Nacionalidad.KeyPress
+    Private Sub Nacionalidad_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Char.IsLetter(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -314,15 +308,14 @@ Public Class Ventana_Registro
         NUsuario.Clear()
         AUsuario.Clear()
         IDUsuario.Clear()
-        Pais.Clear()
-        Ciudad.Clear()
+        Pais.ResetText()
+        Ciudad.ResetText()
         CantP.Clear()
-        Nacionalidad.Clear()
+        Nacionalidad.ResetText()
         ID.Clear()
         LBPrestamos.Clear()
         CBEstado.ResetText()
         CBBN.ResetText()
-        CBBA.ResetText()
         FP.ResetText()
         FD.ResetText()
         Me.Close()
@@ -332,15 +325,14 @@ Public Class Ventana_Registro
         NUsuario.Clear()
         AUsuario.Clear()
         IDUsuario.Clear()
-        Pais.Clear()
-        Ciudad.Clear()
+        Pais.ResetText()
+        Ciudad.ResetText()
         CantP.Clear()
-        Nacionalidad.Clear()
+        Nacionalidad.ResetText()
         ID.Clear()
         LBPrestamos.Clear()
         CBEstado.ResetText()
         CBBN.ResetText()
-        CBBA.ResetText()
         FP.ResetText()
         FD.ResetText()
         ids.Clear()
