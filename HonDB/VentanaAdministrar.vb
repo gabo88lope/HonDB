@@ -479,6 +479,7 @@ Public Class VentanaAdministrar
         Try
             AbrirConexion()
             Dim query As String
+            Dim s As String
             idActual = indexSelected
             query = queryBiblioTabla & " WHERE idbibliotecario = " & indexSelected
             command = New MySqlCommand(query, conexion)
@@ -488,7 +489,8 @@ Public Class VentanaAdministrar
             txtNombreBiblio.Text = reader.GetString("nombre")
             txtApellidoBiblio.Text = reader.GetString("apellido")
             txtUsuario.Text = reader.GetString("usuario")
-            txtClave.Text = reader.GetString("password")
+            s = reader.GetString("password")
+            txtClave.Text = Desencriptar(s)
 
             conexion.Close()
         Catch ex As Exception
@@ -512,12 +514,12 @@ Public Class VentanaAdministrar
         If opc = DialogResult.Yes Then
             If edicion = True Then
                 query = "UPDATE bibliotecario SET nombre = '" & txtNombreBiblio.Text & "', apellido = '" & txtApellidoBiblio.Text & "',
-                usuario = '" & txtUsuario.Text & "', password = '" & txtClave.Text & "' WHERE idbibliotecario = " & idActual
+                usuario = '" & txtUsuario.Text & "', password = '" & Encriptar(txtClave.Text) & "' WHERE idbibliotecario = " & idActual
                 SaveData(query)
 
             Else
                 query = "INSERT INTO bibliotecario (nombre, apellido, usuario, password) values ('" & txtNombreBiblio.Text & "',
-                '" & txtApellidoBiblio.Text & "','" & txtUsuario.Text & "','" & txtClave.Text & "')"
+                '" & txtApellidoBiblio.Text & "','" & txtUsuario.Text & "','" & Encriptar(txtClave.Text) & "')"
                 SaveData(query)
             End If
         End If
@@ -918,7 +920,9 @@ Public Class VentanaAdministrar
         End If
     End Sub
 
+    Private Sub TabPage2_Click(sender As Object, e As EventArgs) Handles TabPage2.Click
 
+    End Sub
 
     Private Sub btEditarCE_Click(sender As Object, e As EventArgs) Handles btEditarCE.Click
         PanelDatosCE.Visible = True

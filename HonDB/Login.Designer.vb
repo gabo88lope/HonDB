@@ -195,6 +195,7 @@ Partial Class Login
         Me.LBUser.Name = "LBUser"
         Me.LBUser.Size = New System.Drawing.Size(120, 95)
         Me.LBUser.TabIndex = 6
+        Me.LBUser.Visible = False
         '
         'LBPass
         '
@@ -203,6 +204,7 @@ Partial Class Login
         Me.LBPass.Name = "LBPass"
         Me.LBPass.Size = New System.Drawing.Size(120, 95)
         Me.LBPass.TabIndex = 7
+        Me.LBPass.Visible = False
         '
         'Login
         '
@@ -210,13 +212,13 @@ Partial Class Login
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(178, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(117, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(690, 331)
-        Me.Controls.Add(Me.LBPass)
-        Me.Controls.Add(Me.LBUser)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.LBPass)
+        Me.Controls.Add(Me.LBUser)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
