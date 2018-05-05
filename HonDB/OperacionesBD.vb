@@ -66,22 +66,32 @@ Module OperacionesBD
     End Sub
 
     Public Function VerificarRE(ByVal query As String, ByVal parametro As String) As Boolean
-        AbrirConexion()
-        comando = New MySqlCommand(query, conexion)
-        reader = comando.ExecuteReader
-        Dim cont As Integer
 
-        While reader.Read
-            cont = cont + 1
-        End While
 
-        If cont <> 0 Then
-            MsgBox("Ya existe un campo " & parametro & " con este valor")
-            Return True
+        Try
+            AbrirConexion()
+            command = New MySqlCommand(query, conexion)
+            reader = command.ExecuteReader
+            Dim cont As Integer
 
-        Else
-            Return False
-        End If
+            While reader.Read
+                cont = cont + 1
+            End While
+
+            If cont <> 0 Then
+                MsgBox("Ya existe un campo " & parametro & " con este valor")
+                Return True
+
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            Return Nothing
+            EMsg.Show("Ha ocurrido un error con la operación solicitada", ex)
+        Finally
+            conexion.Close()
+        End Try
+
     End Function
 
     Public Sub llenarLista(ByRef lista As ListBox, ByVal tabla As String, ByVal columna As String)

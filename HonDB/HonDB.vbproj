@@ -172,12 +172,6 @@
     <Compile Include="VentanaAdministrar.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventana_Nuevo_Registro.Designer.vb">
-      <DependentUpon>Ventana_Nuevo_Registro.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Ventana_Nuevo_Registro.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Ventana_Registro.Designer.vb">
       <DependentUpon>Ventana_Registro.vb</DependentUpon>
     </Compile>
@@ -218,9 +212,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaAdministrar.resx">
       <DependentUpon>VentanaAdministrar.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ventana_Nuevo_Registro.resx">
-      <DependentUpon>Ventana_Nuevo_Registro.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventana_Registro.resx">
       <DependentUpon>Ventana_Registro.vb</DependentUpon>

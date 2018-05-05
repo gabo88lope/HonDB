@@ -404,7 +404,6 @@ Public Class VentanaAdministrar
 
     Private Sub btGuardarAutor_Click(sender As Object, e As EventArgs) Handles btGuardarAutor.Click
         Dim sex As String
-        Dim ubicacion As String
         Dim subQuery As String
 
         Dim query As String

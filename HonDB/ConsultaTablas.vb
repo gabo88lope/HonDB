@@ -46,9 +46,15 @@ Module ConsultaTablas
         Dim cont As Integer
         cont = 0
 
-        While cont < columnas
-            tabla.Columns(cont).Width = width
-            cont = cont + 1
-        End While
+        Try
+            While cont < columnas
+                tabla.Columns(cont).Width = width
+                cont = cont + 1
+            End While
+        Catch ex As Exception
+            EMsg.Show("Ha ocurrido un error con la tabla", ex)
+        End Try
+
+
     End Sub
 End Module
