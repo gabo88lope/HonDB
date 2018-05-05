@@ -83,6 +83,7 @@ Partial Class Busqueda
         Me.Label4.Size = New System.Drawing.Size(126, 13)
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "Temática del Documento"
+        Me.Label4.Visible = False
         '
         'Label3
         '
@@ -93,6 +94,7 @@ Partial Class Busqueda
         Me.Label3.Size = New System.Drawing.Size(119, 13)
         Me.Label3.TabIndex = 9
         Me.Label3.Text = "Nombre del Documento"
+        Me.Label3.Visible = False
         '
         'Label2
         '
@@ -103,6 +105,7 @@ Partial Class Busqueda
         Me.Label2.Size = New System.Drawing.Size(52, 13)
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "Categoria"
+        Me.Label2.Visible = False
         '
         'Label1
         '
@@ -113,6 +116,7 @@ Partial Class Busqueda
         Me.Label1.Size = New System.Drawing.Size(32, 13)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Autor"
+        Me.Label1.Visible = False
         '
         'ComboBox4
         '
@@ -122,6 +126,7 @@ Partial Class Busqueda
         Me.ComboBox4.Name = "ComboBox4"
         Me.ComboBox4.Size = New System.Drawing.Size(174, 21)
         Me.ComboBox4.TabIndex = 6
+        Me.ComboBox4.Visible = False
         '
         'ComboBox3
         '
@@ -131,6 +136,7 @@ Partial Class Busqueda
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(174, 21)
         Me.ComboBox3.TabIndex = 5
+        Me.ComboBox3.Visible = False
         '
         'ComboBox2
         '
@@ -140,6 +146,7 @@ Partial Class Busqueda
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(174, 21)
         Me.ComboBox2.TabIndex = 4
+        Me.ComboBox2.Visible = False
         '
         'ComboBox1
         '
@@ -149,6 +156,7 @@ Partial Class Busqueda
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(174, 21)
         Me.ComboBox1.TabIndex = 3
+        Me.ComboBox1.Visible = False
         '
         'CheckBox1
         '
