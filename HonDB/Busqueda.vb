@@ -122,8 +122,6 @@ Public Class Busqueda
         g  ON l.codigogeneral = g.codigogeneral INNER JOIN categoriaespecial e ON l.codigoespecial = e.codigoespecial INNER
         JOIN detallelibro d ON l.idlibro = d.idlibro GROUP BY l.idlibro HAVING l.titulo LIKE '" & TextBox1.Text & "%';", "libro")
 
-
-
     End Sub
 
     Private Sub Busqueda_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -137,6 +135,6 @@ Public Class Busqueda
     End Sub
 
     Private Sub BotonAgregarBusqueda_Click(sender As Object, e As EventArgs) Handles BotonAgregarBusqueda.Click
-
+        TBI.Text = Ventana_Registro.LBPrestamos.Text
     End Sub
 End Class
