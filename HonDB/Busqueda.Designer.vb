@@ -24,14 +24,9 @@ Partial Class Busqueda
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Busqueda))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TBI = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.BotonLimpiarBusquedaLibro = New System.Windows.Forms.Button()
@@ -39,7 +34,6 @@ Partial Class Busqueda
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.BotonAgregarBusqueda = New System.Windows.Forms.Button()
         Me.BotonCancelarBusqueda = New System.Windows.Forms.Button()
-        Me.TBI = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -49,13 +43,7 @@ Partial Class Busqueda
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.Panel1.Controls.Add(Me.TBI)
         Me.Panel1.Controls.Add(Me.Label5)
-        Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.ComboBox4)
-        Me.Panel1.Controls.Add(Me.ComboBox3)
-        Me.Panel1.Controls.Add(Me.ComboBox2)
         Me.Panel1.Controls.Add(Me.ComboBox1)
         Me.Panel1.Controls.Add(Me.CheckBox1)
         Me.Panel1.Controls.Add(Me.BotonLimpiarBusquedaLibro)
@@ -64,6 +52,13 @@ Partial Class Busqueda
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(816, 153)
         Me.Panel1.TabIndex = 0
+        '
+        'TBI
+        '
+        Me.TBI.Location = New System.Drawing.Point(547, 15)
+        Me.TBI.Name = "TBI"
+        Me.TBI.Size = New System.Drawing.Size(100, 20)
+        Me.TBI.TabIndex = 13
         '
         'Label5
         '
@@ -76,85 +71,23 @@ Partial Class Busqueda
         Me.Label5.TabIndex = 12
         Me.Label5.Text = "Búsqueda de Libros"
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label4.Location = New System.Drawing.Point(364, 93)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(126, 13)
-        Me.Label4.TabIndex = 10
-        Me.Label4.Text = "Temática del Documento"
-        Me.Label4.Visible = False
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label3.Location = New System.Drawing.Point(371, 47)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(119, 13)
-        Me.Label3.TabIndex = 9
-        Me.Label3.Text = "Nombre del Documento"
-        Me.Label3.Visible = False
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label2.Location = New System.Drawing.Point(613, 93)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(52, 13)
-        Me.Label2.TabIndex = 8
-        Me.Label2.Text = "Categoria"
-        Me.Label2.Visible = False
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(613, 47)
+        Me.Label1.Location = New System.Drawing.Point(499, 70)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(32, 13)
+        Me.Label1.Size = New System.Drawing.Size(54, 13)
         Me.Label1.TabIndex = 7
-        Me.Label1.Text = "Autor"
+        Me.Label1.Text = "Filtrar Por:"
         Me.Label1.Visible = False
-        '
-        'ComboBox4
-        '
-        Me.ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(347, 107)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(174, 21)
-        Me.ComboBox4.TabIndex = 6
-        Me.ComboBox4.Visible = False
-        '
-        'ComboBox3
-        '
-        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(347, 63)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(174, 21)
-        Me.ComboBox3.TabIndex = 5
-        Me.ComboBox3.Visible = False
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(547, 107)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(174, 21)
-        Me.ComboBox2.TabIndex = 4
-        Me.ComboBox2.Visible = False
         '
         'ComboBox1
         '
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(547, 63)
+        Me.ComboBox1.Items.AddRange(New Object() {"Nombre del Autor", "Categoria", "Nombre del Documento", "Tematica del Documento"})
+        Me.ComboBox1.Location = New System.Drawing.Point(443, 86)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(174, 21)
         Me.ComboBox1.TabIndex = 3
@@ -178,7 +111,7 @@ Partial Class Busqueda
         Me.BotonLimpiarBusquedaLibro.Name = "BotonLimpiarBusquedaLibro"
         Me.BotonLimpiarBusquedaLibro.Size = New System.Drawing.Size(75, 23)
         Me.BotonLimpiarBusquedaLibro.TabIndex = 1
-        Me.BotonLimpiarBusquedaLibro.Text = "Limpiar"
+        Me.BotonLimpiarBusquedaLibro.Text = "Buscar"
         Me.BotonLimpiarBusquedaLibro.UseVisualStyleBackColor = True
         '
         'TextBox1
@@ -222,13 +155,6 @@ Partial Class Busqueda
         Me.BotonCancelarBusqueda.Text = "Cancelar"
         Me.BotonCancelarBusqueda.UseVisualStyleBackColor = True
         '
-        'TBI
-        '
-        Me.TBI.Location = New System.Drawing.Point(547, 15)
-        Me.TBI.Name = "TBI"
-        Me.TBI.Size = New System.Drawing.Size(100, 20)
-        Me.TBI.TabIndex = 13
-        '
         'Busqueda
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -251,9 +177,6 @@ Partial Class Busqueda
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents ComboBox4 As ComboBox
-    Friend WithEvents ComboBox3 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents BotonLimpiarBusquedaLibro As Button
@@ -261,9 +184,6 @@ Partial Class Busqueda
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents BotonAgregarBusqueda As Button
     Friend WithEvents BotonCancelarBusqueda As Button
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents TBI As TextBox
