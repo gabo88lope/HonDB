@@ -224,6 +224,7 @@ Partial Class Busqueda
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ControlBox = False
         Me.Controls.Add(Me.BotonCancelarBusqueda)
         Me.Controls.Add(Me.BotonAgregarBusqueda)
         Me.Controls.Add(Me.DataGridView1)
