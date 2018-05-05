@@ -33,24 +33,18 @@ Partial Class FReportes
         Me.RBusqueda = New Microsoft.VisualBasic.PowerPacks.RectangleShape()
         Me.LabelLogo = New System.Windows.Forms.Label()
         Me.DGVReporte = New System.Windows.Forms.DataGridView()
-        Me.LabelFiltrado = New System.Windows.Forms.Label()
-        Me.Filtrado = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CBTipoReportes = New System.Windows.Forms.ComboBox()
-        Me.LbEliminar = New System.Windows.Forms.Label()
-        Me.LbActualizar = New System.Windows.Forms.Label()
         Me.LbCrear = New System.Windows.Forms.Label()
+        Me.TBBusqueda = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.BTEliminar = New System.Windows.Forms.PictureBox()
-        Me.BTActualizar = New System.Windows.Forms.PictureBox()
         Me.BTCrear = New System.Windows.Forms.PictureBox()
         Me.RetornoIcon = New System.Windows.Forms.PictureBox()
         Me.BookLogo = New System.Windows.Forms.PictureBox()
-        Me.TBBusqueda = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.CBFiltro = New System.Windows.Forms.ComboBox()
         CType(Me.DGVReporte, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BTEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BTActualizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BTCrear, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RetornoIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BookLogo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -99,9 +93,10 @@ Partial Class FReportes
         Me.RBusqueda.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque
         Me.RBusqueda.BorderColor = System.Drawing.Color.Gray
         Me.RBusqueda.CornerRadius = 15
-        Me.RBusqueda.Location = New System.Drawing.Point(56, 94)
+        Me.RBusqueda.Enabled = False
+        Me.RBusqueda.Location = New System.Drawing.Point(56, 89)
         Me.RBusqueda.Name = "RBusqueda"
-        Me.RBusqueda.Size = New System.Drawing.Size(331, 45)
+        Me.RBusqueda.Size = New System.Drawing.Size(331, 50)
         '
         'LabelLogo
         '
@@ -119,7 +114,7 @@ Partial Class FReportes
         '
         Me.DGVReporte.AllowUserToAddRows = False
         Me.DGVReporte.AllowUserToDeleteRows = False
-        Me.DGVReporte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
+        Me.DGVReporte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGVReporte.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
         Me.DGVReporte.BorderStyle = System.Windows.Forms.BorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -150,29 +145,6 @@ Partial Class FReportes
         Me.DGVReporte.Size = New System.Drawing.Size(1261, 481)
         Me.DGVReporte.TabIndex = 8
         '
-        'LabelFiltrado
-        '
-        Me.LabelFiltrado.AutoSize = True
-        Me.LabelFiltrado.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelFiltrado.ForeColor = System.Drawing.Color.Gray
-        Me.LabelFiltrado.Location = New System.Drawing.Point(400, 89)
-        Me.LabelFiltrado.Name = "LabelFiltrado"
-        Me.LabelFiltrado.Size = New System.Drawing.Size(69, 21)
-        Me.LabelFiltrado.TabIndex = 22
-        Me.LabelFiltrado.Text = "Filtrado"
-        '
-        'Filtrado
-        '
-        Me.Filtrado.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Filtrado.ForeColor = System.Drawing.Color.Gray
-        Me.Filtrado.FormattingEnabled = True
-        Me.Filtrado.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Filtrado.Items.AddRange(New Object() {"Nombre", "Identificación", "Fecha de Préstamo"})
-        Me.Filtrado.Location = New System.Drawing.Point(404, 113)
-        Me.Filtrado.Name = "Filtrado"
-        Me.Filtrado.Size = New System.Drawing.Size(121, 25)
-        Me.Filtrado.TabIndex = 21
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -198,26 +170,6 @@ Partial Class FReportes
         Me.CBTipoReportes.Size = New System.Drawing.Size(271, 25)
         Me.CBTipoReportes.TabIndex = 23
         '
-        'LbEliminar
-        '
-        Me.LbEliminar.AutoSize = True
-        Me.LbEliminar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbEliminar.Location = New System.Drawing.Point(533, 664)
-        Me.LbEliminar.Name = "LbEliminar"
-        Me.LbEliminar.Size = New System.Drawing.Size(74, 21)
-        Me.LbEliminar.TabIndex = 34
-        Me.LbEliminar.Text = "Eliminar"
-        '
-        'LbActualizar
-        '
-        Me.LbActualizar.AutoSize = True
-        Me.LbActualizar.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LbActualizar.Location = New System.Drawing.Point(394, 664)
-        Me.LbActualizar.Name = "LbActualizar"
-        Me.LbActualizar.Size = New System.Drawing.Size(87, 21)
-        Me.LbActualizar.TabIndex = 33
-        Me.LbActualizar.Text = "Actualizar"
-        '
         'LbCrear
         '
         Me.LbCrear.AutoSize = True
@@ -228,35 +180,27 @@ Partial Class FReportes
         Me.LbCrear.TabIndex = 30
         Me.LbCrear.Text = "Exportar a MS Excel"
         '
+        'TBBusqueda
+        '
+        Me.TBBusqueda.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.TBBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TBBusqueda.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBBusqueda.ForeColor = System.Drawing.Color.Gray
+        Me.TBBusqueda.Location = New System.Drawing.Point(112, 104)
+        Me.TBBusqueda.Multiline = True
+        Me.TBBusqueda.Name = "TBBusqueda"
+        Me.TBBusqueda.Size = New System.Drawing.Size(262, 33)
+        Me.TBBusqueda.TabIndex = 36
+        '
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(68, 104)
+        Me.PictureBox1.Location = New System.Drawing.Point(67, 100)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(28, 28)
         Me.PictureBox1.TabIndex = 35
         Me.PictureBox1.TabStop = False
-        '
-        'BTEliminar
-        '
-        Me.BTEliminar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BTEliminar.Image = Global.HonDB.My.Resources.Resources.DeleteBT
-        Me.BTEliminar.Location = New System.Drawing.Point(487, 655)
-        Me.BTEliminar.Name = "BTEliminar"
-        Me.BTEliminar.Size = New System.Drawing.Size(40, 40)
-        Me.BTEliminar.TabIndex = 29
-        Me.BTEliminar.TabStop = False
-        '
-        'BTActualizar
-        '
-        Me.BTActualizar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BTActualizar.Image = Global.HonDB.My.Resources.Resources.UpdateBT
-        Me.BTActualizar.Location = New System.Drawing.Point(348, 655)
-        Me.BTActualizar.Name = "BTActualizar"
-        Me.BTActualizar.Size = New System.Drawing.Size(40, 40)
-        Me.BTActualizar.TabIndex = 28
-        Me.BTActualizar.TabStop = False
         '
         'BTCrear
         '
@@ -291,35 +235,47 @@ Partial Class FReportes
         Me.BookLogo.TabIndex = 5
         Me.BookLogo.TabStop = False
         '
-        'TBBusqueda
+        'Label13
         '
-        Me.TBBusqueda.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
-        Me.TBBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TBBusqueda.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TBBusqueda.ForeColor = System.Drawing.Color.Gray
-        Me.TBBusqueda.Location = New System.Drawing.Point(112, 104)
-        Me.TBBusqueda.Multiline = True
-        Me.TBBusqueda.Name = "TBBusqueda"
-        Me.TBBusqueda.Size = New System.Drawing.Size(262, 33)
-        Me.TBBusqueda.TabIndex = 36
+        Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.Color.Transparent
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.DimGray
+        Me.Label13.Location = New System.Drawing.Point(394, 89)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(115, 21)
+        Me.Label13.TabIndex = 57
+        Me.Label13.Text = "Búsqueda por"
+        '
+        'CBFiltro
+        '
+        Me.CBFiltro.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CBFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CBFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CBFiltro.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBFiltro.ForeColor = System.Drawing.Color.FromArgb(CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.CBFiltro.FormattingEnabled = True
+        Me.CBFiltro.IntegralHeight = False
+        Me.CBFiltro.Items.AddRange(New Object() {"Nombre", "Identificación"})
+        Me.CBFiltro.Location = New System.Drawing.Point(398, 111)
+        Me.CBFiltro.Margin = New System.Windows.Forms.Padding(6)
+        Me.CBFiltro.Name = "CBFiltro"
+        Me.CBFiltro.Size = New System.Drawing.Size(156, 29)
+        Me.CBFiltro.TabIndex = 56
         '
         'FReportes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1350, 729)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.CBFiltro)
         Me.Controls.Add(Me.TBBusqueda)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.LbEliminar)
-        Me.Controls.Add(Me.LbActualizar)
         Me.Controls.Add(Me.LbCrear)
-        Me.Controls.Add(Me.BTEliminar)
-        Me.Controls.Add(Me.BTActualizar)
         Me.Controls.Add(Me.BTCrear)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.CBTipoReportes)
-        Me.Controls.Add(Me.LabelFiltrado)
-        Me.Controls.Add(Me.Filtrado)
         Me.Controls.Add(Me.DGVReporte)
         Me.Controls.Add(Me.RetornoIcon)
         Me.Controls.Add(Me.BookLogo)
@@ -332,8 +288,6 @@ Partial Class FReportes
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.DGVReporte, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BTEliminar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BTActualizar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BTCrear, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RetornoIcon, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BookLogo, System.ComponentModel.ISupportInitialize).EndInit()
@@ -350,16 +304,12 @@ Partial Class FReportes
     Friend WithEvents LabelLogo As Label
     Friend WithEvents RetornoIcon As PictureBox
     Friend WithEvents DGVReporte As DataGridView
-    Friend WithEvents LabelFiltrado As Label
-    Friend WithEvents Filtrado As ComboBox
     Friend WithEvents Label1 As Label
     Friend WithEvents CBTipoReportes As ComboBox
-    Friend WithEvents LbEliminar As Label
-    Friend WithEvents LbActualizar As Label
     Friend WithEvents LbCrear As Label
-    Friend WithEvents BTEliminar As PictureBox
-    Friend WithEvents BTActualizar As PictureBox
     Friend WithEvents BTCrear As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TBBusqueda As TextBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents CBFiltro As ComboBox
 End Class

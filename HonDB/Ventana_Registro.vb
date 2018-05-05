@@ -82,9 +82,9 @@ Public Class Ventana_Registro
         identificacion = '" & IDUsuario.Text & "' Where idusuario = " & ID.Text
         SaveData(EditarUsuario)
         Dim EditarPrestamo As String
-        EditarPrestamo = "Update prestamo Set fechaprestamo = '" & FP.Value.Date & "', fechadevolucion = '" & FD.Value.Date & "', 
-        cantidad = '" & CantP.Text & "' Where idprestamo = " & idPrestamo.Text
-        'SaveData(EditarPrestamo)
+        EditarPrestamo = "Update prestamo Set fechaprestamo =  STR_TO_DATE('" & FP.Value.Date.ToString("dd/MM/yyyy") & "', '%d/%m/%Y') , fechadevolucion = STR_TO_DATE('" & FD.Value.Date & "', '%d/%m/%Y'), cantidad = '" & CantP.Text & "' Where idprestamo = '" & idPrestamo.Text & "';"
+        SaveData(EditarPrestamo)
+
     End Sub
 
     Private Sub BTEliminar_Click(sender As Object, e As EventArgs) Handles BTEliminar.Click
