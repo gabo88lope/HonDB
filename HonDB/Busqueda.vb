@@ -129,12 +129,12 @@ Public Class Busqueda
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-        Dim value As Object = DataGridView1.CurrentRow.Cells(0).Value
-
-        codigo = CType(value, Integer)
+        Dim S As Integer
+        S = DataGridView1.CurrentRow.Index
+        TBI.Text = DataGridView1.Item(4, S).Value()
     End Sub
 
     Private Sub BotonAgregarBusqueda_Click(sender As Object, e As EventArgs) Handles BotonAgregarBusqueda.Click
-        TBI.Text = Ventana_Registro.LBPrestamos.Text
+        Ventana_Registro.LBPrestamos.Text = TBI.Text
     End Sub
 End Class
