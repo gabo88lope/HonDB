@@ -39,6 +39,7 @@ Partial Class Busqueda
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.BotonAgregarBusqueda = New System.Windows.Forms.Button()
         Me.BotonCancelarBusqueda = New System.Windows.Forms.Button()
+        Me.TBI = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -46,6 +47,7 @@ Partial Class Busqueda
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(29, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.TBI)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label3)
@@ -211,6 +213,13 @@ Partial Class Busqueda
         Me.BotonCancelarBusqueda.Text = "Cancelar"
         Me.BotonCancelarBusqueda.UseVisualStyleBackColor = True
         '
+        'TBI
+        '
+        Me.TBI.Location = New System.Drawing.Point(547, 15)
+        Me.TBI.Name = "TBI"
+        Me.TBI.Size = New System.Drawing.Size(100, 20)
+        Me.TBI.TabIndex = 13
+        '
         'Busqueda
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -247,4 +256,5 @@ Partial Class Busqueda
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents TBI As TextBox
 End Class

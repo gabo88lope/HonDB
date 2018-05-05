@@ -272,6 +272,7 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <None Include="Resources\BTA.png" />
     <None Include="Resources\Loupe.png" />
     <None Include="Resources\icons8-csv-64.png" />
     <None Include="Resources\BotonAcercade.png" />

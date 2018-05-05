@@ -19,6 +19,17 @@ Public Class Ventana_Registro
         GROUP BY p.idprestamo;", "prestamo")
         PopulateCombobox(CBBN, "bibliotecario", "nombre")
         PopulateCombobox(CBBA, "bibliotecario", "apellido")
+        RectangleBusqueda.Enabled = False
+        RectangleNS.Enabled = False
+        RectangleShape1.Enabled = False
+        RectangleShape10.Enabled = False
+        RectangleShape8.Enabled = False
+        RectangleShape11.Enabled = False
+        RectangleShape2.Enabled = False
+        RectangleShape5.Enabled = False
+        RectangleShape3.Enabled = False
+        RectangleShape4.Enabled = False
+        RectangleShape6.Enabled = False
     End Sub
 
     Private Sub RetornoIcon_Click(sender As Object, e As EventArgs) Handles RetornoIcon.Click
@@ -29,21 +40,18 @@ Public Class Ventana_Registro
         Dim CrearUsuario As String
         Dim CrearUbicacion As String
         Dim CrearPrestamo As String
-        Dim CrearDetallePrestamo As String
         ConexionBD.AbrirConexion()
         CrearUbicacion = "INSERT INTO ubicacion(pais,ciudad,nacionalidad)
         VALUES ('" & Pais.Text & "','" & Ciudad.Text & "','" & Nacionalidad.Text & "')"
-        SaveData(CrearUbicacion)
+        'SaveData(CrearUbicacion)
         CrearUsuario = "INSERT INTO usuario (nombre,apellido,identificacion,idubicacion) 
         VALUES ('" & NUsuario.Text & "','" & AUsuario.Text & "','" & IDUsuario.Text & "', (SELECT idubicacion FROM ubicacion WHERE ciudad = '" & Ciudad.Text & "'))"
-        SaveData(CrearUsuario)
+        'SaveData(CrearUsuario)
         CrearPrestamo = "INSERT INTO prestamo (idusuario, idbibliotecario, fechaprestamo, fechadevolucion, cantidad, estado)
         VALUES ((SELECT idusuario FROM usuario WHERE identificacion = '" & IDUsuario.Text & "'), (SELECT idbibliotecario FROM bibliotecario WHERE nombre = '" & CBBN.SelectedItem & "')
-        ,'" & FP.Value & "','" & FD.Value & "','" & CantP.Text & "','" & CBEstado.SelectedItem & "')"
+        ,'" & FP.Value.Date & "','" & FD.Value.Date & "','" & CantP.Text & "','" & CBEstado.SelectedItem & "')"
+        MsgBox(CrearPrestamo)
         'SaveData(CrearPrestamo)
-        CrearDetallePrestamo = "INSERT INTO detalleprestamo(idlibro,idprestamo)
-        VALUES ((SELECT idlibro FROM libro WHERE titulo = '" & LBPrestamos.Text & "') , (SELECT idusuario FROM prestamo WHERE identificacion = '" & IDUsuario.Text & "'))"
-        'SaveData(CrearDetallePrestamo)
         MsgBox("Préstamo creado exitosamente")
         NUsuario.Clear()
         AUsuario.Clear()
@@ -58,6 +66,14 @@ Public Class Ventana_Registro
         CBBA.ResetText()
         FP.ResetText()
         FD.ResetText()
+    End Sub
+
+    Private Sub BTAgregarLibro_Click(sender As Object, e As EventArgs) Handles BTAgregarLibro.Click
+        Dim CrearDetallePrestamo As String
+        CrearDetallePrestamo = "INSERT INTO detalleprestamo(idlibro,idprestamo)
+        VALUES ((SELECT idlibro FROM libro WHERE titulo = '" & LBPrestamos.Text & "') , (SELECT idusuario FROM prestamo WHERE identificacion = '" & idPrestamo.Text & "'))"
+        'SaveData(CrearDetallePrestamo)
+        MsgBox(CrearDetallePrestamo)
     End Sub
 
     Private Sub BTEditar_Click(sender As Object, e As EventArgs) Handles BTEditar.Click
@@ -274,5 +290,9 @@ Public Class Ventana_Registro
 
     Private Sub Lupa_Click(sender As Object, e As EventArgs) Handles Lupa.Click
         Busqueda.Show()
+    End Sub
+
+    Private Sub BTGuardar_Click(sender As Object, e As EventArgs) Handles BTGuardar.Click
+        Me.Close()
     End Sub
 End Class
