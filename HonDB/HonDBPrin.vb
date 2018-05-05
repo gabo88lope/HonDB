@@ -35,7 +35,8 @@
     End Sub
 
     Private Sub BAdministrar_Click(sender As Object, e As EventArgs) Handles BAdministrar.Click
-
+        VentanaAdministrar.Show()
+        VentanaAdministrar.Focus()
     End Sub
 
     Private Sub BRegistro_Click_1(sender As Object, e As EventArgs) Handles BRegistro.Click
