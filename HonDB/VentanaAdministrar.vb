@@ -488,7 +488,7 @@ Public Class VentanaAdministrar
             txtNombreBiblio.Text = reader.GetString("nombre")
             txtApellidoBiblio.Text = reader.GetString("apellido")
             txtUsuario.Text = reader.GetString("usuario")
-            txtClave.Text = reader.GetString("contraseña")
+            txtClave.Text = reader.GetString("password")
 
             conexion.Close()
         Catch ex As Exception
@@ -512,11 +512,11 @@ Public Class VentanaAdministrar
         If opc = DialogResult.Yes Then
             If edicion = True Then
                 query = "UPDATE bibliotecario SET nombre = '" & txtNombreBiblio.Text & "', apellido = '" & txtApellidoBiblio.Text & "',
-                usuario = '" & txtUsuario.Text & "', contraseña = '" & txtClave.Text & "' WHERE idbibliotecario = " & idActual
+                usuario = '" & txtUsuario.Text & "', password = '" & txtClave.Text & "' WHERE idbibliotecario = " & idActual
                 SaveData(query)
 
             Else
-                query = "INSERT INTO bibliotecario (nombre, apellido, usuario, contraseña) values ('" & txtNombreBiblio.Text & "',
+                query = "INSERT INTO bibliotecario (nombre, apellido, usuario, password) values ('" & txtNombreBiblio.Text & "',
                 '" & txtApellidoBiblio.Text & "','" & txtUsuario.Text & "','" & txtClave.Text & "')"
                 SaveData(query)
             End If

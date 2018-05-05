@@ -4,109 +4,51 @@ Imports System.Security.Cryptography
 
 Module Encriptacion
 
-    Public Sub Encriptacion(ByVal original As String, ByVal encriptado As Byte(), ByVal op As Boolean)
-        Try
-            ' Create a new instance of the AesManaged
-            ' class.  This generates a new key and initialization 
-            ' vector (IV).
-            Using myAes As New AesManaged()
+    Private enc As System.Text.UTF8Encoding
+    Private encryptor As ICryptoTransform
+    Private decryptor As ICryptoTransform
 
-                If op Then
-                    'Encriptado
-                    encriptado = EncryptStringToBytes_Aes(original, myAes.Key, myAes.IV)
-                Else
-                    'Desencriptado
-                    original = DecryptStringFromBytes_Aes(encriptado, myAes.Key, myAes.IV)
-                End If
+    Private Sub Load()
+        Dim KEY_128 As Byte() = {42, 1, 52, 67, 231, 13, 94, 101, 123, 6, 0, 12, 32, 91, 4, 111, 31, 70, 21, 141, 123, 142, 234, 82, 95, 129, 187, 162, 12, 55, 98, 23}
+        Dim IV_128 As Byte() = {234, 12, 52, 44, 214, 222, 200, 109, 2, 98, 45, 76, 88, 53, 23, 78}
+        Dim symmetricKey As RijndaelManaged = New RijndaelManaged()
+        symmetricKey.Mode = CipherMode.CBC
 
-            End Using
-        Catch e As Exception
-            MsgBox("Error: {0}", e.Message)
-        End Try
-
+        enc = New System.Text.UTF8Encoding
+        encryptor = symmetricKey.CreateEncryptor(KEY_128, IV_128)
+        decryptor = symmetricKey.CreateDecryptor(KEY_128, IV_128)
     End Sub
 
-    Function EncryptStringToBytes_Aes(ByVal plainText As String, ByVal Key() As Byte, ByVal IV() As Byte) As Byte()
-        ' Check arguments.
-        If plainText Is Nothing OrElse plainText.Length <= 0 Then
-            Throw New ArgumentNullException("plainText")
+    Public Function Encriptar(ByVal s As String) As String
+
+        Load()
+        Dim sPlainText As String = s
+
+        If Not String.IsNullOrEmpty(sPlainText) Then
+            Dim memoryStream As MemoryStream = New MemoryStream()
+            Dim cryptoStream As CryptoStream = New CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write)
+            cryptoStream.Write(enc.GetBytes(sPlainText), 0, sPlainText.Length)
+            cryptoStream.FlushFinalBlock()
+            Return Convert.ToBase64String(memoryStream.ToArray())
+            memoryStream.Close()
+            cryptoStream.Close()
+        Else
+            Return Nothing
         End If
-        If Key Is Nothing OrElse Key.Length <= 0 Then
-            Throw New ArgumentNullException("Key")
-        End If
-        If IV Is Nothing OrElse IV.Length <= 0 Then
-            Throw New ArgumentNullException("IV")
-        End If
-        Dim encrypted() As Byte
-        ' Create an AesManaged object
-        ' with the specified key and IV.
-        Using aesAlg As New AesManaged()
+    End Function
 
-            aesAlg.Key = Key
-            aesAlg.IV = IV
+    Public Function Desencriptar(ByVal s As String) As String
 
-            ' Create a decrytor to perform the stream transform.
-            Dim encryptor As ICryptoTransform = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV)
-            ' Create the streams used for encryption.
-            Using msEncrypt As New MemoryStream()
-                Using csEncrypt As New CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write)
-                    Using swEncrypt As New StreamWriter(csEncrypt)
+        Load()
+        Dim cypherTextBytes As Byte() = Convert.FromBase64String(s)
+        Dim memoryStream As MemoryStream = New MemoryStream(cypherTextBytes)
+        Dim cryptoStream As CryptoStream = New CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read)
+        Dim plainTextBytes(cypherTextBytes.Length) As Byte
+        Dim decryptedByteCount As Integer = cryptoStream.Read(plainTextBytes, 0, plainTextBytes.Length)
+        memoryStream.Close()
+        cryptoStream.Close()
+        Return enc.GetString(plainTextBytes, 0, decryptedByteCount)
 
-                        'Write all data to the stream.
-                        swEncrypt.Write(plainText)
-                    End Using
-                    encrypted = msEncrypt.ToArray()
-                End Using
-            End Using
-        End Using
-
-        ' Return the encrypted bytes from the memory stream.
-        Return encrypted
-
-    End Function 'EncryptStringToBytes_Aes
-
-    Function DecryptStringFromBytes_Aes(ByVal cipherText() As Byte, ByVal Key() As Byte, ByVal IV() As Byte) As String
-        ' Check arguments.
-        If cipherText Is Nothing OrElse cipherText.Length <= 0 Then
-            Throw New ArgumentNullException("cipherText")
-        End If
-        If Key Is Nothing OrElse Key.Length <= 0 Then
-            Throw New ArgumentNullException("Key")
-        End If
-        If IV Is Nothing OrElse IV.Length <= 0 Then
-            Throw New ArgumentNullException("IV")
-        End If
-        ' Declare the string used to hold
-        ' the decrypted text.
-        Dim plaintext As String = Nothing
-
-        ' Create an AesManaged object
-        ' with the specified key and IV.
-        Using aesAlg As New AesManaged
-            aesAlg.Key = Key
-            aesAlg.IV = IV
-
-            ' Create a decrytor to perform the stream transform.
-            Dim decryptor As ICryptoTransform = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV)
-
-            ' Create the streams used for decryption.
-            Using msDecrypt As New MemoryStream(cipherText)
-
-                Using csDecrypt As New CryptoStream(msDecrypt, decryptor, CryptoStreamMode.Read)
-
-                    Using srDecrypt As New StreamReader(csDecrypt)
-
-
-                        ' Read the decrypted bytes from the decrypting stream
-                        ' and place them in a string.
-                        plaintext = srDecrypt.ReadToEnd()
-                    End Using
-                End Using
-            End Using
-        End Using
-
-        Return plaintext
-
-    End Function 'DecryptStringFromBytes_Aes 
+    End Function
 
 End Module

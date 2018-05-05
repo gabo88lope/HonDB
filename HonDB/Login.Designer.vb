@@ -35,6 +35,9 @@ Partial Class Login
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.LBUser = New System.Windows.Forms.ListBox()
+        Me.LBPass = New System.Windows.Forms.ListBox()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -174,12 +177,42 @@ Partial Class Login
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "HonDB"
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(140, 206)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(130, 113)
+        Me.TextBox1.TabIndex = 5
+        Me.TextBox1.Text = "Usuarios     Contraseñas" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Montano1     Montano1" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Romero2       Romero2" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Reyes3 " &
+    "        Reyes3" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Casas4         Casas4 " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Lopez5         Lopez5" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'LBUser
+        '
+        Me.LBUser.FormattingEnabled = True
+        Me.LBUser.Location = New System.Drawing.Point(12, 12)
+        Me.LBUser.Name = "LBUser"
+        Me.LBUser.Size = New System.Drawing.Size(120, 95)
+        Me.LBUser.TabIndex = 6
+        '
+        'LBPass
+        '
+        Me.LBPass.FormattingEnabled = True
+        Me.LBPass.Location = New System.Drawing.Point(138, 12)
+        Me.LBPass.Name = "LBPass"
+        Me.LBPass.Size = New System.Drawing.Size(120, 95)
+        Me.LBPass.TabIndex = 7
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(178, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(117, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(690, 331)
+        Me.Controls.Add(Me.LBPass)
+        Me.Controls.Add(Me.LBUser)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label1)
@@ -213,4 +246,7 @@ Partial Class Login
     Friend WithEvents UsernameText As TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents LBUser As ListBox
+    Friend WithEvents LBPass As ListBox
 End Class
