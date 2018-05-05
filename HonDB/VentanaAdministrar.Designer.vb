@@ -603,7 +603,7 @@ Partial Class VentanaAdministrar
         '
         Me.botonEliminar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.botonEliminar.Image = Global.HonDB.My.Resources.Resources.DeleteBT
-        Me.botonEliminar.Location = New System.Drawing.Point(361, 535)
+        Me.botonEliminar.Location = New System.Drawing.Point(373, 535)
         Me.botonEliminar.Name = "botonEliminar"
         Me.botonEliminar.Size = New System.Drawing.Size(40, 40)
         Me.botonEliminar.TabIndex = 19
