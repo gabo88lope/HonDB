@@ -69,20 +69,6 @@ Public Class Ventana_Registro
         MsgBox(CrearPrestamo)
         SaveData(CrearPrestamo)
         MsgBox("Préstamo creado exitosamente")
-        NUsuario.Clear()
-        AUsuario.Clear()
-        IDUsuario.Clear()
-        Pais.Clear()
-        Ciudad.Clear()
-        Nacionalidad.Clear()
-        ID.Clear()
-        LBPrestamos.Clear()
-        CBEstado.ResetText()
-        CBBN.ResetText()
-        CBBA.ResetText()
-        FP.ResetText()
-        FD.ResetText()
-
         GetData("SELECT p.idprestamo FROM prestamo p ORDER BY p.idprestamo DESC LIMIT 1;", idp)
         idPrestamo.Text = idp.ToString
 
@@ -103,7 +89,6 @@ Public Class Ventana_Registro
         Dim EditarPrestamo As String
         EditarPrestamo = "Update prestamo Set fechaprestamo =  STR_TO_DATE('" & FP.Value.Date.ToString("dd/MM/yyyy") & "', '%d/%m/%Y') , fechadevolucion = STR_TO_DATE('" & FD.Value.Date & "', '%d/%m/%Y'), cantidad = '" & CantP.Text & "' Where idprestamo = '" & idPrestamo.Text & "';"
         SaveData(EditarPrestamo)
-
     End Sub
 
     Private Sub BTEliminar_Click(sender As Object, e As EventArgs) Handles BTEliminar.Click
@@ -190,6 +175,7 @@ Public Class Ventana_Registro
     End Sub
 
     Private Sub CBEdit_CheckedChanged(sender As Object, e As EventArgs) Handles CBEdit.CheckedChanged
+
         If CBEdit.Checked = True Then
             BTEliminar.Enabled = True
         Else
@@ -325,6 +311,37 @@ Public Class Ventana_Registro
     End Sub
 
     Private Sub BTGuardar_Click(sender As Object, e As EventArgs) Handles BTGuardar.Click
+        NUsuario.Clear()
+        AUsuario.Clear()
+        IDUsuario.Clear()
+        Pais.Clear()
+        Ciudad.Clear()
+        CantP.Clear()
+        Nacionalidad.Clear()
+        ID.Clear()
+        LBPrestamos.Clear()
+        CBEstado.ResetText()
+        CBBN.ResetText()
+        CBBA.ResetText()
+        FP.ResetText()
+        FD.ResetText()
         Me.Close()
+    End Sub
+
+    Private Sub Limpiar_Click(sender As Object, e As EventArgs) Handles Limpiar.Click
+        NUsuario.Clear()
+        AUsuario.Clear()
+        IDUsuario.Clear()
+        Pais.Clear()
+        Ciudad.Clear()
+        CantP.Clear()
+        Nacionalidad.Clear()
+        ID.Clear()
+        LBPrestamos.Clear()
+        CBEstado.ResetText()
+        CBBN.ResetText()
+        CBBA.ResetText()
+        FP.ResetText()
+        FD.ResetText()
     End Sub
 End Class

@@ -97,7 +97,7 @@ Public Class Busqueda
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PopulateCombobox(ComboBox1, "autor", "nombre")
         PopulateCombobox(ComboBox2, "categoriageneral", "nombre")
-        PopulateCombobox(ComboBox3, "libro", "titulo")
+        'PopulateCombobox(ComboBox3, "libro", "titulo")
         PopulateCombobox(ComboBox4, "tipodocumento", "nombre")
 
         LlenarTabla(DataGridView1, "SELECT l.idlibro as Código, l.isbn as ISBN,(SELECT concat_ws(' ',a.nombre,concat(' ', a.apellido)) FROM 

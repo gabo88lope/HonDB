@@ -87,6 +87,7 @@ Partial Class Ventana_Registro
         Me.BTCrear = New System.Windows.Forms.PictureBox()
         Me.BookLogo = New System.Windows.Forms.PictureBox()
         Me.RetornoIcon = New System.Windows.Forms.PictureBox()
+        Me.Limpiar = New System.Windows.Forms.Button()
         CType(Me.DatosGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Lupa, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -673,6 +674,7 @@ Partial Class Ventana_Registro
         Me.ID.Name = "ID"
         Me.ID.Size = New System.Drawing.Size(68, 22)
         Me.ID.TabIndex = 51
+        Me.ID.Visible = False
         '
         'CBEdit
         '
@@ -723,6 +725,7 @@ Partial Class Ventana_Registro
         Me.idPrestamo.Name = "idPrestamo"
         Me.idPrestamo.Size = New System.Drawing.Size(68, 22)
         Me.idPrestamo.TabIndex = 56
+        Me.idPrestamo.Visible = False
         '
         'Lupa
         '
@@ -817,12 +820,24 @@ Partial Class Ventana_Registro
         Me.RetornoIcon.TabIndex = 1
         Me.RetornoIcon.TabStop = False
         '
+        'Limpiar
+        '
+        Me.Limpiar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Limpiar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Limpiar.Location = New System.Drawing.Point(532, 105)
+        Me.Limpiar.Name = "Limpiar"
+        Me.Limpiar.Size = New System.Drawing.Size(198, 23)
+        Me.Limpiar.TabIndex = 59
+        Me.Limpiar.Text = "Limpiar Campos"
+        Me.Limpiar.UseVisualStyleBackColor = True
+        '
         'Ventana_Registro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1350, 729)
+        Me.Controls.Add(Me.Limpiar)
         Me.Controls.Add(Me.Lupa)
         Me.Controls.Add(Me.idPrestamo)
         Me.Controls.Add(Me.Label13)
@@ -955,4 +970,5 @@ Partial Class Ventana_Registro
     Friend WithEvents Label13 As Label
     Friend WithEvents idPrestamo As TextBox
     Friend WithEvents Lupa As PictureBox
+    Friend WithEvents Limpiar As Button
 End Class
