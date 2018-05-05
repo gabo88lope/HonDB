@@ -135,6 +135,8 @@ Public Class Busqueda
     End Sub
 
     Private Sub BotonAgregarBusqueda_Click(sender As Object, e As EventArgs) Handles BotonAgregarBusqueda.Click
+
         Ventana_Registro.LBPrestamos.Text = TBI.Text
+
     End Sub
 End Class

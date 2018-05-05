@@ -672,7 +672,6 @@ Partial Class Ventana_Registro
         Me.ID.Name = "ID"
         Me.ID.Size = New System.Drawing.Size(68, 22)
         Me.ID.TabIndex = 51
-        Me.ID.Visible = False
         '
         'CBEdit
         '
@@ -723,7 +722,6 @@ Partial Class Ventana_Registro
         Me.idPrestamo.Name = "idPrestamo"
         Me.idPrestamo.Size = New System.Drawing.Size(68, 22)
         Me.idPrestamo.TabIndex = 56
-        Me.idPrestamo.Visible = False
         '
         'BTAgregarLibro
         '

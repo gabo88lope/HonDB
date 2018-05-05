@@ -65,4 +65,12 @@ Module OperacionesBD
         End Try
     End Sub
 
+    Public Sub GetData(ByVal query As String, ByRef result As Object)
+
+        AbrirConexion()
+        command = New MySqlCommand(query, conexion)
+        result = command.ExecuteScalar()
+
+    End Sub
+
 End Module

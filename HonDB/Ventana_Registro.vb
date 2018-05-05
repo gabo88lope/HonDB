@@ -1,5 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Ventana_Registro
+
+    Dim idp As Int32
+
     Private Sub Ventana_Registro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
         Me.WindowState = FormWindowState.Maximized
@@ -66,6 +69,10 @@ Public Class Ventana_Registro
         CBBA.ResetText()
         FP.ResetText()
         FD.ResetText()
+
+        GetData("SELECT p.idprestamo FROM prestamo p ORDER BY p.idprestamo DESC LIMIT 1;", idp)
+        idPrestamo.Text = idp.ToString
+
     End Sub
 
     Private Sub BTAgregarLibro_Click(sender As Object, e As EventArgs) Handles BTAgregarLibro.Click
