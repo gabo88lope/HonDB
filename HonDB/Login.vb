@@ -20,16 +20,6 @@ Public Class Login
         llenarListaL(LBUser, "bibliotecario", "usuario")
         llenarListaL(LBPass, "bibliotecario", "password")
 
-        LBPass.Items.Add(Encriptar(LBUser.Items.Item(0)))
-        LBPass.Items.Add(Encriptar(LBUser.Items.Item(1)))
-        LBPass.Items.Add(Encriptar(LBUser.Items.Item(2)))
-        LBPass.Items.Add(Encriptar(LBUser.Items.Item(3)))
-        LBPass.Items.Add(Encriptar(LBUser.Items.Item(4)))
-
-        For Each s As String In LBPass.Items
-            SaveData("Insert into bibliotecario ")
-        Next
-
     End Sub
 
     Private Sub UsernameText_KeyPress(sender As Object, e As KeyPressEventArgs) Handles UsernameText.KeyPress
