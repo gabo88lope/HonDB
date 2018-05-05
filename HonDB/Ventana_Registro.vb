@@ -2,10 +2,21 @@
 Public Class Ventana_Registro
 
     Dim idp As Int32
+    Shared ids As New List(Of Int32)
+
+
+    Public Shared Sub AddId(ByVal idl As Int32)
+
+        ids.Add(idl)
+        Ventana_Registro.CantP.Text = ids.Count.ToString
+
+    End Sub
 
     Private Sub Ventana_Registro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
         Me.WindowState = FormWindowState.Maximized
+
+        CBEstado.DisplayMember = "Préstamo Vigente"
 
         LlenarTabla(DatosGrid, "SELECT p.idprestamo AS '#', u.idusuario AS 'Codigo de usuario', u.nombre AS Nombre,
         u.apellido AS Apellido, u.identificacion AS Identificacion, ubicacion.pais AS País,
@@ -33,6 +44,7 @@ Public Class Ventana_Registro
         RectangleShape3.Enabled = False
         RectangleShape4.Enabled = False
         RectangleShape6.Enabled = False
+
     End Sub
 
     Private Sub RetornoIcon_Click(sender As Object, e As EventArgs) Handles RetornoIcon.Click
@@ -40,6 +52,7 @@ Public Class Ventana_Registro
     End Sub
 
     Private Sub BTCrear_Click(sender As Object, e As EventArgs) Handles BTCrear.Click
+
         Dim CrearUsuario As String
         Dim CrearUbicacion As String
         Dim CrearPrestamo As String
@@ -73,17 +86,14 @@ Public Class Ventana_Registro
         GetData("SELECT p.idprestamo FROM prestamo p ORDER BY p.idprestamo DESC LIMIT 1;", idp)
         idPrestamo.Text = idp.ToString
 
+        Dim CrearDetallePrestamo As String
+        For Each i As Int32 In ids
+            CrearDetallePrestamo = "INSERT INTO detalleprestamo(idlibro,idprestamo) VALUES ('" & i & "','" & idPrestamo.Text & "')"
+            SaveData(CrearDetallePrestamo)
+        Next
+
     End Sub
 
-    Private Sub BTAgregarLibro_Click(sender As Object, e As EventArgs) Handles BTAgregarLibro.Click
-        Dim Consulta1 As String
-        Consulta1 = "SELECT idusuario FROM usuario WHERE identificacion = '" & IDUsuario.Text
-        Dim CrearDetallePrestamo As String
-        CrearDetallePrestamo = "INSERT INTO detalleprestamo(idlibro,idprestamo)
-        VALUES ((SELECT idlibro FROM libro WHERE titulo = '" & LBPrestamos.Text & "') , (SELECT idprestamo FROM prestamo WHERE usuario = '" & Consulta1 & "'))"
-        SaveData(CrearDetallePrestamo)
-        MsgBox(CrearDetallePrestamo)
-    End Sub
 
     Private Sub BTEditar_Click(sender As Object, e As EventArgs) Handles BTEditar.Click
         Dim EditarUsuario As String
@@ -191,6 +201,19 @@ Public Class Ventana_Registro
         Else
             BTCrear.Enabled = True
         End If
+
+        If CBEdit.Checked = True Then
+            CBEstado.Enabled = True
+        Else
+            CBEstado.Enabled = False
+        End If
+
+        If CBEdit.Checked = True Then
+            CantP.Enabled = True
+        Else
+            CantP.Enabled = False
+        End If
+
         If CBEdit.Checked = True Then
             Dim S As Integer
             S = DatosGrid.CurrentRow.Index
